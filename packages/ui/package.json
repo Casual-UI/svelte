@@ -1,0 +1,16 @@
+{
+  "name": "@casual-ui/svelte",
+  "version": "0.0.1",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "type": "module",
+  "publishConfig": {
+    "exports": {
+      ".": "./index.js",
+      "./style.css": "./style.css"
+    }
+  },
+  "license": "MIT",
+  "svelte": "index.js"
+}

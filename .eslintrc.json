@@ -1,0 +1,3 @@
+{
+  "extends": "@casual-ui/eslint-config-typescript"
+}
