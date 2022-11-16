@@ -4,7 +4,7 @@
   import {
     notifications,
     closeByPositionGroupAndID,
-  } from '$lib/hooks/useNotification'
+  } from '../hooks/useNotification'
   import CPopup from './CPopup.svelte'
   import { circOut, cubicInOut, linear } from 'svelte/easing'
   import { crossfade } from 'svelte/transition'

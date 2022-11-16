@@ -1,6 +1,6 @@
 <script>
-  import { useFormProps } from '$lib/hooks/useForm'
-  import useSize from '$lib/hooks/useSize'
+  import { useFormProps } from '../../hooks/useForm'
+  import useSize from '../../hooks/useSize'
   import CCheckbox from './CCheckbox.svelte'
 
   /**

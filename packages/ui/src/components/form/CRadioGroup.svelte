@@ -1,6 +1,6 @@
 <script>
-  import { useFormProps, useValidator } from '$lib/hooks/useForm'
-  import useSize from '$lib/hooks/useSize'
+  import { useFormProps, useValidator } from '../../hooks/useForm'
+  import useSize from '../../hooks/useSize'
   import { tick } from 'svelte'
   import CRadio from './CRadio.svelte'
 

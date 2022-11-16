@@ -28,7 +28,7 @@ import CPopup from './components/CPopup.svelte'
 import CDialog from './components/CDialog.svelte'
 import CDrawer from './components/CDrawer.svelte'
 import CNotification from './components/CNotification.svelte'
-import { open as openNotification } from '../hooks/useNotification'
+import { open as openNotification } from './hooks/useNotification'
 import CForm from './components/form/CForm.svelte'
 import CFormItem from './components/form/CFormItem.svelte'
 import CInput from './components/form/CInput.svelte'
@@ -45,12 +45,16 @@ import CToggle from './components/form/CToggle.svelte'
 import CDatePicker from './components/form/date-picker/CDatePicker.svelte'
 import CInfoItem from './components/CInfoItem.svelte'
 import CTabs from './components/CTabs.svelte'
-export { useFormProps } from '../hooks/useForm'
 import CTable from './components/table/CTable.svelte'
 import CCarousel from './components/carousel/CCarousel.svelte'
 import CCarouselSlider from './components/carousel/CCarouselSlider.svelte'
+import 'uno.css'
+import '@casual-ui/styles/src/index.scss'
+import { attributeAtom } from './utils/attributeAtom'
+export { useFormProps } from './hooks/useForm'
 
 export {
+  attributeAtom,
   CCarouselSlider,
   CCarousel,
   CTable,

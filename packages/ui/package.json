@@ -1,16 +1,31 @@
 {
   "name": "@casual-ui/svelte",
-  "version": "0.0.1",
-  "main": "index.js",
-  "module": "index.js",
-  "types": "index.d.ts",
+  "version": "0.0.2",
+  "main": "src/index.js",
   "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
   "publishConfig": {
     "exports": {
-      ".": "./index.js",
-      "./style.css": "./style.css"
+      ".": "./dist/index.js",
+      "./dist/style.css": "./dist/style.css"
     }
   },
+  "scripts": {
+    "build": "vite build"
+  },
   "license": "MIT",
-  "svelte": "index.js"
+  "svelte": "index.js",
+  "devDependencies": {
+    "@casual-ui/i18n": "workspace:*",
+    "@casual-ui/styles": "workspace:*",
+    "@sveltejs/package": "1.0.0-next.5",
+    "@sveltejs/vite-plugin-svelte": "^1.2.0",
+    "dayjs": "^1.11.6",
+    "sass": "^1.52.1",
+    "svelte": "^3.46.0",
+    "unocss": "^0.46.5",
+    "vite": "^3.1.0"
+  }
 }

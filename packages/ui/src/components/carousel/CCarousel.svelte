@@ -56,8 +56,8 @@
 </script>
 
 <script>
-  import bem from '$lib/utils/bem'
-  import clsx from '$lib/utils/clsx'
+  import bem from '../../utils/bem'
+  import clsx from '../../utils/clsx'
   import { setContext } from 'svelte'
   import { cubicInOut } from 'svelte/easing'
   import { writable } from 'svelte/store'

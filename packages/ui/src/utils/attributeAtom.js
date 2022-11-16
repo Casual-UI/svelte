@@ -8,5 +8,5 @@ export const attributeAtom = attrs =>
       ...attrsNeeded,
       [name]: exist ? '' : null,
     }),
-    {}
+    {},
   )

@@ -1,6 +1,6 @@
 <script>
-  import { useHorizontal, useVertical } from '$lib/hooks/usePosition'
-  import clsx from '$lib/utils/clsx'
+  import { useHorizontal, useVertical } from '../hooks/usePosition'
+  import clsx from '../utils/clsx'
   import CPopup from './CPopup.svelte'
   import CButton from './CButton.svelte'
   import { onMount, createEventDispatcher } from 'svelte'

@@ -22,6 +22,6 @@ export default (base, condition) =>
   clsx(
     `c-${base}`,
     ...Object.entries(condition).map(
-      ([k, v]) => v && `c-${base}--${camelToKebab(k)}`
-    )
+      ([k, v]) => v && `c-${base}--${camelToKebab(k)}`,
+    ),
   )

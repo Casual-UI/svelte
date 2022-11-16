@@ -1,5 +1,5 @@
 <script>
-  import useSize from '$lib/hooks/useSize'
+  import useSize from '../hooks/useSize'
 
   /**
    * The title of the item.

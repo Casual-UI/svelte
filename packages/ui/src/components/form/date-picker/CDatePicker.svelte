@@ -1,9 +1,8 @@
 <script>
-  import useClickOutside from '$lib/hooks/useClickOutside'
-  import { validateCurrentKey } from '$lib/hooks/useForm'
-
-  import useSize from '$lib/hooks/useSize'
-  import clsx from '$lib/utils/clsx'
+  import useClickOutside from '../../../hooks/useClickOutside'
+  import { validateCurrentKey } from '../../../hooks/useForm'
+  import useSize from '../../../hooks/useSize'
+  import clsx from '../../../utils/clsx'
   import dayjs from 'dayjs'
   import { getContext, tick } from 'svelte'
   import CDropdown from '../../CDropdown.svelte'

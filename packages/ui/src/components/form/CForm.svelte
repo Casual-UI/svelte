@@ -42,7 +42,7 @@
 </script>
 
 <script>
-  import { useFormProps } from '$lib/hooks/useForm'
+  import { useFormProps } from '../../hooks/useForm'
   import { setContext } from 'svelte'
   import { writable } from 'svelte/store'
   import { tick } from 'svelte'

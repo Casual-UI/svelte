@@ -8,18 +8,19 @@ export default ({ cbInside, cbOutside }) => {
   /**
    * @type {import('svelte/types/runtime/action').Action}
    */
-  return node => {
+  return (node) => {
     /**
      *
      * @param {*} e
      */
-    const clickHandler = e => {
-      if (!e.target || !node) return
-      if (node.contains(e.target)) {
+    const clickHandler = (e) => {
+      if (!e.target || !node)
+        return
+      if (node.contains(e.target))
         cbInside?.()
-      } else {
+
+      else
         cbOutside?.()
-      }
     }
 
     window.addEventListener('click', clickHandler)

@@ -1,7 +1,7 @@
 <script>
-  import useClickOutside from '$lib/hooks/useClickOutside'
+  import useClickOutside from '../hooks/useClickOutside'
 
-  import bem from '$lib/utils/bem'
+  import bem from '../utils/bem'
   /**
    * The content text of tooltip
    * @type {string}

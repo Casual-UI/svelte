@@ -1,6 +1,6 @@
-<script lang="ts">
-  import { CButton } from '$lib'
-  import { attributeAtom } from '$lib/utils/attributeAtom'
+<script>
+  import { CButton } from '@casual-ui/svelte'
+  import { attributeAtom } from '@casual-ui/svelte'
   import { cubicInOut } from 'svelte/easing'
   import { slide } from 'svelte/transition'
 

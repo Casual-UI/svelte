@@ -4,7 +4,7 @@
     validateCurrentKey,
     hasErrorKey,
     clearCurrentKey,
-  } from '$lib/hooks/useForm'
+  } from '../../hooks/useForm'
 
   import { writable } from 'svelte/store'
 

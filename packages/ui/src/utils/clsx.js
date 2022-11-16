@@ -3,23 +3,26 @@
  * @param {*} mix
  */
 function toVal(mix) {
-  var k,
-    y,
-    str = ''
+  let k
+  let y
+  let str = ''
 
   if (typeof mix === 'string' || typeof mix === 'number') {
     str += mix
-  } else if (typeof mix === 'object') {
+  }
+  else if (typeof mix === 'object') {
     if (Array.isArray(mix)) {
       for (k = 0; k < mix.length; k++) {
         if (mix[k]) {
-          if ((y = toVal(mix[k]))) {
+          y = toVal(mix[k])
+          if (y) {
             str && (str += ' ')
             str += y
           }
         }
       }
-    } else {
+    }
+    else {
       for (k in mix) {
         if (mix[k]) {
           str && (str += ' ')
@@ -33,13 +36,16 @@ function toVal(mix) {
 }
 
 export default function () {
-  var i = 0,
-    tmp,
-    x,
-    str = ''
+  let i = 0
+  let tmp
+  let x
+  let str = ''
   while (i < arguments.length) {
-    if ((tmp = arguments[i++])) {
-      if ((x = toVal(tmp))) {
+    // eslint-disable-next-line prefer-rest-params
+    tmp = arguments[i++]
+    if (tmp) {
+      x = toVal(tmp)
+      if (x) {
         str && (str += ' ')
         str += x
       }

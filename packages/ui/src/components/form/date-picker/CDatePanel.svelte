@@ -1,5 +1,5 @@
 <script>
-  import clsx from '$lib/utils/clsx'
+  import clsx from '../../../utils/clsx'
   import messages from '@casual-ui/i18n'
   import { createEventDispatcher } from 'svelte'
   import { cubicIn } from 'svelte/easing'

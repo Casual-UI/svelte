@@ -1,6 +1,6 @@
 <script>
-  import useSize from '$lib/hooks/useSize'
-  import clsx from '$lib/utils/clsx'
+  import useSize from '../hooks/useSize'
+  import clsx from '../utils/clsx'
   import { tick } from 'svelte'
   import { cubicIn, cubicInOut } from 'svelte/easing'
 

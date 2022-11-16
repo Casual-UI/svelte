@@ -1,5 +1,5 @@
 <script>
-  import bem from '$lib/utils/bem'
+  import bem from '../../utils/bem'
   import CTd from './CTd.svelte'
   import CTh from './CTh.svelte'
   import CTr from './CTr.svelte'

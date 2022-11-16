@@ -1,6 +1,6 @@
 <script>
-  import useSize from '$lib/hooks/useSize'
-  import bem from '$lib/utils/bem'
+  import useSize from '../hooks/useSize'
+  import bem from '../utils/bem'
   import { createEventDispatcher } from 'svelte'
 
   /**

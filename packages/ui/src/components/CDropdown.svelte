@@ -1,6 +1,6 @@
 <script>
-  import useClickOutside from '$lib/hooks/useClickOutside'
-  import clsx from '$lib/utils/clsx'
+  import useClickOutside from '../hooks/useClickOutside'
+  import clsx from '../utils/clsx'
 
   /**
    * The dropdown shown status. It is recommended to use `bind:show`.

@@ -1,7 +1,7 @@
 <script>
-  import useSize from '$lib/hooks/useSize'
-  import bem from '$lib/utils/bem'
-  import clsx from '$lib/utils/clsx'
+  import useSize from '../../hooks/useSize'
+  import bem from '../../utils/bem'
+  import clsx from '../../utils/clsx'
 
   /**
    * The toggle label text. It is recommended to use `bind:value`.

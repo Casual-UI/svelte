@@ -1,7 +1,7 @@
 <script>
-	import useSize from '$lib/hooks/useSize'
-	import useTheme from '$lib/hooks/useTheme'
-	import clsx from '$lib/utils/clsx'
+	import useSize from '../hooks/useSize'
+	import useTheme from '../hooks/useTheme'
+	import clsx from '../utils/clsx'
 	import { createEventDispatcher } from 'svelte'
 
 	/**

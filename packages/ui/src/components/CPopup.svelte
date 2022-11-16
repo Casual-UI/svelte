@@ -1,8 +1,8 @@
 <script>
-  import { hKey, useHorizontal, useVertical } from '$lib/hooks/usePosition'
-  import bem from '$lib/utils/bem'
+  import { useHorizontal, useVertical } from '../hooks/usePosition'
+  import bem from '../utils/bem'
   import { fade } from 'svelte/transition'
-  import { getContext, onMount } from 'svelte'
+  import { onMount } from 'svelte'
 
   /**
    * Determine whether the popup is shown or not
