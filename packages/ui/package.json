@@ -1,6 +1,6 @@
 {
   "name": "@casual-ui/svelte",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "src/index.js",
   "type": "module",
   "exports": {
