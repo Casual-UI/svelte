@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Setup Node 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with: 
+          version: 7.14.0
+      - name: Install packages
+        run: pnpm i
+      - name: Create release and publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
+          NPM_TOKEN: ${{ secrets.N_TOKEN }}

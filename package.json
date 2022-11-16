@@ -10,5 +10,8 @@
     "@casual-ui/eslint-config-typescript": "^0.0.3",
     "@changesets/cli": "^2.25.2",
     "eslint": "^8.27.0"
+  },
+  "scripts": {
+    "release": "cd packages/ui && pnpm build && cd ../.. && pnpm publish -r"
   }
 }
