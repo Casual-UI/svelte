@@ -49,6 +49,7 @@ declare module '$env/static/private' {
 	export const LC_ADDRESS: string;
 	export const npm_package_scripts_check_watch: string;
 	export const LC_NAME: string;
+	export const npm_package_devDependencies_shiki: string;
 	export const P9K_TTY: string;
 	export const npm_package_private: string;
 	export const npm_config_argv: string;
@@ -226,6 +227,7 @@ declare module '$env/dynamic/private' {
 		LC_ADDRESS: string;
 		npm_package_scripts_check_watch: string;
 		LC_NAME: string;
+		npm_package_devDependencies_shiki: string;
 		P9K_TTY: string;
 		npm_package_private: string;
 		npm_config_argv: string;

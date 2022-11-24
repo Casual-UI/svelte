@@ -1,11 +1,18 @@
 // @ts-nocheck
 import fs from 'fs'
 import fg from 'fast-glob'
+import * as shiki from 'shiki'
 import type { LayoutServerLoad } from './$types'
+import nightOwlTheme from './night-owl.json'
 
 function capitalizeFirstLetter(input: string) {
   return input.charAt(0).toUpperCase() + input.slice(1)
 }
+const codeToHTML = async (code: string, lang = 'svelte') =>
+  (await shiki.getHighlighter({ theme: nightOwlTheme as any })).codeToHtml(
+    code,
+    { lang },
+  )
 
 export const load = async ({ route }: Parameters<LayoutServerLoad>[0]) => {
   const dirName = import.meta.url.replace(/^file:\/\//, '').replace(/\/\+layout\.server\.ts$/, '')
@@ -25,18 +32,27 @@ export const load = async ({ route }: Parameters<LayoutServerLoad>[0]) => {
     }
   })
   sidebars.sort((s1, s2) => s1.label.charCodeAt(0) - s2.label.charCodeAt(0))
+
+  const demos = demoEntries.map((path) => {
+    const pathArr = path.split('/')
+    pathArr.pop()
+    const demoRoutePath = pathArr.pop()
+
+    return {
+      code: fs.readFileSync(path, 'utf-8'),
+      iframeUrl: `${route.id}/demos/${demoRoutePath}`,
+      name: demoRoutePath?.split('-').map(capitalizeFirstLetter).join(' ') || '',
+    }
+  })
+
+  for (let i = 0; i < demos.length; i++) {
+    const demo = demos[i]
+    demo.code = await codeToHTML(demo.code)
+  }
+
   return {
     // Current page demos
-    demos: demoEntries.map((path) => {
-      const pathArr = path.split('/')
-      pathArr.pop()
-      const demoRoutePath = pathArr.pop()
-      return {
-        code: fs.readFileSync(path, 'utf-8'),
-        iframeUrl: `${route.id}/demos/${demoRoutePath}`,
-        name: demoRoutePath?.split('-').map(capitalizeFirstLetter).join(' ') || '',
-      }
-    }),
+    demos,
     // Current sidebars
     sidebars,
   }

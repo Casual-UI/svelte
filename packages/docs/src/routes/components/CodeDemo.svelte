@@ -24,9 +24,7 @@
     {demo.name}
   </h3>
   <iframe on:load={computedHeight} bind:this={iframe} title={demo.name} src={demo.iframeUrl} class="sandbox" style={`height: ${contentHeight}`}></iframe>
-  <pre>
-    {demo.code}
-  </pre>
+  {@html demo.code}
 </div>
 
 <style>
