@@ -6,6 +6,6 @@ import useContextProp from './useContextProp'
 export const key = Symbol('c-size')
 
 /**
- * @param size {import('casual-types').CSize | undefined}
+ * @param size {import('@casual-ui/types').CSize=}
  */
 export default size => useContextProp(key, size, 'md')

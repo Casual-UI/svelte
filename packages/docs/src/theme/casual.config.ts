@@ -1,7 +1,7 @@
 export default {
   sandboxUrl:
     'https://stackblitz.com/edit/sveltejs-kit-template-default-krp2ie?file=src/routes/index.svelte',
-  github: 'https://github.com/Blackman99/casual-ui',
+  github: 'https://github.com/Casual-UI/svelte',
   // NOTICE: support for maximum 6 features
   features: [
     {

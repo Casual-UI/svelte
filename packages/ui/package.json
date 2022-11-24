@@ -19,7 +19,8 @@
   "license": "MIT",
   "dependencies": {
     "@casual-ui/i18n": "workspace:^0.1.4",
-    "@casual-ui/styles": "workspace:*"
+    "@casual-ui/styles": "workspace:*",
+    "@casual-ui/types": "workspace:*"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^23.0.2",

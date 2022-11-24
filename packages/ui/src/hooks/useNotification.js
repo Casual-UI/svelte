@@ -104,9 +104,11 @@ const changeContentByPositionGroupAndID = (positionGroup, id, newContent) => {
  * @returns
  */
 const open = (
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+  // @ts-ignore
   {
-    title,
-    message,
+    title = '',
+    message = '',
     timeout = 3000,
     theme = 'primary',
     alignX = 'end',
@@ -117,6 +119,7 @@ const open = (
     theme: 'primary',
     alignX: 'end',
     alignY: 'start',
+    closeIcon: true,
   },
 ) => {
   const id = notificationCounter++
@@ -148,9 +151,6 @@ const open = (
 
   const close = () => closeByPositionGroupAndID(positionKey, id)
 
-  /**
-   * @type {NodeJS.Timeout}
-   */
   let flag
 
   if (timeout && timeout > 0)

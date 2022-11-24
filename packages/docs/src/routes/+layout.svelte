@@ -3,7 +3,15 @@
   import '@casual-ui/svelte/dist/style.css'
   import CNotification from '@casual-ui/svelte/dist/standalone/components/CNotification.svelte'
   import NavBar from '../theme/NavBar.svelte'
+  import { page } from '$app/stores'
+
+  $: isDemo = $page.route.id?.indexOf('/demos/') !== -1
 </script>
+
+{#if isDemo}
+  <slot />
+{:else}
+
 <NavBar />
 <div
   flex-col
@@ -26,6 +34,7 @@
   </slot>
 </div>
 <CNotification />
+{/if}
 
 <style>
   .doc-container {
