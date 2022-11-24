@@ -1,11 +1,6 @@
 import { presetAttributify, presetIcons, presetUno } from 'unocss'
 
-/**
- *
- * @param {*} hex
- * @returns
- */
-function hexToRgb(hex) {
+function hexToRgb(hex: string) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
   return result
     ? {
@@ -46,17 +41,17 @@ export default {
     presetIcons(),
   ],
   rules: [
-    [/^text-([A-Fa-f0-9]{6})$/, ([_, d]) => ({ color: `#${d}` })],
+    [/^text-([A-Fa-f0-9]{6})$/, ([_, d]: any) => ({ color: `#${d}` })],
     [
       /^bg-([A-Fa-f0-9]{6})$/,
-      ([_, d]) => {
-        const { r, g, b } = hexToRgb(`#${d}`)
+      ([_, d]: any) => {
+        const { r, g, b } = hexToRgb(`#${d}`) || {}
         return {
           'background-color': `rgba(${r}, ${g}, ${b}, var(--un-bg-opacity))`,
         }
       },
     ],
-    [/^border-([A-Fa-f0-9]{6})$/, ([_, d]) => ({ 'border-color': `#${d}` })],
-    [/fs-(\d+)/, ([_, d]) => ({ 'font-size': `${Number(d) / 16}rem` })],
+    [/^border-([A-Fa-f0-9]{6})$/, ([_, d]: any) => ({ 'border-color': `#${d}` })],
+    [/fs-(\d+)/, ([_, d]: any) => ({ 'font-size': `${Number(d) / 16}rem` })],
   ],
 }
