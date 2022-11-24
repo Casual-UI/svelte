@@ -44,5 +44,8 @@
 	],
 	"/components/button/demos/customize-loading-instance": [
 		"src/routes/+layout.server.ts"
+	],
+	"/components/button/demos": [
+		"src/routes/+layout.server.ts"
 	]
 }
