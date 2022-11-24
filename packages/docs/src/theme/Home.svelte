@@ -5,7 +5,6 @@
   import AnimationLogo from './AnimationLogo.svelte'
   import casualConfig from './casual.config'
 </script>
-
 <div max-w-288 class="2xl-max-w-350" mx-auto flex flex-col items-center>
   <div
     md:flex-row
