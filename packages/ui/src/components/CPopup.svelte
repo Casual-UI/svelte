@@ -1,8 +1,8 @@
 <script>
-  import { useHorizontal, useVertical } from '../hooks/usePosition'
-  import bem from '../utils/bem'
   import { fade } from 'svelte/transition'
   import { onMount } from 'svelte'
+  import { useHorizontal, useVertical } from '../hooks/usePosition'
+  import bem from '../utils/bem'
 
   /**
    * Determine whether the popup is shown or not
@@ -15,14 +15,14 @@
    *
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let horizontalAlign = undefined
+  export let horizontalAlign
 
   /**
    * Determine the popup vertical align direction. This prop use the [justify-content CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)
    *
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let verticalAlign = undefined
+  export let verticalAlign
 
   /**
    * Some custom addtional class names
@@ -49,9 +49,8 @@
   })
 
   const onBackdropClick = () => {
-    if (closeOnClickBackdrop) {
+    if (closeOnClickBackdrop)
       show = false
-    }
   }
 </script>
 

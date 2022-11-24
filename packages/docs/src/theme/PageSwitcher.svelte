@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { goto } from '$app/navigation'
   import { attributeAtom } from './utils/attributeAtom'
+  import { goto } from '$app/navigation'
 
   export let title = ''
   export let page = ''

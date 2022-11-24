@@ -1,14 +1,14 @@
 <script>
+  import { tick } from 'svelte'
   import { useFormProps, useValidator } from '../../hooks/useForm'
   import useSize from '../../hooks/useSize'
-  import { tick } from 'svelte'
   import CRadio from './CRadio.svelte'
 
   /**
    * Current value. It is recommended to use `bind:value`.
    * @type {string | number=}
    */
-  export let value = undefined
+  export let value
 
   /**
    * The options array.
@@ -20,13 +20,13 @@
    * The size of all radios in this group.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * The gutter size between each radio.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let gutterSize = undefined
+  export let gutterSize
 
   /**
    * If this group is in a Form context. Set this prop to `true` will validate current field when selection change.

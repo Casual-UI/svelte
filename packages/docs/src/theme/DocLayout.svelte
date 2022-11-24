@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { page } from '$app/stores'
   import PageSwitcher from './PageSwitcher.svelte'
-
+  
   import EditOnGithub from './EditOnGithub.svelte'
+  import { page } from '$app/stores'
 
   export let pages: {
     to: string
@@ -11,15 +11,15 @@
 
   // current page in sidebar index
   $: currentPageIndex = pages?.findIndex(item =>
-    item.to.includes($page.routeId || '*#%@')
+    item.to.includes($page.route.id || '*#%@')
   )
 
   // previous page info
   $: previousPage = currentPageIndex < 1 ? null : pages[currentPageIndex - 1]
 
   // next page info
-  $: nextPage =
-    currentPageIndex >= pages.length - 1 ? null : pages[currentPageIndex + 1]
+  $: nextPage
+    = currentPageIndex >= pages.length - 1 ? null : pages[currentPageIndex + 1]
 </script>
 
 <div pt-8 justify-center class="doc-layout">

@@ -1,7 +1,7 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import useSize from '../hooks/useSize'
   import bem from '../utils/bem'
-  import { createEventDispatcher } from 'svelte'
 
   /**
    * The label text.
@@ -13,7 +13,7 @@
    * The size of item. Notice that default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * Determine whether the item is clickable or not.

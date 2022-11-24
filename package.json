@@ -7,9 +7,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@antfu/eslint-config-basic": "^0.31.0",
     "@casual-ui/eslint-config-typescript": "^0.0.3",
     "@changesets/cli": "^2.25.2",
-    "eslint": "^8.27.0"
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "eslint": "^8.27.0",
+    "eslint-plugin-svelte3": "^4.0.0"
   },
   "scripts": {
     "release": "cd packages/i18n && pnpm build && cd ../ui && pnpm build && cd ../.. && pnpm publish -r"

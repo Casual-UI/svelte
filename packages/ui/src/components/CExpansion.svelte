@@ -1,9 +1,9 @@
 <script>
-  import clsx from '../utils/clsx'
-  import bem from '../utils/bem'
   import { createEventDispatcher, onMount, tick } from 'svelte'
   import { slide } from 'svelte/transition'
   import { cubicInOut } from 'svelte/easing'
+  import bem from '../utils/bem'
+  import clsx from '../utils/clsx'
 
   /**
    * The title of the expansion

@@ -1,8 +1,8 @@
 <script>
+  import { tick } from 'svelte'
+  import { cubicInOut } from 'svelte/easing'
   import useSize from '../hooks/useSize'
   import clsx from '../utils/clsx'
-  import { tick } from 'svelte'
-  import { cubicIn, cubicInOut } from 'svelte/easing'
 
   /**
    * The items config. If a config don't has `title` prop. Will use `name` as tab title.
@@ -20,7 +20,7 @@
    * The size of tabs. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * Determien whether the panel body has a padding or not.
@@ -51,17 +51,23 @@
 
   const computeActiveBar = async () => {
     await tick()
-    if (!header) return
+    if (!header)
+      return
     /**
      * @type {*}
      */
     const activeItem = header.querySelector('.c-tabs--header-item-active')
-    if (!activeItem) return
+    if (!activeItem)
+      return
     activeBarLeft = activeItem.offsetLeft
     activeBarWidth = activeItem.offsetWidth
   }
 
-  $: activeItem, computeActiveBar()
+  $: {
+    // eslint-disable-next-line no-unused-expressions
+    activeItem
+    computeActiveBar()
+  }
 
   let nextIdx = -1
   let currentIdx = -1
@@ -71,7 +77,7 @@
   /**
    * @param {{ name: string }} item
    */
-  const onHeaderClick = async item => {
+  const onHeaderClick = async (item) => {
     currentIdx = items.findIndex(item2 => item2.name === activeItem)
     nextIdx = items.findIndex(item2 => item2.name === item.name)
     reverse = nextIdx < currentIdx
@@ -83,31 +89,32 @@
    * @param {*} node
    * @param {*} params
    */
-  const tab = (node, { mode, name }) => {
+  const tab = (node, { mode }) => {
     return {
       easing: cubicInOut,
       duration: 300,
       /**
        * @param {number} t
        */
-      css: t => {
+      css: (t) => {
         let x
         if (mode === 'in') {
-          if (reverse) {
+          if (reverse)
             x = -(100 - 100 * t)
-          } else {
+  
+          else
             x = 100 - 100 * t
-          }
-        } else {
-          if (!reverse) {
+        }
+        else {
+          if (!reverse)
             x = -100 + 100 * t
-          } else {
+  
+          else
             x = 100 - 100 * t
-          }
         }
-        if (panelPadding && mode === 'out') {
+        if (panelPadding && mode === 'out')
           node.classList.add(`c-pa-${$contextSize}`)
-        }
+  
         return `${
           mode === 'out'
             ? 'position: absolute;top:0;left:0;right:0;bottom:0;'

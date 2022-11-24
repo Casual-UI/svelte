@@ -34,7 +34,7 @@ const useFormProps = ({
     contextLabelDirection: useContextProp(
       labelDirectionKey,
       labelDirection,
-      'row'
+      'row',
     ),
     contextGutterSize: useContextProp(gutterSizeKey, gutterSize, 'md'),
     contextSize: useSize(size),

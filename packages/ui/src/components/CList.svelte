@@ -1,8 +1,7 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import useSize from '../hooks/useSize'
   import bem from '../utils/bem'
-  import clsx from '../utils/clsx'
-  import { createEventDispatcher } from 'svelte'
   import CItem from './CItem.svelte'
 
   /**
@@ -21,13 +20,13 @@
    * The size of list.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * The function that compute the active status of item.
    * @type {(item: any) => boolean=}
    */
-  export let activeFn = undefined
+  export let activeFn
 
   /**
    * Determine whether there is a divider between every item.
@@ -40,16 +39,15 @@
   const contextSize = useSize(size)
 
   $: {
-    if (size) {
+    if (size)
       $contextSize = size
-    }
   }
 
   /**
    *
    * @param {*} item
    */
-  const onItemClick = item => {
+  const onItemClick = (item) => {
     dispatch('item-click', item)
   }
 </script>

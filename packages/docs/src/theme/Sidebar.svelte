@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { page } from '$app/stores'
-  import Link from './Link.svelte'
   import { cubicInOut } from 'svelte/easing'
   import { fly } from 'svelte/transition'
+  import Link from './Link.svelte'
+  import { page } from '$app/stores'
 
   export let links: {
     label: string

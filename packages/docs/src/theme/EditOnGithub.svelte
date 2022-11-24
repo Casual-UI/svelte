@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { page } from '$app/stores'
   import Link from './Link.svelte'
+  import { page } from '$app/stores'
 </script>
 
 <Link
-  to={`https://github.com/Blackman99/casual-ui/edit/main/packages/svelte/src/routes/${$page.routeId}/index.svelte`}
+  to={`https://github.com/Blackman99/casual-ui/edit/main/packages/svelte/src/routes/${$page.route.id}/index.svelte`}
   external
   hideExternalIcon
   mt-8

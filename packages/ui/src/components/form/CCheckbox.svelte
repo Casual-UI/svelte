@@ -1,16 +1,16 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import { useValidator } from '../../hooks/useForm'
-
+  
   import useSize from '../../hooks/useSize'
   import bem from '../../utils/bem'
   import clsx from '../../utils/clsx'
-  import { createEventDispatcher } from 'svelte'
 
   /**
    * Determine whether the checkbox is checked or not. It is recommended to use `bind:value`.
    * @type {boolean | string | number=}
    */
-  export let value = undefined
+  export let value
 
   /**
    * The theme color
@@ -22,7 +22,7 @@
    * The size of checkbox.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = void 0
+  export let size
 
   /**
    * The text label of checkbox.
@@ -49,8 +49,9 @@
   const { hasError } = useValidator()
 
   const onClick = () => {
-    if (disabled) return
-    const newValue = value === checkedValue ? void 0 : checkedValue
+    if (disabled)
+      return
+    const newValue = value === checkedValue ? undefined : checkedValue
     value = newValue
     /**
      * Emit when the checked status change.

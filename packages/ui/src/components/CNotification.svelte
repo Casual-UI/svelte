@@ -1,14 +1,12 @@
 <script>
-  // @ts-nocheck
-
-  import {
-    notifications,
-    closeByPositionGroupAndID,
-  } from '../hooks/useNotification'
-  import CPopup from './CPopup.svelte'
   import { circOut, cubicInOut, linear } from 'svelte/easing'
   import { crossfade } from 'svelte/transition'
   import { flip } from 'svelte/animate'
+  import {
+    closeByPositionGroupAndID,
+    notifications,
+  } from '../hooks/useNotification'
+  import CPopup from './CPopup.svelte'
 
   /**
    * @type {(...parmas: any) => any}
@@ -19,7 +17,6 @@
     return {
       duration: 300,
       easing: circOut,
-      // @ts-ignore
       css: t => `
         transform: ${transform} ${
         params.x === 'start' ? `translateX(${-100 + t * 100}px)` : ''

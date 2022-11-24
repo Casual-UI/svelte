@@ -42,10 +42,9 @@
 </script>
 
 <script>
-  import { useFormProps } from '../../hooks/useForm'
-  import { setContext } from 'svelte'
+  import { setContext, tick } from 'svelte'
   import { writable } from 'svelte/store'
-  import { tick } from 'svelte'
+  import { useFormProps } from '../../hooks/useForm'
   /**
    * The whole form data
    * @type {Record<string, any>}
@@ -62,13 +61,13 @@
    * The label width of whole form. Notice that the default value is `'80px'` instead of `undefined`.
    * @type {string=}
    */
-  export let labelWidth = undefined
+  export let labelWidth
 
   /**
    * The col span of each form item. Total cols are 12. Notice that default value is `6` instead of `undefined`
    * @type {number=}
    */
-  export let col = undefined
+  export let col
 
   /**
    * Label and form component arrangement direction.
@@ -78,7 +77,7 @@
    * This prop use [CSS flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction).
    * @type {'row' | 'row-reverse' | 'column' | 'column-reverse'=}
    */
-  export let labelDirection = undefined
+  export let labelDirection
 
   /**
    * The label itself arrangement direction.
@@ -88,7 +87,7 @@
    * This prop use [CSS text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
    * @type {'left' | 'center' | 'right'=}
    */
-  export let labelAlign = undefined
+  export let labelAlign
 
   /**
    * The size of whole form.
@@ -100,13 +99,13 @@
    * :::
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * The gutte size between label and form component. Notice that the default value is `'md'` instead of `undefined`.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let gutterSize = undefined
+  export let gutterSize
 
   /**
    * The falg that determine form is in validating or not.
@@ -136,39 +135,33 @@
   })
 
   $: {
-    if (size) {
+    if (size)
       $contextSize = size
-    }
   }
 
   $: {
-    if (gutterSize) {
+    if (gutterSize)
       $contextGutterSize = gutterSize
-    }
   }
 
   $: {
-    if (col) {
+    if (col)
       $contextCol = col
-    }
   }
 
   $: {
-    if (labelWidth) {
+    if (labelWidth)
       $contextLabelWidth = labelWidth
-    }
   }
 
   $: {
-    if (labelAlign) {
+    if (labelAlign)
       $contextLabelAlign = labelAlign
-    }
   }
 
   $: {
-    if (labelDirection) {
+    if (labelDirection)
       $contextLabelDirection = labelDirection
-    }
   }
 
   /**
@@ -190,9 +183,10 @@
    * Validate a single field
    * @param {string} f
    */
-  const validateSomeField = async f => {
+  const validateSomeField = async (f) => {
     const validators = rules[f]
-    if (!validators) return
+    if (!validators)
+      return
     for (let i = 0; i < validators.length; i++) {
       const validator = validators[i]
       const r = await validator(value[f])
@@ -200,9 +194,8 @@
         ...$errorStatus,
         [f]: r,
       }
-      if (r) {
+      if (r)
         break
-      }
     }
   }
 
@@ -210,7 +203,7 @@
    * Clear a specified field validate status
    * @param {string} f
    */
-  const clearSomeField = f => {
+  const clearSomeField = (f) => {
     $errorStatus = {
       ...$errorStatus,
       [f]: false,
@@ -224,14 +217,13 @@
    * Validate all fields
    */
   const validateAll = () =>
-    new Promise(resolve => {
+    new Promise((resolve) => {
       validating = true
       const validatorPromises = Object.keys(rules).map(validateSomeField)
       Promise.all(validatorPromises)
         .then(() => {
-          if (Object.values($errorStatus).every(v => !v)) {
-            resolve(void 0)
-          }
+          if (Object.values($errorStatus).every(v => !v))
+            resolve()
         })
         .finally(() => {
           validating = false

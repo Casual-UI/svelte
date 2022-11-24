@@ -1,28 +1,28 @@
 <script lang="ts">
-  import { browser } from '$app/environment'
-
+  
   import { slide } from 'svelte/transition'
   import { dark } from './theme'
+  import { browser } from '$app/environment'
 
   if (browser) {
     const storeValue = window.localStorage.getItem(
       'CASUAL_SVELTE_DOC_DARK_MODE'
     ) as any
-    if (storeValue) {
+    if (storeValue)
       $dark = storeValue
-    }
-    if (storeValue === 'on') {
+  
+    if (storeValue === 'on')
       document.documentElement.classList.add('dark')
-    }
   }
 
   const toggle = () => {
     $dark = $dark === 'off' ? 'on' : 'off'
-    if ($dark === 'on') {
+    if ($dark === 'on')
       document.documentElement.classList.add('dark')
-    } else {
+  
+    else
       document.documentElement.classList.remove('dark')
-    }
+  
     window.localStorage.setItem('CASUAL_SVELTE_DOC_DARK_MODE', $dark)
   }
 </script>

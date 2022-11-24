@@ -1,8 +1,8 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import { useValidator } from '../../hooks/useForm'
   import useSize from '../../hooks/useSize'
   import clsx from '../../utils/clsx'
-  import { createEventDispatcher } from 'svelte'
 
   /**
    * The radio selected status. It is recommended to use `bind:value`.
@@ -26,7 +26,7 @@
    * The size of radio. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * Determine whether the radio is disabled or not.
@@ -35,12 +35,13 @@
 
   const contextSize = useSize(size)
 
-  const { hasError, validateCurrent, clearCurrent } = useValidator()
+  const { hasError } = useValidator()
 
   const dispatch = createEventDispatcher()
 
   const onClick = () => {
-    if (disabled || value === selectedValue) return
+    if (disabled || value === selectedValue)
+      return
     value = selectedValue
     dispatch('change')
   }

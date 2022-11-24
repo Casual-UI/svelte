@@ -1,14 +1,14 @@
 <script>
+  
+  import { writable } from 'svelte/store'
+  
+  import { getContext, setContext } from 'svelte'
   import {
+    clearCurrentKey,
+    hasErrorKey,
     useFormProps,
     validateCurrentKey,
-    hasErrorKey,
-    clearCurrentKey,
   } from '../../hooks/useForm'
-
-  import { writable } from 'svelte/store'
-
-  import { getContext, setContext } from 'svelte'
   import {
     clearSomeFieldKey,
     errorStatusKey,
@@ -19,7 +19,7 @@
    * The field of whole form data
    * @type {string=}
    */
-  export let field = undefined
+  export let field
 
   /**
    * The label of each form item
@@ -30,37 +30,37 @@
    * The label width of this form item. Notice that this prop will override the CForm's `labelWidth` prop
    * @type {string=}
    */
-  export let labelWidth = undefined
+  export let labelWidth
 
   /**
    * This form item col span
    * @type {number=}
    */
-  export let col = undefined
+  export let col
 
   /**
    * The label and form component arrangement direction of this form item
    * @type {'row' | 'row-reverse' | 'column' | 'column-reverse'=}
    */
-  export let labelDirection = undefined
+  export let labelDirection
 
   /**
    * The label align of this form item
    * @type {'left' | 'center' | 'right'=}
    */
-  export let labelAlign = undefined
+  export let labelAlign
 
   /**
    * The size of component in this form item. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * The gutter size of this form item.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let gutterSize = undefined
+  export let gutterSize
 
   /**
    * Determine current form item has error or not.
@@ -88,7 +88,6 @@
   setContext(hasErrorKey, hasError)
   setContext(clearCurrentKey, clearCurrent)
 
-  // @ts-ignore
   const getLabelMarginPosition = direction =>
     new Map([
       ['row', 'r'],
@@ -102,10 +101,9 @@
    */
   const errorStatus = getContext(errorStatusKey)
   if (errorStatus) {
-    errorStatus.subscribe(err => {
-      if (field) {
+    errorStatus.subscribe((err) => {
+      if (field)
         $hasError = err[field]
-      }
     })
   }
 
@@ -125,36 +123,36 @@
     col,
   })
 
-  $: isLabelVertical =
-    $contextLabelDirection === 'column' ||
-    $contextLabelDirection === 'column-reverse'
+  $: isLabelVertical
+    = $contextLabelDirection === 'column'
+    || $contextLabelDirection === 'column-reverse'
 
   /**
    * @param {*} node
    * @param {*} params
    */
-  const errorTip = (node, params) => ({
+  const errorTip = () => ({
     duration: 300,
   })
 
   /**
    * @param {*} e
    */
-  const onInStart = e => {
+  const onInStart = (e) => {
     e.target.classList.add('c-form-item--error-tip-enter-active')
   }
 
   /**
    * @param {*} e
    */
-  const onInEnd = e => {
+  const onInEnd = (e) => {
     e.target.classList.remove('c-form-item--error-tip-enter-active')
   }
 
   /**
    * @param {*} e
    */
-  const onOutStart = e => {
+  const onOutStart = (e) => {
     e.target.classList.add('c-form-item--error-tip-leave-active')
     e.target.classList.add('c-form-item--error-tip--hidden')
   }
@@ -162,7 +160,7 @@
   /**
    * @param {*} e
    */
-  const onOutEnd = e => {
+  const onOutEnd = (e) => {
     e.target.classList.remove('c-form-item--error-tip-leave-active')
   }
 </script>

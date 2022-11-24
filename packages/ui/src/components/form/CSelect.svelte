@@ -1,11 +1,11 @@
 <script>
+  import { onMount, tick } from 'svelte'
   import useClickOutside from '../../hooks/useClickOutside'
-
+  
   import { useValidator } from '../../hooks/useForm'
   import useSize from '../../hooks/useSize'
   import bem from '../../utils/bem'
   import clsx from '../../utils/clsx'
-  import { onMount, tick } from 'svelte'
   import CDropdown from '../CDropdown.svelte'
   import CList from '../CList.svelte'
   import CTag from '../CTag.svelte'
@@ -21,7 +21,7 @@
    * The size of select. Notice that default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * The selected value(s).
@@ -74,9 +74,9 @@
    */
   let tagsContainer
 
-  if (multiple && !Array.isArray(value)) {
+  if (multiple && !Array.isArray(value))
     value = []
-  }
+  
 
   let inputValue = value
 
@@ -98,15 +98,15 @@
 
   $: selectedMultipleOptions = !multiple
     ? []
-    : options.filter(op => value.some((/** @type {any} */ v) => v === op.value))
+    : options.filter(op => value.includes(op.value))
 
-  const { hasError, clearCurrent, validateCurrent } = useValidator()
+  const { hasError, validateCurrent } = useValidator()
 
   const onSelectClick = () => {
-    if (disabled) return
-    if (multiple) {
+    if (disabled)
+      return
+    if (multiple)
       focused = !focused
-    }
   }
 
   const onClear = () => {
@@ -118,10 +118,10 @@
   }
 
   const onArrowClick = () => {
-    if (disabled) return
-    if (!multiple) {
+    if (disabled)
+      return
+    if (!multiple)
       focused = !focused
-    }
   }
 
   /**
@@ -130,12 +130,13 @@
    * @param {string} item.label
    * @param {string | number} item.value
    */
-  const onItemClick = item => {
+  const onItemClick = (item) => {
     if (multiple && Array.isArray(value)) {
       const idx = value.findIndex((/** @type {any} */ v) => v === item.value)
       if (idx === -1) {
         value = [...value, item.value]
-      } else {
+      }
+      else {
         value.splice(idx, 1)
         value = value
       }
@@ -146,19 +147,19 @@
   }
 
   $: isItemActive = (/** @type {{ value: any; }} */ item) => {
-    if (multiple && Array.isArray(value)) {
-      return value.some((/** @type {any} */ v) => v === item.value)
-    }
+    if (multiple && Array.isArray(value))
+      return value.includes(item.value)
+  
     return item.value === value
   }
 
   const clickOutside = useClickOutside({
     cbOutside: () => {
-      if (!focused) return
+      if (!focused)
+        return
       focused = false
-      if (validateOnFold && validateCurrent) {
+      if (validateOnFold && validateCurrent)
         validateCurrent()
-      }
     },
   })
 
@@ -178,6 +179,7 @@
   }
 
   $: {
+    // eslint-disable-next-line no-unused-expressions
     value
     recomputedSelectHeight()
   }

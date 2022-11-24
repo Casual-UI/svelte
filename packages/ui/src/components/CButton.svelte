@@ -2,8 +2,8 @@
   import bem from '../utils/bem'
   import { attributeAtom } from '../utils/attributeAtom'
   import clsx from '../utils/clsx'
-  import CLoading from './CLoading.svelte'
   import useSize from '../hooks/useSize'
+  import CLoading from './CLoading.svelte'
 
   /**
    * The text of the button. You can also use the default slot to cover this prop
@@ -38,7 +38,7 @@
    * The size of the button.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined}
    */
-  export let size = undefined
+  export let size
 
   /**
    * Determine the button has a half circle round border or not.

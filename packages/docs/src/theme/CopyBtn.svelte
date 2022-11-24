@@ -1,8 +1,8 @@
-<script>
-  import { CButton } from '@casual-ui/svelte'
-  import { attributeAtom } from '@casual-ui/svelte'
+<script lang="ts">
+  import CButton from '@casual-ui/svelte/dist/standalone/components/CButton.svelte'
   import { cubicInOut } from 'svelte/easing'
   import { slide } from 'svelte/transition'
+  import { attributeAtom } from './utils/attributeAtom'
 
   export let code = ''
 

@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { page } from '$app/stores'
-
-  import { CExpansion, CTabs } from '$lib'
-  import CTooltip from '$lib/components/CTooltip.svelte'
+  
+  import CTooltip from '@casual-ui/svelte/dist/standalone/components/CTooltip.svelte'
+  import CTabs from '@casual-ui/svelte/dist/standalone/components/CTabs.svelte'
+  import CExpansion from '@casual-ui/svelte/dist/standalone/components/CExpansion.svelte'
   import casualConfig from './casual.config'
   import CopyBtn from './CopyBtn.svelte'
   import Link from './Link.svelte'
   import { attributeAtom } from './utils/attributeAtom'
+  import { page } from '$app/stores'
 
   interface CodeItem {
     code?: string
@@ -17,7 +18,7 @@
   export let code = ''
   export let html = ''
   export let mdDocContent = ''
-  export let component: any = undefined
+  export let component: any
   export let title = ''
   export let id = ''
   export let hideSandboxIcon = false
@@ -29,14 +30,14 @@
 
   let activeItem = id
 
-  let tabItems = [{ name: id, title: 'App.svelte', body: component }, ...group]
+  const tabItems = [{ name: id, title: 'App.svelte', body: component }, ...group]
 
   $: activeCodeItem = group.length
     ? Object.entries(demosCodeHTML).find(([k]) => k === activeItem)?.[1] || {
-        html: '',
-        code: '',
-        mdDocContent: '',
-      }
+      html: '',
+      code: '',
+      mdDocContent: '',
+    }
     : {
         html,
         code,
@@ -84,7 +85,7 @@
         <CTooltip content="Edit this demo on github">
           <Link
             slot="trigger"
-            to={`https://github.com/Blackman99/casual-ui/edit/main/packages/svelte/src/routes/${$page.routeId}/_demos/${id}.svelte`}
+            to={`https://github.com/Blackman99/casual-ui/edit/main/packages/svelte/src/routes/${$page.route.id}/_demos/${id}.svelte`}
             external
             hideExternalIcon
           >

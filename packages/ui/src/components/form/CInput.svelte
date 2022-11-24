@@ -1,9 +1,9 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import { useValidator } from '../../hooks/useForm'
   import useSize from '../../hooks/useSize'
   import bem from '../../utils/bem'
   import clsx from '../../utils/clsx'
-  import { createEventDispatcher } from 'svelte'
   import CLoading from '../CLoading.svelte'
 
   const dispatch = createEventDispatcher()
@@ -24,7 +24,7 @@
    * The size of input. Notice that the default value is `md` not `undefined`.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}q
    */
-  export let size = undefined
+  export let size
 
   /**
    * The placeholder of input dom.
@@ -119,19 +119,18 @@
   }
 
   const onFocus = () => {
-    if (clearValidateOnFocus) {
+    if (clearValidateOnFocus)
       clearCurrent && clearCurrent()
-    }
+  
     focused = true
   }
 
   const onBlur = () => {
-    if (autoBlur) {
+    if (autoBlur)
       focused = false
-    }
-    if (validateTrigger === 'blur') {
+  
+    if (validateTrigger === 'blur')
       validateCurrent && validateCurrent()
-    }
   }
 
   const onClearIconClick = () => {

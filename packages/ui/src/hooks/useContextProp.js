@@ -7,12 +7,11 @@ import { writable } from 'svelte/store'
  * @param {*} defaultVal
  */
 export default (key, val, defaultVal, affectAncestor = false) => {
-  const hasVal = val !== void 0
+  const hasVal = val !== undefined
   if (hasContext(key)) {
     let contextVal = getContext(key)
-    if (!hasVal) {
+    if (!hasVal)
       return contextVal
-    }
 
     if (affectAncestor) {
       contextVal.set(val)
@@ -23,7 +22,7 @@ export default (key, val, defaultVal, affectAncestor = false) => {
 
     return contextVal
   }
-  const contextVal = writable(val ? val : defaultVal)
+  const contextVal = writable(val || defaultVal)
   setContext(key, contextVal)
   return contextVal
 }
@@ -34,7 +33,7 @@ export default (key, val, defaultVal, affectAncestor = false) => {
  * @param {*} defaultVal
  */
 export const useWithoutAffectAncestor = (key, val, defaultVal) => {
-  const hasVal = val !== void 0
+  const hasVal = val !== undefined
   if (!hasContext(key)) {
     const contextVal = writable(hasVal ? val : defaultVal)
     setContext(key, contextVal)

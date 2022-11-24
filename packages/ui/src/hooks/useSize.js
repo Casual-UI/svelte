@@ -1,5 +1,3 @@
-import { hasContext, getContext } from 'svelte'
-import { writable } from 'svelte/store'
 import useContextProp from './useContextProp'
 
 /**

@@ -1,6 +1,5 @@
 <script lang="ts">
   import Description from './Description.svelte'
-
   import Doc from './Doc.svelte'
   import InlineCode from './InlineCode.svelte'
   import VariableName from './VariableName.svelte'
@@ -34,6 +33,7 @@
               <span>default: <InlineCode>{defaultValue}</InlineCode></span>
             {/if}
             <Description>
+              <!-- eslint-disable-next-line svelte/no-at-html-tags -->
               {@html description}
             </Description>
           </div>
@@ -49,6 +49,7 @@
                     {param.type.text}
                   </InlineCode>
                   <Description>
+                    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
                     {@html param.description}
                   </Description>
                 </li>

@@ -1,9 +1,9 @@
 <script>
+  import { createEventDispatcher, onMount } from 'svelte'
   import { useHorizontal, useVertical } from '../hooks/usePosition'
   import clsx from '../utils/clsx'
   import CPopup from './CPopup.svelte'
   import CButton from './CButton.svelte'
-  import { onMount, createEventDispatcher } from 'svelte'
 
   const dispatch = createEventDispatcher()
 
@@ -59,13 +59,13 @@
    *
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let horizontalAlign = undefined
+  export let horizontalAlign
 
   /**
    * See above
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let verticalAlign = undefined
+  export let verticalAlign
 
   /**
    * Customize class names
@@ -134,20 +134,18 @@
   const hAlign = useHorizontal(horizontalAlign)
 
   $: {
-    if (horizontalAlign) {
+    if (horizontalAlign)
       $hAlign = horizontalAlign
-    }
   }
   const vAlign = useVertical(verticalAlign)
 
   $: {
-    if (verticalAlign) {
+    if (verticalAlign)
       $vAlign = verticalAlign
-    }
   }
 
   $: roundedClass = new Map([
-    ['start start', `c-rounded-br-md`],
+    ['start start', 'c-rounded-br-md'],
     ['start center', 'c-rounded-r-md'],
     ['start end', 'c-rounded-tr-md'],
     ['center start', 'c-rounded-b-md'],
@@ -158,24 +156,20 @@
     ['end end', 'c-rounded-tl-md'],
   ]).get(`${$hAlign} ${$vAlign}`)
 
-  $: forceChangeAnimationDirection =
-    `${$hAlign} ${$vAlign}` === 'start center' ||
-    `${$hAlign} ${$vAlign}` === 'end center'
+  $: forceChangeAnimationDirection
+    = `${$hAlign} ${$vAlign}` === 'start center'
+    || `${$hAlign} ${$vAlign}` === 'end center'
 
-  $: enterClassName =
-    exchangeAnimationDirection || forceChangeAnimationDirection
+  $: enterClassName
+    = exchangeAnimationDirection || forceChangeAnimationDirection
       ? 'c-dialog-reverse-enter-active'
       : 'c-dialog-enter-active'
-  $: leaveClassName =
-    exchangeAnimationDirection || forceChangeAnimationDirection
+  $: leaveClassName
+    = exchangeAnimationDirection || forceChangeAnimationDirection
       ? 'c-dialog-reverse-leave-active'
       : 'c-dialog-leave-active'
 
-  /**
-   * @param {*} node
-   * @param {*} params
-   */
-  const dialog = (node, params) => {
+  const dialog = () => {
     return {
       delay: 0,
       duration: 300,
@@ -183,16 +177,15 @@
   }
 
   let inTransition = false
-  let outTransition = false
+  const outTransition = false
 
   /**
    *
    * @param {*} e
    */
-  const listenKeyboard = e => {
-    if (e.key === 'Escape' && show && closeOnEsc) {
+  const listenKeyboard = (e) => {
+    if (e.key === 'Escape' && show && closeOnEsc)
       show = false
-    }
   }
   onMount(() => {
     window.addEventListener('keyup', listenKeyboard)
@@ -204,14 +197,14 @@
   /**
    * @param {*} e
    */
-  const onOutroStart = e => {
+  const onOutroStart = (e) => {
     e.target && e.target.classList.add(leaveClassName)
   }
 
   /**
    * @param {*} e
    */
-  const onOutroEnd = e => {
+  const onOutroEnd = (e) => {
     e.target && e.target.classList.add('c-dialog-exit')
 
     /**

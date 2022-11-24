@@ -13,7 +13,7 @@
    * The size of toggle. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * The current value of toggle.
@@ -44,7 +44,8 @@
   $: checked = value === checkedValue
 
   const toggle = () => {
-    if (disabled) return
+    if (disabled)
+      return
     if (value === checkedValue) {
       value = uncheckValue
       return

@@ -46,17 +46,18 @@
          */
         let x = ''
         if (isForward) {
-          if (leave) {
+          if (leave)
             x = -100 + 100 * t
-          } else {
+  
+          else
             x = 100 - 100 * t
-          }
-        } else {
-          if (leave) {
+        }
+        else {
+          if (leave)
             x = 100 - 100 * t
-          } else {
+  
+          else
             x = -100 + 100 * t
-          }
         }
         return `transform: translate${$vertical ? 'Y' : 'X'}(${x}%);`
       },
@@ -77,9 +78,9 @@
     remain = $interval
     if ($interval && toNext && !$hovering) {
       start = Date.now()
-      if ($timeoutFlag) {
+      if ($timeoutFlag)
         clearTimeout($timeoutFlag)
-      }
+  
       $timeoutFlag = setTimeout(toNext, remain)
     }
   }
@@ -95,34 +96,37 @@
   const resumes = getContext(resumesKey)
 
   const pause = () => {
-    if ($activeIndex !== currentIndex) return
+    if ($activeIndex !== currentIndex)
+      return
     if ($timeoutFlag) {
       clearTimeout($timeoutFlag)
       remain = $interval - (Date.now() - start)
     }
   }
 
-  if (pauses && Array.isArray(pauses)) {
+  if (pauses && Array.isArray(pauses))
     pauses.push(pause)
-  }
+  
 
   const resume = () => {
-    if ($activeIndex !== currentIndex) return
-    if (remain < 4) return
-    if (remain === $interval) {
+    if ($activeIndex !== currentIndex)
+      return
+    if (remain < 4)
+      return
+    if (remain === $interval)
       start = Date.now()
-    }
+  
     $timeoutFlag = setTimeout(toNext, remain)
   }
 
-  if (resumes && Array.isArray(resumes)) {
+  if (resumes && Array.isArray(resumes))
     resumes.push(resume)
-  }
+  
 
   onDestroy(() => {
-    if ($timeoutFlag) {
+    if ($timeoutFlag)
       clearTimeout($timeoutFlag)
-    }
+  
     pauses.splice(
       pauses.findIndex(p => p === pause),
       1

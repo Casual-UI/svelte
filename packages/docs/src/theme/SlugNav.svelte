@@ -11,6 +11,7 @@
   export let demos: any = []
 
   $: {
+    // eslint-disable-next-line no-unused-expressions
     scrollY
 
     computeActiveId()
@@ -21,7 +22,8 @@
   })
 
   const computeActiveId = () => {
-    if (!targetPositions.length) return
+    if (!targetPositions.length)
+      return
     const baseTop = targetPositions[0][1] + 72
     for (let i = 0; i < targetPositions.length; i++) {
       const [, pos] = targetPositions[i]
@@ -31,16 +33,16 @@
           activeIdx = i + 1
           break
         }
-      } else {
+      }
+      else {
         if (scrollY >= pos) {
           activeIdx = i + 1
           break
         }
       }
     }
-    if (activeIdx > 0) {
+    if (activeIdx > 0)
       doPush(`#${targetPositions[activeIdx - 1][0]}`)
-    }
   }
 
   let targetPositions: [string, number][] = []

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { goto } from '$app/navigation'
   import CButton from '@casual-ui/svelte/dist/standalone/components/CButton.svelte'
   import { attributeAtom } from './utils/attributeAtom'
   import AnimationLogo from './AnimationLogo.svelte'
   import casualConfig from './casual.config'
+  import { goto } from '$app/navigation'
 </script>
 <div max-w-288 class="2xl-max-w-350" mx-auto flex flex-col items-center>
   <div

@@ -56,12 +56,12 @@
 </script>
 
 <script>
-  import bem from '../../utils/bem'
-  import clsx from '../../utils/clsx'
   import { setContext } from 'svelte'
   import { cubicInOut } from 'svelte/easing'
   import { writable } from 'svelte/store'
   import { fade } from 'svelte/transition'
+  import clsx from '../../utils/clsx'
+  import bem from '../../utils/bem'
   import CButton from '../CButton.svelte'
 
   /**
@@ -167,7 +167,7 @@
    * Goto specific slider
    * @param {number} idx
    */
-  const toIndex = idx => {
+  const toIndex = (idx) => {
     if (idx < activeIndex) {
       if (idx >= 0) {
         $direction = 'backward'
@@ -214,27 +214,25 @@
   /**
    * @type {'running' | 'paused'}
    */
-  $: indicatorsAnimationPlayState =
-    ($hovering && pauseOnHover) || $sliding ? 'paused' : 'running'
+  $: indicatorsAnimationPlayState
+    = ($hovering && pauseOnHover) || $sliding ? 'paused' : 'running'
 
   const onContainerMouseEnter = () => {
     $hovering = true
-    if (pauseOnHover) {
+    if (pauseOnHover)
       pauses.forEach(p => p())
-    }
-    if (arrowTiming === 'hover') {
+  
+    if (arrowTiming === 'hover')
       showArrow = true
-    }
   }
 
   const onContainerMouseLeave = () => {
     $hovering = false
-    if (pauseOnHover) {
+    if (pauseOnHover)
       resumes.forEach(r => r())
-    }
-    if (arrowTiming === 'hover') {
+  
+    if (arrowTiming === 'hover')
       showArrow = false
-    }
   }
 
   setContext(toNextKey, toNext)
@@ -274,7 +272,7 @@
           <div>
             <div
               class={clsx(
-                `c-carousel--indicator-item`,
+                'c-carousel--indicator-item',
                 `c-carousel--indicator-item--${theme}`,
                 isActive && 'c-carousel--indicator-item--active'
               )}

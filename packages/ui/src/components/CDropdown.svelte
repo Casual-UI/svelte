@@ -28,13 +28,14 @@
 
   const clickOutside = useClickOutside({
     cbInside: () => {
-      if (disabled || manual) return
-      if (!show) {
+      if (disabled || manual)
+        return
+      if (!show)
         show = true
-      }
     },
     cbOutside: () => {
-      if (disabled || manual) return
+      if (disabled || manual)
+        return
       show = false
     },
   })

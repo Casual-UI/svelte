@@ -1,8 +1,8 @@
 <script>
+	import { createEventDispatcher } from 'svelte'
 	import useSize from '../hooks/useSize'
 	import useTheme from '../hooks/useTheme'
 	import clsx from '../utils/clsx'
-	import { createEventDispatcher } from 'svelte'
 
 	/**
 	 * The text content of the tag
@@ -20,7 +20,7 @@
 	 * The size of tag. Notice that default value is `'md'` not `undefined`
 	 * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
 	 */
-	export let size = undefined
+	export let size
 
 	/**
 	 * Determine whether the tag has a rounded border or not
@@ -40,10 +40,10 @@
 	const dispatch = createEventDispatcher()
 
 	const onClose = () => {
-		/**
+	  /**
 		 * Emit when the close icon clicked
-		 */
-		dispatch('close')
+		*/
+	  dispatch('close')
 	}
 </script>
 
