@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation'
-  import { CButton } from '$lib'
-  import { attributeAtom } from '$theme/utils/attributeAtom'
+  import CButton from '@casual-ui/svelte/dist/standalone/components/CButton.svelte'
+  import { attributeAtom } from './utils/attributeAtom'
   import AnimationLogo from './AnimationLogo.svelte'
   import casualConfig from './casual.config'
 </script>
@@ -92,7 +92,7 @@
         p-4
         leading-8
       >
-        <!-- NOTICE: support for maximum 6 features -->
+        <!-- NOTICE: only support for maximum 6 features -->
         <div
           p-4
           box-border

@@ -1,13 +1,40 @@
 <script lang="ts">
+  import 'uno.css'
+  import '@casual-ui/svelte/dist/style.css'
+	import NavBar from "../theme/NavBar.svelte";
+	import CNotification from '@casual-ui/svelte/dist/standalone/components/CNotification.svelte'
+
 </script>
+<NavBar />
+<div
+  flex-col
+  flex
+  text-t1
+  dark:text-cecece
+  sm:pt-18
+  class="doc-container"
+  overflow-auto
+  sm:overflow-unset
+>
+  <div flex-grow>
+    <slot />
+  </div>
 
-<div class="app">
-
-	<main>
-		<h1>
-			This is where the page content land.
-		</h1>
-		<slot />
-	</main>
-
+  <slot name="footer">
+    <footer text-t-3 text-3 text-center h-8 leading-8>
+      Copyright © 2021 - {new Date().getFullYear()} Casual UI
+    </footer>
+  </slot>
 </div>
+<CNotification />
+
+<style>
+  .doc-container {
+    min-height: calc(100vh - 3.5rem);
+  }
+  @media (min-width: 768px) {
+    .doc-container {
+      min-height: calc(100vh - 4.5rem);
+    }
+  }
+</style>

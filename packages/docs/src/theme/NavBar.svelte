@@ -1,7 +1,7 @@
 <script lang="ts">
-  import casualConfig from '$theme/casual.config'
-  import Link from '$theme/Link.svelte'
-  import { attributeAtom } from '$theme/utils/attributeAtom'
+  import casualConfig from './casual.config'
+  import Link from './Link.svelte'
+  import { attributeAtom } from './utils/attributeAtom'
   import ToggleDark from './ToggleDark.svelte'
   let scrollY = 0
 </script>

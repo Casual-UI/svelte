@@ -1,5 +1,5 @@
 <script>
-  import { draw, fade, fly, scale } from 'svelte/transition'
+  import { draw, fade } from 'svelte/transition'
   import { onMount } from 'svelte'
   import { cubicInOut } from 'svelte/easing'
 

@@ -1,30 +1,38 @@
 {
   "name": "@casual-ui/svelte",
   "version": "0.0.3",
-  "main": "src/index.js",
   "type": "module",
   "exports": {
-    ".": "./src/index.js"
-  },
-  "publishConfig": {
-    "exports": {
-      ".": "./dist/index.js",
-      "./dist/style.css": "./dist/style.css"
-    }
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css",
+    "./dist/standalone/*": "./dist/standalone/*.svelte"
   },
   "scripts": {
-    "build": "vite build"
+    "build:style": "vite build",
+    "build:entry": "rollup -c ./rollup.config.js",
+    "build:package": "svelte-package",
+    "build": "pnpm build:style && pnpm build:entry && cp -R src dist/standalone && pnpm build:package"
   },
   "license": "MIT",
-  "svelte": "index.js",
+  "dependencies": {
+    "@casual-ui/i18n": "workspace:^0.1.4",
+    "@casual-ui/styles": "workspace:*"
+  },
   "devDependencies": {
-    "@casual-ui/i18n": "workspace:*",
-    "@casual-ui/styles": "workspace:*",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^9.0.2",
     "@sveltejs/package": "1.0.0-next.5",
     "@sveltejs/vite-plugin-svelte": "^1.2.0",
     "dayjs": "^1.11.6",
+    "rollup": "^2.76.0",
+    "rollup-plugin-svelte": "^7.1.0",
     "sass": "^1.52.1",
     "svelte": "^3.46.0",
+    "typescript": "^4.9.3",
     "unocss": "^0.46.5",
     "vite": "^3.1.0"
   }

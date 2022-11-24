@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
-  import { attributeAtom } from '$theme/utils/attributeAtom'
+  import { attributeAtom } from './utils/attributeAtom'
 
   export let label = ''
   export let to = '/'

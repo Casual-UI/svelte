@@ -1,8 +1,12 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
+import { sveltekit } from '@sveltejs/kit/vite'
+import Unocss from 'unocss/vite'
+import unoConfig from './uno.config'
 
-const config: UserConfig = {
-	plugins: [sveltekit()]
-};
+const config = {
+  plugins: [
+    Unocss(unoConfig as any),
+    sveltekit(),
+  ],
+}
 
-export default config;
+export default config

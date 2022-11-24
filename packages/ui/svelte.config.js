@@ -1,9 +1,6 @@
-import { resolve } from 'path'
-const config = {
+export default {
   package: {
-    source: resolve(process.cwd(), './src/lib'),
-    dir: resolve(process.cwd(), './dist'),
+    source: 'src/components',
+    dir: 'dist/standalone/components',
   },
 }
-
-export default config

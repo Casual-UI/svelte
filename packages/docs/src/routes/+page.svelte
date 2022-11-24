@@ -1,12 +1,11 @@
 <script>
+	import Home from "../theme/Home.svelte";
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Home - Casaul UI Svelte</title>
+	<meta name="description" content="Casual UI Svelte" />
 </svelte:head>
 
-<h1>
-	Hello
-</h1>
+<Home />
 

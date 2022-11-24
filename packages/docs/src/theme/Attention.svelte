@@ -1,7 +1,6 @@
 <script lang="ts">
-  import type { CTheme } from 'casual-types'
-  import { attributeAtom } from '$theme/utils/attributeAtom'
-  import { dark } from '$theme/theme'
+  import type { CTheme } from '@casual-ui/types'
+  import { attributeAtom } from './utils/attributeAtom'
 
   export let type: CTheme = 'secondary'
   export let title = 'Tip'

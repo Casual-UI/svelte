@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { browser } from '$app/env'
+  import { browser } from '$app/environment'
 
   import { slide } from 'svelte/transition'
   import { dark } from './theme'
@@ -27,7 +27,7 @@
   }
 </script>
 
-<div text-6 cursor-pointer on:click={toggle} mx-2>
+<div text-6 cursor-pointer on:click={toggle} on:keypress={toggle} mx-2>
   {#if $dark === 'on'}
     <div transition:slide i-icon-park-solid-dark-mode />
   {:else}

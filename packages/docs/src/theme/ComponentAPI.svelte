@@ -1,17 +1,19 @@
-<script lang="ts">
-  import type { SvelteComponentDoc } from 'sveltedoc-parser'
+<script>
   import ApiList from './APIList.svelte'
 
-  export let api: SvelteComponentDoc
+  /**
+   * @type {any}
+   */
+  export let api
 
   $: propId = `${api.name} Props`
   $: eventId = `${api.name} Events`
   $: slotsId = `${api.name} Slots`
   $: exportName = `${api.name} Exports`
 
-  $: exprotsList = api.data?.filter(d => d.kind === 'const') || []
+  $: exprotsList = api.data?.filter((/** @type {{ kind: string; }} */ d) => d.kind === 'const') || []
 
-  $: propList = api.data?.filter(d => d.kind === 'let') || []
+  $: propList = api.data?.filter((/** @type {{ kind: string; }} */ d) => d.kind === 'let') || []
 </script>
 
 <div class="casual-ui-svelte--component-api">
