@@ -3,6 +3,9 @@
 		"src/routes/+layout.server.ts",
 		"src/routes/+layout.server.ts"
 	],
+	"/components": [
+		"src/routes/+layout.server.ts"
+	],
 	"/components/button": [
 		"src/routes/+layout.server.ts"
 	],
@@ -12,25 +15,22 @@
 	"/components/button/demos/block": [
 		"src/routes/+layout.server.ts"
 	],
-	"/components/button/(demos)/basic-usage": [
+	"/components/button/demos/customize-loading-instance": [
 		"src/routes/+layout.server.ts"
 	],
-	"/components/button/(demos)/block": [
+	"/components/button/demos/different-status": [
 		"src/routes/+layout.server.ts"
 	],
-	"/(demos)/(demos)/basic-usage": [
+	"/components/button/demos/icon-button": [
 		"src/routes/+layout.server.ts"
 	],
-	"/(demos)/(demos)/block": [
+	"/components/button/demos/sizes": [
 		"src/routes/+layout.server.ts"
 	],
-	"/(demos)/button/basic-usage": [
+	"/components/button/demos/themes": [
 		"src/routes/+layout.server.ts"
 	],
-	"/(demos)/button/block": [
-		"src/routes/+layout.server.ts"
-	],
-	"/components": [
+	"/components/carousel": [
 		"src/routes/+layout.server.ts"
 	],
 	"/components/carousel/demos/arrow-shown-timing": [
@@ -39,13 +39,7 @@
 	"/components/carousel/demos/basic-usage": [
 		"src/routes/+layout.server.ts"
 	],
-	"/components/carousel": [
-		"src/routes/+layout.server.ts"
-	],
-	"/components/button/demos/customize-loading-instance": [
-		"src/routes/+layout.server.ts"
-	],
-	"/components/button/demos": [
+	"/components/carousel-slider": [
 		"src/routes/+layout.server.ts"
 	]
 }

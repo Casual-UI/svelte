@@ -18,7 +18,6 @@
   export let code = ''
   export let html = ''
   export let mdDocContent = ''
-  export let component: any
   export let title = ''
   export let id = ''
   export let hideSandboxIcon = false
@@ -30,7 +29,7 @@
 
   let activeItem = id
 
-  const tabItems = [{ name: id, title: 'App.svelte', body: component }, ...group]
+  const tabItems = [{ name: id, title: 'App.svelte' }, ...group]
 
   $: activeCodeItem = group.length
     ? Object.entries(demosCodeHTML).find(([k]) => k === activeItem)?.[1] || {
@@ -107,7 +106,7 @@
       {/if}
     </div>
   </div>
-  {#if component || mdDocContent}
+  {#if mdDocContent}
     {#if !group.length}
       <div p-4 bg-white box-border dark:bg-191919>
         {#if mdDocContent}
@@ -115,7 +114,6 @@
             {@html mdDocContent}
           </div>
         {/if}
-        <svelte:component this={component} />
       </div>
     {:else}
       {#if mdDocContent}

@@ -1,20 +1,28 @@
 import fs from 'fs'
+import { resolve } from 'path'
 import fg from 'fast-glob'
-import * as shiki from 'shiki'
+import { getHighlighter } from 'shiki'
 import type { LayoutServerLoad } from './$types'
 import nightOwlTheme from './night-owl.json'
+import componentMap from './componentMap'
+import parseComponentAPI from './parseComponentAPI'
+// import parseComponentAPI from './parseComponentAPI'
+
+export const prerender = true
+
+export const trailingSlash = 'always'
 
 function capitalizeFirstLetter(input: string) {
   return input.charAt(0).toUpperCase() + input.slice(1)
 }
 const codeToHTML = async (code: string, lang = 'svelte') =>
-  (await shiki.getHighlighter({ theme: nightOwlTheme as any })).codeToHtml(
+  (await getHighlighter({ theme: nightOwlTheme as any })).codeToHtml(
     code,
     { lang },
   )
 
 export const load: LayoutServerLoad = async ({ route }) => {
-  const dirName = import.meta.url.replace(/^file:\/\//, '').replace(/\/\+layout\.server\.ts$/, '')
+  const dirName = resolve(process.cwd(), './src/routes')
   const demosDirectory = `${dirName}${route.id}/demos/**/+page.svelte`
   const demoEntries = await fg(demosDirectory)
 
@@ -35,18 +43,29 @@ export const load: LayoutServerLoad = async ({ route }) => {
   const demos = demoEntries.map((path) => {
     const pathArr = path.split('/')
     pathArr.pop()
+
+    // /components/xxx/demos/xxx
     const demoRoutePath = pathArr.pop()
 
     return {
       code: fs.readFileSync(path, 'utf-8'),
       iframeUrl: `${route.id}/demos/${demoRoutePath}`,
+      slug: demoRoutePath || '',
       name: demoRoutePath?.split('-').map(capitalizeFirstLetter).join(' ') || '',
     }
   })
 
+  // parse svelte code to HTML
   for (let i = 0; i < demos.length; i++) {
     const demo = demos[i]
     demo.code = await codeToHTML(demo.code)
+  }
+
+  let componentPath = ''
+
+  if (route.id && route.id in componentMap) {
+    const componentName = componentMap[route.id as keyof typeof componentMap] as string
+    componentPath = resolve(process.cwd(), `../ui/src/components/${componentName}.svelte`)
   }
 
   return {
@@ -54,5 +73,7 @@ export const load: LayoutServerLoad = async ({ route }) => {
     demos,
     // Current sidebars
     sidebars,
+
+    api: componentPath && await parseComponentAPI(componentPath),
   }
 }

@@ -1,10 +1,12 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import CExpansion from '@casual-ui/svelte/dist/standalone/components/CExpansion.svelte'
 
   export let demo: {
     name: string
     iframeUrl: string
     code: string
+    slug: string
   }
 
   let iframe: HTMLIFrameElement
@@ -19,12 +21,17 @@
   onMount(computedHeight)
 </script>
 
-<div>
-  <h3>
+<div bg-white mb-8 shadow-sm rounded-md id={demo.slug}>
+  <div text-2xl font-bold leading-16 indent>
     {demo.name}
-  </h3>
-  <iframe on:load={computedHeight} bind:this={iframe} title={demo.name} src={demo.iframeUrl} class="sandbox" style={`height: ${contentHeight}`}></iframe>
-  {@html demo.code}
+  </div>
+  <div p-4>
+    <iframe on:load={computedHeight} bind:this={iframe} title={demo.name} src={demo.iframeUrl} class="sandbox" style={`height: ${contentHeight}`}></iframe>
+  </div>
+  <CExpansion reverse title="Fold/Expand code"  headerStyle="position: sticky; bottom: 0;">
+    <div i-vscode-icons-file-type-svelte slot="icon"></div>
+    {@html demo.code}
+  </CExpansion>
 </div>
 
 <style>

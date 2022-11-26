@@ -2,7 +2,7 @@
   import CButton from '@casual-ui/svelte/dist/standalone/components/CButton.svelte'
 </script>
 
-<div class="c-flex c-items-center c-gutter-md c-wrap">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
   <div>
     <CButton label="A Primary (default) Button" />
   </div>

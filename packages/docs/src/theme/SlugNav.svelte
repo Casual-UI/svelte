@@ -17,11 +17,11 @@
     computeActiveId()
   }
 
-  const doPush = debounce((to: string) => {
+  const doPush = (to: string) => {
     window.history.pushState({}, '', to)
-  })
+  }
 
-  const computeActiveId = () => {
+  const computeActiveId = debounce(() => {
     if (!targetPositions.length)
       return
     const baseTop = targetPositions[0][1] + 72
@@ -43,7 +43,7 @@
     }
     if (activeIdx > 0)
       doPush(`#${targetPositions[activeIdx - 1][0]}`)
-  }
+  })
 
   let targetPositions: [string, number][] = []
 
@@ -77,7 +77,6 @@
       [...demos, ...addtionItems] as {
         name: string
         title: string
-        comp: any
       }[]
     ).map<[string, number]>(
       ({ name }) => [name, document.getElementById(name)?.offsetTop ?? 0],

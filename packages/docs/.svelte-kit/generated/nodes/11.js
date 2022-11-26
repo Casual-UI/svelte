@@ -1,1 +1,1 @@
-export { default as component } from "../../../src/routes/components/carousel/demos/basic-usage/+page.svelte";
+export { default as component } from "../../../src/routes/components/button/demos/themes/+page.svelte";

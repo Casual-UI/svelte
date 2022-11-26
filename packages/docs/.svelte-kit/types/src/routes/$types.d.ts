@@ -9,7 +9,7 @@ type OutputDataShape<T> = MaybeWithVoid<Omit<App.PageData, RequiredKeys<T>> & Pa
 type EnsureDefined<T> = T extends null | undefined ? {} : T;
 type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
 type PageParentData = EnsureDefined<LayoutData>;
-type LayoutRouteId = RouteId | "/" | "/components/button" | "/components/button/demos/basic-usage" | "/components/button/demos/block" | "/components/button/demos/customize-loading-instance" | "/components/carousel" | "/components/carousel/demos/arrow-shown-timing" | "/components/carousel/demos/basic-usage" | null
+type LayoutRouteId = RouteId | "/" | "/components/button" | "/components/button/demos/basic-usage" | "/components/button/demos/block" | "/components/button/demos/customize-loading-instance" | "/components/button/demos/different-status" | "/components/button/demos/icon-button" | "/components/button/demos/sizes" | "/components/button/demos/themes" | "/components/carousel" | "/components/carousel/demos/arrow-shown-timing" | "/components/carousel/demos/basic-usage" | null
 type LayoutParams = RouteParams & {  }
 type LayoutServerParentData = EnsureDefined<{}>;
 type LayoutParentData = EnsureDefined<{}>;

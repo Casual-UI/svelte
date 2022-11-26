@@ -49,8 +49,9 @@ header {
 .shiki {
   padding: 12px;
   margin: 0;
-  line-height: 1.2em;
+  line-height: 1.3em;
   overflow: auto;
+  font-size: 14px;
 }
 .shiki code {
   background-color: transparent;
@@ -60,6 +61,7 @@ code {
   background-color: #eee;
   color: #3e2e8e;
 }
+
 
 html.dark .casual-ui-svelte--component-api code {
   background-color: #111;

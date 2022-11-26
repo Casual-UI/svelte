@@ -90,14 +90,18 @@ declare module '$env/static/private' {
 	export const npm_config_version_commit_hooks: string;
 	export const GIT_ASKPASS: string;
 	export const XDG_SEAT_PATH: string;
+	export const npm_package_devDependencies__sveltejs_adapter_static: string;
 	export const INVOCATION_ID: string;
 	export const npm_package_devDependencies_prettier_plugin_svelte: string;
 	export const MANAGERPID: string;
+	export const npm_package_devDependencies_markdown_it: string;
+	export const npm_package_devDependencies_markdown_it_container: string;
 	export const INIT_CWD: string;
 	export const CHROME_DESKTOP: string;
 	export const npm_package_scripts_format: string;
 	export const KDE_SESSION_UID: string;
 	export const npm_package_scripts_preview: string;
+	export const npm_package_devDependencies_markdown_it_shiki: string;
 	export const npm_lifecycle_script: string;
 	export const NVM_DIR: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
@@ -175,6 +179,7 @@ declare module '$env/static/private' {
 	export const OLDPWD: string;
 	export const TERM_PROGRAM: string;
 	export const npm_config_init_version: string;
+	export const NODE_ENV: string;
 }
 
 /**
@@ -268,14 +273,18 @@ declare module '$env/dynamic/private' {
 		npm_config_version_commit_hooks: string;
 		GIT_ASKPASS: string;
 		XDG_SEAT_PATH: string;
+		npm_package_devDependencies__sveltejs_adapter_static: string;
 		INVOCATION_ID: string;
 		npm_package_devDependencies_prettier_plugin_svelte: string;
 		MANAGERPID: string;
+		npm_package_devDependencies_markdown_it: string;
+		npm_package_devDependencies_markdown_it_container: string;
 		INIT_CWD: string;
 		CHROME_DESKTOP: string;
 		npm_package_scripts_format: string;
 		KDE_SESSION_UID: string;
 		npm_package_scripts_preview: string;
+		npm_package_devDependencies_markdown_it_shiki: string;
 		npm_lifecycle_script: string;
 		NVM_DIR: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
@@ -353,6 +362,7 @@ declare module '$env/dynamic/private' {
 		OLDPWD: string;
 		TERM_PROGRAM: string;
 		npm_config_init_version: string;
+		NODE_ENV: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: string]: string | undefined;
 	}
