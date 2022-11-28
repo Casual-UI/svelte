@@ -27,7 +27,7 @@
           style="transform: translateX(calc(-100% - 12px))"
         />
       {/if}
-      <Link {label} {to} />
+      <Link {label} {to} exact />
     </div>
   {/each}
 </div>

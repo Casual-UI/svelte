@@ -8,6 +8,7 @@
   export let external = false
   export let hideExternalIcon = false
   export let customClass = ''
+  export let exact = false
   /**
    * Whehter compare $page with to prop
    */
@@ -28,7 +29,7 @@
   items-center
   hover="opacity-60"
   {...attributeAtom({
-    'text-primary': computeActiveByPageUrl && $page.url.href.includes(to),
+    'text-primary': computeActiveByPageUrl && (exact ? to === $page.route.id : $page.url.href.includes(to)),
     'dark:text-dark-primary':
       computeActiveByPageUrl && $page.url.href.includes(to),
   })}
