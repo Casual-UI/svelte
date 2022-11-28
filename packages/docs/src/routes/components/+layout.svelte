@@ -10,7 +10,6 @@
   export let data: LayoutData
 
   $: isDemo = $page.route.id?.indexOf('/demos/') !== -1
-
 </script>
 
 {#if isDemo}

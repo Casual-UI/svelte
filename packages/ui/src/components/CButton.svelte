@@ -36,9 +36,9 @@
 
   /**
    * The size of the button.
-   * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined}
+   * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * Determine the button has a half circle round border or not.

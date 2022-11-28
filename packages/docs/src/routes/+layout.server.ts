@@ -2,11 +2,10 @@ import fs from 'fs'
 import { resolve } from 'path'
 import fg from 'fast-glob'
 import { getHighlighter } from 'shiki'
+import { virtualResolver } from 'vite-plugin-doc-parser'
 import type { LayoutServerLoad } from './$types'
 import nightOwlTheme from './night-owl.json'
 import componentMap from './componentMap'
-import parseComponentAPI from './parseComponentAPI'
-// import parseComponentAPI from './parseComponentAPI'
 
 export const prerender = true
 
@@ -33,12 +32,17 @@ export const load: LayoutServerLoad = async ({ route }) => {
 
   const sidebars = sidebarEntries.map((entry) => {
     const to = entry.replace(new RegExp(dirName), '').replace(/\/\+page\.svelte/, '')
+
+    // /components/foo-bar => foo-bar
+    const componentRoute = to.replace(new RegExp(`/${sidebarPathPrefix}/`), '').replace(/\/$/, '')
+
     return {
       to,
-      label: capitalizeFirstLetter(to.replace(new RegExp(`/${sidebarPathPrefix}/`), '').replace(/\/$/, '')),
+      // foo-bar => FooBar
+      label: componentRoute.split('-').map(capitalizeFirstLetter).join(''),
     }
   })
-  sidebars.sort((s1, s2) => s1.label.charCodeAt(0) - s2.label.charCodeAt(0))
+  sidebars.sort((s1, s2) => s1.label < s2.label ? -1 : 1)
 
   const demos = demoEntries.map((path) => {
     const pathArr = path.split('/')
@@ -61,12 +65,10 @@ export const load: LayoutServerLoad = async ({ route }) => {
     demo.code = await codeToHTML(demo.code)
   }
 
-  let componentPath = ''
+  let componentName = ''
 
-  if (route.id && route.id in componentMap) {
-    const componentName = componentMap[route.id as keyof typeof componentMap] as string
-    componentPath = resolve(process.cwd(), `../ui/src/components/${componentName}.svelte`)
-  }
+  if (route.id && route.id in componentMap)
+    componentName = componentMap[route.id as keyof typeof componentMap] as string
 
   return {
     // Current page demos
@@ -74,6 +76,6 @@ export const load: LayoutServerLoad = async ({ route }) => {
     // Current sidebars
     sidebars,
 
-    api: componentPath && await parseComponentAPI(componentPath),
+    api: virtualResolver(componentName),
   }
 }

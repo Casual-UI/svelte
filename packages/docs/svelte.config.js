@@ -7,9 +7,6 @@ const config = {
   kit: {
     adapter: adapter(),
   },
-  package: {
-    dir: 'dist',
-  },
 }
 
 export default config

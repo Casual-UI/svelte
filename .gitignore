@@ -10,3 +10,4 @@ build
 .vercel
 .output
 pnpm-lock.yaml
+.doc-parser
