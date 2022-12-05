@@ -2,9 +2,8 @@ import clsx from './clsx'
 
 /**
  * Change camel case to kebab
- * @param {string} str
  */
-const camelToKebab = str =>
+const camelToKebab = (str: string) =>
   str
     .split('')
     .map((letter, idx) => {
@@ -14,14 +13,10 @@ const camelToKebab = str =>
     })
     .join('')
 
-/**
- * @param base {string}
- * @param condition {Record<string, any>}
- */
-export default (base, condition) =>
+export default (base: string, condition: Record<string, any>) =>
   clsx(
     `c-${base}`,
-    ...Object.entries(condition).map(
+    ...(Object.entries(condition).map(
       ([k, v]) => v && `c-${base}--${camelToKebab(k)}`,
-    ),
+    ) as [any, any]),
   )

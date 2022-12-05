@@ -1,3 +1,4 @@
+import type { CSize } from '@casual-ui/types'
 import useContextProp from './useContextProp'
 
 /**
@@ -5,7 +6,4 @@ import useContextProp from './useContextProp'
  */
 export const key = Symbol('c-size')
 
-/**
- * @param size {import('@casual-ui/types').CSize=}
- */
-export default size => useContextProp(key, size, 'md')
+export default (size: CSize) => useContextProp(key, size, 'md')

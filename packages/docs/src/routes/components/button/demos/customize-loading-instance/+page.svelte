@@ -1,7 +1,5 @@
 <script lang="ts">
-  import CButton from '@casual-ui/svelte/dist/standalone/components/CButton.svelte'
-  import CLoadingBar from '@casual-ui/svelte/dist/standalone/components/loadings/CLoadingBar.svelte'
-  import CLoadingHourglass from '@casual-ui/svelte/dist/standalone/components/loadings/CLoadingHourglass.svelte'
+  import { CButton, CLoadingBar, CLoadingHourglass } from '@casual-ui/svelte'
 </script>
 
 <CButton loading label="Loading...">

@@ -1,7 +1,7 @@
 <script lang="ts">
   import 'uno.css'
   import '@casual-ui/svelte/dist/style.css'
-  import CNotification from '@casual-ui/svelte/dist/standalone/components/CNotification.svelte'
+  import { CNotification } from '@casual-ui/svelte'
   import NavBar from '../theme/NavBar.svelte'
   import { page } from '$app/stores'
   $: isDemo = $page.route.id?.indexOf('/demos/') !== -1

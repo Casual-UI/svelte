@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { CButton, CCarousel, CCarouselSlider } from 'casual-ui-svelte'
-
+  import { CButton, CCarousel, CCarouselSlider } from '@casual-ui/svelte'
+  
   let activeIndex = 0
 </script>
 

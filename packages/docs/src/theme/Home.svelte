@@ -1,5 +1,5 @@
 <script lang="ts">
-  import CButton from '@casual-ui/svelte/dist/standalone/components/CButton.svelte'
+  import { CButton } from '@casual-ui/svelte'
   import { attributeAtom } from './utils/attributeAtom'
   import AnimationLogo from './AnimationLogo.svelte'
   import casualConfig from './casual.config'

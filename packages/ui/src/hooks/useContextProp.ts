@@ -1,15 +1,13 @@
 import { getContext, hasContext, setContext } from 'svelte'
+import type { Writable } from 'svelte/store'
 import { writable } from 'svelte/store'
 
-/**
- * @param {*} key
- * @param {*} val
- * @param {*} defaultVal
- */
-export default (key, val, defaultVal, affectAncestor = false) => {
+type ContextKey = string | number | Symbol
+
+export default <T>(key: ContextKey, val: T, defaultVal: any, affectAncestor = false) => {
   const hasVal = val !== undefined
   if (hasContext(key)) {
-    let contextVal = getContext(key)
+    let contextVal = getContext<Writable<T>>(key)
     if (!hasVal)
       return contextVal
 
@@ -27,12 +25,7 @@ export default (key, val, defaultVal, affectAncestor = false) => {
   return contextVal
 }
 
-/**
- * @param {*} key
- * @param {*} val
- * @param {*} defaultVal
- */
-export const useWithoutAffectAncestor = (key, val, defaultVal) => {
+export const useWithoutAffectAncestor = <T>(key: ContextKey, val: T, defaultVal: T) => {
   const hasVal = val !== undefined
   if (!hasContext(key)) {
     const contextVal = writable(hasVal ? val : defaultVal)

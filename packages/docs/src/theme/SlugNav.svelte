@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import { afterNavigate } from '$app/navigation';
+  import { onMount, tick } from 'svelte'
 
   import Link from './Link.svelte'
   import debounce from './utils/debounce'
@@ -68,8 +69,10 @@
 
   $: all = [...demos, ...addtionItems]
 
-  onMount(() => {
-    computedTargetPositions()
+  afterNavigate(() => {
+    tick().then(() => {
+      computedTargetPositions()
+    })
   })
 
   export function computedTargetPositions() {
@@ -82,6 +85,8 @@
       ({ name }) => [name, document.getElementById(name)?.offsetTop ?? 0],
       []
     )
+    console.log(targetPositions);
+    
   }
 </script>
 

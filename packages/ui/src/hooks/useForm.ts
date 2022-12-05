@@ -1,3 +1,4 @@
+import type { CFlexDirection, CSize, CUnit } from '@casual-ui/types'
 import { getContext } from 'svelte'
 import useContextProp from './useContextProp'
 import useSize from './useSize'
@@ -11,15 +12,6 @@ const labelDirectionKey = Symbol('labelDirection')
 const colKey = Symbol('col')
 const labelWidthKey = Symbol('labelWidth')
 
-/**
- * @param {object} params
- * @param {'left' | 'center' | 'right'} [params.labelAlign]
- * @param {'xs' | 'sm' | 'md' | 'lg' | 'xl'} [params.size]
- * @param {'xs' | 'sm' | 'md' | 'lg' | 'xl'} [params.gutterSize]
- * @param {string} [params.labelWidth]
- * @param {number} [params.col]
- * @param {'row' | 'row-reverse' | 'column' | 'column-reverse'} [params.labelDirection]
- */
 const useFormProps = ({
   gutterSize,
   labelAlign,
@@ -27,6 +19,13 @@ const useFormProps = ({
   labelDirection,
   col,
   labelWidth,
+}: {
+  labelAlign?: 'left' | 'right' | 'center'
+  size?: CSize
+  gutterSize?: CSize
+  labelWidth?: CUnit
+  col?: number
+  labelDirection?: CFlexDirection
 } = {}) => {
   return {
     contextLabelWidth: useContextProp(labelWidthKey, labelWidth, '80px'),

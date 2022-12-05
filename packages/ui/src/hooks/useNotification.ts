@@ -1,9 +1,24 @@
+import type { CPosition, CTheme, PositionGroup } from '@casual-ui/types'
 import { get, writable } from 'svelte/store'
 
-/**
- * @type {*}
- */
-const notifications = writable({
+interface NotificationItem {
+  title: string
+  message: string
+  timeout: number
+  theme: CTheme
+  alignX: CPosition
+  alignY: CPosition
+  closeIcon: boolean
+  id: number
+}
+
+const notifications = writable<{
+  [key in PositionGroup]: {
+    x: CPosition
+    y: CPosition
+    items: NotificationItem[]
+  }
+}>({
   'start start': {
     x: 'start',
     y: 'start',
@@ -53,12 +68,7 @@ const notifications = writable({
 
 let notificationCounter = 0
 
-/**
- *
- * @param {*} positionGroup
- * @param {number} id
- */
-const closeByPositionGroupAndID = (positionGroup, id) => {
+const closeByPositionGroupAndID = (positionGroup: PositionGroup, id: number) => {
   const idx = get(notifications)[positionGroup].items.findIndex(
     noItem => noItem.id === id,
   )
@@ -70,13 +80,7 @@ const closeByPositionGroupAndID = (positionGroup, id) => {
   }
 }
 
-/**
- *
- * @param {*} positionGroup
- * @param {*} id
- * @param {*} newContent
- */
-const changeContentByPositionGroupAndID = (positionGroup, id, newContent) => {
+const changeContentByPositionGroupAndID = (positionGroup: PositionGroup, id: number, newContent: Pick<NotificationItem, 'message' | 'theme' | 'title'>) => {
   const idx = get(notifications)[positionGroup].items.findIndex(
     noItem => noItem.id === id,
   )
@@ -91,21 +95,7 @@ const changeContentByPositionGroupAndID = (positionGroup, id, newContent) => {
   }
 }
 
-/**
- *
- * @param {object} [params]
- * @param {string} [params.title]
- * @param {string} [params.message]
- * @param {'primary' | 'secondary' | 'warning' | 'negative'} [params.theme]
- * @param {number} [params.timeout]
- * @param {boolean} [params.closeIcon]
- * @param {'start' | 'center' | 'end'} [params.alignX]
- * @param {'start' | 'center' | 'end'} [params.alignY]
- * @returns
- */
 const open = (
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
-  // @ts-ignore
   {
     title = '',
     message = '',
@@ -114,7 +104,7 @@ const open = (
     alignX = 'end',
     alignY = 'start',
     closeIcon = true,
-  } = {
+  }: Partial<NotificationItem> = {
     timeout: 3000,
     theme: 'primary',
     alignX: 'end',
@@ -127,7 +117,7 @@ const open = (
   /**
    * @type {*}
    */
-  const positionKey = `${alignX} ${alignY}`
+  const positionKey: PositionGroup = `${alignX} ${alignY}`
   const newItem = {
     title,
     message,

@@ -1,14 +1,10 @@
-/**
- * @param {object} params
- * @param {() => void} [params.cbInside] This would be called when the click event emit in the dom element
- * @param {() => void} [params.cbOutside] This would be called when the click event emit outside the dom element
- * @return {import('svelte/types/runtime/action').Action}
- */
-export default ({ cbInside, cbOutside }) => {
-  /**
-   * @type {import('svelte/types/runtime/action').Action}
-   */
-  return (node) => {
+import type { Action } from 'svelte/types/runtime/action'
+
+export default ({ cbInside, cbOutside }: {
+  cbInside: () => void
+  cbOutside: () => void
+}) => {
+  const action: Action = (node) => {
     /**
      *
      * @param {*} e
@@ -34,4 +30,6 @@ export default ({ cbInside, cbOutside }) => {
       },
     }
   }
+
+  return action
 }

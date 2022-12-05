@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { CRadioGroup, CCarousel, CCarouselSlider } from 'casual-ui-svelte'
-
+  import { CRadioGroup, CCarousel, CCarouselSlider } from '@casual-ui/svelte'
+  
   let activeIndex = 0
 
   let indicatorsPositionHorizontal: 'start' | 'center' | 'end' = 'center'

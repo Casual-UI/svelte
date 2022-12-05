@@ -1,8 +1,6 @@
 <script lang="ts">
+  import { CTooltip, CTabs, CExpansion } from '@casual-ui/svelte'
   
-  import CTooltip from '@casual-ui/svelte/dist/standalone/components/CTooltip.svelte'
-  import CTabs from '@casual-ui/svelte/dist/standalone/components/CTabs.svelte'
-  import CExpansion from '@casual-ui/svelte/dist/standalone/components/CExpansion.svelte'
   import casualConfig from './casual.config'
   import CopyBtn from './CopyBtn.svelte'
   import Link from './Link.svelte'

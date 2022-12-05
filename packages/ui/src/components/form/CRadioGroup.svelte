@@ -6,9 +6,9 @@
 
   /**
    * Current value. It is recommended to use `bind:value`.
-   * @type {string | number=}
+   * @type {string | number}
    */
-  export let value
+  export let value = ''
 
   /**
    * The options array.
@@ -18,15 +18,15 @@
 
   /**
    * The size of all radios in this group.
-   * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
+   * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The gutter size between each radio.
-   * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
+   * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'}
    */
-  export let gutterSize
+  export let gutterSize = undefined
 
   /**
    * If this group is in a Form context. Set this prop to `true` will validate current field when selection change.

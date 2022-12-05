@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import CExpansion from '@casual-ui/svelte/dist/standalone/components/CExpansion.svelte'
+  import { CExpansion } from '@casual-ui/svelte'
 
   export let demo: {
     name: string

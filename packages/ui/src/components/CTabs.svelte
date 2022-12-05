@@ -20,7 +20,7 @@
    * The size of tabs. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * Determien whether the panel body has a padding or not.

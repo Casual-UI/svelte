@@ -1,3 +1,4 @@
+import type { CPosition } from '@casual-ui/types'
 import useContextProp from './useContextProp'
 
 /**
@@ -16,11 +17,8 @@ export const vKey = Symbol('c-position')
  *
  * The position prop will have a higher priority and will override the ancestors' position
  */
-export const useHorizontal = position =>
+export const useHorizontal = (position: CPosition) =>
   useContextProp(hKey, position, 'center', true)
 
-/**
- * @param {'start' | 'center' | 'end'} [position]
- */
-export const useVertical = position =>
+export const useVertical = (position: CPosition) =>
   useContextProp(vKey, position, 'center', true)

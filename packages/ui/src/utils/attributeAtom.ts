@@ -1,8 +1,4 @@
-/**
- *
- * @param {Record<string, any>} attrs
- */
-export const attributeAtom = attrs =>
+export const attributeAtom = (attrs: Record<string, boolean | string | number>) =>
   Object.entries(attrs).reduce(
     (attrsNeeded, [name, exist]) => ({
       ...attrsNeeded,

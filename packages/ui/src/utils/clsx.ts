@@ -1,8 +1,4 @@
-/**
- *
- * @param {*} mix
- */
-function toVal(mix) {
+function toVal(mix: any) {
   let k
   let y
   let str = ''
@@ -35,14 +31,13 @@ function toVal(mix) {
   return str
 }
 
-export default function () {
+export default function (...args: any) {
   let i = 0
   let tmp
   let x
   let str = ''
   while (i < arguments.length) {
-    // eslint-disable-next-line prefer-rest-params
-    tmp = arguments[i++]
+    tmp = args[i++]
     if (tmp) {
       x = toVal(tmp)
       if (x) {

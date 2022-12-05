@@ -23,8 +23,9 @@
     <SlugNav
       demos={data.demos.map(demo => ({
         title: demo.name,
-        name: demo.slug
-      }))} 
+          name: demo.slug
+        }
+      ))} 
       slot="right"
     />
     {#if data.api}
