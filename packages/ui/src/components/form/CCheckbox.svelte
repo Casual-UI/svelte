@@ -22,7 +22,7 @@
    * The size of checkbox.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The text label of checkbox.

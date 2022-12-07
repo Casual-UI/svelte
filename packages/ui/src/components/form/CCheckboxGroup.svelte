@@ -19,13 +19,13 @@
    * The size of every item.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The size of every item.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let gutterSize
+  export let gutterSize = undefined
 
   const { contextGutterSize } = useFormProps({ gutterSize })
 
