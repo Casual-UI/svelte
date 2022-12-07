@@ -8,7 +8,7 @@
 </script>
 
 {#if isDemo}
-<div bg-white>
+<div bg-white dark:bg-111111>
   <slot />
 </div>
 {:else}

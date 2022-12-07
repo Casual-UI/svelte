@@ -21,7 +21,7 @@
   onMount(computedHeight)
 </script>
 
-<div bg-white mb-8 shadow-sm rounded-md id={demo.slug}>
+<div bg-white dark:bg-111111 mb-8 shadow-sm rounded-md id={demo.slug}>
   <div text-2xl font-bold leading-16 indent>
     {demo.name}
   </div>

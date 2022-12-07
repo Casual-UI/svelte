@@ -6,11 +6,11 @@
   let formattedDate = ''
 </script>
 
-<div text-lg>
+<div text-bold>
   <b> Selected date: </b>
   {date}
 </div>
-<div text-lg>
+<div text-bold my-2>
   <b> Selected date formatted: </b>
   {formattedDate}
 </div>

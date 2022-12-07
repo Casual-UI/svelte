@@ -4,6 +4,13 @@
   import { dark } from './theme'
   import { browser } from '$app/environment'
 
+  const setDark = () => {
+    document.documentElement.classList.add('dark')
+    document.querySelectorAll('iframe').forEach((iframe) => {
+      iframe.contentDocument?.documentElement.classList.add('dark')
+    })
+  }
+
   if (browser) {
     const storeValue = window.localStorage.getItem(
       'CASUAL_SVELTE_DOC_DARK_MODE'
@@ -12,16 +19,21 @@
       $dark = storeValue
   
     if (storeValue === 'on')
-      document.documentElement.classList.add('dark')
+      setDark()
   }
 
   const toggle = () => {
     $dark = $dark === 'off' ? 'on' : 'off'
-    if ($dark === 'on')
-      document.documentElement.classList.add('dark')
+    if ($dark === 'on') {
+      setDark()
+    }
   
-    else
+    else {
       document.documentElement.classList.remove('dark')
+      document.querySelectorAll('iframe').forEach((iframe) => {
+        iframe.contentDocument?.documentElement.classList.remove('dark')
+      })
+    }
   
     window.localStorage.setItem('CASUAL_SVELTE_DOC_DARK_MODE', $dark)
   }
