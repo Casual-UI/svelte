@@ -14,6 +14,7 @@
         "import/no-mutable-exports": "off",
         "import/first": "off",
         "no-multiple-empty-lines": "off",
+        "no-undef-init": "off",
         "no-tabs": ["error", { "allowIndentationTabs": true }]
       }
     }

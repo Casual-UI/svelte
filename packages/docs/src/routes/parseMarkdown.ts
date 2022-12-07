@@ -24,7 +24,7 @@ md.use(markdownItContainer, 'tip', {
     }
   },
 })
-// md.use(Shiki, {
-//   theme: nightOwl,
-// })
+md.use(Shiki, {
+  theme: nightOwl,
+})
 export default (mdContent?: string) => md.render(mdContent || '')

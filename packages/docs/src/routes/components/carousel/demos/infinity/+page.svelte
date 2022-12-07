@@ -1,33 +1,10 @@
 <script lang="ts">
-  import { CCarousel, CCarouselSlider, CRadioGroup } from 'casual-ui-svelte'
+  import { CCarousel, CCarouselSlider } from '@casual-ui/svelte'
 
   let activeIndex = 0
-  let theme: 'primary' | 'secondary' | 'warning' | 'negative' = 'primary'
-  const themeOptions = [
-    {
-      label: 'primary',
-      value: 'primary',
-    },
-    {
-      label: 'secondary',
-      value: 'secondary',
-    },
-    {
-      label: 'warning',
-      value: 'warning',
-    },
-    {
-      label: 'negative',
-      value: 'negative',
-    },
-  ]
 </script>
 
-<CRadioGroup bind:value={theme} options={themeOptions} />
-
-<hr />
-
-<CCarousel bind:activeIndex {theme} interval={3000} infinity>
+<CCarousel bind:activeIndex infinity>
   <CCarouselSlider>
     <div class="item">
       <div i-openmoji-red-apple class="icon" />

@@ -146,6 +146,7 @@
     on:introstart={onIntroStart}
     on:introend={onIntroEnd}
   >
+    <!-- The content -->
     <slot />
   </div>
 {/if}

@@ -26,7 +26,7 @@
    * The size of radio. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * Determine whether the radio is disabled or not.
