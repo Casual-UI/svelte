@@ -1,10 +1,10 @@
 <script>
+  import dayjs from 'dayjs'
+  import { getContext } from 'svelte'
   import useClickOutside from '../../../hooks/useClickOutside'
   import { validateCurrentKey } from '../../../hooks/useForm'
   import useSize from '../../../hooks/useSize'
   import clsx from '../../../utils/clsx'
-  import dayjs from 'dayjs'
-  import { getContext, tick } from 'svelte'
   import CDropdown from '../../CDropdown.svelte'
   import CInput from '../CInput.svelte'
   import CDatePanel from './CDatePanel.svelte'
@@ -94,8 +94,9 @@
    * Get the real formatter. If has `formattor` prop
    * @param {Date | null} d
    */
-  const innerFormattor = d => {
-    if (!d) return ''
+  const innerFormattor = (d) => {
+    if (!d)
+      return ''
     return formatter ? formatter(d, format) : dayjs(d).format(format)
   }
 
@@ -108,9 +109,15 @@
     formattedRangeValue = [innerFormattor(start), innerFormattor(end)]
   }
 
-  $: value, recomputeFormattedValue()
+  $: {
+    value
+    recomputeFormattedValue()
+  }
 
-  $: rangeValue, recomputeFormattedRangeValue()
+  $: {
+    rangeValue
+    recomputeFormattedRangeValue()
+  }
 
   let show = false
 
@@ -120,7 +127,8 @@
     if (range) {
       const [start, end] = formattedRangeValue
 
-      if (!start && !end) displayValue = ''
+      if (!start && !end)
+        displayValue = ''
       displayValue = `${start} - ${end}`
       return
     }
@@ -143,9 +151,8 @@
   let yearRange = [year, year + 11]
 
   const onDateSet = () => {
-    if (hideOnSelect) {
+    if (hideOnSelect)
       show = false
-    }
   }
 
   const contextSize = useSize(size)
@@ -156,46 +163,43 @@
   }
 
   /**
-   * @param {'day' | 'month' | 'year'} newUnit
-   */
-  const updateUnit = async newUnit => {}
-
-  /**
    * @param {Date} newDate
    */
-  const onMonthChange = newDate => {
+  const onMonthChange = (newDate) => {
     month = newDate.getMonth()
-    if (initialUnit === 'day') {
+    if (initialUnit === 'day')
       unit = 'day'
-    } else {
+  
+    else
       onDateSet()
-    }
   }
 
   /**
    * @param {Date} newDate
    */
-  const onYearChange = newDate => {
+  const onYearChange = (newDate) => {
     year = newDate.getFullYear()
-    if (initialUnit === 'year') {
+    if (initialUnit === 'year')
       onDateSet()
-    } else {
+  
+    else
       unit = 'month'
-    }
   }
 
   const validateCurrent = getContext(validateCurrentKey)
 
   const clickOutside = useClickOutside({
     cbInside: () => {
-      if (disabled) return
+      if (disabled)
+        return
       show = true
     },
     cbOutside: async () => {
-      if (disabled || show === false) return
-      if (validateOnClickOutside && validateCurrent) {
+      if (disabled || show === false)
+        return
+      if (validateOnClickOutside && validateCurrent)
         validateCurrent()
-      }
+  
       show = false
     },
   })

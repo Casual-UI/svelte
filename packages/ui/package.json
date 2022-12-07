@@ -14,11 +14,11 @@
   "dependencies": {
     "@casual-ui/i18n": "workspace:*",
     "@casual-ui/styles": "workspace:*",
-    "@casual-ui/types": "workspace:*"
+    "@casual-ui/types": "workspace:*",
+    "dayjs": "^1.11.6"
   },
   "devDependencies": {
     "@sveltejs/package": "1.0.0-next.5",
-    "dayjs": "^1.11.6",
     "sass": "^1.52.1",
     "svelte": "^3.46.0",
     "typescript": "^4.9.3",

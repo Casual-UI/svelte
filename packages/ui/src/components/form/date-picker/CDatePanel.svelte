@@ -1,9 +1,9 @@
 <script>
-  import clsx from '../../../utils/clsx'
   import messages from '@casual-ui/i18n'
   import { createEventDispatcher } from 'svelte'
   import { cubicIn } from 'svelte/easing'
   import { scale } from 'svelte/transition'
+  import clsx from '../../../utils/clsx'
   /**
    * @type {number}
    */
@@ -60,7 +60,7 @@
   /**
    * @param date {number}
    */
-  const setDate = date => {
+  const setDate = (date) => {
     const d = getCurrentYearMonth()
     d.setDate(date)
     const target = formattor(d)
@@ -133,7 +133,7 @@
   /**
    * @param {number} date
    */
-  const setHoveringDate = date => {
+  const setHoveringDate = (date) => {
     const d = getCurrentYearMonth()
     d.setDate(date)
     hoveringDate = d
@@ -142,7 +142,7 @@
   /**
    * @param { number } date
    */
-  const isStart = date => {
+  const isStart = (date) => {
     const d = getCurrentYearMonth()
     d.setDate(date)
     const [start, end] = formattedRangeValue
@@ -158,26 +158,28 @@
   /**
    * @param {number} date
    */
-  const isDateInHoveringRange = date => {
+  const isDateInHoveringRange = (date) => {
     const [start, end] = formattedRangeValue
-    if (!start) return false
-    if (!end && !hoveringDate) return false
+    if (!start)
+      return false
+    if (!end && !hoveringDate)
+      return false
     const d = getCurrentYearMonth()
     d.setDate(date)
     const target = formattor(d)
-    if (end) {
+    if (end)
       return target >= start && target <= end
-    }
+  
     return (
-      (target >= start && target <= formattedHoveringDate) ||
-      (target >= formattedHoveringDate && target <= start)
+      (target >= start && target <= formattedHoveringDate)
+      || (target >= formattedHoveringDate && target <= start)
     )
   }
 
   /**
    * @param {number} date
    */
-  const isEnd = date => {
+  const isEnd = (date) => {
     const d = getCurrentYearMonth()
     d.setDate(date)
     const [start, end] = formattedRangeValue
@@ -193,19 +195,19 @@
   /**
    * @param {number} date
    */
-  const isSelected = date => {
+  const isSelected = (date) => {
     const d = getCurrentYearMonth()
     d.setDate(date)
-    if (range) {
+    if (range)
       return rangeValue.some(d2 => isSameDate(d, d2))
-    }
+  
     return isSameDate(value, d)
   }
 
   /**
    * @param {number} date Notice that this value can be lower than 0 or larger than 31
    */
-  const getDisplaDateNum = date => {
+  const getDisplaDateNum = (date) => {
     const d = getCurrentYearMonth()
     d.setDate(date)
     return d.getDate()
@@ -224,7 +226,7 @@
 </script>
 
 <div
-  class={`c-date-panel c-date-picker--panel`}
+  class={'c-date-panel c-date-picker--panel'}
   transition:scale={{ duration: 300, easing: cubicIn }}
 >
   <div class="c-date-panel--body">
@@ -236,7 +238,7 @@
     {#each dates.items as d, i}
       <div
         class={clsx(
-          `c-date-panel--date-item`,
+          'c-date-panel--date-item',
           isStart(d) && 'c-date-panel--date-item--is-start',
           isEnd(d) && 'c-date-panel--date-item--is-end',
           isDateInHoveringRange(d) && 'c-date-panel--date-item--in-range'
@@ -247,10 +249,10 @@
       >
         <div
           class={clsx(
-            `c-date-panel--date-item--inner`,
+            'c-date-panel--date-item--inner',
             isSelected(d) && 'c-date-panel--date-item--inner-selected',
-            (i < dates.start || i >= dates.end) &&
-              'c-date-panel--date-item--inner-not-current-month'
+            (i < dates.start || i >= dates.end)
+              && 'c-date-panel--date-item--inner-not-current-month'
           )}
         >
           {getDisplaDateNum(d)}

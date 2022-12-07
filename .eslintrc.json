@@ -15,6 +15,7 @@
         "import/first": "off",
         "no-multiple-empty-lines": "off",
         "no-undef-init": "off",
+        "no-unused-expressions": "off",
         "no-tabs": ["error", { "allowIndentationTabs": true }]
       }
     }
