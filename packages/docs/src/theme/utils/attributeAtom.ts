@@ -4,5 +4,5 @@ export const attributeAtom = (attrs: Record<string, any>) =>
       ...attrsNeeded,
       [name]: exist ? '' : null,
     }),
-    {}
+    {},
   )

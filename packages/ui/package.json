@@ -8,7 +8,7 @@
     "./dist/style/style.css": "./dist/style/style.css"
   },
   "scripts": {
-    "build": "svelte-package && vite build"
+    "build": "svelte-package && vite build && rm dist/package.json"
   },
   "license": "MIT",
   "dependencies": {
