@@ -6,6 +6,7 @@ const componentMap = {
   '/components/checkbox-group': '../ui/src/components/form/CCheckboxGroup.svelte',
   '/components/date-picker': '../ui/src/components/form/date-picker/CDatePicker.svelte',
   '/components/dialog': '../ui/src/components/CDialog.svelte',
+  '/components/drawer': '../ui/src/components/CDrawer.svelte',
 }
 
 export default componentMap
