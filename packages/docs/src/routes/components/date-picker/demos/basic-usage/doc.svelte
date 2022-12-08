@@ -10,7 +10,7 @@
   <b> Selected date: </b>
   {date}
 </div>
-<div text-bold my-2>
+<div text-bold my-4>
   <b> Selected date formatted: </b>
   {formattedDate}
 </div>

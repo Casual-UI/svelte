@@ -29,7 +29,7 @@
 </script>
 
 <div bg-white dark:bg-111111 mb-8 shadow-sm rounded-md>
-  <div text-2xl font-bold leading-16 indent>
+  <div text-lg font-bold leading-16 pl-4>
     {demo.name}
   </div>
   <div p-4>

@@ -52,9 +52,9 @@ const svelteKitDemoRoutesPlugin: (options: PluginOptions) => Plugin = ({ viteCon
         i++
         bar.update(i)
         watchFile(fullPath, () => {
-          console.log(colors.magenta('[Demo changing]'), fullPath)
+          console.log(colors.magenta('[Demo change detected]'), fullPath)
           doBuild().then(() => {
-            console.log(colors.magenta('[Demo changing applied]'), fullPath)
+            console.log(colors.magenta('[Demo change applied]'), fullPath)
           })
         })
       }
