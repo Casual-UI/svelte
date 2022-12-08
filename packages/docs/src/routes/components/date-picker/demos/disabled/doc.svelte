@@ -5,7 +5,3 @@
 </script>
 
 <CDatePicker bind:value={date} placeholder="Select date" disabled />
-
-<div pb-5>
-
-</div>

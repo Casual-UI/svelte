@@ -15,14 +15,14 @@
    *
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let horizontalAlign
+  export let horizontalAlign = undefined
 
   /**
    * Determine the popup vertical align direction. This prop use the [justify-content CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)
    *
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let verticalAlign
+  export let verticalAlign = undefined
 
   /**
    * Some custom addtional class names

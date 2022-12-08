@@ -2,7 +2,7 @@
   import { CButton } from '@casual-ui/svelte'
 </script>
 
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<div class="grid grid-cols-3 md:grid-cols-2 gap-4">
   <div>
     <CButton label="A Primary (default) Button" />
   </div>

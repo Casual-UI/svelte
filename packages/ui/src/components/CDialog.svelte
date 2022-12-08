@@ -59,13 +59,13 @@
    *
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let horizontalAlign
+  export let horizontalAlign = undefined
 
   /**
    * See above
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let verticalAlign
+  export let verticalAlign = undefined
 
   /**
    * Customize class names

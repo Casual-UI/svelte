@@ -22,7 +22,7 @@ const codeToHTML = async (code: string, lang = 'svelte') =>
 
 export const load: LayoutServerLoad = async ({ route }) => {
   const dirName = resolve(process.cwd(), './src/routes')
-  const demosDirectory = `${dirName}${route.id}/demos/**/+page.svelte`
+  const demosDirectory = `${dirName}${route.id}/demos/**/doc.svelte`
   const demoEntries = await fg(demosDirectory)
 
   const routeIdArr = route.id?.split('/') || []
@@ -58,6 +58,8 @@ export const load: LayoutServerLoad = async ({ route }) => {
       name: demoRoutePath?.split('-').map(capitalizeFirstLetter).join(' ') || '',
     }
   })
+
+  demos.sort((d1, d2) => d1.slug > d2.slug ? 1 : -1)
 
   // parse svelte code to HTML
   for (let i = 0; i < demos.length; i++) {

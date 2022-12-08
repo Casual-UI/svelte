@@ -20,7 +20,3 @@
   bind:formattedValue={formattedDate}
   placeholder="Select date"
 />
-
-<div pb-80>
-
-</div>

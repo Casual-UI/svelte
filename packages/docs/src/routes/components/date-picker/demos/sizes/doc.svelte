@@ -21,7 +21,3 @@
     <CDatePicker size="xl" bind:value={date} placeholder="xl" />
   </div>
 </div>
-
-<div pb-80>
-
-</div>

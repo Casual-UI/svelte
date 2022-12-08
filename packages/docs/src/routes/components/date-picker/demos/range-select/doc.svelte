@@ -21,7 +21,3 @@
   placeholder="Select date range"
   range
 />
-
-<div pb-80>
-
-</div>

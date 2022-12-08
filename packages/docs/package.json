@@ -22,14 +22,17 @@
 		"@sveltejs/adapter-static": "^1.0.0-next.48",
 		"@sveltejs/kit": "next",
 		"@sveltejs/package": "1.0.0-next.5",
+		"@sveltejs/vite-plugin-svelte": "^1.4.0",
 		"@types/cookie": "^0.5.1",
 		"dayjs": "^1.11.6",
+		"esbuild": "^0.16.1",
 		"fast-glob": "^3.2.12",
 		"markdown-it": "^13.0.1",
 		"markdown-it-container": "^3.0.0",
 		"markdown-it-shiki": "^0.6.1",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
+		"rollup": "^2.76.0",
 		"shiki": "^0.11.1",
 		"svelte": "^3.46.0",
 		"svelte-check": "^2.7.1",
@@ -39,7 +42,8 @@
 		"typescript": "^4.7.4",
 		"unocss": "^0.46.5",
 		"vite": "^3.1.0",
-		"vite-plugin-doc-parser": "workspace:*"
+		"vite-plugin-doc-parser": "workspace:*",
+		"sveltekit-demo-routes": "workspace:*"
 	},
 	"type": "module"
 }

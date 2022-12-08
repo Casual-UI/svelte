@@ -6,9 +6,6 @@
 
   const setDark = () => {
     document.documentElement.classList.add('dark')
-    document.querySelectorAll('iframe').forEach((iframe) => {
-      iframe.contentDocument?.documentElement.classList.add('dark')
-    })
   }
 
   if (browser) {
@@ -24,16 +21,12 @@
 
   const toggle = () => {
     $dark = $dark === 'off' ? 'on' : 'off'
-    if ($dark === 'on') {
+    if ($dark === 'on')
       setDark()
-    }
   
-    else {
+  
+    else
       document.documentElement.classList.remove('dark')
-      document.querySelectorAll('iframe').forEach((iframe) => {
-        iframe.contentDocument?.documentElement.classList.remove('dark')
-      })
-    }
   
     window.localStorage.setItem('CASUAL_SVELTE_DOC_DARK_MODE', $dark)
   }
