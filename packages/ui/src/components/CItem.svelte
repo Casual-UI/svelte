@@ -13,7 +13,7 @@
    * The size of item. Notice that default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * Determine whether the item is clickable or not.

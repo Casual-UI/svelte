@@ -5,6 +5,7 @@
   import {
     closeByPositionGroupAndID,
     notifications,
+    open
   } from '../hooks/useNotification'
   import CPopup from './CPopup.svelte'
 
@@ -46,6 +47,11 @@
       stroke-dashoffset: ${0 - 63 * t};
     `,
   })
+
+
+  export {
+    open
+  }
 </script>
 
 {#each Object.entries($notifications) as [groupName, { x, y, items }]}

@@ -21,7 +21,7 @@
    * The size of select. Notice that default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The selected value(s).
@@ -179,7 +179,6 @@
   }
 
   $: {
-    // eslint-disable-next-line no-unused-expressions
     value
     recomputedSelectHeight()
   }

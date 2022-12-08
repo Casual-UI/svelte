@@ -29,7 +29,7 @@
    * The size of item.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   const contextSize = useSize(size)
 </script>

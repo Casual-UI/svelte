@@ -9,6 +9,22 @@ const componentMap = {
   '/components/drawer': '../ui/src/components/CDrawer.svelte',
   '/components/dropdown': '../ui/src/components/CDropdown.svelte',
   '/components/expansion': '../ui/src/components/CExpansion.svelte',
+  '/components/form': '../ui/src/components/form/CForm.svelte',
+  '/components/form-item': '../ui/src/components/form/CFormItem.svelte',
+  '/components/info-item': '../ui/src/components/CInfoItem.svelte',
+  '/components/input': '../ui/src/components/form/CInput.svelte',
+  '/components/item': '../ui/src/components/CItem.svelte',
+  '/components/list': '../ui/src/components/CList.svelte',
+  '/components/loading': '../ui/src/components/CLoading.svelte',
+  '/components/notification': '../ui/src/components/CNotification.svelte',
+  '/components/popup': '../ui/src/components/CPopup.svelte',
+  '/components/radio': '../ui/src/components/form/CRadio.svelte',
+  '/components/radio-group': '../ui/src/components/form/CRadioGroup.svelte',
+  '/components/select': '../ui/src/components/form/CSelect.svelte',
+  '/components/table': '../ui/src/components/table/CTable.svelte',
+  '/components/tag': '../ui/src/components/table/CTag.svelte',
+  '/components/toggle': '../ui/src/components/form/CToggle.svelte',
+  '/components/tooltip': '../ui/src/components/CTooltip.svelte',
 }
 
 export default componentMap

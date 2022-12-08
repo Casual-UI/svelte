@@ -13,7 +13,7 @@
    * The size of toggle. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The current value of toggle.

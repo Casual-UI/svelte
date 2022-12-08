@@ -19,7 +19,7 @@
    * The field of whole form data
    * @type {string=}
    */
-  export let field
+  export let field = undefined
 
   /**
    * The label of each form item
@@ -30,37 +30,37 @@
    * The label width of this form item. Notice that this prop will override the CForm's `labelWidth` prop
    * @type {string=}
    */
-  export let labelWidth
+  export let labelWidth = undefined
 
   /**
    * This form item col span
    * @type {number=}
    */
-  export let col
+  export let col = undefined
 
   /**
    * The label and form component arrangement direction of this form item
    * @type {'row' | 'row-reverse' | 'column' | 'column-reverse'=}
    */
-  export let labelDirection
+  export let labelDirection = undefined
 
   /**
    * The label align of this form item
    * @type {'left' | 'center' | 'right'=}
    */
-  export let labelAlign
+  export let labelAlign = undefined
 
   /**
    * The size of component in this form item. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The gutter size of this form item.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let gutterSize
+  export let gutterSize = undefined
 
   /**
    * Determine current form item has error or not.

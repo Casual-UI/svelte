@@ -61,13 +61,13 @@
    * The label width of whole form. Notice that the default value is `'80px'` instead of `undefined`.
    * @type {string=}
    */
-  export let labelWidth
+  export let labelWidth = undefined
 
   /**
    * The col span of each form item. Total cols are 12. Notice that default value is `6` instead of `undefined`
    * @type {number=}
    */
-  export let col
+  export let col = undefined
 
   /**
    * Label and form component arrangement direction.
@@ -77,7 +77,7 @@
    * This prop use [CSS flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction).
    * @type {'row' | 'row-reverse' | 'column' | 'column-reverse'=}
    */
-  export let labelDirection
+  export let labelDirection = undefined
 
   /**
    * The label itself arrangement direction.
@@ -87,7 +87,7 @@
    * This prop use [CSS text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
    * @type {'left' | 'center' | 'right'=}
    */
-  export let labelAlign
+  export let labelAlign = undefined
 
   /**
    * The size of whole form.
@@ -99,13 +99,13 @@
    * :::
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The gutte size between label and form component. Notice that the default value is `'md'` instead of `undefined`.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let gutterSize
+  export let gutterSize = undefined
 
   /**
    * The falg that determine form is in validating or not.

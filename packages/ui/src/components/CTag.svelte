@@ -20,7 +20,7 @@
 	 * The size of tag. Notice that default value is `'md'` not `undefined`
 	 * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
 	 */
-	export let size
+	export let size = undefined
 
 	/**
 	 * Determine whether the tag has a rounded border or not

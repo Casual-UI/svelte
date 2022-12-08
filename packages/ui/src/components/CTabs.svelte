@@ -64,7 +64,6 @@
   }
 
   $: {
-    // eslint-disable-next-line no-unused-expressions
     activeItem
     computeActiveBar()
   }

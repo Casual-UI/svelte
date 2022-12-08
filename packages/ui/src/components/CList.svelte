@@ -20,7 +20,7 @@
    * The size of list.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The function that compute the active status of item.

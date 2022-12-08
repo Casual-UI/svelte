@@ -22,9 +22,9 @@
 
   /**
    * The size of input. Notice that the default value is `md` not `undefined`.
-   * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}q
+   * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The placeholder of input dom.
