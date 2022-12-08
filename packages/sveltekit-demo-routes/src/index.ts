@@ -1,5 +1,6 @@
+/* eslint-disable no-console */
 import { resolve } from 'path'
-import { mkdirSync, rmSync, writeFileSync } from 'fs'
+import { mkdirSync, rmSync, watchFile, writeFileSync } from 'fs'
 import type { Plugin } from 'vite'
 import { build } from 'vite'
 import fg from 'fast-glob'
@@ -40,13 +41,22 @@ const svelteKitDemoRoutesPlugin: (options: PluginOptions) => Plugin = ({ viteCon
       bar.start(entries.length, i)
       for (const entry of entries) {
         const fullPath = resolve(process.cwd(), entry)
-        writeFileSync(ENTRY_PATH, entryFileGenerator(fullPath), 'utf-8')
-        writeFileSync(VITE_CONFIG_PATH, viteConfGenerator(fullPath), 'utf-8')
-        await build({
-          root: BASE_PATH,
-        })
+        const doBuild = async () => {
+          writeFileSync(ENTRY_PATH, entryFileGenerator(fullPath), 'utf-8')
+          writeFileSync(VITE_CONFIG_PATH, viteConfGenerator(fullPath), 'utf-8')
+          await build({
+            root: BASE_PATH,
+          })
+        }
+        await doBuild()
         i++
         bar.update(i)
+        watchFile(fullPath, () => {
+          console.log(colors.magenta('[Demo changing]'), fullPath)
+          doBuild().then(() => {
+            console.log(colors.magenta('[Demo changing applied]'), fullPath)
+          })
+        })
       }
       bar.stop()
     },
