@@ -12,7 +12,7 @@
   import CInput from './CInput.svelte'
 
   /**
-   * The placeholder text. Same as [CInput](/components/CInput)
+   * The placeholder text. Same as [CInput](/components/input)
    * @type {string}
    */
   export let placheholder = ''

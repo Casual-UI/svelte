@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { afterNavigate } from '$app/navigation';
-  import { onMount, tick } from 'svelte'
-
+  import { tick } from 'svelte'
+  
   import Link from './Link.svelte'
   import debounce from './utils/debounce'
+  import { afterNavigate } from '$app/navigation'
 
   let scrollY: number
 
@@ -12,7 +12,6 @@
   export let demos: any = []
 
   $: {
-    // eslint-disable-next-line no-unused-expressions
     scrollY
 
     computeActiveId()
@@ -85,8 +84,6 @@
       ({ name }) => [name, document.getElementById(name)?.offsetTop ?? 0],
       []
     )
-    console.log(targetPositions);
-    
   }
 </script>
 
