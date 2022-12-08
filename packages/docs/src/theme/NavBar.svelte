@@ -48,7 +48,7 @@
       </Link>
     </div>
     <div items-center gap-2 display-none md:flex>
-      <Link to="/components/button/" label="Components" />
+      <Link to="/components/button/" label="Components" exact={false} />
       <ToggleDark />
       <Link to={casualConfig.github} text-8 external hideExternalIcon>
         <div i-openmoji-github />

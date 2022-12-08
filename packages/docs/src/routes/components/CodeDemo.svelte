@@ -36,7 +36,7 @@
     <div id={demo.slug}></div>
     <!-- <iframe on:load={computedHeight} bind:this={iframe} title={demo.name} src={demo.iframeUrl} class="sandbox" style={`height: ${contentHeight}`}></iframe> -->
   </div>
-  <CExpansion reverse title="Fold/Expand code"  headerStyle="position: sticky; bottom: 0;">
+  <CExpansion reverse title="Fold/Expand code"  headerStyle="position: sticky; bottom: 0;font-size: 14px;">
     <div i-vscode-icons-file-type-svelte slot="icon"></div>
     {@html demo.code}
   </CExpansion>
