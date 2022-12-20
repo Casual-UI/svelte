@@ -1,13 +1,15 @@
 {
   "name": "@casual-ui/svelte",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
     "./dist/style/style.css": "./dist/style/style.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "svelte-package && vite build && rm dist/package.json"
   },
