@@ -15,6 +15,6 @@
     "eslint-plugin-svelte3": "^4.0.0"
   },
   "scripts": {
-    "release": "cd packages/i18n && pnpm build && cd ../ui && pnpm build && cd ../.. && pnpm publish -r"
+    "release": "cd packages/ui && pnpm build && cd ../.. && pnpm publish -r"
   }
 }

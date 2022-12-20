@@ -1,6 +1,3 @@
-[submodule "packages/i18n"]
-	path = packages/i18n
-	url = https://github.com/Casual-UI/i18n.git
 [submodule "packages/styles"]
 	path = packages/styles
 	url = https://github.com/Casual-UI/styles.git
