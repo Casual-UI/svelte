@@ -10,7 +10,6 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@casual-ui/i18n": "^0.1.5",
 		"@casual-ui/svelte": "workspace:*",
 		"@casual-ui/types": "workspace:*",
 		"@fontsource/fira-mono": "^4.5.0",
