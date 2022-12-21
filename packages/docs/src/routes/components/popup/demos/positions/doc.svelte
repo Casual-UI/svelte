@@ -1,7 +1,7 @@
 <script lang="ts">
   import { CButton, CPopup } from '@casual-ui/svelte'
   import { cubicInOut } from 'svelte/easing'
-  import { scale, fly } from 'svelte/transition'
+  import { fly } from 'svelte/transition'
 
   let show = false
 
@@ -126,6 +126,7 @@
           cursor-pointer
           hover:text-gray
           on:click={() => (show = false)}
+          on:keyup={() => show = false}
         />
       </div>
       <div text-gray-6 dark:text-gray-3>
