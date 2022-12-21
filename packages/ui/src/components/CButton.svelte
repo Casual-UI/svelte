@@ -1,4 +1,5 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import bem from '../utils/bem'
   import { attributeAtom } from '../utils/attributeAtom'
   import clsx from '../utils/clsx'
@@ -77,6 +78,13 @@
   export let style = ''
 
   $: realSize = useSize(size)
+
+  const dispatch = createEventDispatcher()
+
+  const handleClick = () => {
+    if (!disabled && !loading)
+      dispatch('click')
+  }
 </script>
 
 <!-- The click event -->
@@ -100,7 +108,7 @@
   {disabled}
   {...attributeAtom($$restProps)}
   {style}
-  on:click
+  on:click={handleClick}
 >
   <div class="c-button--focus-helper" />
   <div class="c-button--content-wrapper">
