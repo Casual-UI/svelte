@@ -1,11 +1,4 @@
 {
-  "name": "svelte",
-  "private": true,
-  "version": "0.0.1",
-  "description": "",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@antfu/eslint-config-basic": "^0.31.0",
     "@casual-ui/eslint-config-typescript": "^0.0.3",
