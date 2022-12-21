@@ -4,6 +4,7 @@
     "@casual-ui/eslint-config-typescript": "^0.0.3",
     "@changesets/cli": "^2.25.2",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "ali-oss-static-web-deploy": "^0.3.4",
     "eslint": "^8.27.0",
     "eslint-plugin-svelte3": "^4.0.0"
   },

@@ -23,15 +23,28 @@ export default {
   ],
   navbar: [
     {
-      label: '指南',
+      label: 'Guide',
       children: [
         {
-          label: '安装',
+          label: 'Install',
           to: '/guide/install/',
         },
         {
-          label: '主题定制',
-          to: '/guide/theme-customize/',
+          label: 'Theme Customization',
+          to: '/guide/theme-customization/',
+        },
+      ],
+    },
+    {
+      label: 'Features',
+      children: [
+        {
+          label: 'Components',
+          to: '/components/button/',
+        },
+        {
+          label: 'CSS Utils',
+          to: '/css-utils/',
         },
       ],
     },
