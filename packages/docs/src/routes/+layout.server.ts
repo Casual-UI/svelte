@@ -39,7 +39,7 @@ export const load: LayoutServerLoad = async ({ route }) => {
     return {
       to,
       // foo-bar => FooBar
-      label: componentRoute.split('-').map(capitalizeFirstLetter).join(''),
+      label: componentRoute.split('-').map(capitalizeFirstLetter).join(' '),
     }
   })
   sidebars.sort((s1, s2) => s1.label < s2.label ? -1 : 1)
@@ -53,7 +53,6 @@ export const load: LayoutServerLoad = async ({ route }) => {
 
     return {
       code: fs.readFileSync(path, 'utf-8'),
-      iframeUrl: `${route.id}/demos/${demoRoutePath}`,
       slug: demoRoutePath || '',
       name: demoRoutePath?.split('-').map(capitalizeFirstLetter).join(' ') || '',
     }

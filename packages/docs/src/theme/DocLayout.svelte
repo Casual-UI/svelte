@@ -25,8 +25,9 @@
   <aside
     fixed
     top-18
-    style="height: calc(100vh - 4.5rem);"
+    style="height: calc(100vh - 4.5rem);width: 20vw;"
     fs-14
+    left-0
     z-3
     class="left"
     justify-end
@@ -34,10 +35,11 @@
     dark:bg-262626
     display-none
     md:flex
+    shadow-md
   >
     <slot name="left" />
   </aside>
-  <div max-w-120 lg:max-w-150 xl:max-w-200 pb-8 m-auto px-4 md:px-0>
+  <div max-w-110 lg:max-w-140 xl:max-w-190 pb-8 m-auto px-4 md:px-0>
     <slot />
     <div border-t border-e9e9e9 dark:border-383838 mt-4 mb-8 />
     <div grid grid-cols-2 gap-4 md:gap-8 lg:gap-16>

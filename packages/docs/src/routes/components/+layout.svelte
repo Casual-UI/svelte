@@ -7,7 +7,6 @@
   import CodeDemo from './CodeDemo.svelte'
 
   export let data: LayoutData
-
 </script>
 
 <DocLayout pages={data.sidebars}>

@@ -12,3 +12,7 @@ declare namespace svelte.JSX {
   }
 }
 
+declare module "virtual:casual-scss-theme-vars" {
+  const vars: string
+  export default vars
+}

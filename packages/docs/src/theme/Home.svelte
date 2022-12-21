@@ -52,7 +52,7 @@
           label="Guide"
           round
           hover:shadow-md
-          on:click={() => goto('/guide/1-install/')}
+          on:click={() => goto('/guide/install/')}
         />
         <CButton
           label="Components"

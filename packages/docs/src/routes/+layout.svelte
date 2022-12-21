@@ -1,6 +1,6 @@
 <script lang="ts">
   import 'uno.css'
-  import '@casual-ui/svelte/dist/style/style.css'
+  import '@casual-ui/styles/src/index.scss'
   import { CNotification } from '@casual-ui/svelte'
   import NavBar from '../theme/NavBar.svelte'
 </script>

@@ -4,6 +4,7 @@
   import Link from './Link.svelte'
   import debounce from './utils/debounce'
   import { afterNavigate } from '$app/navigation'
+  import { page } from '$app/stores'
 
   let scrollY: number
 
@@ -47,24 +48,26 @@
 
   let targetPositions: [string, number][] = []
 
-  export let addtionItems = [
-    {
-      title: 'Props',
-      name: 'props',
-    },
-    {
-      title: 'Events',
-      name: 'events',
-    },
-    {
-      title: 'Slots',
-      name: 'slots',
-    },
-    {
-      title: 'Exports',
-      name: 'exports',
-    },
-  ]
+  export let addtionItems = $page.route.id?.startsWith('/components')
+    ? [
+        {
+          title: 'Props',
+          name: 'props',
+        },
+        {
+          title: 'Events',
+          name: 'events',
+        },
+        {
+          title: 'Slots',
+          name: 'slots',
+        },
+        {
+          title: 'Exports',
+          name: 'exports',
+        },
+      ]
+    : []
 
   $: all = [...demos, ...addtionItems]
 

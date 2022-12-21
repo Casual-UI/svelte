@@ -10,7 +10,7 @@
   }[] = []
 </script>
 
-<div leading-8 p-8 box-border inline-block h-full overflow-y-auto>
+<div leading-8 p-8 box-content inline-block h-full overflow-y-auto>
   {#each links as { label, to } (to)}
     <div flex items-center relative>
       {#if  $page.route.id === to}
