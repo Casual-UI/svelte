@@ -1,6 +1,5 @@
 <script lang="ts">
   import { CExpansion } from '@casual-ui/svelte'
-  import type { SvelteComponent } from 'svelte'
   import { page } from '$app/stores'
 
   export let demo: {
@@ -15,33 +14,26 @@
   let DemoComponent: any
   import(`./${componentName}/demos/${demo.slug}/doc.svelte`).then((module) => {
     DemoComponent = module.default
-})
+  })
 
-  // onMount(() => {
-  //   const id = demo.slug
+  let docHTML: string
 
+  import(`./${componentName}/demos/${demo.slug}/doc.md`).then((module) => {
+    docHTML = module.html
+  }).catch(() => {})
 
-  //   const link = document.createElement('link')
-  //   link.rel = 'stylesheet'
-  //   link.href = `/demos${$page.route.id}/demos/${id}/style.css`
-  //   document.head.append(link)
-  
-  //   const script = document.createElement('script')
-  //   script.src = `/demos${$page.route.id}/demos/${id}/main.js`
-  //   document.body.append(script)
-
-  //   return () => {
-  //     script.remove()
-  //     link.remove()
-  //   }
-  // })
 </script>
 
 <div bg-white dark:bg-111111 mb-8 shadow-sm rounded-md>
   <div text-lg font-bold leading-16 pl-4>
     {demo.name}
   </div>
-  <div p-4 id={demo.slug}>
+  {#if docHTML}
+    <div mb-4 bg-gray-1 dark:bg-gray-9 p-4 leading-6 class="demo-md-content">
+      {@html docHTML}
+    </div>
+  {/if}
+  <div px-4 pb-4 id={demo.slug}>
     {#if DemoComponent}
       <svelte:component this={DemoComponent} />
     {/if}
