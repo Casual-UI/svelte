@@ -10,7 +10,7 @@
   export let customClass = ''
   export let exact = false
   /**
-   * Whehter compare $page with to prop
+   * Whether compare `$page` with `to` prop
    */
   export let computeActiveByPageUrl = true
 
