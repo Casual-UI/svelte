@@ -1,7 +1,9 @@
+import { resolve } from 'path'
 import MarkdownIt from 'markdown-it'
 import markdownItContainer from 'markdown-it-container'
 import Shiki from 'markdown-it-shiki'
-import nightOwl from './night-owl.json'
+import nightOwl from '../../routes/night-owl.json'
+import { importCodePlugin } from './importCodePlugin'
 
 const md = MarkdownIt({ html: true })
 md.use(markdownItContainer, 'tip', {
@@ -26,6 +28,12 @@ md.use(markdownItContainer, 'tip', {
 })
 md.use(Shiki, {
   theme: nightOwl,
+})
+
+md.use(importCodePlugin, {
+  handleImportPath: (str) => {
+    return resolve(process.cwd(), `./src/routes/${str}`)
+  },
 })
 
 export {

@@ -5,8 +5,8 @@ import vitePluginDocParser from 'vite-plugin-doc-parser'
 import { Mode, plugin } from 'vite-plugin-markdown'
 import type { Plugin } from 'vite'
 import unoConfig from './uno.config'
-import parseComponentAPI from './src/routes/parseComponentAPI'
-import { md } from './src/routes/parseMarkdown'
+import parseComponentAPI from './src/plugins/api/parseComponentAPI'
+import { md } from './src/plugins/md/parseMarkdown'
 
 const virtualModuleId = 'virtual:casual-scss-theme-vars'
 const resolvedVirtualModuleId = `\0${virtualModuleId}`

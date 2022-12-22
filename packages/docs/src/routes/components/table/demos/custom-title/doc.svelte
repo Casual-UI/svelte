@@ -1,10 +1,12 @@
 <script lang="ts">
   import { CTable } from '@casual-ui/svelte'
+  import CustomTitle from './CustomTitle.svelte'
 
   const columns = [
     {
       field: 'name',
       width: '200px',
+      title: CustomTitle
     },
     {
       title: 'Description',

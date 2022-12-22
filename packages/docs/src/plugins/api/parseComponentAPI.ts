@@ -1,5 +1,5 @@
 import { parse } from 'sveltedoc-parser'
-import parseMarkdown from './parseMarkdown'
+import parseMarkdown from '../md/parseMarkdown'
 
 export default async (filename: string) => {
   const api = await parse({
