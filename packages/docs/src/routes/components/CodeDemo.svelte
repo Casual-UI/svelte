@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CExpansion } from '@casual-ui/svelte'
+  import { CExpansion, CLoadingPie } from '@casual-ui/svelte'
   import { page } from '$app/stores'
 
   export let demo: {
@@ -12,8 +12,14 @@
   const componentName = $page.route.id?.split('/').pop()
 
   let DemoComponent: any
+  let loading = true
+  let error = false
   import(`./${componentName}/demos/${demo.slug}/doc.svelte`).then((module) => {
     DemoComponent = module.default
+  }).catch(() => {
+    error = true
+  }).finally(() => {
+    loading = false
   })
 
   let docHTML: string
@@ -34,6 +40,16 @@
     </div>
   {/if}
   <div px-4 pb-4 id={demo.slug}>
+    {#if loading}
+      <div text-10 text-center text-primary>
+        <CLoadingPie />
+      </div>
+    {/if}
+    {#if error}
+      <div text-lg text-red-6>
+        Sorry, something wrong with this demo
+      </div>
+    {/if}
     {#if DemoComponent}
       <svelte:component this={DemoComponent} />
     {/if}

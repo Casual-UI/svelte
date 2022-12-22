@@ -109,3 +109,8 @@ html.dark a {
   margin: 0;
   padding-left: 1.5em;
 }
+
+html.dark .casual-attention--warning a,
+.casual-attention--warning a {
+  color: var(--casual-warning);
+}

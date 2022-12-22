@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CTooltip, CTabs, CExpansion } from '@casual-ui/svelte'
+  import { CExpansion, CTabs, CTooltip } from '@casual-ui/svelte'
   
   import casualConfig from './casual.config'
   import CopyBtn from './CopyBtn.svelte'

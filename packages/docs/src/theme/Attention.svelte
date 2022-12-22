@@ -8,9 +8,9 @@
 
 <div
   bg-opacity-10
-  dark:bg-opacity-100
+  dark:bg-opacity-20
   border-l-6
-  rounded-l-2
+  rounded-2
   box-border
   {...attributeAtom({
     'bg-primary': type === 'primary',
@@ -33,6 +33,7 @@
   pb-2
   pl-4
   fs-14
+  class={`casual-attention--${type}`}
 >
   <div font-bold>
     <slot name="title">
