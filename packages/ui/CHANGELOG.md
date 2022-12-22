@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.0.7
+
+### Patch Changes
+
+- f9e26ac: uno plugin should go before svelte
+
 ## 0.0.6
 
 ### Patch Changes
