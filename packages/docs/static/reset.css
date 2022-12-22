@@ -114,3 +114,13 @@ html.dark .casual-attention--warning a,
 .casual-attention--warning a {
   color: var(--casual-warning);
 }
+
+html.dark .casual-attention--secondary a,
+.casual-attention--secondary a {
+  color: var(--casual-secondary);
+}
+
+html.dark .casual-attention--negative a,
+.casual-attention--negative a {
+  color: var(--casual-negative);
+}
