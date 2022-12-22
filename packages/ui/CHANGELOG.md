@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.0.6
+
+### Patch Changes
+
+- c605166: fix unocss not bundled problem
+
 ## 0.0.5
 
 ### Patch Changes
