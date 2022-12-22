@@ -25,6 +25,7 @@ const componentMap = {
   '/components/tag': '../ui/src/components/table/CTag.svelte',
   '/components/toggle': '../ui/src/components/form/CToggle.svelte',
   '/components/tooltip': '../ui/src/components/CTooltip.svelte',
+  '/components/tabs': '../ui/src/components/CTabs.svelte',
 }
 
 export default componentMap

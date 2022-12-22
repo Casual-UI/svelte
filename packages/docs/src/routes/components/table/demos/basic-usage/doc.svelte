@@ -13,11 +13,11 @@
     },
   ]
 
-  const fruites = [
+  const fruits = [
     { name: 'Apple', description: 'Apple is red' },
     { name: 'Banana', description: 'Banana is yellow' },
     { name: 'Grapes', description: 'Grapes is purple' },
   ]
 </script>
 
-<CTable data={fruites} {columns} />
+<CTable data={fruits} {columns} />
