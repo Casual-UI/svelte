@@ -1,12 +1,9 @@
 {
   "devDependencies": {
-    "@antfu/eslint-config-basic": "^0.31.0",
-    "@casual-ui/eslint-config-typescript": "^0.0.3",
+    "@casual-ui/eslint-config-svelte": "^0.0.2",
     "@changesets/cli": "^2.25.2",
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
     "ali-oss-static-web-deploy": "^0.3.4",
-    "eslint": "^8.27.0",
-    "eslint-plugin-svelte3": "^4.0.0"
+    "eslint": "^8.27.0"
   },
   "scripts": {
     "release": "cd packages/ui && pnpm build && cd ../.. && pnpm publish -r"
