@@ -4,7 +4,7 @@ The Svelte version of Casual UI
 
 ## Online Docs & Demos
 
-[Casual UI - Svelte](https://casaul-ui-svelte.donsen.site/)
+[Casual UI - Svelte](https://casual-ui-svelte.donsen.site/)
 
 ## Install
 
