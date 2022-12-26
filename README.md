@@ -2,7 +2,7 @@
 
 The Svelte version of Casual UI
 
-## Online Docs && Demos
+## Online Docs & Demos
 
 [Casual UI - Svelte](https://casaul-ui-svelte.donsen.site/)
 
