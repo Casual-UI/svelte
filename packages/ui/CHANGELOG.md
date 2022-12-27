@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.0.9
+
+### Patch Changes
+
+- 9f3bdc3: add all components single exports
+
 ## 0.0.8
 
 ### Patch Changes
