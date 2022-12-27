@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.0.10
+
+### Patch Changes
+
+- 04f847e: patch styles package
+
 ## 0.0.9
 
 ### Patch Changes
