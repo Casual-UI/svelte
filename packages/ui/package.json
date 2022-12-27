@@ -5,7 +5,10 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./dist/style/style.css": "./dist/style/style.css"
+    "./dist/style/style.css": "./dist/style/style.css",
+    "./components/*.svelte": "./dist/components/*.svelte",
+    "./components/*/*.svelte": "./dist/components/*/*.svelte",
+    "./components/*/*/*.svelte": "./dist/components/*/*/*.svelte"
   },
   "files": [
     "dist"
