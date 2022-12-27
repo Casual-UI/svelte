@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.0.8
+
+### Patch Changes
+
+- 07fcf90: exports single components
+
 ## 0.0.7
 
 ### Patch Changes
