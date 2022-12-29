@@ -1,23 +1,21 @@
 <script lang="ts">
   import 'uno.css'
   import '@casual-ui/styles/src/index.scss'
-  import { CLoading, CNotification } from '@casual-ui/svelte'
+  import { CNotification } from '@casual-ui/svelte'
   import NavBar from '../theme/NavBar.svelte'
+  import AjaxBar from '../theme/AjaxBar.svelte'
   import { navigating } from '$app/stores'
-</script>
 
-{#if $navigating}
-  <div 
-    flex items-center justify-center fixed top-0 left-0 right-0 bottom-0 z-999 
-    bg-white 
-    bg-opacity-30 
-    text-20 
-    text-teal-6
-    dark:bg-gray-3
-  >
-    <CLoading />
-  </div>
-{/if}
+  let ajaxBar: AjaxBar
+
+  navigating.subscribe((n) => {
+    if (n)
+      ajaxBar?.start()
+    else
+      ajaxBar?.end()
+  })
+</script>
+<AjaxBar bind:this={ajaxBar} />
 
 <NavBar />
 <div
