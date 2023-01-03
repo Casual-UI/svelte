@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.0.12
+
+### Patch Changes
+
+- ef09dfd: remove atom css class, use styles package style instead
+
 ## 0.0.11
 
 ### Patch Changes
