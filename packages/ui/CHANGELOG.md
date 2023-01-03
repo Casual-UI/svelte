@@ -1,5 +1,13 @@
 # @casual-ui/svelte
 
+## 0.0.11
+
+### Patch Changes
+
+- a4f4386: add ajax bar component
+- Updated dependencies [a4f4386]
+  - @casual-ui/styles@0.0.4
+
 ## 0.0.10
 
 ### Patch Changes
