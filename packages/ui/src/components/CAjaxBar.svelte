@@ -59,5 +59,5 @@
   } 
   style={`--casual-ajax-bar-width: ${barWidth}%;`}
 >
-  <div class="c-ajax-bar--progress transition-width-100"></div>
+  <div class="c-ajax-bar--progress"></div>
 </div>
