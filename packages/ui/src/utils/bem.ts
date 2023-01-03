@@ -13,7 +13,7 @@ const camelToKebab = (str: string) =>
     })
     .join('')
 
-export default (base: string, condition: Record<string, any>) =>
+export default (base: string, condition: Record<string, any> = {}) =>
   clsx(
     `c-${base}`,
     ...(Object.entries(condition).map(

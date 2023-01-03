@@ -26,6 +26,7 @@ const componentMap = {
   '/components/toggle': '../ui/src/components/form/CToggle.svelte',
   '/components/tooltip': '../ui/src/components/CTooltip.svelte',
   '/components/tabs': '../ui/src/components/CTabs.svelte',
+  '/components/ajax-bar': '../ui/src/components/CAjaxBar.svelte',
 }
 
 export default componentMap

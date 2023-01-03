@@ -1,4 +1,5 @@
 import CButton from './components/CButton.svelte'
+import CAjaxBar from './components/CAjaxBar.svelte'
 import CExpansion from './components/CExpansion.svelte'
 import CLoading from './components/CLoading.svelte'
 import CLoadingAudio from './components/loadings/CLoadingAudio.svelte'
@@ -53,6 +54,7 @@ export { useFormProps } from './hooks/useForm'
 
 export {
   attributeAtom,
+  CAjaxBar,
   CCarouselSlider,
   CCarousel,
   CTable,

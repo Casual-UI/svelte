@@ -1,12 +1,11 @@
 <script lang="ts">
   import 'uno.css'
   import '@casual-ui/styles/src/index.scss'
-  import { CNotification } from '@casual-ui/svelte'
+  import { CAjaxBar, CNotification } from '@casual-ui/svelte'
   import NavBar from '../theme/NavBar.svelte'
-  import AjaxBar from '../theme/AjaxBar.svelte'
   import { navigating } from '$app/stores'
 
-  let ajaxBar: AjaxBar
+  let ajaxBar: CAjaxBar
 
   navigating.subscribe((n) => {
     if (n)
@@ -15,7 +14,7 @@
       ajaxBar?.end()
   })
 </script>
-<AjaxBar bind:this={ajaxBar} />
+<CAjaxBar bind:this={ajaxBar} />
 
 <NavBar />
 <div
