@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.0.13
+
+### Patch Changes
+
+- 0274639: - Bug fix: form item should leave extra space for the error tip that may show
+
 ## 0.0.12
 
 ### Patch Changes
