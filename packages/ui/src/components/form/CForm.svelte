@@ -39,6 +39,11 @@
    * ```
    */
   export const clearSomeFieldKey = Symbol('clearSomeField')
+
+  /**
+   * The rules object. Can be used like this:
+   */
+  export const rulesKey = Symbol('rules')
 </script>
 
 <script>
@@ -181,18 +186,18 @@
 
   /**
    * Validate a single field
-   * @param {string} f
+   * @param {string} field the field that need to validate
    */
-  const validateSomeField = async (f) => {
-    const validators = rules[f]
+  const validateSomeField = async (field) => {
+    const validators = rules[field]
     if (!validators)
       return
     for (let i = 0; i < validators.length; i++) {
       const validator = validators[i]
-      const r = await validator(value[f])
+      const r = await validator(value[field])
       $errorStatus = {
         ...$errorStatus,
-        [f]: r,
+        [field]: r,
       }
       if (r)
         break
@@ -212,6 +217,7 @@
 
   setContext(validateSomeFieldKey, validateSomeField)
   setContext(clearSomeFieldKey, clearSomeField)
+  setContext(rulesKey, rules)
 
   /**
    * Validate all fields

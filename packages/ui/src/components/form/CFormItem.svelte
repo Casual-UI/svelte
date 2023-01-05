@@ -1,7 +1,5 @@
 <script>
-  
   import { writable } from 'svelte/store'
-  
   import { getContext, setContext } from 'svelte'
   import {
     clearCurrentKey,
@@ -9,9 +7,11 @@
     useFormProps,
     validateCurrentKey,
   } from '../../hooks/useForm'
+  import clsx from '../../utils/clsx'
   import {
     clearSomeFieldKey,
     errorStatusKey,
+    rulesKey,
     validateSomeFieldKey,
   } from './CForm.svelte'
 
@@ -83,6 +83,9 @@
     validateSomeField && field && validateSomeField(field)
 
   const clearCurrent = () => clearSomeField && field && clearSomeField(field)
+
+  const allRules = getContext(rulesKey)
+  const currentRules = allRules[field]
 
   setContext(validateCurrentKey, validateCurrent)
   setContext(hasErrorKey, hasError)
@@ -166,14 +169,22 @@
 </script>
 
 <div
-  class={`c-form-item c-col-${$contextCol} c-${$contextLabelDirection} ${
-    isLabelVertical ? 'c-items-start' : 'c-items-center'
-  } ${$hasError ? 'c-form-item--has-error' : ''}`}
+  class={clsx(
+    'c-form-item',
+    `c-col-${$contextCol}`,
+    `c-${$contextLabelDirection}`,
+    isLabelVertical ? 'c-items-start' : 'c-items-center',
+    $hasError && 'c-form-item--has-error',
+    currentRules && 'c-form-item--maybe-error'
+  )}
 >
   <div
-    class={`c-form-item--label c-font-${$contextSize} c-m${getLabelMarginPosition(
-      $contextLabelDirection
-    )}-${$contextGutterSize} c-text-${$contextLabelAlign}`}
+    class={clsx(
+      'c-form-item--label',
+      `c-font-${$contextSize}`,
+      `c-m${getLabelMarginPosition($contextLabelDirection)}-${$contextGutterSize}`,
+      `c-text-${$contextLabelAlign}`,
+    )}
     style={`width: ${$contextLabelWidth}`}
   >
     {label}
