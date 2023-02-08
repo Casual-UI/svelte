@@ -5,7 +5,7 @@
     openNotification({
       title: 'Hi, there',
       theme: 'secondary',
-      message: 'You\'ve clicked the close icon',
+      message: "You've clicked the close icon",
     })
   }
 </script>

@@ -82,8 +82,7 @@
   const dispatch = createEventDispatcher()
 
   const handleClick = () => {
-    if (!disabled && !loading)
-      dispatch('click')
+    if (!disabled && !loading) dispatch('click')
   }
 </script>
 

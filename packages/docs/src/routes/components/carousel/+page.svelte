@@ -1,3 +1,3 @@
 <svelte:head>
-	<title>Carousel - Casual UI Svelte</title>
+  <title>Carousel - Casual UI Svelte</title>
 </svelte:head>

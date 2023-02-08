@@ -40,8 +40,7 @@
   const dispatch = createEventDispatcher()
 
   const onClick = () => {
-    if (disabled || value === selectedValue)
-      return
+    if (disabled || value === selectedValue) return
     value = selectedValue
     dispatch('change')
   }

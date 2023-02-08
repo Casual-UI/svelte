@@ -7,13 +7,12 @@
 
   let ajaxBar: CAjaxBar
 
-  navigating.subscribe((n) => {
-    if (n)
-      ajaxBar?.start()
-    else
-      ajaxBar?.end()
+  navigating.subscribe(n => {
+    if (n) ajaxBar?.start()
+    else ajaxBar?.end()
   })
 </script>
+
 <CAjaxBar bind:this={ajaxBar} />
 
 <NavBar />

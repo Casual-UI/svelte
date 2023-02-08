@@ -34,8 +34,8 @@
     { label: 'Education', value: 3 },
   ]
 
-  let labelDirection: 'row' | 'row-reverse' | 'column' | 'column-reverse'
-    = 'row'
+  let labelDirection: 'row' | 'row-reverse' | 'column' | 'column-reverse' =
+    'row'
   const directions = [
     {
       label: 'row',

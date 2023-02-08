@@ -1,6 +1,6 @@
 <script lang="ts">
   import PageSwitcher from './PageSwitcher.svelte'
-  
+
   import { page } from '$app/stores'
 
   export let pages: {
@@ -17,8 +17,8 @@
   $: previousPage = currentPageIndex < 1 ? null : pages[currentPageIndex - 1]
 
   // next page info
-  $: nextPage
-    = currentPageIndex >= pages.length - 1 ? null : pages[currentPageIndex + 1]
+  $: nextPage =
+    currentPageIndex >= pages.length - 1 ? null : pages[currentPageIndex + 1]
 </script>
 
 <div pt-8 justify-center class="doc-layout">

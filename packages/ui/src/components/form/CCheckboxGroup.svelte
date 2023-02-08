@@ -34,12 +34,11 @@
   /**
    * @param {*} val
    */
-  const onChange = (val) => {
+  const onChange = val => {
     const idx = value.findIndex(v => v === val)
     if (idx === -1) {
       value = [...value, val]
-    }
-    else {
+    } else {
       value.splice(idx, 1)
       value = value
     }

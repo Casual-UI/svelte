@@ -13,7 +13,7 @@
 <div leading-8 p-8 box-content inline-block h-full overflow-y-auto>
   {#each links as { label, to } (to)}
     <div flex items-center relative>
-      {#if  $page.route.id === to}
+      {#if $page.route.id === to}
         <div
           absolute
           left-0

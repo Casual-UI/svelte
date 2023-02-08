@@ -1,3 +1,3 @@
 <svelte:head>
-<title>List - Casual UI Svelte</title>
+  <title>List - Casual UI Svelte</title>
 </svelte:head>

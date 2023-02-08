@@ -3,7 +3,6 @@
   import { attributeAtom } from './utils/attributeAtom'
   export let type: CTheme = 'secondary'
   export let title = 'Tip'
-
 </script>
 
 <div

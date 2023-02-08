@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte'
   import { useValidator } from '../../hooks/useForm'
-  
+
   import useSize from '../../hooks/useSize'
   import bem from '../../utils/bem'
   import clsx from '../../utils/clsx'
@@ -49,8 +49,7 @@
   const { hasError } = useValidator()
 
   const onClick = () => {
-    if (disabled)
-      return
+    if (disabled) return
     const newValue = value === checkedValue ? undefined : checkedValue
     value = newValue
     /**

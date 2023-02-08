@@ -7,7 +7,7 @@
       title: 'Name',
       field: 'name',
       width: '400px',
-      cell: CustomColumn
+      cell: CustomColumn,
     },
     {
       title: 'Description',

@@ -12,8 +12,7 @@
         timeout: 0,
       })
       closeNotification = close
-    }
-    else {
+    } else {
       closeNotification()
       closeNotification = null
     }

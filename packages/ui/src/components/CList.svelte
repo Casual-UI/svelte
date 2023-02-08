@@ -39,15 +39,14 @@
   const contextSize = useSize(size)
 
   $: {
-    if (size)
-      $contextSize = size
+    if (size) $contextSize = size
   }
 
   /**
    *
    * @param {*} item
    */
-  const onItemClick = (item) => {
+  const onItemClick = item => {
     dispatch('item-click', item)
   }
 </script>

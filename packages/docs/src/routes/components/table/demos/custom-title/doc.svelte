@@ -6,7 +6,7 @@
     {
       field: 'name',
       width: '200px',
-      title: CustomTitle
+      title: CustomTitle,
     },
     {
       title: 'Description',

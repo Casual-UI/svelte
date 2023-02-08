@@ -1,6 +1,6 @@
 <script lang="ts">
   import { CExpansion, CTabs, CTooltip } from '@casual-ui/svelte'
-  
+
   import casualConfig from './casual.config'
   import CopyBtn from './CopyBtn.svelte'
   import Link from './Link.svelte'
@@ -31,10 +31,10 @@
 
   $: activeCodeItem = group.length
     ? Object.entries(demosCodeHTML).find(([k]) => k === activeItem)?.[1] || {
-      html: '',
-      code: '',
-      mdDocContent: '',
-    }
+        html: '',
+        code: '',
+        mdDocContent: '',
+      }
     : {
         html,
         code,

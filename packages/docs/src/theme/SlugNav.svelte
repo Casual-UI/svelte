@@ -1,6 +1,6 @@
 <script lang="ts">
   import { tick } from 'svelte'
-  
+
   import Link from './Link.svelte'
   import debounce from './utils/debounce'
   import { afterNavigate } from '$app/navigation'
@@ -23,8 +23,7 @@
   }
 
   const computeActiveId = debounce(() => {
-    if (!targetPositions.length)
-      return
+    if (!targetPositions.length) return
     const baseTop = targetPositions[0][1] + 72
     for (let i = 0; i < targetPositions.length; i++) {
       const [, pos] = targetPositions[i]
@@ -34,16 +33,14 @@
           activeIdx = i + 1
           break
         }
-      }
-      else {
+      } else {
         if (scrollY >= pos) {
           activeIdx = i + 1
           break
         }
       }
     }
-    if (activeIdx > 0)
-      doPush(`#${targetPositions[activeIdx - 1][0]}`)
+    if (activeIdx > 0) doPush(`#${targetPositions[activeIdx - 1][0]}`)
   })
 
   let targetPositions: [string, number][] = []

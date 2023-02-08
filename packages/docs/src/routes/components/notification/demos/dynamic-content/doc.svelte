@@ -4,7 +4,7 @@
   const onClick = () => {
     const { changeContent } = openNotification({
       title: 'Hi, there',
-      message: 'You\'ve got a new notification',
+      message: "You've got a new notification",
       timeout: 10000,
     })
     setTimeout(() => {

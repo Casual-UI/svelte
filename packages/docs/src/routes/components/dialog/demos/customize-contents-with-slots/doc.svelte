@@ -1,7 +1,6 @@
 <script lang="ts">
   import { CButton, CDialog } from '@casual-ui/svelte'
   let show = false
-  
 </script>
 
 <CButton on:click={() => (show = true)} label="Click to show dialog" />

@@ -5,7 +5,7 @@
   import {
     closeByPositionGroupAndID,
     notifications,
-    open
+    open,
   } from '../hooks/useNotification'
   import CPopup from './CPopup.svelte'
 
@@ -48,10 +48,7 @@
     `,
   })
 
-
-  export {
-    open
-  }
+  export { open }
 </script>
 
 {#each Object.entries($notifications) as [groupName, { x, y, items }]}
@@ -81,7 +78,8 @@
                 <div
                   class="c-notification--close-icon"
                   on:click={() => closeByPositionGroupAndID(groupName, item.id)}
-                  on:keypress={() => closeByPositionGroupAndID(groupName, item.id)}
+                  on:keypress={() =>
+                    closeByPositionGroupAndID(groupName, item.id)}
                 >
                   <svg
                     class="c-notification--countdown-bar"

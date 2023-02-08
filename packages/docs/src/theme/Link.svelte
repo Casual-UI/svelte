@@ -29,7 +29,9 @@
   items-center
   hover="opacity-60"
   {...attributeAtom({
-    'text-primary': computeActiveByPageUrl && (exact ? to === $page.route.id : $page.url.href.includes(to)),
+    'text-primary':
+      computeActiveByPageUrl &&
+      (exact ? to === $page.route.id : $page.url.href.includes(to)),
     'dark:text-dark-primary':
       computeActiveByPageUrl && $page.url.href.includes(to),
   })}

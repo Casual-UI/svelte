@@ -4,7 +4,6 @@
 
   export let demo: {
     name: string
-    iframeUrl: string
     code: string
     slug: string
   }
@@ -14,20 +13,24 @@
   let DemoComponent: any
   let loading = true
   let error = false
-  import(`./${componentName}/demos/${demo.slug}/doc.svelte`).then((module) => {
-    DemoComponent = module.default
-  }).catch(() => {
-    error = true
-  }).finally(() => {
-    loading = false
-  })
+  import(`./${componentName}/demos/${demo.slug}/doc.svelte`)
+    .then(module => {
+      DemoComponent = module.default
+    })
+    .catch(() => {
+      error = true
+    })
+    .finally(() => {
+      loading = false
+    })
 
   let docHTML: string
 
-  import(`./${componentName}/demos/${demo.slug}/doc.md`).then((module) => {
-    docHTML = module.html
-  }).catch(() => {})
-
+  import(`./${componentName}/demos/${demo.slug}/doc.md`)
+    .then(module => {
+      docHTML = module.html
+    })
+    .catch(() => {})
 </script>
 
 <div bg-white dark:bg-111111 mb-8 shadow-sm rounded-md>
@@ -46,16 +49,18 @@
       </div>
     {/if}
     {#if error}
-      <div text-lg text-red-6>
-        Sorry, something wrong with this demo
-      </div>
+      <div text-lg text-red-6>Sorry, something wrong with this demo</div>
     {/if}
     {#if DemoComponent}
       <svelte:component this={DemoComponent} />
     {/if}
   </div>
-  <CExpansion reverse title="Fold/Expand code"  headerStyle="position: sticky; bottom: 0;font-size: 14px;">
-    <div i-vscode-icons-file-type-svelte slot="icon"></div>
+  <CExpansion
+    reverse
+    title="Fold/Expand code"
+    headerStyle="position: sticky; bottom: 0;font-size: 14px;"
+  >
+    <div i-vscode-icons-file-type-svelte slot="icon" />
     {@html demo.code}
   </CExpansion>
 </div>

@@ -6,8 +6,7 @@
   let startedFlag: ReturnType<typeof setInterval>
 
   onDestroy(() => {
-    if (startedFlag)
-      clearInterval(startedFlag)
+    if (startedFlag) clearInterval(startedFlag)
   })
 
   export const start = () => {
@@ -19,8 +18,7 @@
 
   export const end = () => {
     barWidth = 100
-    if (startedFlag)
-      clearInterval(startedFlag)
+    if (startedFlag) clearInterval(startedFlag)
     setTimeout(() => {
       barWidth = 0
     }, 100)
@@ -28,11 +26,10 @@
 </script>
 
 <div class="ajax-bar">
-  <div 
-    class="progress bg-primary transition-width-100" 
+  <div
+    class="progress bg-primary transition-width-100"
     style={`--cui-ajax-bar-width: ${barWidth}%;`}
-  >
-  </div>
+  />
 </div>
 
 <style>

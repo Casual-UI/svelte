@@ -1,11 +1,14 @@
 {
   "devDependencies": {
-    "@casual-ui/eslint-config-svelte": "^0.0.2",
+    "@casual-ui/eslint-config-svelte": "^0.0.5",
     "@changesets/cli": "^2.25.2",
     "ali-oss-static-web-deploy": "^0.3.4",
-    "eslint": "^8.27.0"
+    "eslint": "^8.27.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-svelte": "^2.9.0"
   },
   "scripts": {
-    "release": "cd packages/ui && pnpm build && cd ../.. && changeset publish"
+    "release": "cd packages/ui && pnpm build && cd ../.. && changeset publish",
+    "format": "prettier \"./packages/**/*.svelte\" --write"
   }
 }

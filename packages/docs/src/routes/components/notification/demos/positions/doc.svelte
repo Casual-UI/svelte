@@ -4,7 +4,7 @@
   function openWithPosition(alignX: any, alignY: any) {
     openNotification({
       title: 'Hi, there',
-      message: 'You\'ve got a new notification',
+      message: "You've got a new notification",
       alignX,
       alignY,
     })

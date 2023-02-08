@@ -125,7 +125,12 @@
         />
       {/if}
       {#if isDay}
-        <div class="c-icon" i-majesticons-chevron-left on:click={toPrevMonth} on:keypress={toPrevMonth} />
+        <div
+          class="c-icon"
+          i-majesticons-chevron-left
+          on:click={toPrevMonth}
+          on:keypress={toPrevMonth}
+        />
       {/if}
     </slot>
   </div>
@@ -137,7 +142,7 @@
   >
     <slot name="title">
       {#if isDay}
-        <span 
+        <span
           on:click|stopPropagation={() => changeUnit('month')}
           on:keypress|stopPropagation={() => changeUnit('month')}
         >
@@ -146,7 +151,7 @@
       {/if}
       &nbsp;
       {#if isDay || isMonth}
-        <span 
+        <span
           on:click|stopPropagation={() => changeUnit('year')}
           on:keypress|stopPropagation={() => changeUnit('year')}
         >

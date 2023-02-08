@@ -104,9 +104,8 @@
    */
   const errorStatus = getContext(errorStatusKey)
   if (errorStatus) {
-    errorStatus.subscribe((err) => {
-      if (field)
-        $hasError = err[field]
+    errorStatus.subscribe(err => {
+      if (field) $hasError = err[field]
     })
   }
 
@@ -126,9 +125,9 @@
     col,
   })
 
-  $: isLabelVertical
-    = $contextLabelDirection === 'column'
-    || $contextLabelDirection === 'column-reverse'
+  $: isLabelVertical =
+    $contextLabelDirection === 'column' ||
+    $contextLabelDirection === 'column-reverse'
 
   /**
    * @param {*} node
@@ -141,21 +140,21 @@
   /**
    * @param {*} e
    */
-  const onInStart = (e) => {
+  const onInStart = e => {
     e.target.classList.add('c-form-item--error-tip-enter-active')
   }
 
   /**
    * @param {*} e
    */
-  const onInEnd = (e) => {
+  const onInEnd = e => {
     e.target.classList.remove('c-form-item--error-tip-enter-active')
   }
 
   /**
    * @param {*} e
    */
-  const onOutStart = (e) => {
+  const onOutStart = e => {
     e.target.classList.add('c-form-item--error-tip-leave-active')
     e.target.classList.add('c-form-item--error-tip--hidden')
   }
@@ -163,7 +162,7 @@
   /**
    * @param {*} e
    */
-  const onOutEnd = (e) => {
+  const onOutEnd = e => {
     e.target.classList.remove('c-form-item--error-tip-leave-active')
   }
 </script>
@@ -182,8 +181,10 @@
     class={clsx(
       'c-form-item--label',
       `c-font-${$contextSize}`,
-      `c-m${getLabelMarginPosition($contextLabelDirection)}-${$contextGutterSize}`,
-      `c-text-${$contextLabelAlign}`,
+      `c-m${getLabelMarginPosition(
+        $contextLabelDirection
+      )}-${$contextGutterSize}`,
+      `c-text-${$contextLabelAlign}`
     )}
     style={`width: ${$contextLabelWidth}`}
   >

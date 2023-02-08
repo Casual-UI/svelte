@@ -44,8 +44,7 @@
   $: checked = value === checkedValue
 
   const toggle = () => {
-    if (disabled)
-      return
+    if (disabled) return
     if (value === checkedValue) {
       value = uncheckValue
       return

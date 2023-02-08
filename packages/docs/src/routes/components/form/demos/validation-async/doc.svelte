@@ -44,7 +44,7 @@
   const rules = {
     name: [
       (v: string) =>
-        new Promise<string | false>((resolve) => {
+        new Promise<string | false>(resolve => {
           nameLoading = true
           setTimeout(() => {
             resolve(v ? false : 'Please enter name')

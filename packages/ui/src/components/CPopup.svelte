@@ -49,8 +49,7 @@
   })
 
   const onBackdropClick = () => {
-    if (closeOnClickBackdrop)
-      show = false
+    if (closeOnClickBackdrop) show = false
   }
 </script>
 
@@ -61,7 +60,12 @@
   bind:this={popupContainer}
 >
   {#if show}
-    <div on:click={onBackdropClick} on:keypress={onBackdropClick} transition:fade class="c-popup--backdrop" />
+    <div
+      on:click={onBackdropClick}
+      on:keypress={onBackdropClick}
+      transition:fade
+      class="c-popup--backdrop"
+    />
   {/if}
   <div
     class={`c-popup--content-wrapper c-items-${$hAlign} c-justify-${$vAlign}`}

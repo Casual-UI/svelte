@@ -7,4 +7,3 @@
 <CButton label="Click to show dialog" on:click={() => (show = true)} />
 
 <CDialog bind:show title="Hi, there!">some content</CDialog>
-

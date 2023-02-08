@@ -126,7 +126,7 @@
           cursor-pointer
           hover:text-gray
           on:click={() => (show = false)}
-          on:keyup={() => show = false}
+          on:keyup={() => (show = false)}
         />
       </div>
       <div text-gray-6 dark:text-gray-3>

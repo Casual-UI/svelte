@@ -1,7 +1,7 @@
 <script>
   import { onMount, tick } from 'svelte'
   import useClickOutside from '../../hooks/useClickOutside'
-  
+
   import { useValidator } from '../../hooks/useForm'
   import useSize from '../../hooks/useSize'
   import bem from '../../utils/bem'
@@ -74,9 +74,7 @@
    */
   let tagsContainer
 
-  if (multiple && !Array.isArray(value))
-    value = []
-  
+  if (multiple && !Array.isArray(value)) value = []
 
   let inputValue = value
 
@@ -103,10 +101,8 @@
   const { hasError, validateCurrent } = useValidator()
 
   const onSelectClick = () => {
-    if (disabled)
-      return
-    if (multiple)
-      focused = !focused
+    if (disabled) return
+    if (multiple) focused = !focused
   }
 
   const onClear = () => {
@@ -118,10 +114,8 @@
   }
 
   const onArrowClick = () => {
-    if (disabled)
-      return
-    if (!multiple)
-      focused = !focused
+    if (disabled) return
+    if (!multiple) focused = !focused
   }
 
   /**
@@ -130,13 +124,12 @@
    * @param {string} item.label
    * @param {string | number} item.value
    */
-  const onItemClick = (item) => {
+  const onItemClick = item => {
     if (multiple && Array.isArray(value)) {
       const idx = value.findIndex((/** @type {any} */ v) => v === item.value)
       if (idx === -1) {
         value = [...value, item.value]
-      }
-      else {
+      } else {
         value.splice(idx, 1)
         value = value
       }
@@ -147,19 +140,16 @@
   }
 
   $: isItemActive = (/** @type {{ value: any; }} */ item) => {
-    if (multiple && Array.isArray(value))
-      return value.includes(item.value)
-  
+    if (multiple && Array.isArray(value)) return value.includes(item.value)
+
     return item.value === value
   }
 
   const clickOutside = useClickOutside({
     cbOutside: () => {
-      if (!focused)
-        return
+      if (!focused) return
       focused = false
-      if (validateOnFold && validateCurrent)
-        validateCurrent()
+      if (validateOnFold && validateCurrent) validateCurrent()
     },
   })
 

@@ -140,33 +140,27 @@
   })
 
   $: {
-    if (size)
-      $contextSize = size
+    if (size) $contextSize = size
   }
 
   $: {
-    if (gutterSize)
-      $contextGutterSize = gutterSize
+    if (gutterSize) $contextGutterSize = gutterSize
   }
 
   $: {
-    if (col)
-      $contextCol = col
+    if (col) $contextCol = col
   }
 
   $: {
-    if (labelWidth)
-      $contextLabelWidth = labelWidth
+    if (labelWidth) $contextLabelWidth = labelWidth
   }
 
   $: {
-    if (labelAlign)
-      $contextLabelAlign = labelAlign
+    if (labelAlign) $contextLabelAlign = labelAlign
   }
 
   $: {
-    if (labelDirection)
-      $contextLabelDirection = labelDirection
+    if (labelDirection) $contextLabelDirection = labelDirection
   }
 
   /**
@@ -188,10 +182,9 @@
    * Validate a single field
    * @param {string} field the field that need to validate
    */
-  const validateSomeField = async (field) => {
+  const validateSomeField = async field => {
     const validators = rules[field]
-    if (!validators)
-      return
+    if (!validators) return
     for (let i = 0; i < validators.length; i++) {
       const validator = validators[i]
       const r = await validator(value[field])
@@ -199,8 +192,7 @@
         ...$errorStatus,
         [field]: r,
       }
-      if (r)
-        break
+      if (r) break
     }
   }
 
@@ -208,7 +200,7 @@
    * Clear a specified field validate status
    * @param {string} f
    */
-  const clearSomeField = (f) => {
+  const clearSomeField = f => {
     $errorStatus = {
       ...$errorStatus,
       [f]: false,
@@ -223,13 +215,12 @@
    * Validate all fields
    */
   const validateAll = () =>
-    new Promise((resolve) => {
+    new Promise(resolve => {
       validating = true
       const validatorPromises = Object.keys(rules).map(validateSomeField)
       Promise.all(validatorPromises)
         .then(() => {
-          if (Object.values($errorStatus).every(v => !v))
-            resolve()
+          if (Object.values($errorStatus).every(v => !v)) resolve()
         })
         .finally(() => {
           validating = false

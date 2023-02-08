@@ -134,14 +134,12 @@
   const hAlign = useHorizontal(horizontalAlign)
 
   $: {
-    if (horizontalAlign)
-      $hAlign = horizontalAlign
+    if (horizontalAlign) $hAlign = horizontalAlign
   }
   const vAlign = useVertical(verticalAlign)
 
   $: {
-    if (verticalAlign)
-      $vAlign = verticalAlign
+    if (verticalAlign) $vAlign = verticalAlign
   }
 
   $: roundedClass = new Map([
@@ -156,16 +154,16 @@
     ['end end', 'c-rounded-tl-md'],
   ]).get(`${$hAlign} ${$vAlign}`)
 
-  $: forceChangeAnimationDirection
-    = `${$hAlign} ${$vAlign}` === 'start center'
-    || `${$hAlign} ${$vAlign}` === 'end center'
+  $: forceChangeAnimationDirection =
+    `${$hAlign} ${$vAlign}` === 'start center' ||
+    `${$hAlign} ${$vAlign}` === 'end center'
 
-  $: enterClassName
-    = exchangeAnimationDirection || forceChangeAnimationDirection
+  $: enterClassName =
+    exchangeAnimationDirection || forceChangeAnimationDirection
       ? 'c-dialog-reverse-enter-active'
       : 'c-dialog-enter-active'
-  $: leaveClassName
-    = exchangeAnimationDirection || forceChangeAnimationDirection
+  $: leaveClassName =
+    exchangeAnimationDirection || forceChangeAnimationDirection
       ? 'c-dialog-reverse-leave-active'
       : 'c-dialog-leave-active'
 
@@ -183,9 +181,8 @@
    *
    * @param {*} e
    */
-  const listenKeyboard = (e) => {
-    if (e.key === 'Escape' && show && closeOnEsc)
-      show = false
+  const listenKeyboard = e => {
+    if (e.key === 'Escape' && show && closeOnEsc) show = false
   }
   onMount(() => {
     window.addEventListener('keyup', listenKeyboard)
@@ -197,14 +194,14 @@
   /**
    * @param {*} e
    */
-  const onOutroStart = (e) => {
+  const onOutroStart = e => {
     e.target && e.target.classList.add(leaveClassName)
   }
 
   /**
    * @param {*} e
    */
-  const onOutroEnd = (e) => {
+  const onOutroEnd = e => {
     e.target && e.target.classList.add('c-dialog-exit')
 
     /**

@@ -1,5 +1,4 @@
 <!-- CustomColumn.svelte -->
-
 <script lang="ts">
   export let row: {
     name: string

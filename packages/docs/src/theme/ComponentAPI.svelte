@@ -11,9 +11,15 @@
   $: slotsId = `${api.name} Slots`
   $: exportName = `${api.name} Exports`
 
-  $: exprotsList = api.data?.filter((/** @type {{ kind: string; }} */ d) => d.kind === 'const') || []
+  $: exprotsList =
+    api.data?.filter(
+      (/** @type {{ kind: string; }} */ d) => d.kind === 'const'
+    ) || []
 
-  $: propList = api.data?.filter((/** @type {{ kind: string; }} */ d) => d.kind === 'let') || []
+  $: propList =
+    api.data?.filter(
+      (/** @type {{ kind: string; }} */ d) => d.kind === 'let'
+    ) || []
 </script>
 
 <div class="casual-ui-svelte--component-api">

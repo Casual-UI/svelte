@@ -119,18 +119,15 @@
   }
 
   const onFocus = () => {
-    if (clearValidateOnFocus)
-      clearCurrent && clearCurrent()
-  
+    if (clearValidateOnFocus) clearCurrent && clearCurrent()
+
     focused = true
   }
 
   const onBlur = () => {
-    if (autoBlur)
-      focused = false
-  
-    if (validateTrigger === 'blur')
-      validateCurrent && validateCurrent()
+    if (autoBlur) focused = false
+
+    if (validateTrigger === 'blur') validateCurrent && validateCurrent()
   }
 
   const onClearIconClick = () => {

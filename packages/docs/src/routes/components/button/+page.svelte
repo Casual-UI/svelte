@@ -1,3 +1,3 @@
 <svelte:head>
-	<title>Button - Casual UI Svelte</title>
+  <title>Button - Casual UI Svelte</title>
 </svelte:head>

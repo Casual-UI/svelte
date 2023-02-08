@@ -15,4 +15,3 @@
 <CButton label="Start" on:click={handleStart} />
 <CButton label="End" theme="negative" on:click={handleEnd} />
 <CAjaxBar bind:this={ajaxBar} />
-

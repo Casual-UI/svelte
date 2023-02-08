@@ -1,3 +1,3 @@
 <svelte:head>
-<title>Input - Casual UI Svelte</title>
+  <title>Input - Casual UI Svelte</title>
 </svelte:head>

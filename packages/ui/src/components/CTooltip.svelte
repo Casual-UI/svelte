@@ -27,23 +27,19 @@
   export let show = false
 
   const onMouseEnter = () => {
-    if (trigger === 'hover')
-      show = true
+    if (trigger === 'hover') show = true
   }
 
   const onMouseLeave = () => {
-    if (trigger === 'hover')
-      show = false
+    if (trigger === 'hover') show = false
   }
 
   const clickOutside = useClickOutside({
     cbInside: () => {
-      if (trigger === 'click')
-        show = !show
+      if (trigger === 'click') show = !show
     },
     cbOutside: () => {
-      if (trigger === 'click')
-        show = false
+      if (trigger === 'click') show = false
     },
   })
 </script>

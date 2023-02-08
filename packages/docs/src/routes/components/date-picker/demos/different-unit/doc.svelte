@@ -20,7 +20,7 @@
       <b> Selected month formatted: </b>
       {formattedMonth}
     </div>
-    
+
     <CDatePicker
       bind:value={month}
       bind:formattedValue={formattedMonth}
@@ -38,7 +38,7 @@
       <b> Selected year formatted: </b>
       {yearFormatted}
     </div>
-    
+
     <CDatePicker
       bind:value={year}
       bind:formattedValue={yearFormatted}

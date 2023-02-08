@@ -51,14 +51,12 @@
 
   const computeActiveBar = async () => {
     await tick()
-    if (!header)
-      return
+    if (!header) return
     /**
      * @type {*}
      */
     const activeItem = header.querySelector('.c-tabs--header-item-active')
-    if (!activeItem)
-      return
+    if (!activeItem) return
     activeBarLeft = activeItem.offsetLeft
     activeBarWidth = activeItem.offsetWidth
   }
@@ -76,7 +74,7 @@
   /**
    * @param {{ name: string }} item
    */
-  const onHeaderClick = async (item) => {
+  const onHeaderClick = async item => {
     currentIdx = items.findIndex(item2 => item2.name === activeItem)
     nextIdx = items.findIndex(item2 => item2.name === item.name)
     reverse = nextIdx < currentIdx
@@ -95,25 +93,18 @@
       /**
        * @param {number} t
        */
-      css: (t) => {
+      css: t => {
         let x
         if (mode === 'in') {
-          if (reverse)
-            x = -(100 - 100 * t)
-  
-          else
-            x = 100 - 100 * t
-        }
-        else {
-          if (!reverse)
-            x = -100 + 100 * t
-  
-          else
-            x = 100 - 100 * t
+          if (reverse) x = -(100 - 100 * t)
+          else x = 100 - 100 * t
+        } else {
+          if (!reverse) x = -100 + 100 * t
+          else x = 100 - 100 * t
         }
         if (panelPadding && mode === 'out')
           node.classList.add(`c-pa-${$contextSize}`)
-  
+
         return `${
           mode === 'out'
             ? 'position: absolute;top:0;left:0;right:0;bottom:0;'
