@@ -11,8 +11,8 @@ const START_CODES = [64, 91, 99, 111, 100, 101]
 // regexp to match the import syntax
 const SYNTAX_RE = /^@\[code(?:{(?:(\d+)?-(\d+)?)})?(?: ([^\]]+))?\]\(([^)]*)\)/
 
-export const createImportCodeBlockRule
-  = ({ handleImportPath = str => str }: ImportCodePluginOptions): RuleBlock =>
+export const createImportCodeBlockRule =
+  ({ handleImportPath = str => str }: ImportCodePluginOptions): RuleBlock =>
     (state, startLine, _endLine, silent): boolean => {
     // if it's indented more than 3 spaces, it should be a code block
     /* istanbul ignore if */

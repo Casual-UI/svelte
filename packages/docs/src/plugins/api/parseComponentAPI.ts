@@ -16,7 +16,7 @@ export default async (filename: string) => {
 
   api.events = api.events?.map(converter)
 
-  api.slots = api.slots?.map((item) => {
+  api.slots = api.slots?.map(item => {
     const newItem = converter(item)
     newItem.params = newItem.params
       ?.filter(item => item.name !== 'slot')

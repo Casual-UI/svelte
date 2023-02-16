@@ -31,7 +31,7 @@ md.use(Shiki, {
 })
 
 md.use(importCodePlugin, {
-  handleImportPath: (str) => {
+  handleImportPath: str => {
     return resolve(process.cwd(), `./src/routes/${str}`)
   },
 })
