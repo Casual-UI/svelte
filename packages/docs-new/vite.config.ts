@@ -17,6 +17,10 @@ const config = defineConfig({
         themeColor: {
           light: '#fff',
           dark: '#000',
+          gradient: {
+            start: '#41D1FF',
+            end: '#BD34FE',
+          },
         },
       }),
       siteConfig: {

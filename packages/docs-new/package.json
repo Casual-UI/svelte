@@ -7,7 +7,7 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@sveltepress/theme-default": "^0.21.1",
+    "@sveltepress/theme-default": "^0.21.2",
     "@sveltepress/vite": "^0.14.4",
     "@sveltejs/adapter-static": "^1.0.0",
     "@sveltejs/kit": "^1.0.0",
