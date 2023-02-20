@@ -74,6 +74,10 @@ const config = defineConfig({
                   title: 'Tag',
                   to: '/features/components/basic/tag/',
                 },
+                {
+                  title: 'Icon',
+                  to: '/features/components/basic/icon/',
+                },
               ],
             },
           ],
