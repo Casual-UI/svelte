@@ -124,6 +124,10 @@ const config = defineConfig({
                   title: 'Checkbox Group',
                   to: '/features/components/form/checkbox-group/',
                 },
+                {
+                  title: 'Toggle',
+                  to: '/features/components/form/toggle/',
+                },
               ],
             },
           ],
