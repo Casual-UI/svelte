@@ -166,6 +166,10 @@ const config = defineConfig({
                   title: 'Ajax Bar',
                   to: '/features/components/interact/ajax-bar/',
                 },
+                {
+                  title: 'Dropdown',
+                  to: '/features/components/interact/dropdown/',
+                },
               ],
             },
           ],
