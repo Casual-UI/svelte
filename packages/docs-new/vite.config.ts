@@ -140,6 +140,7 @@ const config = defineConfig({
             },
             {
               title: 'Popups',
+              collapsible: true,
               items: [
                 {
                   title: 'Dialog',
@@ -161,6 +162,7 @@ const config = defineConfig({
             },
             {
               title: 'Interact',
+              collapsible: true,
               items: [
                 {
                   title: 'Ajax Bar',
@@ -180,6 +182,16 @@ const config = defineConfig({
                 },
               ],
             },
+            {
+              title: 'Data Presentation',
+              items: [{
+                title: 'List',
+                to: '/features/components/data-presentation/list/',
+              }, {
+                title: 'Table',
+                to: '/features/components/data-presentation/table/',
+              }],
+            },
           ],
         },
         github: 'https://github.com/Casual-UI/casual-ui',
@@ -191,7 +203,7 @@ const config = defineConfig({
             start: '#41D1FF',
             end: '#BD34FE',
           },
-          primary: '#41D1FF',
+          primary: '#8952fd',
           hover: '#618BFF',
         },
       }),
