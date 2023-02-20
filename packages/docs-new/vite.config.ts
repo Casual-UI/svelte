@@ -174,6 +174,10 @@ const config = defineConfig({
                   title: 'Expansion',
                   to: '/features/components/interact/expansion/',
                 },
+                {
+                  title: 'Carousel',
+                  to: '/features/components/interact/carousel/',
+                },
               ],
             },
           ],
