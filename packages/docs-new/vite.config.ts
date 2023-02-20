@@ -194,7 +194,7 @@ const config = defineConfig({
             },
           ],
         },
-        github: 'https://github.com/Casual-UI/casual-ui',
+        github: 'https://github.com/Casual-UI/svelte',
         logo: '/logo.png',
         themeColor: {
           light: '#fff',
