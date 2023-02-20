@@ -70,6 +70,10 @@ const config = defineConfig({
                   title: 'Loading',
                   to: '/features/components/basic/loading/',
                 },
+                {
+                  title: 'Tag',
+                  to: '/features/components/basic/tag/',
+                },
               ],
             },
           ],
