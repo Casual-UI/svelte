@@ -128,6 +128,10 @@ const config = defineConfig({
                   title: 'Toggle',
                   to: '/features/components/form/toggle/',
                 },
+                {
+                  title: 'Date Picker',
+                  to: '/features/components/form/date-picker/',
+                },
               ],
             },
           ],
