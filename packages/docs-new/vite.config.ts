@@ -116,6 +116,14 @@ const config = defineConfig({
                   title: 'Radio Group',
                   to: '/features/components/form/radio-group/',
                 },
+                {
+                  title: 'Checkbox',
+                  to: '/features/components/form/checkbox/',
+                },
+                {
+                  title: 'Checkbox Group',
+                  to: '/features/components/form/checkbox-group/',
+                },
               ],
             },
           ],
