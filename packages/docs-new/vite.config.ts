@@ -104,6 +104,10 @@ const config = defineConfig({
                   title: 'Input',
                   to: '/features/components/form/input/',
                 },
+                {
+                  title: 'Radio',
+                  to: '/features/components/form/radio/',
+                },
               ],
             },
           ],

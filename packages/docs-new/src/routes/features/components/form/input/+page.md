@@ -111,11 +111,15 @@ title: Input
 </script>
 
 <CInput {value} placeholder="Custom loading" loading>
-  <CLoadingWifi slot="loading" />
+  <div slot="loading" class="c-text-primary">
+    <CLoadingWifi />
+  </div>
 </CInput>
 
 <CInput {value} placeholder="Custom loading" loading>
-  <CLoadingCircleBars slot="loading" />
+  <div slot="loading" class="c-text-warning">
+    <CLoadingCircleBars slot="loading" />
+  </div>
 </CInput>
 ```
 
