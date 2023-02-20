@@ -28,9 +28,8 @@
    * @param {number} month
    */
   const isSelected = month => {
-    if (!value) {
-      return false
-    }
+    if (!value) return false
+
     const d = new Date(value.getTime())
     d.setFullYear(year)
     d.setMonth(month)

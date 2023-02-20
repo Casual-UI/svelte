@@ -132,6 +132,10 @@ const config = defineConfig({
                   title: 'Date Picker',
                   to: '/features/components/form/date-picker/',
                 },
+                {
+                  title: 'Form & Form Item',
+                  to: '/features/components/form/form/',
+                },
               ],
             },
           ],
@@ -155,6 +159,9 @@ const config = defineConfig({
       },
     }) as any,
   ],
+  optimizeDeps: {
+    exclude: ['dayjs'],
+  },
 })
 
 export default config

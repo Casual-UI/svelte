@@ -38,11 +38,8 @@
    * @param {number} year
    */
   const onYearClick = year => {
-    if (value) {
-      value = new Date(year, value.getMonth(), value.getDate())
-    } else {
-      value = new Date(year, 0, 1)
-    }
+    if (value) value = new Date(year, value.getMonth(), value.getDate())
+    else value = new Date(year, 0, 1)
 
     dispatch('year-change', value)
   }
