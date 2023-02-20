@@ -159,6 +159,15 @@ const config = defineConfig({
                 },
               ],
             },
+            {
+              title: 'Interact',
+              items: [
+                {
+                  title: 'Ajax Bar',
+                  to: '/features/components/interact/ajax-bar/',
+                },
+              ],
+            },
           ],
         },
         github: 'https://github.com/Casual-UI/casual-ui',
