@@ -37,6 +37,21 @@ const config = defineConfig({
               },
             ],
           },
+          {
+            title: 'More',
+            items: [
+              {
+                title: 'Casual UI - Vue',
+                to: 'https://casual-ui-vue.donsen.site',
+                external: true,
+              },
+              {
+                title: 'Casual UI - React',
+                to: 'https://casual-ui-react.donsen.site',
+                external: true,
+              },
+            ],
+          },
         ],
         sidebar: {
           '/guide/': [
@@ -61,6 +76,7 @@ const config = defineConfig({
           '/features/components/': [
             {
               title: 'Basic',
+              collapsible: true,
               items: [
                 {
                   title: 'Button',
@@ -77,6 +93,16 @@ const config = defineConfig({
                 {
                   title: 'Icon',
                   to: '/features/components/basic/icon/',
+                },
+              ],
+            },
+            {
+              title: 'Form',
+              collapsible: true,
+              items: [
+                {
+                  title: 'Input',
+                  to: '/features/components/form/input/',
                 },
               ],
             },

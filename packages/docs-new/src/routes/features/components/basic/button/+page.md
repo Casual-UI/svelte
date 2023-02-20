@@ -133,45 +133,20 @@ title: Button
 
 ## Icon button
 
-<Tabs activeName="demo" bodyPadding={false}>
-  <TabPanel name="demo">
-
 ```svelte live
 <script lang="ts">
   import { CButton } from '@casual-ui/svelte'
-  import Apple from '/src/routes/features/components/basic/button/Apple.svelte'
-  import Banana from '/src/routes/features/components/basic/button/Banana.svelte'
-  import Peach from '/src/routes/features/components/basic/button/Peach.svelte'
 </script>
 
 <div>
   <CButton icon style="font-size: 2rem;">
-    <Apple />
+    <div class="i-openmoji-apple" />
   </CButton>
   <CButton icon style="font-size: 4rem;" outlined theme="warning">
-    <Banana />
+    <div class="i-openmoji-banana" />
   </CButton>
   <CButton icon style="font-size: 6rem;" theme="negative">
-    <Peach />
+    <div class="i-openmoji-peach" />
   </CButton>
 </div>
 ```
-
-  </TabPanel>
-  <TabPanel name="Apple.svelte">
-
-@code(./Apple.svelte)
-
-  </TabPanel>
-  <TabPanel name="Banana.svelte">
-
-@code(./Banana.svelte)
-
-  </TabPanel>
-  <TabPanel name="Peach.svelte">
-
-@code(./Peach.svelte)
-
-  </TabPanel>
-</Tabs>
-
