@@ -7,7 +7,15 @@ const config = defineConfig({
     sveltepress({
       theme: defaultTheme({
         navbar: [
-          // Add your navbar configs here
+          {
+            title: 'Features',
+            items: [
+              {
+                title: 'Components',
+                to: '/components/basic/button/',
+              },
+            ],
+          },
         ],
         sidebar: {
           // Add your sidebar configs here
@@ -21,6 +29,8 @@ const config = defineConfig({
             start: '#41D1FF',
             end: '#BD34FE',
           },
+          primary: '#41D1FF',
+          hover: '#618BFF',
         },
       }),
       siteConfig: {
