@@ -170,6 +170,10 @@ const config = defineConfig({
                   title: 'Dropdown',
                   to: '/features/components/interact/dropdown/',
                 },
+                {
+                  title: 'Expansion',
+                  to: '/features/components/interact/expansion/',
+                },
               ],
             },
           ],
