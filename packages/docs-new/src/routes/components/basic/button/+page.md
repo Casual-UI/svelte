@@ -1,6 +1,0 @@
----
-title: Button
----
-
-## Basic Usage
-

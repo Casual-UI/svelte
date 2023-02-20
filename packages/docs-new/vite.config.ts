@@ -11,8 +11,16 @@ const config = defineConfig({
             title: 'Guide',
             items: [
               {
-                title: 'Quick start',
+                title: 'Quick Start',
                 to: '/guide/quick-start/',
+              },
+              {
+                title: 'Theme Customization',
+                to: '/guide/theme-customization/',
+              },
+              {
+                title: 'Dark Mode',
+                to: '/guide/dark-mode/',
               },
             ],
           },
@@ -21,13 +29,50 @@ const config = defineConfig({
             items: [
               {
                 title: 'Components',
-                to: '/components/basic/button/',
+                to: '/features/components/basic/button/',
+              },
+              {
+                title: 'Global CSS Utils',
+                to: '/features/global-css-utils/',
               },
             ],
           },
         ],
         sidebar: {
-          // Add your sidebar configs here
+          '/guide/': [
+            {
+              title: 'Guide',
+              items: [
+                {
+                  title: 'Quick Start',
+                  to: '/guide/quick-start/',
+                },
+                {
+                  title: 'Theme Customization',
+                  to: '/guide/theme-customization/',
+                },
+                {
+                  title: 'Dark Mode',
+                  to: '/guide/dark-mode/',
+                },
+              ],
+            },
+          ],
+          '/features/components/': [
+            {
+              title: 'Basic',
+              items: [
+                {
+                  title: 'Button',
+                  to: '/features/components/basic/button/',
+                },
+                {
+                  title: 'Loading',
+                  to: '/features/components/basic/loading/',
+                },
+              ],
+            },
+          ],
         },
         github: 'https://github.com/Casual-UI/casual-ui',
         logo: '/logo.png',

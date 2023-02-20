@@ -14,7 +14,6 @@ For example, if you're using [SvelteKit](http://kit.svelte.dev/). Then in your /
 import '@casual-ui/svelte/dist/style/style.css'
 ```
 
-
 ## Use in svelte files
 
 ```svelte live
