@@ -1,7 +1,7 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import useSize from '../../../hooks/useSize'
   import clsx from '../../../utils/clsx'
-  import { createEventDispatcher } from 'svelte'
 
   /**
    * Current year value.
@@ -136,7 +136,7 @@
   </div>
   <div
     class={clsx(
-      `c-date-panel--year`,
+      'c-date-panel--year',
       unit !== 'year' && unitSwitchable && 'c-date-panel--year-switchable'
     )}
   >

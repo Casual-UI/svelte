@@ -1,9 +1,8 @@
 <script>
-  import clsx from '../../../utils/clsx'
-
   import { createEventDispatcher } from 'svelte'
   import { cubicIn } from 'svelte/easing'
   import { scale } from 'svelte/transition'
+  import clsx from '../../../utils/clsx'
 
   /**
    * @type {any[]}
@@ -34,7 +33,7 @@
     {#each items as item}
       <div
         class={clsx(
-          `c-date-picker--panel-cell`,
+          'c-date-picker--panel-cell',
           isActive(item) && 'c-date-picker--panel-cell--is-selected'
         )}
         on:click|stopPropagation={() => dispatch('item-click', item)}

@@ -15,7 +15,7 @@
    * The placeholder text. Same as [CInput](/components/input)
    * @type {string}
    */
-  export let placheholder = ''
+  export let placeholder = ''
 
   /**
    * The size of select. Notice that default value is `'md'` instead of `undefined`
@@ -89,8 +89,8 @@
   $: realPlaceholder = multiple
     ? value.length > 0
       ? ''
-      : placheholder
-    : placheholder
+      : placeholder
+    : placeholder
 
   $: selectDomStyle = selectDomHeight < 0 ? '' : `height:${selectDomHeight}px`
 

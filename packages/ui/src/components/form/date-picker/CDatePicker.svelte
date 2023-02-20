@@ -1,5 +1,5 @@
 <script>
-  import dayjs from 'dayjs'
+  import dayjs from 'dayjs/esm'
   import { getContext } from 'svelte'
   import useClickOutside from '../../../hooks/useClickOutside'
   import { validateCurrentKey } from '../../../hooks/useForm'
@@ -94,18 +94,18 @@
    * Get the real formatter. If has `formattor` prop
    * @param {Date | null} d
    */
-  const innerFormattor = d => {
+  const innerFormatter = d => {
     if (!d) return ''
     return formatter ? formatter(d, format) : dayjs(d).format(format)
   }
 
   const recomputeFormattedValue = () => {
-    formattedValue = innerFormattor(value)
+    formattedValue = innerFormatter(value)
   }
 
   const recomputeFormattedRangeValue = () => {
     const [start, end] = rangeValue
-    formattedRangeValue = [innerFormattor(start), innerFormattor(end)]
+    formattedRangeValue = [innerFormatter(start), innerFormatter(end)]
   }
 
   $: {
@@ -233,7 +233,7 @@
             {range}
             {year}
             {month}
-            formattor={innerFormattor}
+            formattor={innerFormatter}
             on:date-set={onDateSet}
           />
         {:else if unit === 'month'}
