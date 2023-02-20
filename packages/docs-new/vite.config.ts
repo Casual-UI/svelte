@@ -153,6 +153,10 @@ const config = defineConfig({
                   title: 'Notification',
                   to: '/features/components/popups/notification/',
                 },
+                {
+                  title: 'Tooltip',
+                  to: '/features/components/popups/tooltip/',
+                },
               ],
             },
           ],

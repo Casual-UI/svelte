@@ -12,4 +12,7 @@
   :global(.svp-live-code--demo) {
     --at-apply: 'bg-white dark:bg-black rounded-t-lg';
   }
+  :global(.c-tooltip--popper-content-wrapper) {
+    z-index: 10000;
+  }
 </style>
