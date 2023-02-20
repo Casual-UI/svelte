@@ -138,6 +138,15 @@ const config = defineConfig({
                 },
               ],
             },
+            {
+              title: 'Popups',
+              items: [
+                {
+                  title: 'Dialog',
+                  to: '/features/components/popups/dialog/',
+                },
+              ],
+            },
           ],
         },
         github: 'https://github.com/Casual-UI/casual-ui',
