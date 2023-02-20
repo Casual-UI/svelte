@@ -145,6 +145,10 @@ const config = defineConfig({
                   title: 'Dialog',
                   to: '/features/components/popups/dialog/',
                 },
+                {
+                  title: 'Drawer',
+                  to: '/features/components/popups/drawer/',
+                },
               ],
             },
           ],
