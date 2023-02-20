@@ -149,6 +149,10 @@ const config = defineConfig({
                   title: 'Drawer',
                   to: '/features/components/popups/drawer/',
                 },
+                {
+                  title: 'Notification',
+                  to: '/features/components/popups/notification/',
+                },
               ],
             },
           ],
