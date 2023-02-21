@@ -9,6 +9,6 @@
   },
   "scripts": {
     "release": "cd packages/ui && pnpm build && cd ../.. && changeset publish",
-    "format": "prettier \"./packages/**/*.svelte\" --write"
+    "format": "prettier \"./packages/**/*.svelte\" --check"
   }
 }
