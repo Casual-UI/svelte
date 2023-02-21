@@ -1,4 +1,3 @@
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { presetAttributify, presetIcons, presetUno } from 'unocss'
 import Unocss from 'unocss/vite'
@@ -20,7 +19,7 @@ export default defineConfig({
     lib: {
       name: 'CasualUISvelte',
       fileName: () => 'import-style.js',
-      entry: resolve(process.cwd(), './src/import-style.ts'),
+      entry: 'import-style.ts',
       formats: ['es'],
     },
   },

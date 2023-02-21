@@ -498,8 +498,9 @@ And the CFormItem's `field` prop also needed.
 The `rules` is an object that contains every field rules. Its' type look like this:
 
 ```ts
+type Validator = (val: any) => string | false | Promise<string | false>
 interface Rules {
-  [key: string]: Array<(val: any) => string | false | Promise<string | false>>
+  [key: string]: Array<Validator>
 }
 ```
 
@@ -619,7 +620,7 @@ To use validation the async validation.
 The rule item need to be a function that return a `Promise<string | false>`. For example:
 
 ```js
-const rule = async v => {
+const rule = async function (v) {
   return await someApiValidation(v)
 }
 ```
@@ -725,7 +726,7 @@ const rule = async v => {
     <CSelect
       bind:value={industry}
       options={industryOptions}
-      placheholder="Your industry"
+      placeholder="Your industry"
     />
   </CFormItem>
 </CForm>
