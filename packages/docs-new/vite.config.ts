@@ -3,6 +3,9 @@ import { sveltepress } from '@sveltepress/vite'
 import { defaultTheme } from '@sveltepress/theme-default'
 
 const config = defineConfig({
+  optimizeDeps: {
+    exclude: ['@sveltepress/sveltepress'],
+  },
   plugins: [
     sveltepress({
       theme: defaultTheme({
@@ -195,6 +198,7 @@ const config = defineConfig({
           ],
         },
         github: 'https://github.com/Casual-UI/svelte',
+        editLink: 'https://github.com/Casual-UI/svelte/tree/main/packages/docs-new/src/:routeId',
         logo: '/logo.png',
         themeColor: {
           light: '#fff',
@@ -211,11 +215,8 @@ const config = defineConfig({
         title: 'Casual UI - Svelte',
         description: 'A component library that supports Svelte3+',
       },
-    }) as any,
+    }),
   ],
-  optimizeDeps: {
-    exclude: ['dayjs'],
-  },
 })
 
 export default config

@@ -10,7 +10,7 @@ lib
 !.env.example
 .vercel
 .output
-pnpm-lock.yaml
 .doc-parser
 .demo-routes
 packages/docs/static/demos
+.sveltepress
