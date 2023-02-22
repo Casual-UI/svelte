@@ -11,5 +11,5 @@ aliOSSStaicWebDeploy({
   accessKeyId: ALI_OSS_KEY_ID,
   accessKeySecret: ALI_OSS_KEY_SECRET,
   bucket: 'cui-svelte',
-  staticWebAppPath: path.resolve(__dirname, '../build'),
+  staticWebAppPath: path.resolve(__dirname, '../dist'),
 })

@@ -42,12 +42,12 @@ const config = defineConfig({
             items: [
               {
                 title: 'Casual UI - Vue',
-                to: 'https://casual-ui-vue.donsen.site',
+                to: 'https://vue.casual-ui.site',
                 external: true,
               },
               {
                 title: 'Casual UI - React',
-                to: 'https://casual-ui-react.donsen.site',
+                to: 'https://react.casual-ui.site',
                 external: true,
               },
             ],
