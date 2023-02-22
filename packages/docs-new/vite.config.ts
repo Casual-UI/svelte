@@ -3,9 +3,6 @@ import { sveltepress } from '@sveltepress/vite'
 import { defaultTheme } from '@sveltepress/theme-default'
 
 const config = defineConfig({
-  optimizeDeps: {
-    exclude: ['@sveltepress/sveltepress'],
-  },
   plugins: [
     sveltepress({
       theme: defaultTheme({
@@ -35,8 +32,8 @@ const config = defineConfig({
                 to: '/features/components/basic/button/',
               },
               {
-                title: 'Global CSS Utils',
-                to: '/features/global-css-utils/',
+                title: 'CSS Utility Classes',
+                to: '/features/global-css-utils/sizes/',
               },
             ],
           },
@@ -196,6 +193,21 @@ const config = defineConfig({
               }],
             },
           ],
+          '/features/global-css-utils/': [
+            {
+              title: 'CSS Utility Classes',
+              items: [
+                {
+                  title: 'Sizes',
+                  to: '/features/global-css-utils/sizes/',
+                },
+                {
+                  title: 'Flex and Grid',
+                  to: '/features/global-css-utils/flex-and-grid/',
+                },
+              ],
+            },
+          ],
         },
         github: 'https://github.com/Casual-UI/svelte',
         editLink: 'https://github.com/Casual-UI/svelte/tree/main/packages/docs-new/src/:routeId',
@@ -215,7 +227,7 @@ const config = defineConfig({
         title: 'Casual UI - Svelte',
         description: 'A component library that supports Svelte3+',
       },
-    }),
+    }) as any,
   ],
 })
 
