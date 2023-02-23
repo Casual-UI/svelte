@@ -28,4 +28,4 @@ import '@casual-ui/dist/style.css'
 
 ## LICENSE
 
-[MIT](https://opensource.org/licenses/MIT)
+[MIT](./LICENSE)
