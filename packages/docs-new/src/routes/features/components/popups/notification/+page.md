@@ -15,7 +15,7 @@ Take projects use SvelteKit for example:
 <slot />
 ```
 
-:::note Only once
+:::note[Only Once]
 Please make sure CNotification component only used once in whole application.
 :::
 

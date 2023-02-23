@@ -2,7 +2,7 @@
 title: Icon
 ---
 
-:::info tip
+:::info[Better Solution]
 The community already has these css based icon solutions.
 Please refer to:  
 * [Icônes](https://github.com/antfu/icones)
