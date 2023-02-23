@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+build
+.svelte-kit
+dist
+.sveltepress
+.env
+.env.*
+!.env.example
+
+# Don't check old docs
+/packages/docs/**/*
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

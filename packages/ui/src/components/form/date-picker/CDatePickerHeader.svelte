@@ -87,7 +87,7 @@
 
   let displayMonth = ''
 
-  const recomputeDispalyMonth = () => {
+  const recomputeDisplayMonth = () => {
     const d = new Date()
     d.setDate(1)
     d.setMonth(month)
@@ -101,7 +101,10 @@
     dispatch('unit-change', newUnit)
   }
 
-  $: month, recomputeDispalyMonth()
+  $: {
+    month
+    recomputeDisplayMonth()
+  }
   $: isMonth = unit === 'month'
   $: isDay = unit === 'day'
 </script>

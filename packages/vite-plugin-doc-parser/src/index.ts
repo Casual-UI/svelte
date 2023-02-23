@@ -55,7 +55,7 @@ const vitePluginDocParser: (options: PluginOptions) => Plugin = ({ globPattern, 
   },
 })
 
-export const virtualResolver = (componentPath) => {
+export const virtualResolver = componentPath => {
   const virtualMap = getVirtualMap()
   if (componentPath in virtualMap) {
     const id = virtualMap[componentPath]

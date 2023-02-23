@@ -5,5 +5,5 @@
     "target": "ES2015",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-  }
+  },
 }

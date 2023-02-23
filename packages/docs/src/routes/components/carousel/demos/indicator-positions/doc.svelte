@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CRadioGroup, CCarousel, CCarouselSlider } from '@casual-ui/svelte'
+  import { CCarousel, CCarouselSlider, CRadioGroup } from '@casual-ui/svelte'
 
   let activeIndex = 0
 

@@ -9,6 +9,7 @@
   },
   "scripts": {
     "release": "cd packages/ui && pnpm build && cd ../.. && changeset publish",
+    "lint": "eslint -c ./.eslintrc.json --ext .js,.ts,.svelte ./packages",
     "format": "prettier \"./packages/**/*.svelte\" --check"
   }
 }

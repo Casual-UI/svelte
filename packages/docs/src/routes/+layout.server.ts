@@ -30,7 +30,7 @@ export const load: LayoutServerLoad = async ({ route }) => {
   const sidebarPathPrefix = routeIdArr.shift() || ''
   const sidebarEntries = await fg(`${dirName}/${sidebarPathPrefix}/*/+page.svelte`)
 
-  const sidebars = sidebarEntries.map((entry) => {
+  const sidebars = sidebarEntries.map(entry => {
     const to = entry.replace(new RegExp(dirName), '').replace(/\/\+page\.svelte/, '')
 
     // /components/foo-bar => foo-bar
@@ -44,7 +44,7 @@ export const load: LayoutServerLoad = async ({ route }) => {
   })
   sidebars.sort((s1, s2) => s1.label < s2.label ? -1 : 1)
 
-  const demos = demoEntries.map((path) => {
+  const demos = demoEntries.map(path => {
     const pathArr = path.split('/')
     pathArr.pop()
 

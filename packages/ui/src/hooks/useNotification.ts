@@ -73,7 +73,7 @@ const closeByPositionGroupAndID = (positionGroup: PositionGroup, id: number) => 
     noItem => noItem.id === id,
   )
   if (idx !== -1) {
-    notifications.update((group) => {
+    notifications.update(group => {
       group[positionGroup].items.splice(idx, 1)
       return group
     })
@@ -85,7 +85,7 @@ const changeContentByPositionGroupAndID = (positionGroup: PositionGroup, id: num
     noItem => noItem.id === id,
   )
   if (idx !== -1) {
-    notifications.update((group) => {
+    notifications.update(group => {
       group[positionGroup].items.splice(idx, 1, {
         ...group[positionGroup].items[idx],
         ...newContent,
@@ -129,7 +129,7 @@ const open = (
     closeIcon,
   }
 
-  notifications.update((group) => {
+  notifications.update(group => {
     if (positionKey.startsWith('end'))
       group[positionKey].items.unshift(newItem)
 
@@ -154,7 +154,7 @@ const open = (
    * @param {number} [content.timeout]
    * @param {'primary' | 'secondary' | 'warning' | 'negative'} [content.theme]
    */
-  const changeContent = (content) => {
+  const changeContent = content => {
     changeContentByPositionGroupAndID(positionKey, id, content)
     const { timeout } = content
     if (timeout && timeout > 0) {
