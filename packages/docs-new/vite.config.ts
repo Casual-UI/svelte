@@ -210,7 +210,7 @@ const config = defineConfig({
           ],
         },
         github: 'https://github.com/Casual-UI/svelte',
-        editLink: 'https://github.com/Casual-UI/svelte/tree/main/packages/docs-new/src/:routeId',
+        editLink: 'https://github.com/Casual-UI/svelte/edit/main/packages/docs-new/src/routes/:route',
         logo: '/logo.png',
         themeColor: {
           light: '#fff',
@@ -227,7 +227,7 @@ const config = defineConfig({
         title: 'Casual UI - Svelte',
         description: 'A component library that supports Svelte3+',
       },
-    }) as any,
+    }),
   ],
 })
 
