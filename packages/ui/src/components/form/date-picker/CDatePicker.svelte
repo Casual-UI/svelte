@@ -120,25 +120,15 @@
 
   let show = false
 
-  let displayValue = ''
-
-  const getDisplayValue = () => {
+  $: displayValue = (() => {
     if (range) {
       const [start, end] = formattedRangeValue
 
       if (!start && !end) displayValue = ''
-      displayValue = `${start} - ${end}`
-      return
+      return `${start} - ${end}`
     }
-    displayValue = formattedValue
-  }
-
-  $: {
-    range
-    value
-    rangeValue
-    getDisplayValue()
-  }
+    return formattedValue
+  })()
 
   let year = value ? value.getFullYear() : new Date().getFullYear()
   let month = value ? value.getMonth() : new Date().getMonth()
@@ -187,7 +177,6 @@
     cbOutside: async () => {
       if (disabled || show === false) return
       if (validateOnClickOutside && validateCurrent) validateCurrent()
-
       show = false
     },
   })
@@ -233,7 +222,7 @@
             {range}
             {year}
             {month}
-            formattor={innerFormatter}
+            formatter={innerFormatter}
             on:date-set={onDateSet}
           />
         {:else if unit === 'month'}

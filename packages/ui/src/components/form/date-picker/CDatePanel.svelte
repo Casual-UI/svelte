@@ -32,7 +32,7 @@
   /**
    * @type {(d: Date | null) => string}
    */
-  export let formattor
+  export let formatter
 
   /**
    * @type {boolean}
@@ -46,7 +46,7 @@
    * @param {Date | null} d2
    */
   const isSameDate = (d1, d2) => {
-    return formattor(d1) === formattor(d2)
+    return formatter(d1) === formatter(d2)
   }
 
   const getCurrentYearMonth = () => {
@@ -63,7 +63,7 @@
   const setDate = date => {
     const d = getCurrentYearMonth()
     d.setDate(date)
-    const target = formattor(d)
+    const target = formatter(d)
     if (range) {
       const [start, end] = rangeValue
       const [fStart] = formattedRangeValue
@@ -72,6 +72,7 @@
         return
       }
       if (!end) {
+        dispatch('date-set', d)
         rangeValue = fStart < target ? [start, d] : [d, start]
         return
       }
@@ -128,7 +129,7 @@
   }
 
   let hoveringDate = rangeValue[1]
-  $: formattedHoveringDate = formattor(hoveringDate)
+  $: formattedHoveringDate = formatter(hoveringDate)
 
   /**
    * @param {number} date
@@ -146,7 +147,7 @@
     const d = getCurrentYearMonth()
     d.setDate(date)
     const [start, end] = formattedRangeValue
-    const target = formattor(d)
+    const target = formatter(d)
     if (!end) {
       return formattedHoveringDate <= start
         ? target === formattedHoveringDate
@@ -164,7 +165,7 @@
     if (!end && !hoveringDate) return false
     const d = getCurrentYearMonth()
     d.setDate(date)
-    const target = formattor(d)
+    const target = formatter(d)
     if (end) return target >= start && target <= end
 
     return (
@@ -180,7 +181,7 @@
     const d = getCurrentYearMonth()
     d.setDate(date)
     const [start, end] = formattedRangeValue
-    const target = formattor(d)
+    const target = formatter(d)
     if (!end) {
       return formattedHoveringDate < start
         ? target === start
@@ -203,7 +204,7 @@
   /**
    * @param {number} date Notice that this value can be lower than 0 or larger than 31
    */
-  const getDisplaDateNum = date => {
+  const getDisplayDateNum = date => {
     const d = getCurrentYearMonth()
     d.setDate(date)
     return d.getDate()
@@ -251,7 +252,7 @@
               'c-date-panel--date-item--inner-not-current-month'
           )}
         >
-          {getDisplaDateNum(d)}
+          {getDisplayDateNum(d)}
         </div>
       </div>
     {/each}
