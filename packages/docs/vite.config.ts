@@ -6,6 +6,8 @@ import { parse } from 'sveltedoc-parser'
 import navbar from './config/navbar'
 import sidebar from './config/sidebar'
 import componentApi from './src/remark-plugins/component-api'
+import links from './src/remark-plugins/links'
+import type { Plugin } from 'unified'
 
 const defaultThemeResolved = defaultTheme({
   navbar,
@@ -49,7 +51,10 @@ async function svelteDocParser(filename: string) {
     version: 3,
   })
 
+  const remarkPlugins: Plugin[] = [links]
+
   const admonitionPlugin = defaultThemeResolved.remarkPlugins?.[1]
+  if(admonitionPlugin) remarkPlugins.push(admonitionPlugin)
 
   const converter = async <T extends Record<string, any>>(d: T) => ({
     ...d,
@@ -57,7 +62,7 @@ async function svelteDocParser(filename: string) {
       mdContent: d.description,
       filename: `${filename}.md`,
       highlighter: defaultThemeResolved.highlighter,
-      remarkPlugins: admonitionPlugin ? [admonitionPlugin] : [],
+      remarkPlugins,
     })).code,
   })
 

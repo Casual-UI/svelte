@@ -51,10 +51,10 @@
   /**
    * The horizontal align position.
    *
-   * ::: tip TIP
+   * :::tip[TIP]
    * CDialog is implemented based on [CPopup](/features/components/popups/popup/)
    *
-   * So, this prop and `verticalAlign` prop below is the same with CPopup
+   * So, this prop and `verticalAlign` prop below is the same with [CPopup](/features/components/popups/popup/)
    * :::
    *
    * @type {'start' | 'center' | 'end' | undefined}
