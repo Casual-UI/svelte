@@ -33,7 +33,7 @@
   /**
    * If set to `true`. The popup would be hidden when click the backdrop.
    *
-   * This prop is the same as [CPopup](/components/popup)
+   * This prop is the same as [CPopup](/features/components/popups/popup/)
    */
   export let closeOnClickBackdrop = false
 
@@ -71,12 +71,12 @@
   bodyHeight={!isLeftOrRight ? bodyHeight : undefined}
   {closeOnClickBackdrop}
 >
-  <!-- The same as [CDialog](/components/dialog) -->
+  <!-- The same as [CDialog](/features/components/popups/dialog/) -->
   <slot name="title" slot="title">
     {title}
   </slot>
 
-  <!-- The same as [CDialog](/components/dialog) -->
+  <!-- The same as [CDialog](/features/components/popups/dialog/) -->
   <slot slot="close-icon" name="close-icon">
     <div i-majesticons-close />
   </slot>

@@ -333,7 +333,7 @@
   {/if}
 
   <div class="c-carousel--sliders">
-    <!-- The slides content. It is recommended to use [CCarouselSlider](/components/carousel-slider) -->
+    <!-- The slides content. It is recommended to use `CCarouselSlider` -->
     <slot />
   </div>
 </div>

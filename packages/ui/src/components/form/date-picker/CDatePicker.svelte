@@ -59,7 +59,7 @@
   export let size = undefined
 
   /**
-   * The placeholder. Same as [CInput](/components/input)
+   * The placeholder. Same as [CInput](/features/components/form/input/)
    * @type {string}
    */
   export let placeholder = ''

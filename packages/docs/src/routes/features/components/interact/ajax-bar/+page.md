@@ -71,7 +71,3 @@ Ajax bar is useful when page toggling or data fetching visibility is required.
 
 <CAjaxBar bind:this={ajaxBar} {theme} />
 ```
-
-<script>
-  console.log(__cui_api)
-</script>

@@ -52,7 +52,7 @@
    * The horizontal align position.
    *
    * ::: tip TIP
-   * CDialog is implemented based on [CPopup](/components/popup)
+   * CDialog is implemented based on [CPopup](/features/components/popups/popup/)
    *
    * So, this prop and `verticalAlign` prop below is the same with CPopup
    * :::
@@ -127,7 +127,7 @@
   /**
    * If set to `true`. The popup would be hidden when click the backdrop.
    *
-   * This prop is the same as [CPopup](/components/popup)
+   * This prop is the same as [CPopup](/features/components/popups/popup/)
    */
   export let closeOnClickBackdrop = false
 
