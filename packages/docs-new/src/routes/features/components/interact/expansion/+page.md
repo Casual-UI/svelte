@@ -1,5 +1,6 @@
 ---
 title: Expansion
+componentName: CExpansion
 ---
 
 ## Basic usage

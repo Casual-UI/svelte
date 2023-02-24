@@ -1,5 +1,6 @@
 ---
 title: Checkbox Group
+componentName: form/CCheckboxGroup
 ---
 
 ## Basic usage

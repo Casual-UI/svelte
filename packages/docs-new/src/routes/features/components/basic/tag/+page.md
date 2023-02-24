@@ -1,5 +1,6 @@
 ---
 title: Tag
+componentName: CTag
 ---
 
 ## Themes

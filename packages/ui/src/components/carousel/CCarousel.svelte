@@ -1,56 +1,67 @@
 <script context="module">
   /**
    * Records the names of this carousel.
+   * @type {symbol}
    */
   export const slidesKey = Symbol('c-carousel-names')
 
   /**
    * The current index.
+   * @type {symbol}
    */
   export const activeIndexKey = Symbol('c-carousel-active-index')
 
   /**
    * The move direction. Can be `'forward'` or `'backward'`
+   * @type {symbol}
    */
   export const directionKey = Symbol('c-carousel-direction')
 
   /**
    * The vertical context. Determine whether the carousel moving vertical.
+   * @type {symbol}
    */
   export const verticalKey = Symbol('c-carousel-vertical')
 
   /**
    * The auto play interval key.
+   * @type {symbol}
    */
   export const intervalKey = Symbol('c-carousel-interval')
 
   /**
    * To next function key.
+   * @type {symbol}
    */
   export const toNextKey = Symbol('c-carousel-to-next')
 
   /**
    * The timeout flag key.
+   * @type {symbol}
    */
   export const timeoutKey = Symbol('c-carousel-timeout-flag')
 
   /**
    * The hovering flag key.
+   * @type {symbol}
    */
   export const hoveringKey = Symbol('c-carousel-hovering')
 
   /**
    * The slidering flag key.
+   * @type {symbol}
    */
   export const slideringKey = Symbol('c-carousel-slidering')
 
   /**
    * The pause functions key.
+   * @type {symbol}
    */
   export const pausesKey = Symbol('c-carousel-pauses')
 
   /**
    * The resume functions key.
+   * @type {symbol}
    */
   export const resumesKey = Symbol('c-carousel-pauses')
 </script>

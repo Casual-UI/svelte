@@ -1,5 +1,6 @@
 ---
 title: Form & Form Item
+componentName: form/CForm
 ---
 
 ## Basic usage

@@ -1,6 +1,9 @@
 ---
 title: Radio Group
+componentName: form/CRadioGroup
 ---
+
+## Usage
 
 ```svelte live
 <script lang="ts">

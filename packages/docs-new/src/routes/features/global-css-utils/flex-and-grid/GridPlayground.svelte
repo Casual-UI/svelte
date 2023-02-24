@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   import { CRadioGroup } from '@casual-ui/svelte'
   import { flip } from 'svelte/animate'
   import { crossfade } from 'svelte/transition'
   import { cubicInOut } from 'svelte/easing'
 
-  const mapOptions = options =>
+  const mapOptions = (options: any[]) =>
     options.map(label => ({
       label,
       value: label,

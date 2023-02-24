@@ -1,5 +1,6 @@
 ---
 title: Date Picker
+componentName: form/date-picker/CDatePicker
 ---
 
 ## Basic usage

@@ -1,5 +1,6 @@
 ---
 title: Notification
+componentName: CNotification
 ---
 
 ## Add in root

@@ -25,7 +25,7 @@
 
   /**
    * The selected value(s).
-   * @type {*}
+   * @type {number | string | Array<string | number>}
    */
   export let value = ''
 

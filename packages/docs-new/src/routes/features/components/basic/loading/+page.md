@@ -1,5 +1,6 @@
 ---
 title: Loading
+componentName: CLoading
 ---
 
 ## Loading instances

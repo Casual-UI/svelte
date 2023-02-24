@@ -1,5 +1,6 @@
 ---
 title: Tooltip
+componentName: CTooltip
 ---
 
 ## Basic usage

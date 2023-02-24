@@ -1,5 +1,6 @@
 ---
 title: Input
+componentName: form/CInput
 ---
 
 ## Basic usage

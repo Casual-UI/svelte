@@ -1,5 +1,6 @@
 ---
 title: Radio
+componentName: form/CRadio
 ---
 
 

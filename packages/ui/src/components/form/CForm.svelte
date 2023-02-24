@@ -23,6 +23,7 @@
    * // At some proper time
    * validateSomeFiled?.('field')
    * ```
+   * @type {symbol}
    */
   export const validateSomeFieldKey = Symbol('validateSomeField')
 
@@ -37,11 +38,13 @@
    * // At some proper time
    * clearSomeField?.('field')
    * ```
+   * @type {symbol}
    */
   export const clearSomeFieldKey = Symbol('clearSomeField')
 
   /**
    * The rules object. Can be used like this:
+   * @type {symbol}
    */
   export const rulesKey = Symbol('rules')
 </script>
@@ -99,7 +102,7 @@
    *
    * Notice that the default value is `'md'` instead of `undefined`.
    *
-   * ::: tip TIP
+   * :::tip[TIP]
    * This prop will affect all the components that holds the size props.
    * :::
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}

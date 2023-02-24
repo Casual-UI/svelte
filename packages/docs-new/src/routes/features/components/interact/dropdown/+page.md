@@ -1,5 +1,6 @@
 ---
 title: Dropdown
+componentName: CDropdown
 ---
 
 ## Basic usage

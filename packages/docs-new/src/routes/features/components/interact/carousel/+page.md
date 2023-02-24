@@ -1,5 +1,6 @@
 ---
 title: Carousel
+componentName: carousel/CCarousel
 ---
 
 ## Basic usage

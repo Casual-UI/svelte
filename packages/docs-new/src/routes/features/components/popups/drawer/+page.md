@@ -1,5 +1,6 @@
 ---
 title: Drawer
+componentName: CDrawer
 ---
 
 ## Basic usage

@@ -1,5 +1,6 @@
 ---
 title: Select
+componentName: form/CSelect
 ---
 
 ## Basic usage

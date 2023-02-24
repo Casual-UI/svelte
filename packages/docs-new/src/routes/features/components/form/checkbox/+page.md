@@ -1,5 +1,6 @@
 ---
 title: Checkbox
+componentName: form/CCheckbox
 ---
 
 ## Basic usage

@@ -1,5 +1,6 @@
 ---
 title: Toggle
+componentName: form/CToggle
 ---
 
 ## Disabled

@@ -34,7 +34,7 @@
 
   /**
    * Determine whether the input has a rounded border or not.
-   * ::: tip TIP
+   * :::tip[TIP]
    * Notice that rounded border size will be along with input `size` prop.
    * :::
    * @type {boolean}

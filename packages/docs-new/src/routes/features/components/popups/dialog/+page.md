@@ -1,5 +1,6 @@
 ---
 title: Dialog
+componentName: CDialog
 ---
 
 ## Basic usage
