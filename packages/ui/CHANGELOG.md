@@ -1,5 +1,15 @@
 # @casual-ui/svelte
 
+## 0.1.0
+
+### Minor Changes
+
+- [`b7a2769`](https://github.com/Casual-UI/svelte/commit/b7a27692d977edc0733bb9c596048bd2a2a116c1) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: bump things with new docs site
+
+### Patch Changes
+
+- [`1585c6e`](https://github.com/Casual-UI/svelte/commit/1585c6e398371ed93fa32908ec4939b974c17522) Thanks [@Blackman99](https://github.com/Blackman99)! - fix: date picker dropdown should hide when rage date is selected
+
 ## 0.0.13
 
 ### Patch Changes
