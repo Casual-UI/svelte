@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'fs'
+import { existsSync, mkdirSync, readFileSync, rmdirSync, writeFileSync } from 'fs'
 import type { Plugin } from 'vite'
 import fg from 'fast-glob'
 
@@ -16,9 +16,8 @@ const getVirtualMap = () => {
 }
 
 const init = () => {
-  rmSync(DOC_BASE_PATH, {
+  rmdirSync(DOC_BASE_PATH, {
     recursive: true,
-    force: true,
   })
   mkdirSync(resolveDocPath(''))
   writeFileSync(VIRTUAL_MAP_PATH, '{}', 'utf-8')
