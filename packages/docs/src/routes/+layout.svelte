@@ -1,4 +1,3 @@
-<!-- Leave this. Or you can add more content for your custom layout -->
 <script>
   import '@casual-ui/svelte/dist/style/style.css'
   import { CNotification } from '@casual-ui/svelte'
@@ -13,6 +12,9 @@
     --at-apply: 'bg-white dark:bg-black rounded-t-lg';
   }
   :global(.c-tooltip--popper-content-wrapper) {
-    z-index: 10000;
+    z-index: 1000;
+  }
+  :global(:root) {
+    --docsearch-primary-color: var(--casual-primary);
   }
 </style>
