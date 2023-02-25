@@ -15,6 +15,11 @@ const defaultThemeResolved = defaultTheme({
   github: 'https://github.com/Casual-UI/svelte',
   editLink: 'https://github.com/Casual-UI/svelte/edit/main/packages/docs-new/src/routes/:route',
   logo: '/logo.png',
+  docsearch: {
+    appId: '3P3WWINCDI',
+    apiKey: '13665d1ac089426e8964e37d7c05670f',
+    indexName: 'svelte'
+  },
   themeColor: {
     light: '#fff',
     dark: '#000',
@@ -41,6 +46,7 @@ const config = defineConfig({
         description: 'A component library that supports Svelte3+',
       },
       remarkPlugins: [componentApi],
+      
     }),
   ],
 })
