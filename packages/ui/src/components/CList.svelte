@@ -26,7 +26,7 @@
    * The function that compute the active status of item.
    * @type {(item: any) => boolean=}
    */
-  export let activeFn
+  export let activeFn = undefined
 
   /**
    * Determine whether there is a divider between every item.
@@ -42,11 +42,12 @@
     if (size) $contextSize = size
   }
 
-  /**
-   *
-   * @param {*} item
-   */
   const onItemClick = item => {
+    /**
+     *
+     * Emit when item is clicked.
+     * @param {*} item the clicked item
+     */
     dispatch('item-click', item)
   }
 </script>
@@ -63,11 +64,8 @@
     </slot>
   {:else}
     {#each items as item}
-      <CItem
-        {clickable}
-        active={activeFn && activeFn(item)}
-        on:click={() => onItemClick(item)}
-      >
+      {@const active = activeFn?.(item)}
+      <CItem {clickable} {active} on:click={() => onItemClick(item)}>
         <!-- 
           Customize item 
           @param {any} itemObj the item obj that holds the whole item data.
@@ -76,6 +74,7 @@
         -->
         <slot
           name="item"
+          {active}
           itemObj={item}
           isClickable={clickable}
           isActive={activeFn && activeFn(item)}

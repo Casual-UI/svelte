@@ -82,7 +82,12 @@
   const dispatch = createEventDispatcher()
 
   const handleClick = () => {
-    if (!disabled && !loading) dispatch('click')
+    if (!disabled && !loading) {
+      /**
+       * Emit when button is clicked. Notice that loading and disabled button won't trigger this event.
+       */
+      dispatch('click')
+    }
   }
 </script>
 

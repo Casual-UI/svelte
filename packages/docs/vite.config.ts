@@ -46,7 +46,6 @@ const config = defineConfig({
         description: 'A component library that supports Svelte3+',
       },
       remarkPlugins: [componentApi],
-      
     }),
   ],
 })
@@ -78,16 +77,17 @@ async function svelteDocParser(filename: string) {
   if (api.events)
     api.events = await Promise.all(api.events.map(converter))
 
-  if (api.slots)
-  { api.slots = await Promise.all(api.slots?.map(async item => {
-    const newItem = await converter(item)
-    if (newItem.params) {
-      newItem.params = await Promise.all(newItem.params.filter(item => item.name !== 'slot')
-        .map(converter))
-    }
+  if (api.slots) { 
+    api.slots = await Promise.all(api.slots?.map(async item => {
+      const newItem = await converter(item)
+      if (newItem.params) {
+        newItem.params = await Promise.all(newItem.params.filter(item => item.name !== 'slot')
+          .map(converter))
+      }
 
-    return newItem
-  })) }
+      return newItem
+    }))
+  }
 
   return api as any
 }
