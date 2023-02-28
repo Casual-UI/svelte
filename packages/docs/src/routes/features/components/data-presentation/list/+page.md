@@ -1,6 +1,9 @@
 ---
 title: List
-componentName: CList
+componentName: 
+  - CList
+  - CItem
+  - CInfoItem
 ---
 
 ## Sizes
