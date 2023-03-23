@@ -13,7 +13,7 @@ const defaultThemeResolved = defaultTheme({
   navbar,
   sidebar,
   github: 'https://github.com/Casual-UI/svelte',
-  editLink: 'https://github.com/Casual-UI/svelte/edit/main/packages/docs-new/src/routes/:route',
+  editLink: 'https://github.com/Casual-UI/svelte/edit/main/packages/docs/src/routes/:route',
   logo: '/logo.png',
   docsearch: {
     appId: '3P3WWINCDI',
