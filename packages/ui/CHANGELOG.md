@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.1.1
+
+### Patch Changes
+
+- [`7287caa`](https://github.com/Casual-UI/svelte/commit/7287caa71bc1d7950be67b2624e06c23cc71a57c) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: update deps
+
 ## 0.1.0
 
 ### Minor Changes
