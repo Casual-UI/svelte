@@ -27,6 +27,6 @@
   "dependencies": {
     "colors": "^1.4.0",
     "fast-glob": "^3.2.12",
-    "vite": "^4.0.2"
+    "vite": "^4.3.5"
   }
 }
