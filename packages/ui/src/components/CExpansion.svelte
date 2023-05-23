@@ -30,6 +30,11 @@
   export let headerStyle = ''
 
   /**
+   * Determine whether to show the expanded status arrow on the right.
+   */
+  export let showArrow = true
+
+  /**
    * The panel body dom
    * @type {HTMLDivElement}
    */
@@ -98,7 +103,7 @@
     {/if}
     <div class="c-expansion--title">
       <!-- Customize the title content -->
-      <slot name="title">
+      <slot name="title" {expanded}>
         {title}
       </slot>
     </div>
@@ -108,10 +113,12 @@
         expanded && 'c-expansion--arrow-expanded'
       )}
     >
-      <!-- Customize the arrow dom -->
-      <slot name="arrow">
-        <div i-ph-caret-down-light />
-      </slot>
+      {#if showArrow}
+        <!-- Customize the arrow dom -->
+        <slot name="arrow">
+          <div i-ph-caret-down-light />
+        </slot>
+      {/if}
     </div>
   </div>
   {#if !reverse && expanded}

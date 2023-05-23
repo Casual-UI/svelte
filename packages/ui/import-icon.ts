@@ -1,5 +1,4 @@
 import 'uno.css'
-import '@casual-ui/styles/src/index.scss'
 
 import CButton from './src/components/CButton.svelte'
 import CExpansion from './src/components/CExpansion.svelte'

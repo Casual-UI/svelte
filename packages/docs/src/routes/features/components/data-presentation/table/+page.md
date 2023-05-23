@@ -1,5 +1,7 @@
 ---
 title: Table
+componentName:
+  - table/CTable
 ---
 
 ## Basic usage

@@ -1,5 +1,5 @@
 {
-  "name": "docs-new",
+  "name": "@casual-ui/svelte-docs",
   "private": true,
   "version": "0.0.1",
   "scripts": {
@@ -7,13 +7,15 @@
     "build": "vite build"
   },
   "devDependencies": {
+    "@casual-ui/styles": "workspace:*",
     "@casual-ui/svelte": "workspace:*",
     "@iconify/json": "^2.1.142",
     "@sveltejs/adapter-static": "^2.0.1",
     "@sveltejs/kit": "^1.16.3",
-    "@sveltepress/theme-default": "^1.4.1",
-    "@sveltepress/vite": "^0.17.2",
+    "@sveltepress/theme-default": "^1.6.1",
+    "@sveltepress/vite": "^0.19.0",
     "@types/node": "^18.11.17",
+    "sass": "^1.52.1",
     "svelte": "^3.59.1",
     "sveltedoc-parser": "^4.2.1",
     "typescript": "^4.9.3",

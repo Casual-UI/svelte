@@ -48,6 +48,9 @@ const config = defineConfig({
       remarkPlugins: [componentApi],
     }),
   ],
+  optimizeDeps: {
+    exclude: ['@casual-ui/i18n', 'dayjs/esm']
+  }
 })
 
 async function svelteDocParser(filename: string) {
