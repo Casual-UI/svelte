@@ -158,14 +158,14 @@
     `${$hAlign} ${$vAlign}` === 'start center' ||
     `${$hAlign} ${$vAlign}` === 'end center'
 
-  $: enterClassName =
-    exchangeAnimationDirection || forceChangeAnimationDirection
-      ? 'c-dialog-reverse-enter-active'
-      : 'c-dialog-enter-active'
-  $: leaveClassName =
-    exchangeAnimationDirection || forceChangeAnimationDirection
-      ? 'c-dialog-reverse-leave-active'
-      : 'c-dialog-leave-active'
+  $: reverse = exchangeAnimationDirection || forceChangeAnimationDirection
+
+  $: enterClassName = reverse
+    ? 'c-dialog-reverse-enter-active'
+    : 'c-dialog-enter-active'
+  $: leaveClassName = reverse
+    ? 'c-dialog-reverse-leave-active'
+    : 'c-dialog-leave-active'
 
   const dialog = () => {
     return {

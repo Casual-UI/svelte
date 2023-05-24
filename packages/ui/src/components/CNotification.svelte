@@ -40,13 +40,15 @@
   /**
    * @type {import('svelte/transition').slide}
    */
-  const countDownBar = (node, params) => ({
-    duration: params ? params.duration || 3000 : 3000,
-    easing: linear,
-    css: t => `
-      stroke-dashoffset: ${0 - 63 * t};
-    `,
-  })
+  const countDownBar = (_node, params) => {
+    return {
+      duration: params?.duration ?? 3000,
+      easing: linear,
+      css: t => `
+        stroke-dashoffset: ${0 - 63 * t};
+      `,
+    }
+  }
 
   export { open }
 </script>

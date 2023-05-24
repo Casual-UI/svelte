@@ -29,6 +29,10 @@ const componentApi: Plugin<any[], any> = () => {
         componentApi.forEach(({ title, apiList }) => {
           const id = `${componentNameWithFilenameOnly}-${title}`
           const label = `${componentNameWithFilenameOnly} ${title}`
+          const isProps = title === 'Props'
+          const isSlots = title === 'Slots'
+          const isExports = title === 'Exports'
+          const isProp = isProps || isExports
           tree.children.push(
             {
               type: 'html',
@@ -40,7 +44,7 @@ const componentApi: Plugin<any[], any> = () => {
             },
             {
               type: 'html',
-              value: `<CUIApiList isSlot={${title === 'Slots' ? 'true' : 'false'}} showDefault={${title === 'Props' ? 'true' : 'false'}} isProp={${title === 'Props' || title === 'Exports' ? 'true' : 'false'}} apiList="{${apiVarName}.${apiList} || []}" />`,
+              value: `<CUIApiList isSlot={${isSlots ? 'true' : 'false'}} showDefault={${isProps ? 'true' : 'false'}} isProp={${isProp ? 'true' : 'false'}} apiList="{${apiVarName}.${apiList} || []}" />`,
             },
           )
           anchors.push({
@@ -51,13 +55,11 @@ const componentApi: Plugin<any[], any> = () => {
         })
       }
 
-      if(Array.isArray(componentName)) {
+      if (Array.isArray(componentName))
         componentName.forEach(addComponentApi)
-      } else {
+      else
         addComponentApi(componentName)
-      }
-      
-      
+
       let hasScript = false
       visit(tree, (node, idx, parent) => {
         if (node.type === 'html' && node.value.startsWith('<script') && !hasScript) {

@@ -8,8 +8,9 @@ dist
 .env.*
 !.env.example
 
-# Don't check old docs
-/packages/docs/**/*
+# Don't check submodules
+/packages/styles/**/*
+/packages/types/**/*
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml

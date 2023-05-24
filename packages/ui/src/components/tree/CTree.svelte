@@ -1,5 +1,6 @@
 <script>
   import CExpansion from '../CExpansion.svelte'
+  
   /**
    * The tree array
    * @type {Array<import('./types').Tree>} The tree config

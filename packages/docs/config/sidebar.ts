@@ -135,15 +135,16 @@ export default {
       title: 'Data Presentation',
       items: [
         {
-        title: 'List',
-        to: '/features/components/data-presentation/list/',
-      }, {
-        title: 'Table',
-        to: '/features/components/data-presentation/table/',
-      }, {
-        title: 'Tree',
-        to: '/features/components/data-presentation/tree/'
-      }],
+          title: 'List',
+          to: '/features/components/data-presentation/list/',
+        }, {
+          title: 'Table',
+          to: '/features/components/data-presentation/table/',
+        }, {
+          title: 'Tree',
+          to: '/features/components/data-presentation/tree/',
+        },
+      ],
     },
   ],
   '/features/global-css-utils/': [

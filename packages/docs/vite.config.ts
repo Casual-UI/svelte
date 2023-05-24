@@ -3,11 +3,11 @@ import { mdToSvelte, sveltepress } from '@sveltepress/vite'
 import { vitePluginDocParser } from 'vite-plugin-doc-parser'
 import { defaultTheme } from '@sveltepress/theme-default'
 import { parse } from 'sveltedoc-parser'
+import type { Plugin } from 'unified'
 import navbar from './config/navbar'
 import sidebar from './config/sidebar'
 import componentApi from './src/remark-plugins/component-api'
 import links from './src/remark-plugins/links'
-import type { Plugin } from 'unified'
 
 const defaultThemeResolved = defaultTheme({
   navbar,
@@ -18,7 +18,7 @@ const defaultThemeResolved = defaultTheme({
   docsearch: {
     appId: '3P3WWINCDI',
     apiKey: '13665d1ac089426e8964e37d7c05670f',
-    indexName: 'svelte'
+    indexName: 'svelte',
   },
   themeColor: {
     light: '#fff',
@@ -49,8 +49,8 @@ const config = defineConfig({
     }),
   ],
   optimizeDeps: {
-    exclude: ['@casual-ui/i18n', 'dayjs/esm']
-  }
+    exclude: ['@casual-ui/i18n', 'dayjs/esm'],
+  },
 })
 
 async function svelteDocParser(filename: string) {
@@ -62,7 +62,7 @@ async function svelteDocParser(filename: string) {
   const remarkPlugins: Plugin[] = [links]
 
   const admonitionPlugin = defaultThemeResolved.remarkPlugins?.[1]
-  if(admonitionPlugin) remarkPlugins.push(admonitionPlugin)
+  if (admonitionPlugin) remarkPlugins.push(admonitionPlugin)
 
   const converter = async <T extends Record<string, any>>(d: T) => ({
     ...d,
@@ -80,7 +80,7 @@ async function svelteDocParser(filename: string) {
   if (api.events)
     api.events = await Promise.all(api.events.map(converter))
 
-  if (api.slots) { 
+  if (api.slots) {
     api.slots = await Promise.all(api.slots?.map(async item => {
       const newItem = await converter(item)
       if (newItem.params) {

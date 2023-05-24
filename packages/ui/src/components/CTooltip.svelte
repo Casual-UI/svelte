@@ -2,6 +2,7 @@
   import useClickOutside from '../hooks/useClickOutside'
 
   import bem from '../utils/bem'
+  
   /**
    * The content text of tooltip
    * @type {string}

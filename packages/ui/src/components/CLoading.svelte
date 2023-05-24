@@ -1,5 +1,6 @@
 <script>
   import { attributeAtom } from '../utils/attributeAtom'
+  
   /**
    * The thickness of loading bar circle
    * @type {number}

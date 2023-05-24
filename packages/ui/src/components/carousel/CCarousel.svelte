@@ -222,11 +222,12 @@
   setContext(hoveringKey, hovering)
   setContext(slideringKey, sliding)
 
+  $: paused = ($hovering && pauseOnHover) || $sliding
+
   /**
    * @type {'running' | 'paused'}
    */
-  $: indicatorsAnimationPlayState =
-    ($hovering && pauseOnHover) || $sliding ? 'paused' : 'running'
+  $: indicatorsAnimationPlayState = paused ? 'paused' : 'running'
 
   const onContainerMouseEnter = () => {
     $hovering = true
@@ -276,6 +277,7 @@
       <slot name="indicators">
         {#each $slides as _, i}
           {@const isActive = activeIndex === i}
+          {@const isActiveAndHasInterval = isActive && interval}
           <div>
             <div
               class={clsx(
@@ -289,7 +291,7 @@
               <div class="c-carousel--indicator-item--bg" />
               <div
                 class="c-carousel--indicator-item--progress-bar"
-                style={isActive && interval
+                style={isActiveAndHasInterval
                   ? `animation-play-state: ${indicatorsAnimationPlayState}; animation-duration: ${interval}ms; `
                   : ''}
               />

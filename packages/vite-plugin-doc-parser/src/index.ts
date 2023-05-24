@@ -1,5 +1,5 @@
-import { resolve } from 'path'
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'fs'
+import { resolve } from 'node:path'
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import type { Plugin } from 'vite'
 import fg from 'fast-glob'
 

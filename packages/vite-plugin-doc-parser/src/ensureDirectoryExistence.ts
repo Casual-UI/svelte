@@ -1,5 +1,5 @@
-import { existsSync, mkdirSync } from 'fs'
-import { dirname } from 'path'
+import { existsSync, mkdirSync } from 'node:fs'
+import { dirname } from 'node:path'
 
 const ensureDirectoryExistence = (filePath: string) => {
   const dir = dirname(filePath)
