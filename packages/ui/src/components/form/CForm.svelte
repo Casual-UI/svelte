@@ -53,7 +53,7 @@
   import { setContext, tick } from 'svelte'
   import { writable } from 'svelte/store'
   import { useFormProps } from '../../hooks/useForm'
-  
+
   /**
    * The whole form data
    * @type {Record<string, any>}
