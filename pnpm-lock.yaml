@@ -134,13 +134,13 @@ importers:
       '@casual-ui/types':
         specifier: workspace:*
         version: link:../types
+      '@floating-ui/dom':
+        specifier: ^1.2.8
+        version: 1.2.8
       dayjs:
         specifier: ^1.11.6
         version: 1.11.7
     devDependencies:
-      '@floating-ui/dom':
-        specifier: ^1.2.8
-        version: 1.2.8
       '@iconify/json':
         specifier: ^2.1.142
         version: 2.1.142
@@ -2538,13 +2538,13 @@ packages:
 
   /@floating-ui/core@1.2.6:
     resolution: {integrity: sha512-EvYTiXet5XqweYGClEmpu3BoxmsQ4hkj3QaYA6qEnigCWffTP3vNRwBReTdrwDwo7OoJ3wM8Uoe9Uk4n+d4hfg==}
-    dev: true
+    dev: false
 
   /@floating-ui/dom@1.2.8:
     resolution: {integrity: sha512-XLwhYV90MxiHDq6S0rzFZj00fnDM+A1R9jhSioZoMsa7G0Q0i+Q4x40ajR8FHSdYDE1bgjG45mIWe6jtv9UPmg==}
     dependencies:
       '@floating-ui/core': 1.2.6
-    dev: true
+    dev: false
 
   /@humanwhocodes/config-array@0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
@@ -3526,7 +3526,7 @@ packages:
     hasBin: true
     dependencies:
       '@ampproject/remapping': 2.2.1
-      '@rollup/pluginutils': 5.0.2(rollup@3.22.1)
+      '@rollup/pluginutils': 5.0.2(rollup@3.17.2)
       '@unocss/config': 0.49.8
       '@unocss/core': 0.49.8
       '@unocss/preset-uno': 0.49.8
@@ -3784,7 +3784,7 @@ packages:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
     dependencies:
       '@ampproject/remapping': 2.2.1
-      '@rollup/pluginutils': 5.0.2(rollup@3.22.1)
+      '@rollup/pluginutils': 5.0.2(rollup@3.17.2)
       '@unocss/config': 0.49.8
       '@unocss/core': 0.49.8
       '@unocss/inspector': 0.49.8
