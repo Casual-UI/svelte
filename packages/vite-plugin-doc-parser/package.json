@@ -20,10 +20,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.14.2",
+    "@types/node": "^20.2.3",
     "sveltedoc-parser": "^4.2.1",
-    "unbuild": "^1.1.2",
-    "vite": "^4.3.5",
+    "unbuild": "^1.2.1",
     "vitest": "^0.31.1"
   },
   "dependencies": {

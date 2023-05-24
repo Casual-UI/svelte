@@ -1,6 +1,5 @@
 import { resolve } from 'node:path'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
-import type { Plugin } from 'vite'
 import fg from 'fast-glob'
 
 const DOC_BASE_PATH = resolve(process.cwd(), '.doc-parser')
@@ -25,7 +24,7 @@ const init = () => {
   writeFileSync(VIRTUAL_MAP_PATH, '{}', 'utf-8')
 }
 
-export interface PluginOptions {
+export interface DocParserOptions {
   /**
    * A transformer to transform source file content to some custom content
    */
@@ -42,11 +41,11 @@ export interface PluginOptions {
 
 const VIRTUAL_COMPONENT_API_PREFIX = 'virtual:doc-parse/'
 
-const vitePluginDocParser: (options: PluginOptions) => Plugin = ({
+const vitePluginDocParser = ({
   extension,
   parser,
   baseDir,
-}) => {
+}: DocParserOptions) => {
   const globPattern = `${baseDir}**/*${extension}`
   const getVirtualId = (id: string) => {
     if (id.startsWith(VIRTUAL_COMPONENT_API_PREFIX)) {
