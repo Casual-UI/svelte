@@ -1,5 +1,19 @@
 # @casual-ui/svelte
 
+## 0.2.0
+
+### Minor Changes
+
+- [`b84d3dd`](https://github.com/Casual-UI/svelte/commit/b84d3dd5a91df553938f451fe3711139abeee787) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: update lint rules
+
+- [`08edf5e`](https://github.com/Casual-UI/svelte/commit/08edf5e3977347d3c22d4940209946e0cfa95d36) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: add Tree component
+
+- [`6da8489`](https://github.com/Casual-UI/svelte/commit/6da8489cecb78fcdf90014e3562b7d1979bfa458) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: use floating ui reimplement tooltip
+
+### Patch Changes
+
+- [`bfe653b`](https://github.com/Casual-UI/svelte/commit/bfe653be79f74d1a3d250e0d7871a7d215f80a2a) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: rename clickOutSide to actions
+
 ## 0.1.1
 
 ### Patch Changes
