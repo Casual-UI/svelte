@@ -1,5 +1,5 @@
 <script>
-  import useClickOutside from '../hooks/useClickOutside'
+  import createClickOutsideAction from '../actions/createClickOutsideAction'
 
   import bem from '../utils/bem'
 
@@ -35,7 +35,7 @@
     if (trigger === 'hover') show = false
   }
 
-  const clickOutside = useClickOutside({
+  const clickOutside = createClickOutsideAction({
     cbInside: () => {
       if (trigger === 'click') show = !show
     },

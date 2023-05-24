@@ -1,5 +1,5 @@
 <script>
-  import useClickOutside from '../hooks/useClickOutside'
+  import createClickOutsideAction from '../actions/createClickOutsideAction'
   import clsx from '../utils/clsx'
 
   /**
@@ -26,7 +26,7 @@
    */
   export let manual = false
 
-  const clickOutside = useClickOutside({
+  const clickOutside = createClickOutsideAction({
     cbInside: () => {
       if (disabled || manual) return
       if (!show) show = true

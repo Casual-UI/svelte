@@ -1,7 +1,7 @@
 <script>
   import dayjs from 'dayjs/esm'
   import { getContext } from 'svelte'
-  import useClickOutside from '../../../hooks/useClickOutside'
+  import createClickOutsideAction from '../../../actions/createClickOutsideAction'
   import { validateCurrentKey } from '../../../hooks/useForm'
   import useSize from '../../../hooks/useSize'
   import clsx from '../../../utils/clsx'
@@ -170,7 +170,7 @@
 
   const validateCurrent = getContext(validateCurrentKey)
 
-  const clickOutside = useClickOutside({
+  const clickOutside = createClickOutsideAction({
     cbInside: () => {
       if (disabled) return
       show = true

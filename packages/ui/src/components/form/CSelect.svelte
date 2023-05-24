@@ -1,6 +1,6 @@
 <script>
   import { onMount, tick } from 'svelte'
-  import useClickOutside from '../../hooks/useClickOutside'
+  import createClickOutsideAction from '../../actions/createClickOutsideAction'
 
   import { useValidator } from '../../hooks/useForm'
   import useSize from '../../hooks/useSize'
@@ -145,7 +145,7 @@
     return item.value === value
   }
 
-  const clickOutside = useClickOutside({
+  const clickOutside = createClickOutsideAction({
     cbOutside: () => {
       if (!focused) return
       focused = false
