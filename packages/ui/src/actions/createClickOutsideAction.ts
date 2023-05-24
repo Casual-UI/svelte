@@ -4,15 +4,11 @@ export default ({ cbInside, cbOutside }: {
   cbInside: () => void
   cbOutside: () => void
 }) => {
-  const action: Action = node => {
-    /**
-     *
-     * @param {*} e
-     */
-    const clickHandler = e => {
+  const action: Action = <T extends HTMLElement>(node: T) => {
+    const clickHandler = (e: MouseEvent) => {
       if (!e.target || !node)
         return
-      if (node.contains(e.target))
+      if (node.contains(e.target as HTMLElement))
         cbInside?.()
 
       else

@@ -1,7 +1,7 @@
 <script>
+  import { arrow, computePosition, flip, offset, shift } from '@floating-ui/dom'
+  import { onMount } from 'svelte'
   import createClickOutsideAction from '../actions/createClickOutsideAction'
-
-  import bem from '../utils/bem'
 
   /**
    * The content text of tooltip
@@ -11,7 +11,7 @@
 
   /**
    * The tooltip popup position
-   * @type {'top-left' | 'top-right' | 'top' | 'left-top' | 'left' | 'left-bttom' | 'bottom-left' | 'bottom' | 'bottom-right' | 'right-top' | 'right' | 'right-bottom'}
+   * @type {`${'top' | 'right' | 'bottom' | 'left'}${`-${'start' | 'end'}` | ''}`}
    */
   export let position = 'top'
 
@@ -27,13 +27,56 @@
    */
   export let show = false
 
-  const onMouseEnter = () => {
+  let triggerDom
+  let contentDom
+  let arrowDom
+
+  let top = 0
+  let left = 0
+
+  const recomputePos = () => {
+    if (!triggerDom || !contentDom || !arrowDom) return
+    computePosition(triggerDom, contentDom, {
+      placement: position,
+      middleware: [
+        offset(6),
+        flip(),
+        shift({ padding: 5 }),
+        arrow({ element: arrowDom }),
+      ],
+    }).then(({ x, y, placement, middlewareData }) => {
+      left = `${x}px`
+      top = `${y}px`
+      const { x: arrowX, y: arrowY } = middlewareData.arrow
+
+      const staticSide = {
+        top: 'bottom',
+        right: 'left',
+        bottom: 'top',
+        left: 'right',
+      }[placement.split('-')[0]]
+
+      Object.assign(arrowDom.style, {
+        left: arrowX != null ? `${arrowX}px` : '',
+        top: arrowY != null ? `${arrowY}px` : '',
+        right: '',
+        bottom: '',
+        [staticSide]: '-4px',
+      })
+    })
+  }
+
+  onMount(recomputePos)
+
+  const handleTriggerMouseEnter = () => {
     if (trigger === 'hover') show = true
   }
 
-  const onMouseLeave = () => {
+  const handleTriggerMouseLeave = () => {
     if (trigger === 'hover') show = false
   }
+
+  $: if (show) recomputePos()
 
   const clickOutside = createClickOutsideAction({
     cbInside: () => {
@@ -45,28 +88,54 @@
   })
 </script>
 
-<div
-  class={bem('tooltip', {
-    show,
-  })}
-  on:mouseenter={onMouseEnter}
-  on:mouseleave={onMouseLeave}
-  use:clickOutside
->
-  <div class="c-tooltip--trigger-content">
+<div class:show class="tooltip" style:--top={top} style:--left={left}>
+  <div
+    bind:this={triggerDom}
+    class="trigger"
+    on:mouseenter={handleTriggerMouseEnter}
+    on:mouseleave={handleTriggerMouseLeave}
+    use:clickOutside
+  >
     <!-- The trigger content -->
     <slot name="trigger" />
   </div>
-  <div
-    class={`c-tooltip--popper-content-wrapper c-tooltip--position-${position}`}
-    on:click|stopPropagation
-    on:keypress|stopPropagation
-  >
+  <div bind:this={contentDom} class="content" role="tooltip">
     <!-- The tooltip content. Notice that this slot will override the content prop -->
     <slot>
-      <div class="c-tooltip--popper-content">
-        {content}
-      </div>
+      {content}
     </slot>
+    <div bind:this={arrowDom} class="arrow" />
   </div>
 </div>
+
+<style>
+  .tooltip {
+    position: relative;
+  }
+  .trigger {
+    display: inline-block;
+  }
+  .content {
+    line-height: 1.5em;
+    padding: 4px 8px;
+    background-color: var(--casual-tooltip-bg);
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 14px;
+    color: var(--casual-tooltip-color);
+    display: none;
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+  }
+  .show .content {
+    display: block;
+  }
+  .arrow {
+    position: absolute;
+    background: var(--casual-tooltip-bg);
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+  }
+</style>

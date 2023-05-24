@@ -1,0 +1,53 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`parser > CNotification.svelte 1`] = `
+{
+  "components": [],
+  "computed": [],
+  "data": [],
+  "description": null,
+  "events": [],
+  "keywords": [],
+  "methods": [],
+  "name": "CNotification",
+  "refs": [],
+  "slots": [
+    {
+      "description": "Customize the content of each notification item",
+      "keywords": [
+        {
+          "description": "{any} itemInfo all the item's props will be passed to this slot. <br />For example: \`message\`, \`title\`, \`theme\`, \`timeout\`",
+          "name": "param",
+        },
+      ],
+      "name": "item",
+      "parameters": [
+        {
+          "description": "all the item's props will be passed to this slot. <br />For example: \`message\`, \`title\`, \`theme\`, \`timeout\`",
+          "name": "itemInfo",
+          "optional": false,
+          "type": {
+            "kind": "type",
+            "text": "any",
+            "type": "any",
+          },
+        },
+      ],
+      "params": [
+        {
+          "description": "all the item's props will be passed to this slot. <br />For example: \`message\`, \`title\`, \`theme\`, \`timeout\`",
+          "name": "itemInfo",
+          "optional": false,
+          "type": {
+            "kind": "type",
+            "text": "any",
+            "type": "any",
+          },
+        },
+      ],
+      "visibility": "public",
+    },
+  ],
+  "version": 3,
+}
+`;

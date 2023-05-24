@@ -47,31 +47,29 @@ componentName: CTooltip
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CTooltip } from '@casual-ui/svelte'
+  import { CButton, CRadioGroup, CTooltip } from '@casual-ui/svelte'
 
+  let position = 'top'
   const positions: any = [
-    'top-left',
+    'top-start',
     'top',
-    'top-right',
-    'left-top',
+    'top-end',
+    'left-start',
     'left',
-    'left-bottom',
-    'right-top',
+    'left-end',
+    'right-start',
     'right',
-    'right-bottom',
-    'bottom-left',
+    'right-end',
+    'bottom-start',
     'bottom',
-    'bottom-right',
+    'bottom-end',
   ]
 </script>
 
 <div class="grid grid-cols-3 gap-4">
-  {#each positions as pos}
-    <div>
-      <CTooltip position={pos} content={`Hi, I'm some message from ${pos}!`}>
-        <CButton label={pos} slot="trigger" />
-      </CTooltip>
-    </div>
-  {/each}
+  <CRadioGroup bind:value={position} options="{positions.map(pos => ({ label: pos, value: pos }))}" />
+  <CTooltip {position} content={`Hi, I'm some message from ${position}!`}>
+    <CButton label="Hover me to see the effect" slot="trigger" />
+  </CTooltip>
 </div>
 ```

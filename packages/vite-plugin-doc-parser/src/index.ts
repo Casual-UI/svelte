@@ -16,10 +16,12 @@ const getVirtualMap = () => {
 }
 
 const init = () => {
-  rmSync(DOC_BASE_PATH, {
-    recursive: true,
-  })
-  mkdirSync(resolveDocPath(''))
+  if (existsSync(DOC_BASE_PATH)) {
+    rmSync(DOC_BASE_PATH, {
+      recursive: true,
+    })
+  }
+  mkdirSync(DOC_BASE_PATH)
   writeFileSync(VIRTUAL_MAP_PATH, '{}', 'utf-8')
 }
 

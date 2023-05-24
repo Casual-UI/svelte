@@ -21,11 +21,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.14.2",
-    "unbuild": "^1.1.2"
+    "sveltedoc-parser": "^4.2.1",
+    "unbuild": "^1.1.2",
+    "vite": "^4.3.5",
+    "vitest": "^0.31.1"
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "fast-glob": "^3.2.12",
-    "vite": "^4.3.5"
+    "fast-glob": "^3.2.12"
   }
 }

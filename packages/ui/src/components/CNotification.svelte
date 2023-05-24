@@ -5,13 +5,9 @@
   import {
     closeByPositionGroupAndID,
     notifications,
-    open,
   } from '../hooks/useNotification'
   import CPopup from './CPopup.svelte'
 
-  /**
-   * @type {(...parmas: any) => any}
-   */
   const notification = (node, params, intro) => {
     const style = getComputedStyle(node)
     const transform = style.transform === 'none' ? '' : style.transform
@@ -42,15 +38,13 @@
    */
   const countDownBar = (_node, params) => {
     return {
-      duration: params?.duration ?? 3000,
+      duration: params.duration ? params.duration : 3000,
       easing: linear,
       css: t => `
         stroke-dashoffset: ${0 - 63 * t};
       `,
     }
   }
-
-  export { open }
 </script>
 
 {#each Object.entries($notifications) as [groupName, { x, y, items }]}
