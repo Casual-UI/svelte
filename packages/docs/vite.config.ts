@@ -30,6 +30,10 @@ const defaultThemeResolved = defaultTheme({
     primary: '#8952fd',
     hover: '#618BFF',
   },
+  preBuildIconifyIcons: {
+    logos: ['typescript-icon'],
+    solar: ['moon-sleep-outline', 'dumbbell-small-line-duotone'],
+  },
 })
 
 const config = defineConfig({
