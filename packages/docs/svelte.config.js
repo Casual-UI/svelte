@@ -11,6 +11,22 @@ const config = {
     adapter: adapter({
       pages: 'dist',
     }),
+    typescript: {
+      config: tsconfig => {
+        const {
+          importsNotUsedAsValues: _,
+          preserveValueImports: __,
+          ...compilerOptions
+        } = tsconfig.compilerOptions
+
+        return {
+          ...tsconfig,
+          compilerOptions: {
+            ...compilerOptions,
+          },
+        }
+      },
+    },
   },
 }
 
