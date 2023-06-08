@@ -7,7 +7,7 @@ componentName:
 
 ## Basic usage
 
-```svelte live
+```svelte live async
 <script lang="ts">
   import {
     CDatePicker,
@@ -72,7 +72,7 @@ componentName:
 
 ## Control sizes
 
-```svelte live
+```svelte live async
 <script lang="ts">
   import {
     CDatePicker,
@@ -163,7 +163,7 @@ componentName:
 
 ## Gutter sizes
 
-```svelte live
+```svelte live async
 <script lang="ts">
   import {
     CDatePicker,
@@ -254,7 +254,7 @@ componentName:
 
 ## Label width
 
-```svelte live
+```svelte live async
 <script lang="ts">
   import {
     CDatePicker,
@@ -323,7 +323,7 @@ componentName:
 
 ## Label align
 
-```svelte live
+```svelte live async
 <script lang="ts">
   import {
     CDatePicker,
@@ -406,7 +406,7 @@ componentName:
 
 ## Label direction
 
-```svelte live
+```svelte live async
 <script lang="ts">
   import {
     CDatePicker,
@@ -513,7 +513,7 @@ Each rule can be a function that receive current value and return a string messa
 - `false` means no error.
 - `Promise<string | false>` means a async validation.
 
-```svelte live
+```svelte live async
 <script lang="ts">
   import {
     CButton,
@@ -628,7 +628,7 @@ const rule = async function (v) {
 }
 ```
 
-```svelte live
+```svelte live async
 <script lang="ts">
   import {
     CButton,
