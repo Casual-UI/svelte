@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte'
-  import createClickOutsideAction from '../actions/createClickOutsideAction'
   import { recomputePos } from '@casual-ui/utils'
+  import createClickOutsideAction from '../actions/createClickOutsideAction'
 
   /**
    * The content text of tooltip
@@ -68,10 +68,15 @@
   })
 </script>
 
-<div class:show class="tooltip" style:--top={top} style:--left={left}>
+<div
+  class:c-tooltip--show={show}
+  class="c-tooltip"
+  style:--c-tooltip-top={top}
+  style:--c-tooltip-left={left}
+>
   <div
     bind:this={triggerDom}
-    class="trigger"
+    class="c-tooltip--trigger"
     on:mouseenter={handleTriggerMouseEnter}
     on:mouseleave={handleTriggerMouseLeave}
     use:clickOutside
@@ -79,43 +84,11 @@
     <!-- The trigger content -->
     <slot name="trigger" />
   </div>
-  <div bind:this={contentDom} class="content" role="tooltip">
+  <div bind:this={contentDom} class="c-tooltip--content" role="tooltip">
     <!-- The tooltip content. Notice that this slot will override the content prop -->
     <slot>
       {content}
     </slot>
-    <div bind:this={arrowDom} class="arrow" />
+    <div bind:this={arrowDom} class="c-tooltip--arrow" />
   </div>
 </div>
-
-<style>
-  .tooltip {
-    position: relative;
-  }
-  .trigger {
-    display: inline-block;
-  }
-  .content {
-    line-height: 1.5em;
-    padding: 4px 8px;
-    background-color: var(--casual-tooltip-bg);
-    border-radius: 4px;
-    white-space: nowrap;
-    font-size: 14px;
-    color: var(--casual-tooltip-color);
-    display: none;
-    position: absolute;
-    top: var(--top);
-    left: var(--left);
-  }
-  .show .content {
-    display: block;
-  }
-  .arrow {
-    position: absolute;
-    background: var(--casual-tooltip-bg);
-    width: 8px;
-    height: 8px;
-    transform: rotate(45deg);
-  }
-</style>

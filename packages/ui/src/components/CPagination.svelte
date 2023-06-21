@@ -15,12 +15,12 @@
    * The max page count to display. Will display ... when the pages is larger than this
    * @type {number}
    */
-  export let maxDisplayPages = 10
+  // export let maxDisplayPages = 10
 </script>
 
 <ul class="c-pagination">
   {#each pages as page}
-    <li>
+    <li class:c-pagination--active={current === page}>
       {page}
     </li>
   {/each}

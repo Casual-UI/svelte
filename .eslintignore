@@ -11,6 +11,7 @@ dist
 # Don't check submodules
 /packages/styles/**/*
 /packages/types/**/*
+/packages/utils/**/*
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
