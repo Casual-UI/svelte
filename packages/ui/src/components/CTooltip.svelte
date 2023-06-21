@@ -1,7 +1,7 @@
 <script>
-  import { arrow, computePosition, flip, offset, shift } from '@floating-ui/dom'
   import { onMount } from 'svelte'
   import createClickOutsideAction from '../actions/createClickOutsideAction'
+  import { recomputePos } from '@casual-ui/utils'
 
   /**
    * The content text of tooltip
@@ -34,39 +34,19 @@
   let top = 0
   let left = 0
 
-  const recomputePos = () => {
-    if (!triggerDom || !contentDom || !arrowDom) return
-    computePosition(triggerDom, contentDom, {
+  const doCompute = () => {
+    recomputePos({
+      triggerDom,
+      contentDom,
+      arrowDom,
       placement: position,
-      middleware: [
-        offset(6),
-        flip(),
-        shift({ padding: 5 }),
-        arrow({ element: arrowDom }),
-      ],
-    }).then(({ x, y, placement, middlewareData }) => {
-      left = `${x}px`
-      top = `${y}px`
-      const { x: arrowX, y: arrowY } = middlewareData.arrow
-
-      const staticSide = {
-        top: 'bottom',
-        right: 'left',
-        bottom: 'top',
-        left: 'right',
-      }[placement.split('-')[0]]
-
-      Object.assign(arrowDom.style, {
-        left: arrowX != null ? `${arrowX}px` : '',
-        top: arrowY != null ? `${arrowY}px` : '',
-        right: '',
-        bottom: '',
-        [staticSide]: '-4px',
-      })
+    }).then(pos => {
+      top = pos.top
+      left = pos.left
     })
   }
 
-  onMount(recomputePos)
+  onMount(doCompute)
 
   const handleTriggerMouseEnter = () => {
     if (trigger === 'hover') show = true
@@ -76,7 +56,7 @@
     if (trigger === 'hover') show = false
   }
 
-  $: if (show) recomputePos()
+  $: if (show) doCompute()
 
   const clickOutside = createClickOutsideAction({
     cbInside: () => {

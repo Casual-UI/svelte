@@ -53,8 +53,11 @@ const config = defineConfig({
     }),
   ],
   optimizeDeps: {
-    exclude: ['@casual-ui/i18n', 'dayjs/esm'],
+    exclude: ['dayjs/esm'],
   },
+  ssr: {
+    noExternal: ['@casual-ui/utils']
+  }
 })
 
 async function svelteDocParser(filename: string) {
