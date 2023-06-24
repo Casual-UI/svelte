@@ -1,5 +1,19 @@
 # @casual-ui/svelte
 
+## 0.4.0
+
+### Minor Changes
+
+- [`c987899`](https://github.com/Casual-UI/svelte/commit/c987899485b1bab7d3f057eee42bff0b6fb37110) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: extract tooltip style to @casual-ui/styles package
+
+- [`01dc46d`](https://github.com/Casual-UI/svelte/commit/01dc46d60b8fb59bdc8f4a7ac3bbeee675f0de2b) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: update svelte to version 4 and other deps
+
+### Patch Changes
+
+- [`24a39bc`](https://github.com/Casual-UI/svelte/commit/24a39bc3ac5815a29a4d6d02e5764ce29d915f3c) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: bump ally and new eslint
+
+- [`9e53e02`](https://github.com/Casual-UI/svelte/commit/9e53e024b6f094ca3e3b726a35a6449e27436e8f) Thanks [@Blackman99](https://github.com/Blackman99)! - refactor: use util package
+
 ## 0.3.0
 
 ### Minor Changes
