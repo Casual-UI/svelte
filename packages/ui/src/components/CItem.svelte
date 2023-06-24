@@ -48,6 +48,7 @@
   })} c-font-${$contextSize} c-pa-${$contextSize}`}
   on:click|stopPropagation={onClick}
   on:keypress={onClick}
+  role="none"
 >
   <slot>
     <span class={`c-h-${$contextSize}`}>

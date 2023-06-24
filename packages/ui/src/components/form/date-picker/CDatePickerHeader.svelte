@@ -118,6 +118,8 @@
           i-majesticons-chevron-double-left-line
           on:click={toPrevYear}
           on:keypress={toPrevYear}
+          role="button"
+          tabindex="0"
         />
       {:else}
         <div
@@ -125,6 +127,8 @@
           i-majesticons-chevron-double-left-line
           on:click={toPreviousYearRange}
           on:keypress={toPreviousYearRange}
+          role="button"
+          tabindex="0"
         />
       {/if}
       {#if isDay}
@@ -133,6 +137,8 @@
           i-majesticons-chevron-left
           on:click={toPrevMonth}
           on:keypress={toPrevMonth}
+          role="button"
+          tabindex="0"
         />
       {/if}
     </slot>
@@ -148,6 +154,8 @@
         <span
           on:click|stopPropagation={() => changeUnit('month')}
           on:keypress|stopPropagation={() => changeUnit('month')}
+          role="button"
+          tabindex="0"
         >
           {displayMonth}
         </span>
@@ -157,6 +165,8 @@
         <span
           on:click|stopPropagation={() => changeUnit('year')}
           on:keypress|stopPropagation={() => changeUnit('year')}
+          role="button"
+          tabindex="0"
         >
           {year}
         </span>
@@ -173,6 +183,8 @@
           i-majesticons-chevron-right
           on:click={toNextMonth}
           on:keypress={toNextMonth}
+          role="button"
+          tabindex="0"
         />
       {/if}
       {#if isDay || isMonth}
@@ -181,6 +193,8 @@
           i-majesticons-chevron-double-right-line
           on:click={toNextYear}
           on:keypress={toNextYear}
+          role="button"
+          tabindex="0"
         />
       {:else}
         <div
@@ -188,6 +202,8 @@
           i-majesticons-chevron-double-right-line
           on:click={toNextYearRange}
           on:keypress={toNextYearRange}
+          role="button"
+          tabindex="0"
         />
       {/if}
     </slot>

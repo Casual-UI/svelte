@@ -94,6 +94,8 @@
     style={headerStyle}
     on:click|stopPropagation={onHeaderClick}
     on:keypress={onHeaderClick}
+    role="button"
+    tabindex="0"
   >
     {#if $$slots.icon}
       <div class="c-expansion--icon">

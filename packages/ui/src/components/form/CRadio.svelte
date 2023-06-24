@@ -55,6 +55,9 @@
   )}
   on:click={onClick}
   on:keypress={onClick}
+  role="radio"
+  tabindex="0"
+  aria-checked={value}
 >
   <svg
     class="c-radio--circle-wrapper"

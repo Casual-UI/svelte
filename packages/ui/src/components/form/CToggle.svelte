@@ -65,6 +65,9 @@
   )}
   on:click={toggle}
   on:keypress={toggle}
+  role="checkbox"
+  tabindex="0"
+  aria-checked={value}
 >
   <div class="c-toggle--track">
     <div class="c-toggle--dot" />

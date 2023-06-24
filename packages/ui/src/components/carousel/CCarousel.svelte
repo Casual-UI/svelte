@@ -263,6 +263,7 @@
   style={`height: ${height}`}
   on:mouseenter={onContainerMouseEnter}
   on:mouseleave={onContainerMouseLeave}
+  role="banner"
 >
   <div
     class={`c-carousel--indicators c-flex c-items-${indicatorsPositionVertical} c-justify-${indicatorsPositionHorizontal}`}
@@ -287,6 +288,8 @@
               )}
               on:click={() => toIndex(i)}
               on:keypress={() => toIndex(i)}
+              role="button"
+              tabindex="0"
             >
               <div class="c-carousel--indicator-item--bg" />
               <div
@@ -308,6 +311,8 @@
       transition:fade={{ duration: 300, easing: cubicInOut }}
       on:click={toPrev}
       on:keypress={toPrev}
+      role="button"
+      tabindex="0"
     >
       <!-- Customize the to previous slide control content -->
       <slot name="control-prev">
@@ -324,6 +329,8 @@
       transition:fade={{ duration: 300, easing: cubicInOut }}
       on:click={toNext}
       on:keypress={toNext}
+      role="button"
+      tabindex="0"
     >
       <!-- Customize the to next slide control content -->
       <slot name="control-next">

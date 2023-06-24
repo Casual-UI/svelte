@@ -38,6 +38,8 @@
         )}
         on:click|stopPropagation={() => dispatch('item-click', item)}
         on:keypress|stopPropagation={() => dispatch('item-click', item)}
+        role="button"
+        tabindex="0"
       >
         <div class="c-date-picker--panel-cell--inner">
           {displayFormattor(item)}

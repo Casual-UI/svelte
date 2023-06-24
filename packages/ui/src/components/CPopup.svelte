@@ -65,6 +65,7 @@
       on:keypress={onBackdropClick}
       transition:fade
       class="c-popup--backdrop"
+      role="none"
     />
   {/if}
   <div

@@ -69,6 +69,8 @@
       class="c-tag--close-icon c-ml-xs"
       on:click|stopPropagation={onClose}
       on:keypress|stopPropagation={onClose}
+      role="button"
+      tabindex="0"
     >
       <div class="c-icon" i-carbon-close />
     </div>

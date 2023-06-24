@@ -164,6 +164,7 @@
       )}
       on:click={focusInput}
       on:keypress={focusInput}
+      role="none"
     >
       <!-- Customize prefix content -->
       <slot name="prefix" />
@@ -192,6 +193,8 @@
         )}
         on:click|stopPropagation={onClearIconClick}
         on:keypress={onClearIconClick}
+        role="button"
+        tabindex="0"
       >
         <div i-mdi-close-circle-outline />
       </div>
@@ -205,6 +208,7 @@
       )}
       on:click={focusInput}
       on:keypress={focusInput}
+      role="none"
     >
       <div class={clsx(loading && 'c-mr-sm')}>
         <!-- Customize suffix content -->

@@ -76,6 +76,8 @@
                   on:click={() => closeByPositionGroupAndID(groupName, item.id)}
                   on:keypress={() =>
                     closeByPositionGroupAndID(groupName, item.id)}
+                  role="button"
+                  tabindex="0"
                 >
                   <svg
                     class="c-notification--countdown-bar"

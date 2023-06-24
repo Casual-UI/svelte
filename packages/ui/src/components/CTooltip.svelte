@@ -80,6 +80,7 @@
     on:mouseenter={handleTriggerMouseEnter}
     on:mouseleave={handleTriggerMouseLeave}
     use:clickOutside
+    role="tooltip"
   >
     <!-- The trigger content -->
     <slot name="trigger" />

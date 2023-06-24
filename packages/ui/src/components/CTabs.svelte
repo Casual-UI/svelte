@@ -125,6 +125,8 @@
         )}
         on:click={() => onHeaderClick(item)}
         on:keypress={() => onHeaderClick(item)}
+        role="tab"
+        tabindex="0"
       >
         {#if slots[`header-${item.name}`]}
           {slots[`header-${item.name}`]}

@@ -70,6 +70,9 @@
   )}
   on:click={onClick}
   on:keypress={onClick}
+  role="checkbox"
+  tabindex="0"
+  aria-checked={value}
 >
   <svg class="c-checkbox--check-wrapper" viewBox="0 0 24 24" aria-hidden="true">
     <path

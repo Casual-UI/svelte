@@ -250,6 +250,8 @@
           {#if closeIcon}
             <div
               class="c-dialog--close-btn"
+              role="button"
+              tabindex="0"
               on:click={() => {
                 show = false
               }}

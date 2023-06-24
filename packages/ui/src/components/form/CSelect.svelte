@@ -197,6 +197,7 @@
       style={selectDomStyle}
       on:click={onSelectClick}
       on:keypress={onSelectClick}
+      role="none"
     >
       {#if multiple}
         <div
@@ -227,6 +228,8 @@
         )}
         on:click|stopPropagation={onArrowClick}
         on:keypress|stopPropagation={onArrowClick}
+        role="button"
+        tabindex="0"
       >
         <div i-ph-caret-down-light class="c-icon" />
       </div>
