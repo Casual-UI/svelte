@@ -1,21 +1,17 @@
 {
   "devDependencies": {
-    "@casual-ui/eslint-config-basic": "^0.3.1",
-    "@casual-ui/eslint-config-svelte": "^0.3.1",
-    "@casual-ui/eslint-config-typescript": "^0.3.1",
+    "@casual-ui/eslint-config-svelte": "^0.4.0",
     "@changesets/cli": "^2.26.1",
     "ali-oss-static-web-deploy": "^0.3.4",
-    "eslint": "^8.42.0",
+    "eslint": "^8.43.0",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.1.3",
+    "@changesets/changelog-github": "^0.4.8"
   },
   "scripts": {
     "release": "cd packages/ui && pnpm build && cd ../.. && changeset publish",
     "lint": "eslint -c ./.eslintrc.json --ext .js,.ts,.svelte ./packages",
     "format": "prettier \"./packages/**/*.svelte\" --check"
-  },
-  "dependencies": {
-    "@changesets/changelog-github": "^0.4.8"
   }
 }
