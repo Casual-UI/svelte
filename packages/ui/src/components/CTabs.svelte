@@ -20,7 +20,7 @@
    * The size of tabs. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * Determien whether the panel body has a padding or not.
@@ -149,7 +149,7 @@
     class={clsx('c-tabs--body', panelPadding && `c-pa-${$contextSize}`)}
     style={bodyStyle}
   >
-    {#each items as item, i (item.name)}
+    {#each items as item (item.name)}
       {#if activeItem === item.name}
         <div
           class="c-tabs--body-item"

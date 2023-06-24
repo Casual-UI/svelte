@@ -15,7 +15,9 @@
    * The max page count to display. Will display ... when the pages is larger than this
    * @type {number}
    */
-  // export let maxDisplayPages = 10
+  export let maxDisplayPages = 10
+
+  maxDisplayPages
 </script>
 
 <ul class="c-pagination">

@@ -69,7 +69,8 @@ async function svelteDocParser(filename: string) {
   const remarkPlugins: Plugin[] = [links]
 
   const admonitionPlugin = defaultThemeResolved.remarkPlugins?.[1]
-  if (admonitionPlugin) remarkPlugins.push(admonitionPlugin)
+  if (admonitionPlugin)
+    remarkPlugins.push(admonitionPlugin)
 
   const converter = async <T extends Record<string, any>>(d: T) => ({
     ...d,

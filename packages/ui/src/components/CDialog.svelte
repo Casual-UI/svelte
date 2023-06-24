@@ -59,13 +59,13 @@
    *
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let horizontalAlign = undefined
+  export let horizontalAlign
 
   /**
    * See above
    * @type {'start' | 'center' | 'end' | undefined}
    */
-  export let verticalAlign = undefined
+  export let verticalAlign
 
   /**
    * Customize class names
@@ -236,9 +236,9 @@
       style={customStyle}
     >
       <div class="c-dialog--header">
-        <!-- 
-          Customize the header content  
-          This slot can override the title prop and the default close icon 
+        <!--
+          Customize the header content
+          This slot can override the title prop and the default close icon
         -->
         <slot name="header">
           <div class="c-dialog--title">
@@ -276,9 +276,9 @@
         <slot />
       </div>
       <div class="c-dialog--footer">
-        <!-- 
-          Customize footer content of dialog 
-          This slot would override the confirm and cancel button 
+        <!--
+          Customize footer content of dialog
+          This slot would override the confirm and cancel button
         -->
         <slot name="footer">
           <div class="c-row c-gutter-x-sm">

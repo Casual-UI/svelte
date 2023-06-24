@@ -15,7 +15,7 @@
    */
   export let month = new Date().getMonth()
 
-  export let size = undefined
+  export let size
 
   /**
    * @type {'year' | 'month' | 'day'}

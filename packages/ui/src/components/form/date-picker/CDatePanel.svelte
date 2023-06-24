@@ -244,6 +244,8 @@
         on:click|stopPropagation={() => setDate(d)}
         on:keypress
         on:mouseenter={() => setHoveringDate(d)}
+        role="button"
+        tabindex="0"
       >
         <div
           class={clsx(

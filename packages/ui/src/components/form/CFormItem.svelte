@@ -19,7 +19,7 @@
    * The field of whole form data
    * @type {string=}
    */
-  export let field = undefined
+  export let field
 
   /**
    * The label of each form item
@@ -30,37 +30,37 @@
    * The label width of this form item. Notice that this prop will override the CForm's `labelWidth` prop
    * @type {string=}
    */
-  export let labelWidth = undefined
+  export let labelWidth
 
   /**
    * This form item col span
    * @type {number=}
    */
-  export let col = undefined
+  export let col
 
   /**
    * The label and form component arrangement direction of this form item
    * @type {'row' | 'row-reverse' | 'column' | 'column-reverse'=}
    */
-  export let labelDirection = undefined
+  export let labelDirection
 
   /**
    * The label align of this form item
    * @type {'left' | 'center' | 'right'=}
    */
-  export let labelAlign = undefined
+  export let labelAlign
 
   /**
    * The size of component in this form item. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size = undefined
+  export let size
 
   /**
    * The gutter size of this form item.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let gutterSize = undefined
+  export let gutterSize
 
   /**
    * Determine current form item has error or not.
@@ -191,7 +191,7 @@
     {label}
   </div>
   <div class="c-form-item--content-wrapper c-flex c-items-center">
-    <!-- 
+    <!--
       The content of this form item. You can use built-in form components like CInput
      -->
     <slot />

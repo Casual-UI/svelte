@@ -39,9 +39,9 @@
         duration: 300,
         easing: cubicInOut,
         css: t => `
-					transform: ${transform};
-					opacity: ${t};
-				`,
+          transform: ${transform};
+          opacity: ${t};
+        `,
       }
     },
   })

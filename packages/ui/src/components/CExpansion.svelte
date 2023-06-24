@@ -81,8 +81,8 @@
       bind:this={bodyDom}
       class="c-expansion--body"
     >
-      <!--  
-        Expansion body content 
+      <!--
+        Expansion body content
         @param {() => void} recomputedHeight The method to recomputed the body height.
       -->
       <slot recomputedHeight={resetHeight} />
@@ -131,8 +131,8 @@
       bind:this={bodyDom}
       class="c-expansion--body"
     >
-      <!--  
-        Expansion body content 
+      <!--
+        Expansion body content
         @param {() => void} recomputedHeight The method to recomputed the body height.
       -->
       <slot recomputedHeight={resetHeight} />

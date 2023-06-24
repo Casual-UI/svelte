@@ -66,8 +66,8 @@
     {#each items as item}
       {@const active = activeFn?.(item)}
       <CItem {clickable} {active} on:click={() => onItemClick(item)}>
-        <!-- 
-          Customize item 
+        <!--
+          Customize item
           @param {any} itemObj the item obj that holds the whole item data.
           @param {boolean} isClickable Determine whether the item is clickable or not.
           @param {boolean} isActive Determine whether the item is active or not.

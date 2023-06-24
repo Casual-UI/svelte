@@ -30,7 +30,7 @@
 >
   <table class="c-table--table">
     <colgroup>
-      {#each columns as col}
+      {#each columns as _col}
         <col />
       {/each}
     </colgroup>
