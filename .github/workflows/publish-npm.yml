@@ -35,7 +35,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.N_TOKEN }}
       - name: Update docs site after publish is released
         if: steps.changesets.outputs.published == 'true'
-        run: cd packages/vite-plugin-doc-parser && pnpm build && cd ../docs && pnpm build && pnpm build && node deploy/index.cjs
+        run: cd packages/vite-plugin-doc-parser && pnpm build && cd ../docs && pnpm build && node deploy/index.cjs
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
           ALI_OSS_KEY_ID: ${{ secrets.ALI_OSS_KEY_ID }}

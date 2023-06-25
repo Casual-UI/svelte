@@ -176,6 +176,7 @@ componentName: CDialog
 ```svelte live
 <script lang="ts">
   import { CButton, CDialog } from '@casual-ui/svelte'
+
   let show = false
 </script>
 

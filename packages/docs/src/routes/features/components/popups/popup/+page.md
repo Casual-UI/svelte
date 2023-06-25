@@ -99,8 +99,8 @@ componentName: CPopup
           horizontalAlign === 'start'
             ? -50
             : horizontalAlign === 'center'
-            ? -100
-            : 50,
+              ? -100
+              : 50,
         y:
           verticalAlign === 'start' ? -50 : verticalAlign === 'center' ? 0 : 50,
       }}
@@ -109,8 +109,8 @@ componentName: CPopup
           horizontalAlign === 'start'
             ? -50
             : horizontalAlign === 'center'
-            ? 100
-            : 50,
+              ? 100
+              : 50,
         y:
           verticalAlign === 'start' ? -50 : verticalAlign === 'center' ? 0 : 50,
       }}
@@ -120,7 +120,9 @@ componentName: CPopup
         <div
           class="close-icon"
           on:click={() => (show = false)}
-          on:keyup={() => (show = false)}
+          on:keypress={() => (show = false)}
+          role="button"
+          tabindex="0"
         />
       </div>
       <div class="desc">
