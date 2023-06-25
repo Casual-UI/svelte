@@ -1,5 +1,13 @@
 # @casual-ui/svelte
 
+## 0.4.1
+
+### Patch Changes
+
+- [`ab0fda2`](https://github.com/Casual-UI/svelte/commit/ab0fda248a7f082b4c03ee56d8c37ebf5ea5950b) Thanks [@Blackman99](https://github.com/Blackman99)! - fix: lint and a11y
+
+- [`ab0fda2`](https://github.com/Casual-UI/svelte/commit/ab0fda248a7f082b4c03ee56d8c37ebf5ea5950b) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: sync submodule
+
 ## 0.4.0
 
 ### Minor Changes
