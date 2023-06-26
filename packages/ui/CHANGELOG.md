@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.4.2
+
+### Patch Changes
+
+- [`08233a5`](https://github.com/Casual-UI/svelte/commit/08233a503ee421b6846fdb31b31e8f4376cbb8c4) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: extract tooltip postion types
+
 ## 0.4.1
 
 ### Patch Changes
