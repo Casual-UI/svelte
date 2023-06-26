@@ -11,7 +11,7 @@
 
   /**
    * The tooltip popup position
-   * @type {`${'top' | 'right' | 'bottom' | 'left'}${`-${'start' | 'end'}` | ''}`}
+   * @type {import ('@casual-ui/types').CTooltipPosition}
    */
   export let position = 'top'
 
