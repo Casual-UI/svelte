@@ -1,5 +1,6 @@
 <script>
-  import '@casual-ui/svelte/dist/style/style.css'
+  import '@casual-ui/styles'
+  import '@casual-ui/svelte/icon.css'
   import { CNotification } from '@casual-ui/svelte'
 </script>
 

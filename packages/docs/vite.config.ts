@@ -56,7 +56,7 @@ const config = defineConfig({
     exclude: ['dayjs/esm'],
   },
   ssr: {
-    noExternal: ['@casual-ui/utils'],
+    noExternal: ['@casual-ui/utils', '@casual-ui/styles'],
   },
 })
 
