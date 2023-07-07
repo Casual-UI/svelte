@@ -2,7 +2,7 @@ import { getContext, hasContext, setContext } from 'svelte'
 import type { Writable } from 'svelte/store'
 import { writable } from 'svelte/store'
 
-type ContextKey = string | number | Symbol
+type ContextKey = string | number | symbol
 
 export default <T>(key: ContextKey, val: T, defaultVal: any, affectAncestor = false) => {
   const hasVal = val !== undefined

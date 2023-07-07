@@ -1,5 +1,4 @@
 <script>
-  // eslint-disable-next-line import/default
   import dayjs from 'dayjs'
   import { getContext } from 'svelte'
   import createClickOutsideAction from '../../../actions/createClickOutsideAction'
