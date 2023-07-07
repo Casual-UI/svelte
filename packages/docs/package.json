@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build"
+    "build": "vite build",
+    "build:vercel": "cd ../vite-plugin-doc-parser && pnpm build && cd ../ui && pnpm build:icon && cd ../docs && pnpm build"
   },
   "devDependencies": {
     "@casual-ui/styles": "workspace:*",
