@@ -30,16 +30,16 @@
     "@casual-ui/styles": "workspace:",
     "@casual-ui/types": "workspace:*",
     "@casual-ui/utils": "workspace:*",
-    "dayjs": "^1.11.8"
+    "dayjs": "^1.11.9"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.82",
+    "@iconify/json": "^2.2.87",
     "@sveltejs/package": "^2.1.0",
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "sass": "^1.63.6",
-    "svelte": "^4.0.0",
-    "unocss": "^0.53.3",
-    "vite": "^4.3.9"
+    "svelte": "^4.0.5",
+    "unocss": "^0.53.4",
+    "vite": "^4.4.1"
   },
   "peerDependencies": {
     "svelte": "^3.46.0 || ^4.0.0"
