@@ -3,6 +3,8 @@
   export let row: {
     name: string
   }
+
+  $$restProps
 </script>
 
 <div class="text-10">

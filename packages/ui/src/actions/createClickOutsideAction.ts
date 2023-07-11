@@ -1,4 +1,4 @@
-import type { Action } from 'svelte/types/runtime/action'
+import type { Action } from 'svelte/action'
 
 export default ({ cbInside, cbOutside }: {
   cbInside: () => void
