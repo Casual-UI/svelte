@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.6.0
+
+### Minor Changes
+
+- [`02617ab`](https://github.com/Casual-UI/svelte/commit/02617ab8550e6be66b1ff792dd87474ba701de86) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: table sticky columns
+
 ## 0.5.0
 
 ### Minor Changes
