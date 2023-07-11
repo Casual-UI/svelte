@@ -1,5 +1,15 @@
 # @casual-ui/svelte
 
+## 0.5.0
+
+### Minor Changes
+
+- [`3e77274`](https://github.com/Casual-UI/svelte/commit/3e772747003b533a2e5d98e95c2d3033dcbd54cd) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: update deps
+
+- [`3e77274`](https://github.com/Casual-UI/svelte/commit/3e772747003b533a2e5d98e95c2d3033dcbd54cd) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: add connectors support for CTree
+
+- [`5e4f7b2`](https://github.com/Casual-UI/svelte/commit/5e4f7b2189798f3afbd3ec63d4fae554cd18db30) Thanks [@Blackman99](https://github.com/Blackman99)! - fix: symbol
+
 ## 0.4.2
 
 ### Patch Changes
