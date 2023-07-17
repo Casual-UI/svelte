@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+import process from 'node:process'
 import { describe, expect, it } from 'vitest'
 import { parse } from 'sveltedoc-parser'
 
