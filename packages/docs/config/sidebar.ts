@@ -129,6 +129,10 @@ export default {
           title: 'Carousel',
           to: '/features/components/interact/carousel/',
         },
+        {
+          title: 'Skeleton',
+          to: '/features/components/interact/skeleton/',
+        },
       ],
     },
     {

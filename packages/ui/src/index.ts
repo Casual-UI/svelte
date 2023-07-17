@@ -50,6 +50,7 @@ import CTable from './components/table/CTable.svelte'
 import CCarousel from './components/carousel/CCarousel.svelte'
 import CCarouselSlider from './components/carousel/CCarouselSlider.svelte'
 import CTree from './components/tree/CTree.svelte'
+import CSkeleton from './components/skeleton/CSkeleton.svelte'
 import { attributeAtom } from './utils/attributeAtom'
 
 export { useFormProps } from './hooks/useForm'
@@ -58,6 +59,7 @@ export {
   attributeAtom,
   CTree,
   CAjaxBar,
+  CSkeleton,
   CCarouselSlider,
   CCarousel,
   CTable,
