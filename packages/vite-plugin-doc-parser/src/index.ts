@@ -1,5 +1,6 @@
 import { resolve } from 'node:path'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import process from 'node:process'
 import fg from 'fast-glob'
 
 const DOC_BASE_PATH = resolve(process.cwd(), '.doc-parser')
