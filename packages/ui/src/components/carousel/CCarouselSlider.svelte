@@ -8,8 +8,8 @@
     intervalKey,
     pausesKey,
     resumesKey,
-    slideringKey,
     slidesKey,
+    slidingKey,
     timeoutKey,
     toNextKey,
     verticalKey,
@@ -23,7 +23,7 @@
   const toNext = getContext(toNextKey)
   const timeoutFlag = getContext(timeoutKey)
   const hovering = getContext(hoveringKey)
-  const slidering = getContext(slideringKey)
+  const sliding = getContext(slidingKey)
 
   const currentIndex = $slides.length
 
@@ -34,7 +34,7 @@
    * @param {*} node
    * @param {*} params
    */
-  const carousel = (node, params) => {
+  const carousel = (_node, params) => {
     const { leave } = params
     return {
       duration: 300,
@@ -62,18 +62,17 @@
   let remain = $interval
 
   const onIntroStart = () => {
-    $slidering = true
-    remain = $interval
+    $sliding = true
   }
 
-  const onIntroEnd = () => {
-    $slidering = false
+  const onIntroEnd = async () => {
+    $sliding = false
     remain = $interval
     if ($interval && toNext && !$hovering) {
       start = Date.now()
       if ($timeoutFlag) clearTimeout($timeoutFlag)
 
-      $timeoutFlag = setTimeout(toNext, remain)
+      $timeoutFlag = setTimeout(toNext, $interval)
     }
   }
 
@@ -95,7 +94,7 @@
     }
   }
 
-  if (pauses && Array.isArray(pauses)) pauses.push(pause)
+  if (Array.isArray(pauses)) pauses.push(pause)
 
   const resume = () => {
     if ($activeIndex !== currentIndex) return
@@ -105,7 +104,7 @@
     $timeoutFlag = setTimeout(toNext, remain)
   }
 
-  if (resumes && Array.isArray(resumes)) resumes.push(resume)
+  if (Array.isArray(resumes)) resumes.push(resume)
 
   onDestroy(() => {
     if ($timeoutFlag) clearTimeout($timeoutFlag)

@@ -48,10 +48,10 @@
   export const hoveringKey = Symbol('c-carousel-hovering')
 
   /**
-   * The slidering flag key.
+   * The sliding flag key.
    * @type {symbol}
    */
-  export const slideringKey = Symbol('c-carousel-slidering')
+  export const slidingKey = Symbol('c-carousel-slidering')
 
   /**
    * The pause functions key.
@@ -67,7 +67,7 @@
 </script>
 
 <script>
-  import { setContext } from 'svelte'
+  import { onMount, setContext } from 'svelte'
   import { cubicInOut } from 'svelte/easing'
   import { writable } from 'svelte/store'
   import { fade } from 'svelte/transition'
@@ -220,7 +220,7 @@
   const sliding = writable(false)
 
   setContext(hoveringKey, hovering)
-  setContext(slideringKey, sliding)
+  setContext(slidingKey, sliding)
 
   $: paused = ($hovering && pauseOnHover) || $sliding
 
@@ -252,6 +252,15 @@
   $: {
     $verticalContext = vertical
   }
+
+  let initialized = false
+
+  onMount(() => {
+    if (!initialized && interval) {
+      initialized = true
+      timeoutFlag.set(setTimeout(toNext, interval))
+    }
+  })
 
   export { toPrev, toNext, toIndex }
 </script>
