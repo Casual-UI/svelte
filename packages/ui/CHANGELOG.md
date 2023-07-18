@@ -1,5 +1,19 @@
 # @casual-ui/svelte
 
+## 0.7.0
+
+### Minor Changes
+
+- [`3cf8397`](https://github.com/Casual-UI/svelte/commit/3cf8397027d7d61b9135bc3020966fe5ffb148f5) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: add skeleton
+
+### Patch Changes
+
+- [`b6d6a3f`](https://github.com/Casual-UI/svelte/commit/b6d6a3f99c4b3c6ef433197a491586ffde56e246) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: update deps
+
+- [`492a9cb`](https://github.com/Casual-UI/svelte/commit/492a9cb866c9f6d9eeeaa0d544b676007044d682) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: update deps
+
+- [`b23656d`](https://github.com/Casual-UI/svelte/commit/b23656d7f32a4b1b85edc6041d53b3fa5fb82a42) Thanks [@Blackman99](https://github.com/Blackman99)! - fix(carousel): first auto play should be triggered in mount instead of in intro end event
+
 ## 0.6.0
 
 ### Minor Changes
