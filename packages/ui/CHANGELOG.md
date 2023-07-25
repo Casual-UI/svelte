@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.8.0
+
+### Minor Changes
+
+- [`dc92e4d`](https://github.com/Casual-UI/svelte/commit/dc92e4ddf13adfb644faba1ef2f0dcd8155c7b5b) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: add parallax
+
 ## 0.7.0
 
 ### Minor Changes
