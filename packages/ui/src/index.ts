@@ -51,6 +51,7 @@ import CCarousel from './components/carousel/CCarousel.svelte'
 import CCarouselSlider from './components/carousel/CCarouselSlider.svelte'
 import CTree from './components/tree/CTree.svelte'
 import CSkeleton from './components/skeleton/CSkeleton.svelte'
+import CParallax from './components/CParallax.svelte'
 import { attributeAtom } from './utils/attributeAtom'
 
 export { useFormProps } from './hooks/useForm'
@@ -58,6 +59,7 @@ export { useFormProps } from './hooks/useForm'
 export {
   attributeAtom,
   CTree,
+  CParallax,
   CAjaxBar,
   CSkeleton,
   CCarouselSlider,

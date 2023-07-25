@@ -133,6 +133,10 @@ export default {
           title: 'Skeleton',
           to: '/features/components/interact/skeleton/',
         },
+        {
+          title: 'Parallax',
+          to: '/features/components/interact/parallax/',
+        },
       ],
     },
     {
