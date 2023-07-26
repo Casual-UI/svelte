@@ -152,6 +152,10 @@ export default {
           title: 'Tree',
           to: '/features/components/data-presentation/tree/',
         },
+        {
+          title: 'Pagination',
+          to: '/features/components/data-presentation/pagination/',
+        },
       ],
     },
   ],

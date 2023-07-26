@@ -4,6 +4,7 @@
   import { attributeAtom } from '../utils/attributeAtom'
   import clsx from '../utils/clsx'
   import useSize from '../hooks/useSize'
+  import useTheme from '../hooks/useTheme'
   import CLoading from './CLoading.svelte'
 
   /**
@@ -69,7 +70,9 @@
    * The color theme of the button.
    * @type {'primary' | 'secondary' | 'warning' | 'negative'}
    */
-  export let theme = 'primary'
+  export let theme = undefined
+
+  $: realTheme = useTheme(theme)
 
   /**
    * Custom style of the button.
@@ -102,7 +105,7 @@
     icon,
     flat,
   })} ${clsx(
-    `c-button--theme-${theme}`,
+    `c-button--theme-${$realTheme}`,
     rounded && `c-rounded-${$realSize}`,
     `c-font-${$realSize}`,
     `c-h-${$realSize}`,

@@ -1,0 +1,117 @@
+---
+title: Pagination
+componentName: CPagination
+---
+
+## Basic usage
+
+```svelte live
+<script>
+  import { CPagination } from '@casual-ui/svelte'
+
+  let current
+</script>
+
+<CPagination pages={6} bind:current />
+```
+
+## Shapes
+
+```svelte live
+<script>
+  import { CPagination } from '@casual-ui/svelte'
+
+  let current
+</script>
+<div class="c-column c-gutter-md">
+  <CPagination pages={6} bind:current shape="square" />
+  <CPagination pages={6} bind:current shape="rounded" />
+  <CPagination pages={6} bind:current shape="circle" />
+</div>
+```
+
+## Sizes
+
+```svelte live
+<script>
+  import { CPagination } from '@casual-ui/svelte'
+
+  let current
+</script>
+<div class="c-column c-gutter-md">
+  <CPagination pages={6} bind:current size="xs" />
+  <CPagination pages={6} bind:current size="sm" shape="rounded" />
+  <CPagination pages={6} bind:current round shape="circle" />
+  <CPagination pages={6} bind:current size="lg" shape="rounded" />
+  <CPagination pages={6} bind:current size="xl" />
+</div>
+```
+
+## Gutter sizes
+
+```svelte live
+<script>
+  import { CPagination } from '@casual-ui/svelte'
+
+  let current
+</script>
+<div class="c-column c-gutter-md">
+  <CPagination pages={6} bind:current gutterSize="xs" />
+  <CPagination pages={6} bind:current gutterSize="sm" />
+  <CPagination pages={6} bind:current />
+  <CPagination pages={6} bind:current gutterSize="lg" />
+  <CPagination pages={6} bind:current gutterSize="xl" />
+</div>
+```
+
+## Themes
+
+```svelte live
+<script>
+  import { CPagination } from '@casual-ui/svelte'
+
+  let current
+</script>
+<div class="c-column c-gutter-md">
+  <CPagination pages={6} bind:current theme="primary" shape="circle" />
+  <CPagination pages={6} bind:current theme="secondary" shape="circle" />
+  <CPagination pages={6} bind:current theme="warning" shape="circle" />
+  <CPagination pages={6} bind:current theme="negative" shape="circle" />
+</div>
+```
+
+## No to first/last button
+
+```svelte live
+<script>
+  import { CPagination } from '@casual-ui/svelte'
+
+  let current
+</script>
+
+<CPagination pages={6} bind:current showBoundaryButton={false} />
+```
+
+## No prev/next button
+
+```svelte live
+<script>
+  import { CPagination } from '@casual-ui/svelte'
+
+  let current
+</script>
+
+<CPagination pages={6} bind:current showPrevNextButton={false} />
+```
+
+## Max display pages
+
+```svelte live
+<script>
+  import { CPagination } from '@casual-ui/svelte'
+
+  let current = 4
+</script>
+
+<CPagination pages={10} maxDisplayPages={3} bind:current />
+```
