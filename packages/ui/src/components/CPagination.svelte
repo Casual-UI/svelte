@@ -114,61 +114,106 @@
   )}
 >
   {#if showBoundaryButton}
-    <slot name="to-first" {toFirst}>
-      <div class={`${classPrefix}--to-first`}>
-        <CButton disabled={isFirst} on:click={toFirst}>
+    <div class={`${classPrefix}--to-first`}>
+      <!--
+        Customize the "to first" button
+        @param {function} do set first page
+      -->
+      <slot name="to-first" set={toFirst} disabled={isFirst}>
+        <CButton disabled={isFirst} on:click={toFirst} flat>
           <div class="i-material-symbols-keyboard-double-arrow-left" />
         </CButton>
-      </div>
-    </slot>
+      </slot>
+    </div>
   {/if}
   {#if showPrevNextButton}
     <div class={`${classPrefix}--to-prev`}>
-      <CButton disabled={isFirst} on:click={toPrev}>
-        <div class="i-material-symbols-chevron-left" />
-      </CButton>
+      <!--
+        Customize the "to prev" button
+        @param {function} set Do set previous page
+        @param {boolean} disabled Determine whether the button should be disabled or not
+      -->
+      <slot name="to-prev" set={toPrev} disabled={isFirst}>
+        <CButton disabled={isFirst} on:click={toPrev} flat>
+          <div class="i-material-symbols-chevron-left" />
+        </CButton>
+      </slot>
     </div>
   {/if}
   {#if showEllipsesLeft}
     <div>
-      <CButton flat on:click={toEllipsesLeft}>
-        {#if pagesArray[0] > 2}
-          <div class="i-tabler-dots" />
-        {:else}
-          1
-        {/if}
-      </CButton>
+      <!--
+        Customize the left ellipsis button
+        @param {function} do set left ellipsis page
+      -->
+      <slot name="left-ellipsis" set={toEllipsesLeft}>
+        <CButton flat on:click={toEllipsesLeft}>
+          {#if pagesArray[0] > 2}
+            <div class="i-tabler-dots" />
+          {:else}
+            1
+          {/if}
+        </CButton>
+      </slot>
     </div>
   {/if}
   {#each pagesArray as p}
     <div>
-      <CButton label={p} flat={p !== current} on:click={() => (current = p)} />
+      <!--
+        Customize the page button
+        @param {number} page number
+      -->
+      <slot name="page-button" {p}>
+        <CButton
+          label={p}
+          flat={p !== current}
+          on:click={() => (current = p)}
+        />
+      </slot>
     </div>
   {/each}
   {#if showEllipsesRight}
     <div>
-      <CButton flat on:click={toEllipsesRight}>
-        {#if pagesArray.at(-1) < pages - 1}
-          <div class="i-tabler-dots" />
-        {:else}
-          {pages}
-        {/if}
-      </CButton>
+      <!--
+        Customize the right ellipsis button
+        @param {function} do set right ellipsis page
+      -->
+      <slot name="right-ellipsis" set={toEllipsesRight}>
+        <CButton flat on:click={toEllipsesRight}>
+          {#if pagesArray.at(-1) < pages - 1}
+            <div class="i-tabler-dots" />
+          {:else}
+            {pages}
+          {/if}
+        </CButton>
+      </slot>
     </div>
   {/if}
   {#if showPrevNextButton}
     <div class={`${classPrefix}--to-next`}>
-      <CButton disabled={isLast} on:click={toNext}>
-        <div class="i-material-symbols-chevron-right" />
-      </CButton>
+      <!--
+        Customize the "to next" button
+        @param {function} do set next page
+      -->
+      <slot name="to-next" set={toNext} disabled={isLast}>
+        <CButton disabled={isLast} on:click={toNext} flat>
+          <div class="i-material-symbols-chevron-right" />
+        </CButton>
+      </slot>
     </div>
   {/if}
 
   {#if showBoundaryButton}
     <div class={`${classPrefix}--to-last`}>
-      <CButton disabled={isLast} on:click={toLast}>
-        <div class="i-material-symbols-keyboard-double-arrow-right" />
-      </CButton>
+      <!--
+        Customize the "to last" button
+        @param {function} do set last page
+      -->
+      <slot name="to-last" set={toLast} disabled={isLast}>
+        <CButton disabled={isLast} on:click={toLast} flat>
+          <div class="i-material-symbols-keyboard-double-arrow-right" />
+        </CButton>
+      </slot>
     </div>
   {/if}
 </div>

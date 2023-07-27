@@ -41,7 +41,7 @@ componentName: CPagination
 <div class="c-column c-gutter-md">
   <CPagination pages={6} bind:current size="xs" />
   <CPagination pages={6} bind:current size="sm" shape="rounded" />
-  <CPagination pages={6} bind:current round shape="circle" />
+  <CPagination pages={6} bind:current shape="circle" />
   <CPagination pages={6} bind:current size="lg" shape="rounded" />
   <CPagination pages={6} bind:current size="xl" />
 </div>
@@ -114,4 +114,55 @@ componentName: CPagination
 </script>
 
 <CPagination pages={10} maxDisplayPages={3} bind:current />
+```
+
+## Customize buttons with slots
+
+```svelte live
+<script>
+  import { CButton, CPagination } from '@casual-ui/svelte'
+
+  let current = 4
+</script>
+
+<CPagination pages={10} maxDisplayPages={3} bind:current>
+  <button slot="to-first" let:set let:disabled on:click={set} {disabled}>
+    To first
+  </button>
+  <CButton
+    slot="to-prev"
+    let:set
+    let:disabled
+    on:click={set}
+    {disabled}
+    flat
+    theme="negative"
+    >
+    <div class="i-ph-arrow-arc-left-fill"></div>
+  </CButton>
+
+  <CButton slot="left-ellipsis" let:set flat theme="warning" on:click={set}>
+    <div class="i-ion-ellipsis-horizontal-circle"></div>
+  </CButton>
+
+  <CButton slot="right-ellipsis" let:set flat theme="warning" on:click={set}>
+    <div class="i-octicon-ellipsis-16"></div>
+  </CButton>
+
+  <CButton
+    slot="to-next"
+    let:set
+    let:disabled
+    on:click={set}
+    {disabled}
+    flat
+    theme="secondary"
+    >
+    <div class="i-ph-arrow-arc-right-fill"></div>
+  </CButton>
+
+   <button slot="to-last" let:set let:disabled on:click={set} {disabled}>
+    To last
+  </button>
+</CPagination>
 ```
