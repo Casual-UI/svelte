@@ -1,5 +1,13 @@
 # @casual-ui/svelte
 
+## 0.9.0
+
+### Minor Changes
+
+- [`8ec5fd0`](https://github.com/Casual-UI/svelte/commit/8ec5fd0f2e0b658504b7023c38fb47bb9a68a00f) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: add pagination
+
+- [`d24d2aa`](https://github.com/Casual-UI/svelte/commit/d24d2aa16b6515b9f18349594ecc2352494ebfd5) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: add customize slots for pagination
+
 ## 0.8.0
 
 ### Minor Changes
