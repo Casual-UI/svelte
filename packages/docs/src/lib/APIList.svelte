@@ -38,7 +38,9 @@
         {#if isSlot && params && params.length}
           <p><b>Bindings:</b></p>
           <ul class="my-0">
-            {#each params as param}
+            <!-- Ignore the `{xxx}` bindings -->
+            <!-- TODO: Make the sveltedoc-parser support this -->
+            {#each params.filter(p => !p.name.startsWith('{')) as param}
               <li class="mb-4">
                 <VariableName>
                   {param.name}

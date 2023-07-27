@@ -117,7 +117,8 @@
     <div class={`${classPrefix}--to-first`}>
       <!--
         Customize the "to first" button
-        @param {function} do set first page
+        @param {function} set Set first page
+        @param {function} disabled Determine whether the button should be disabled or not
       -->
       <slot name="to-first" set={toFirst} disabled={isFirst}>
         <CButton disabled={isFirst} on:click={toFirst} flat>
@@ -144,7 +145,7 @@
     <div>
       <!--
         Customize the left ellipsis button
-        @param {function} do set left ellipsis page
+        @param {function} set Set left ellipsis page
       -->
       <slot name="left-ellipsis" set={toEllipsesLeft}>
         <CButton flat on:click={toEllipsesLeft}>
@@ -158,17 +159,15 @@
     </div>
   {/if}
   {#each pagesArray as p}
+    {@const active = p === current}
     <div>
       <!--
         Customize the page button
-        @param {number} page number
+        @param {number} p The page number
+        @param {boolean} active Determine whether the button is active or not
       -->
-      <slot name="page-button" {p}>
-        <CButton
-          label={p}
-          flat={p !== current}
-          on:click={() => (current = p)}
-        />
+      <slot name="page-button" {p} {active}>
+        <CButton label={p} flat={!active} on:click={() => (current = p)} />
       </slot>
     </div>
   {/each}
@@ -176,7 +175,7 @@
     <div>
       <!--
         Customize the right ellipsis button
-        @param {function} do set right ellipsis page
+        @param {function} set Set right ellipsis page
       -->
       <slot name="right-ellipsis" set={toEllipsesRight}>
         <CButton flat on:click={toEllipsesRight}>
@@ -193,7 +192,8 @@
     <div class={`${classPrefix}--to-next`}>
       <!--
         Customize the "to next" button
-        @param {function} do set next page
+        @param {function} set Set next page
+        @param {boolean} disabled Determine whether the button should be disabled or not
       -->
       <slot name="to-next" set={toNext} disabled={isLast}>
         <CButton disabled={isLast} on:click={toNext} flat>
@@ -207,7 +207,8 @@
     <div class={`${classPrefix}--to-last`}>
       <!--
         Customize the "to last" button
-        @param {function} do set last page
+        @param {function} set Set last page
+        @param {boolean} disabled Determine whether the button should be disabled or not
       -->
       <slot name="to-last" set={toLast} disabled={isLast}>
         <CButton disabled={isLast} on:click={toLast} flat>
