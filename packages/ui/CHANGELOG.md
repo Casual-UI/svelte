@@ -1,5 +1,17 @@
 # @casual-ui/svelte
 
+## 0.10.0
+
+### Minor Changes
+
+- [`cd1a201`](https://github.com/Casual-UI/svelte/commit/cd1a201bd0a78ce8a2b1285a99e8b29487c5ecef) Thanks [@Blackman99](https://github.com/Blackman99)! - perf: enable svelte strict mode
+
+- [`cd1a201`](https://github.com/Casual-UI/svelte/commit/cd1a201bd0a78ce8a2b1285a99e8b29487c5ecef) Thanks [@Blackman99](https://github.com/Blackman99)! - chore: update deps
+
+- [`cd1a201`](https://github.com/Casual-UI/svelte/commit/cd1a201bd0a78ce8a2b1285a99e8b29487c5ecef) Thanks [@Blackman99](https://github.com/Blackman99)! - perf: use class directive
+
+- [`cd1a201`](https://github.com/Casual-UI/svelte/commit/cd1a201bd0a78ce8a2b1285a99e8b29487c5ecef) Thanks [@Blackman99](https://github.com/Blackman99)! - fix: notification close bar circle animation
+
 ## 0.9.0
 
 ### Minor Changes
