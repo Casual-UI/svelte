@@ -10,7 +10,7 @@ on:
       - changeset-release/main
 jobs:
   linter:
-    name: Running lint
+    name: Running eslint check
     runs-on: ubuntu-latest
     permissions:
       contents: read
