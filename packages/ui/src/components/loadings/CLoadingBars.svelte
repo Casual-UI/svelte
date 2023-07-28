@@ -26,7 +26,7 @@
         keySplines="0.1 0.9 0.4 1"
         keyTimes="0;1"
         values="2;1"
-      />
+      ></animateTransform>
     </rect>
   </g>
   <g transform="translate(50 50)">
@@ -50,7 +50,7 @@
         keySplines="0.1 0.9 0.4 1"
         keyTimes="0;1"
         values="2;1"
-      />
+      ></animateTransform>
     </rect>
   </g>
   <g transform="translate(80 50)">
@@ -74,7 +74,7 @@
         keySplines="0.1 0.9 0.4 1"
         keyTimes="0;1"
         values="2;1"
-      />
+      ></animateTransform>
     </rect>
   </g>
 </svg>

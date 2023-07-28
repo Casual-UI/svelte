@@ -20,12 +20,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.4.2",
+    "@types/node": "^20.4.5",
     "unbuild": "^1.2.1",
     "vitest": "^0.33.0"
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "fast-glob": "^3.3.0"
+    "fast-glob": "^3.3.1"
   }
 }

@@ -16,7 +16,7 @@
         to="0 50 50"
         dur="1s"
         repeatCount="indefinite"
-      />
+      ></animateTransform>
     </path>
   </g>
   <g transform="translate(20,20) rotate(15 50 50)">
@@ -31,7 +31,7 @@
         to="90 50 50"
         dur="1s"
         repeatCount="indefinite"
-      />
+      ></animateTransform>
     </path>
   </g>
 </svg>

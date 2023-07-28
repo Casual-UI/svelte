@@ -48,14 +48,14 @@
 </script>
 
 <div
-  class={clsx(
+  class="{clsx(
     'c-tag',
     `c-tag--theme-${$contextTheme}`,
     `c-h-${$contextSize}`,
     `c-font-${$contextSize}`,
     `c-px-${$contextSize}`,
-    rounded && `c-rounded-${$contextSize}`
-  )}
+    rounded && `c-rounded-${$contextSize}`,
+  )}"
 >
   <div class="c-tag--prefix">
     <!-- Customize prefix content -->
@@ -67,12 +67,12 @@
   {#if closeable}
     <div
       class="c-tag--close-icon c-ml-xs"
-      on:click|stopPropagation={onClose}
-      on:keypress|stopPropagation={onClose}
+      on:click|stopPropagation="{onClose}"
+      on:keypress|stopPropagation="{onClose}"
       role="button"
       tabindex="0"
     >
-      <div class="c-icon" i-carbon-close />
+      <div class="c-icon" i-carbon-close></div>
     </div>
   {/if}
 </div>

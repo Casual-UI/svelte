@@ -12,7 +12,7 @@
     stroke-width="4"
     stroke-opacity=".5"
     stroke="currentColor"
-  />
+  ></circle>
   <circle
     cx="8"
     cy="54"
@@ -28,6 +28,6 @@
       to="360 50 52"
       dur="2s"
       repeatCount="indefinite"
-    />
+    ></animateTransform>
   </circle>
 </svg>

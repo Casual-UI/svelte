@@ -46,15 +46,15 @@
 </script>
 
 <div
-  class={`c-checkbox-group c-row c-items-center c-wrap c-gutter-${$contextGutterSize}`}
+  class="c-checkbox-group c-row c-items-center c-wrap c-gutter-{$contextGutterSize}"
 >
   {#each options as op}
     <div>
       <CCheckbox
-        label={op.label}
-        checkedValue={op.value}
-        value={value.find(v => v === op.value)}
-        on:change={() => onChange(op.value)}
+        label="{op.label}"
+        checkedValue="{op.value}"
+        value="{value.find(v => v === op.value)}"
+        on:change="{() => onChange(op.value)}"
       />
     </div>
   {/each}

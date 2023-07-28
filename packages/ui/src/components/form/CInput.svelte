@@ -140,7 +140,7 @@
 </script>
 
 <div
-  class={clsx(
+  class="{clsx(
     bem('input', {
       customColor,
       focused,
@@ -152,18 +152,17 @@
     `c-font-${$contextSize}`,
     rounded && `c-rounded-${$contextSize}`,
     `c-h-${$contextSize}`,
-    `c-px-${$contextSize}`
-  )}
+    `c-px-${$contextSize}`,
+  )}"
 >
   <div class="c-input--content-wrapper">
     <div
-      class={clsx(
-        'c-input--prefix',
-        prefixDivider && 'c-input--prefix-with-divider',
-        $$slots.prefix && 'c-pr-sm c-input--prefix-with-content'
-      )}
-      on:click={focusInput}
-      on:keypress={focusInput}
+      class="c-input--prefix"
+      class:c-input--prefix-with-divider="{prefixDivider}"
+      class:c-pr-sm="{$$slots.prefix}"
+      class:c-input--prefix-with-content="{$$slots.prefix}"
+      on:click="{focusInput}"
+      on:keypress="{focusInput}"
       role="none"
     >
       <!-- Customize prefix content -->
@@ -172,45 +171,43 @@
     <div class="c-input--input-wrapper">
       {#if type === 'text'}
         <input
-          bind:this={inputDom}
+          bind:this="{inputDom}"
           bind:value
           type="text"
-          class={clsx($$slots.prefix && 'c-pl-sm', $$slots.suffix && 'c-pr-sm')}
+          class:c-pl-sm="{$$slots.prefix}"
+          class:c-pr-sm="{$$slots.suffix}"
           {placeholder}
           {disabled}
-          readonly={readonly || loading}
-          on:focus={onFocus}
-          on:blur={onBlur}
+          readonly="{readonly || loading}"
+          on:focus="{onFocus}"
+          on:blur="{onBlur}"
         />
       {/if}
     </div>
     {#if clearable}
       <div
-        class={clsx(
-          'c-input--clear-icon',
-          $$slots.suffix || (loading && 'c-mr-sm'),
-          value && 'c-input--clear-icon-show'
-        )}
-        on:click|stopPropagation={onClearIconClick}
-        on:keypress={onClearIconClick}
+        class="c-input--clear-icon"
+        class:c-input--clear-icon-show="{value}"
+        class:c-mr-sm="{$$slots.suffix || loading}"
+        on:click|stopPropagation="{onClearIconClick}"
+        on:keypress="{onClearIconClick}"
         role="button"
         tabindex="0"
       >
-        <div i-mdi-close-circle-outline />
+        <div i-mdi-close-circle-outline></div>
       </div>
     {/if}
 
     <div
-      class={clsx(
-        'c-input--suffix',
-        suffixDivider && 'c-input--suffix-with-divider',
-        $$slots.suffix && 'c-pl-sm c-input--suffix-with-content'
-      )}
-      on:click={focusInput}
-      on:keypress={focusInput}
+      class="c-input--suffix"
+      class:c-input--suffix-with-divider="{suffixDivider}"
+      class:c-pl-sm="{$$slots.suffix}"
+      class:c-input--suffix-with-content="{$$slots.suffix}"
+      on:click="{focusInput}"
+      on:keypress="{focusInput}"
       role="none"
     >
-      <div class={clsx(loading && 'c-mr-sm')}>
+      <div class:c-mr-sm="{loading}">
         <!-- Customize suffix content -->
         <slot name="suffix" />
       </div>

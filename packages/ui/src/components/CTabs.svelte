@@ -116,15 +116,15 @@
 </script>
 
 <div class="c-tabs">
-  <div bind:this={header} class="c-tabs--header c-row c-items-center">
+  <div bind:this="{header}" class="c-tabs--header c-row c-items-center">
     {#each items as item}
       <div
-        class={clsx(
+        class="{clsx(
           `c-tabs--header-item c-h-${$contextSize} c-font-${$contextSize} c-px-${$contextSize}`,
-          activeItem === item.name && 'c-tabs--header-item-active'
-        )}
-        on:click={() => onHeaderClick(item)}
-        on:keypress={() => onHeaderClick(item)}
+          activeItem === item.name && 'c-tabs--header-item-active',
+        )}"
+        on:click="{() => onHeaderClick(item)}"
+        on:keypress="{() => onHeaderClick(item)}"
         role="tab"
         tabindex="0"
       >
@@ -142,27 +142,27 @@
     {/each}
     <div
       class="c-tabs--header-active-bar"
-      style={`left: ${activeBarLeft}px;width: ${activeBarWidth}px;`}
-    />
+      style="left: {activeBarLeft}px;width: {activeBarWidth}px;"
+    ></div>
   </div>
   <div
-    class={clsx('c-tabs--body', panelPadding && `c-pa-${$contextSize}`)}
-    style={bodyStyle}
+    class="{clsx('c-tabs--body', panelPadding && `c-pa-${$contextSize}`)}"
+    style="{bodyStyle}"
   >
     {#each items as item (item.name)}
       {#if activeItem === item.name}
         <div
           class="c-tabs--body-item"
-          in:tab={{
+          in:tab="{{
             mode: 'in',
             name: item.name,
-          }}
-          out:tab={{
+          }}"
+          out:tab="{{
             mode: 'out',
             name: item.name,
-          }}
+          }}"
         >
-          <svelte:component this={item.body} />
+          <svelte:component this="{item.body}" />
         </div>
       {/if}
     {/each}

@@ -176,8 +176,8 @@
         ...obj,
         [f]: false,
       }),
-      {}
-    )
+      {},
+    ),
   )
 
   setContext(errorStatusKey, errorStatus)
@@ -241,16 +241,14 @@
         ...obj,
         [f]: false,
       }),
-      {}
+      {},
     )
   }
 
   export { validateAll, validateSomeField, clearAll, clearSomeField }
 </script>
 
-<div
-  class={`c-form c-row c-items-center c-wrap c-gutter-${$contextGutterSize}`}
->
+<div class="c-form c-row c-items-center c-wrap c-gutter-{$contextGutterSize}">
   <slot>
     <!-- TODO: generate form with items -->
   </slot>

@@ -66,34 +66,34 @@
 </script>
 
 <div
-  class={bem('expansion', {
+  class="{bem('expansion', {
     expanded,
-  })}
+  })}"
 >
   {#if reverse && expanded}
     <div
-      transition:slide={{
+      transition:slide="{{
         duration: 300,
         easing: cubicInOut,
-      }}
-      on:introend={onTransitionEnd}
-      on:outroend={onTransitionEnd}
-      bind:this={bodyDom}
+      }}"
+      on:introend="{onTransitionEnd}"
+      on:outroend="{onTransitionEnd}"
+      bind:this="{bodyDom}"
       class="c-expansion--body"
     >
       <!--
         Expansion body content
         @param {() => void} recomputedHeight The method to recomputed the body height.
       -->
-      <slot recomputedHeight={resetHeight} />
+      <slot recomputedHeight="{resetHeight}" />
     </div>
   {/if}
   <!-- The header click function, emit the expand status exchange -->
   <div
     class="c-expansion--header"
-    style={headerStyle}
-    on:click|stopPropagation={onHeaderClick}
-    on:keypress={onHeaderClick}
+    style="{headerStyle}"
+    on:click|stopPropagation="{onHeaderClick}"
+    on:keypress="{onHeaderClick}"
     role="button"
     tabindex="0"
   >
@@ -110,15 +110,15 @@
       </slot>
     </div>
     <div
-      class={clsx(
+      class="{clsx(
         'c-expansion--arrow',
-        expanded && 'c-expansion--arrow-expanded'
-      )}
+        expanded && 'c-expansion--arrow-expanded',
+      )}"
     >
       {#if showArrow}
         <!-- Customize the arrow dom -->
         <slot name="arrow">
-          <div i-ph-caret-down-light />
+          <div i-ph-caret-down-light></div>
         </slot>
       {/if}
     </div>
@@ -126,16 +126,16 @@
   {#if !reverse && expanded}
     <div
       transition:slide
-      on:introend={onTransitionEnd}
-      on:outroend={onTransitionEnd}
-      bind:this={bodyDom}
+      on:introend="{onTransitionEnd}"
+      on:outroend="{onTransitionEnd}"
+      bind:this="{bodyDom}"
       class="c-expansion--body"
     >
       <!--
         Expansion body content
         @param {() => void} recomputedHeight The method to recomputed the body height.
       -->
-      <slot recomputedHeight={resetHeight} />
+      <slot recomputedHeight="{resetHeight}" />
     </div>
   {/if}
 </div>

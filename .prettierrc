@@ -3,7 +3,7 @@
     "prettier-plugin-svelte"
   ],
   "svelteSortOrder": "options-scripts-markup-styles",
-  "svelteStrictMode": false,
+  "svelteStrictMode": true,
   "svelteAllowShorthand": true,
   "svelteIndentScriptAndStyle": true,
   "semi": false,

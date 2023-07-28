@@ -34,9 +34,9 @@
   const contextSize = useSize(size)
 </script>
 
-<div class={`c-info-item c-flex cjustify-between c-items-${align}`}>
-  <div class={`c-flex c-flex-grow c-items-${iconAlign}`}>
-    <div class={`c-mr-${$contextSize}`}>
+<div class="c-info-item c-flex c-justify-between c-items-{align}">
+  <div class="c-flex c-flex-grow c-items-${iconAlign}">
+    <div class="c-mr-{$contextSize}">
       <!-- The icon content -->
       <slot name="icon" />
     </div>

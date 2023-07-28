@@ -60,26 +60,26 @@
 </script>
 
 <div
-  class={clsx(
+  class="{clsx(
     bem('checkbox', {
       checked: value === checkedValue,
       disabled,
       hasError: $hasError,
     }),
-    `c-checkbox--theme-${theme} c-h-${$contextSize} c-font-${$contextSize}`
-  )}
-  on:click={onClick}
-  on:keypress={onClick}
+    `c-checkbox--theme-${theme} c-h-${$contextSize} c-font-${$contextSize}`,
+  )}"
+  on:click="{onClick}"
+  on:keypress="{onClick}"
   role="checkbox"
   tabindex="0"
-  aria-checked={value}
+  aria-checked="{value}"
 >
   <svg class="c-checkbox--check-wrapper" viewBox="0 0 24 24" aria-hidden="true">
     <path
       class="c-checkbox--checker"
       fill="none"
       d="M1.73,12.91 8.1,19.28 22.79,4.59"
-    />
+    ></path>
     <!-- TODO: half checked -->
     <!-- <path d="M4,14H20V10H4"></path> -->
   </svg>

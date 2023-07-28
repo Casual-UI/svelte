@@ -47,8 +47,8 @@
 </script>
 
 <div
-  class={clsx(bem('ajax-bar'), `c-ajax-bar--theme-${$injectedTheme}`)}
-  style={`--casual-ajax-bar-width: ${barWidth}%;`}
+  class="{clsx(bem('ajax-bar'), `c-ajax-bar--theme-${$injectedTheme}`)}"
+  style="--casual-ajax-bar-width: {barWidth}%;"
 >
-  <div class="c-ajax-bar--progress" />
+  <div class="c-ajax-bar--progress"></div>
 </div>

@@ -1,5 +1,5 @@
 <script>
-  import { circOut, cubicInOut, linear } from 'svelte/easing'
+  import { circOut, cubicInOut } from 'svelte/easing'
   import { crossfade } from 'svelte/transition'
   import { flip } from 'svelte/animate'
   import {
@@ -16,12 +16,12 @@
       easing: circOut,
       css: t => `
         transform: ${transform} ${
-        params.x === 'start' ? `translateX(${-100 + t * 100}px)` : ''
-      } ${params.x === 'end' ? `translateX(${100 - t * 100}px)` : ''} ${
-        params.x === 'center'
-          ? `translateY(${(100 - t * 100) * (intro ? 1 : -1)}px)`
-          : ''
-      };
+          params.x === 'start' ? `translateX(${-100 + t * 100}px)` : ''
+        } ${params.x === 'end' ? `translateX(${100 - t * 100}px)` : ''} ${
+          params.x === 'center'
+            ? `translateY(${(100 - t * 100) * (intro ? 1 : -1)}px)`
+            : ''
+        };
         opacity: ${t};
       `,
     }
@@ -32,40 +32,27 @@
     easing: circOut,
     fallback: notification,
   })
-
-  /**
-   * @type {import('svelte/transition').slide}
-   */
-  const countDownBar = (_node, params) => {
-    return {
-      duration: params.duration ? params.duration : 3000,
-      easing: linear,
-      css: t => `
-        stroke-dashoffset: ${0 - 63 * t};
-      `,
-    }
-  }
 </script>
 
 {#each Object.entries($notifications) as [groupName, { x, y, items }]}
   <CPopup
-    horizontalAlign={x}
-    verticalAlign={y}
+    horizontalAlign="{x}"
+    verticalAlign="{y}"
     customClass="c-popup--notification c-notification"
   >
     <div class="c-notification--item-list">
       {#each items as item (item.id)}
         <div
-          animate:flip={{ duration: 300, easing: cubicInOut }}
-          in:receive={{ key: item.id, x, y }}
-          out:send={{ key: item.id, x, y }}
-          class={`c-notification--item-card c-notification--item-theme-${item.theme}`}
+          animate:flip="{{ duration: 300, easing: cubicInOut }}"
+          in:receive="{{ key: item.id, x, y }}"
+          out:send="{{ key: item.id, x, y }}"
+          class="{`c-notification--item-card c-notification--item-theme-${item.theme}`}"
         >
           <!--
             Customize the content of each notification item
             @param {any} itemInfo all the item's props will be passed to this slot. <br />For example: `message`, `title`, `theme`, `timeout`
            -->
-          <slot name="item" itemInfo={item}>
+          <slot name="item" itemInfo="{item}">
             <div class="c-notification--header">
               <div class="c-notification--title">
                 {item.title}
@@ -73,9 +60,10 @@
               {#if item.closeIcon}
                 <div
                   class="c-notification--close-icon"
-                  on:click={() => closeByPositionGroupAndID(groupName, item.id)}
-                  on:keypress={() =>
-                    closeByPositionGroupAndID(groupName, item.id)}
+                  on:click="{() =>
+                    closeByPositionGroupAndID(groupName, item.id)}"
+                  on:keypress="{() =>
+                    closeByPositionGroupAndID(groupName, item.id)}"
                   role="button"
                   tabindex="0"
                 >
@@ -92,14 +80,14 @@
                         stroke-width="2"
                         fill="transparent"
                         class="c-notification--countdown-bar-circle c-notification--countdown-bar-circle-with-initial-state"
-                        in:countDownBar={{ duration: item.timeout }}
-                      />
+                        style="--c-notification-duration: {item.timeout}ms;"
+                      ></circle>
                     {/if}
                   </svg>
                   <div
                     i-majesticons-close
                     class="c-notification--close-icon-icon"
-                  />
+                  ></div>
                 </div>
               {/if}
             </div>

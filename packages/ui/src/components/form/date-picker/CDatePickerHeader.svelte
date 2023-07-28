@@ -15,7 +15,7 @@
    */
   export let month = new Date().getMonth()
 
-  export let size
+  export let size = undefined
 
   /**
    * @type {'year' | 'month' | 'day'}
@@ -109,51 +109,51 @@
   $: isDay = unit === 'day'
 </script>
 
-<div class={`c-date-panel--header c-px-${$contextSize} c-pt-${$contextSize}`}>
+<div class="{`c-date-panel--header c-px-${$contextSize} c-pt-${$contextSize}`}">
   <div class="c-flex c-items-center">
     <slot name="left">
       {#if isDay || isMonth}
         <div
           class="c-icon"
           i-majesticons-chevron-double-left-line
-          on:click={toPrevYear}
-          on:keypress={toPrevYear}
+          on:click="{toPrevYear}"
+          on:keypress="{toPrevYear}"
           role="button"
           tabindex="0"
-        />
+        ></div>
       {:else}
         <div
           class="c-icon"
           i-majesticons-chevron-double-left-line
-          on:click={toPreviousYearRange}
-          on:keypress={toPreviousYearRange}
+          on:click="{toPreviousYearRange}"
+          on:keypress="{toPreviousYearRange}"
           role="button"
           tabindex="0"
-        />
+        ></div>
       {/if}
       {#if isDay}
         <div
           class="c-icon"
           i-majesticons-chevron-left
-          on:click={toPrevMonth}
-          on:keypress={toPrevMonth}
+          on:click="{toPrevMonth}"
+          on:keypress="{toPrevMonth}"
           role="button"
           tabindex="0"
-        />
+        ></div>
       {/if}
     </slot>
   </div>
   <div
-    class={clsx(
+    class="{clsx(
       'c-date-panel--year',
-      unit !== 'year' && unitSwitchable && 'c-date-panel--year-switchable'
-    )}
+      unit !== 'year' && unitSwitchable && 'c-date-panel--year-switchable',
+    )}"
   >
     <slot name="title">
       {#if isDay}
         <span
-          on:click|stopPropagation={() => changeUnit('month')}
-          on:keypress|stopPropagation={() => changeUnit('month')}
+          on:click|stopPropagation="{() => changeUnit('month')}"
+          on:keypress|stopPropagation="{() => changeUnit('month')}"
           role="button"
           tabindex="0"
         >
@@ -163,8 +163,8 @@
       &nbsp;
       {#if isDay || isMonth}
         <span
-          on:click|stopPropagation={() => changeUnit('year')}
-          on:keypress|stopPropagation={() => changeUnit('year')}
+          on:click|stopPropagation="{() => changeUnit('year')}"
+          on:keypress|stopPropagation="{() => changeUnit('year')}"
           role="button"
           tabindex="0"
         >
@@ -181,30 +181,30 @@
         <div
           class="c-icon"
           i-majesticons-chevron-right
-          on:click={toNextMonth}
-          on:keypress={toNextMonth}
+          on:click="{toNextMonth}"
+          on:keypress="{toNextMonth}"
           role="button"
           tabindex="0"
-        />
+        ></div>
       {/if}
       {#if isDay || isMonth}
         <div
           class="c-icon"
           i-majesticons-chevron-double-right-line
-          on:click={toNextYear}
-          on:keypress={toNextYear}
+          on:click="{toNextYear}"
+          on:keypress="{toNextYear}"
           role="button"
           tabindex="0"
-        />
+        ></div>
       {:else}
         <div
           class="c-icon"
           i-majesticons-chevron-double-right-line
-          on:click={toNextYearRange}
-          on:keypress={toNextYearRange}
+          on:click="{toNextYearRange}"
+          on:keypress="{toNextYearRange}"
           role="button"
           tabindex="0"
-        />
+        ></div>
       {/if}
     </slot>
   </div>

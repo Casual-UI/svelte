@@ -46,7 +46,7 @@
         root: null,
         rootMargin: '0px',
         threshold: [0, 1],
-      }
+      },
     )
 
     observer.observe(container)
@@ -71,18 +71,18 @@
 </script>
 
 <div
-  class={classPrefix}
+  class="{classPrefix}"
   style:height
-  bind:this={container}
-  style:--c-parallax-top={top}
+  bind:this="{container}"
+  style:--c-parallax-top="{top}"
 >
-  <div bind:this={imageContainer} class={`${classPrefix}--image`}>
+  <div bind:this="{imageContainer}" class="{classPrefix}--image">
     <!-- Customize the bg content -->
     <slot name="bg">
       <img {src} alt="" />
     </slot>
   </div>
-  <div class={`${classPrefix}--front`}>
+  <div class="{classPrefix}--front">
     <slot />
   </div>
 </div>

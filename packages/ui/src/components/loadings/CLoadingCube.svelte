@@ -4,7 +4,7 @@
   viewBox="0 0 100 100"
   preserveAspectRatio="xMidYMid"
 >
-  <rect x="0" y="0" width=" 100" height="100" fill="none" />
+  <rect x="0" y="0" width=" 100" height="100" fill="none"></rect>
   <g transform="translate(25 25)">
     <rect
       x="-20"
@@ -25,7 +25,7 @@
         calcMode="spline"
         keySplines="0.2 0.8 0.2 0.8"
         keyTimes="0;1"
-      />
+      ></animateTransform>
     </rect>
   </g>
   <g transform="translate(75 25)">
@@ -48,7 +48,7 @@
         calcMode="spline"
         keySplines="0.2 0.8 0.2 0.8"
         keyTimes="0;1"
-      />
+      ></animateTransform>
     </rect>
   </g>
   <g transform="translate(25 75)">
@@ -71,7 +71,7 @@
         calcMode="spline"
         keySplines="0.2 0.8 0.2 0.8"
         keyTimes="0;1"
-      />
+      ></animateTransform>
     </rect>
   </g>
   <g transform="translate(75 75)">
@@ -94,7 +94,7 @@
         calcMode="spline"
         keySplines="0.2 0.8 0.2 0.8"
         keyTimes="0;1"
-      />
+      ></animateTransform>
     </rect>
   </g>
 </svg>

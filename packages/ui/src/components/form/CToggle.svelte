@@ -54,23 +54,23 @@
 </script>
 
 <div
-  class={clsx(
+  class="{clsx(
     bem('toggle', {
       checked,
       disabled,
     }),
     `c-h-${$contextSize}`,
     `c-font-${$contextSize}`,
-    `c-toggle--size-${$contextSize}`
-  )}
-  on:click={toggle}
-  on:keypress={toggle}
+    `c-toggle--size-${$contextSize}`,
+  )}"
+  on:click="{toggle}"
+  on:keypress="{toggle}"
   role="checkbox"
   tabindex="0"
-  aria-checked={value}
+  aria-checked="{value}"
 >
   <div class="c-toggle--track">
-    <div class="c-toggle--dot" />
+    <div class="c-toggle--dot"></div>
   </div>
   <div class="c-toggle--label">
     {label}

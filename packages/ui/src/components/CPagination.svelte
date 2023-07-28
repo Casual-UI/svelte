@@ -103,40 +103,40 @@
 </script>
 
 <div
-  class={clsx(
+  class="{clsx(
     classPrefix,
     `${classPrefix}--${shape}`,
     `${classPrefix}--${$realSize}`,
     `${classPrefix}--${$realTheme}`,
     'c-row',
     'c-items-center',
-    `c-gutter-${gutterSize}`
-  )}
+    `c-gutter-${gutterSize}`,
+  )}"
 >
   {#if showBoundaryButton}
-    <div class={`${classPrefix}--to-first`}>
+    <div class="{classPrefix}--to-first">
       <!--
         Customize the "to first" button
         @param {function} set Set first page
         @param {function} disabled Determine whether the button should be disabled or not
       -->
-      <slot name="to-first" set={toFirst} disabled={isFirst}>
-        <CButton disabled={isFirst} on:click={toFirst} flat>
-          <div class="i-material-symbols-keyboard-double-arrow-left" />
+      <slot name="to-first" set="{toFirst}" disabled="{isFirst}">
+        <CButton disabled="{isFirst}" on:click="{toFirst}" flat>
+          <div class="i-material-symbols-keyboard-double-arrow-left"></div>
         </CButton>
       </slot>
     </div>
   {/if}
   {#if showPrevNextButton}
-    <div class={`${classPrefix}--to-prev`}>
+    <div class="{classPrefix}--to-prev">
       <!--
         Customize the "to prev" button
         @param {function} set Do set previous page
         @param {boolean} disabled Determine whether the button should be disabled or not
       -->
-      <slot name="to-prev" set={toPrev} disabled={isFirst}>
-        <CButton disabled={isFirst} on:click={toPrev} flat>
-          <div class="i-material-symbols-chevron-left" />
+      <slot name="to-prev" set="{toPrev}" disabled="{isFirst}">
+        <CButton disabled="{isFirst}" on:click="{toPrev}" flat>
+          <div class="i-material-symbols-chevron-left"></div>
         </CButton>
       </slot>
     </div>
@@ -147,10 +147,10 @@
         Customize the left ellipsis button
         @param {function} set Set left ellipsis page
       -->
-      <slot name="left-ellipsis" set={toEllipsesLeft}>
-        <CButton flat on:click={toEllipsesLeft}>
+      <slot name="left-ellipsis" set="{toEllipsesLeft}">
+        <CButton flat on:click="{toEllipsesLeft}">
           {#if pagesArray[0] > 2}
-            <div class="i-tabler-dots" />
+            <div class="i-tabler-dots"></div>
           {:else}
             1
           {/if}
@@ -167,7 +167,11 @@
         @param {boolean} active Determine whether the button is active or not
       -->
       <slot name="page-button" {p} {active}>
-        <CButton label={p} flat={!active} on:click={() => (current = p)} />
+        <CButton
+          label="{p}"
+          flat="{!active}"
+          on:click="{() => (current = p)}"
+        />
       </slot>
     </div>
   {/each}
@@ -177,10 +181,10 @@
         Customize the right ellipsis button
         @param {function} set Set right ellipsis page
       -->
-      <slot name="right-ellipsis" set={toEllipsesRight}>
-        <CButton flat on:click={toEllipsesRight}>
+      <slot name="right-ellipsis" set="{toEllipsesRight}">
+        <CButton flat on:click="{toEllipsesRight}">
           {#if pagesArray.at(-1) < pages - 1}
-            <div class="i-tabler-dots" />
+            <div class="i-tabler-dots"></div>
           {:else}
             {pages}
           {/if}
@@ -189,30 +193,30 @@
     </div>
   {/if}
   {#if showPrevNextButton}
-    <div class={`${classPrefix}--to-next`}>
+    <div class="{classPrefix}--to-next">
       <!--
         Customize the "to next" button
         @param {function} set Set next page
         @param {boolean} disabled Determine whether the button should be disabled or not
       -->
-      <slot name="to-next" set={toNext} disabled={isLast}>
-        <CButton disabled={isLast} on:click={toNext} flat>
-          <div class="i-material-symbols-chevron-right" />
+      <slot name="to-next" set="{toNext}" disabled="{isLast}">
+        <CButton disabled="{isLast}" on:click="{toNext}" flat>
+          <div class="i-material-symbols-chevron-right"></div>
         </CButton>
       </slot>
     </div>
   {/if}
 
   {#if showBoundaryButton}
-    <div class={`${classPrefix}--to-last`}>
+    <div class="{classPrefix}--to-last">
       <!--
         Customize the "to last" button
         @param {function} set Set last page
         @param {boolean} disabled Determine whether the button should be disabled or not
       -->
-      <slot name="to-last" set={toLast} disabled={isLast}>
-        <CButton disabled={isLast} on:click={toLast} flat>
-          <div class="i-material-symbols-keyboard-double-arrow-right" />
+      <slot name="to-last" set="{toLast}" disabled="{isLast}">
+        <CButton disabled="{isLast}" on:click="{toLast}" flat>
+          <div class="i-material-symbols-keyboard-double-arrow-right"></div>
         </CButton>
       </slot>
     </div>

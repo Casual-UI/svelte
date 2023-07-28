@@ -53,7 +53,7 @@
 
 <CGridPanel
   {items}
-  isActive={isSelected}
-  displayFormattor={getDisplayMonth}
-  on:item-click={e => onMonthClick(e.detail)}
+  isActive="{isSelected}"
+  displayFormatter="{getDisplayMonth}"
+  on:item-click="{e => onMonthClick(e.detail)}"
 />

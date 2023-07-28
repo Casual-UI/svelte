@@ -215,25 +215,25 @@
   {#if show}
     <div
       transition:dialog
-      on:introstart={() => (inTransition = true)}
-      on:introend={() => {
+      on:introstart="{() => (inTransition = true)}"
+      on:introend="{() => {
         inTransition = false
         /**
          * Emit when the open transition is done
          */
         dispatch('opened')
-      }}
-      on:outrostart={onOutroStart}
-      on:outroend={onOutroEnd}
-      class={clsx(
+      }}"
+      on:outrostart="{onOutroStart}"
+      on:outroend="{onOutroEnd}"
+      class="{clsx(
         'c-dialog',
         rounded && roundedClass,
         inTransition && enterClassName,
         outTransition && leaveClassName,
-        customClass
-      )}
+        customClass,
+      )}"
       style:width
-      style={customStyle}
+      style="{customStyle}"
     >
       <div class="c-dialog--header">
         <!--
@@ -252,25 +252,25 @@
               class="c-dialog--close-btn"
               role="button"
               tabindex="0"
-              on:click={() => {
+              on:click="{() => {
                 show = false
-              }}
-              on:keypress={() => {
+              }}"
+              on:keypress="{() => {
                 show = false
-              }}
+              }}"
             >
               <!-- Customize the close icon -->
               <slot name="close-icon">
-                <div i-majesticons-close />
+                <div i-majesticons-close></div>
               </slot>
             </div>
           {/if}
         </slot>
       </div>
       <div
-        class={clsx('c-dialog--content', bodyPadding && 'c-px-md c-pb-md')}
-        style={customBodyStyle}
-        style:height={bodyHeight}
+        class="{clsx('c-dialog--content', bodyPadding && 'c-px-md c-pb-md')}"
+        style="{customBodyStyle}"
+        style:height="{bodyHeight}"
       >
         <!-- The default content of dialog -->
         <slot />
@@ -287,29 +287,29 @@
               <div>
                 {#if showCancelBtn}
                   <CButton
-                    label={cancelBtnLabel}
+                    label="{cancelBtnLabel}"
                     flat
                     {rounded}
-                    on:click={() => {
+                    on:click="{() => {
                       /**
                        * Emit when the default cancel button clicked
                        */
                       dispatch('cancel')
-                    }}
+                    }}"
                   />
                 {/if}
               </div>
               <div>
                 {#if showConfirmBtn}
                   <CButton
-                    label={confirmBtnLabel}
+                    label="{confirmBtnLabel}"
                     {rounded}
-                    on:click={() => {
+                    on:click="{() => {
                       /**
                        * Emit when the default confirm button clicked
                        */
                       dispatch('confirm')
-                    }}
+                    }}"
                   />
                 {/if}
               </div>

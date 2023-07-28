@@ -47,17 +47,17 @@
 </script>
 
 <div
-  class={clsx(
+  class="{clsx(
     `c-radio c-font-${$contextSize} c-h-${$contextSize} c-radio--size-${$contextSize}`,
     value === selectedValue && 'c-radio--selected',
     disabled && 'c-radio--disabled',
-    $hasError && 'c-radio--has-error'
-  )}
-  on:click={onClick}
-  on:keypress={onClick}
+    $hasError && 'c-radio--has-error',
+  )}"
+  on:click="{onClick}"
+  on:keypress="{onClick}"
   role="radio"
   tabindex="0"
-  aria-checked={value}
+  aria-checked="{value}"
 >
   <svg
     class="c-radio--circle-wrapper"
@@ -67,11 +67,11 @@
   >
     <path
       d="M12,22a10,10 0 0 1 -10,-10a10,10 0 0 1 10,-10a10,10 0 0 1 10,10a10,10 0 0 1 -10,10m0,-22a12,12 0 0 0 -12,12a12,12 0 0 0 12,12a12,12 0 0 0 12,-12a12,12 0 0 0 -12,-12"
-    />
+    ></path>
     <path
       class="c-radio--inner-circle"
       d="M12,6a6,6 0 0 0 -6,6a6,6 0 0 0 6,6a6,6 0 0 0 6,-6a6,6 0 0 0 -6,-6"
-    />
+    ></path>
   </svg>
   <div class="c-radio--label">
     {label}

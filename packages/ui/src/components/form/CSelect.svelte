@@ -178,63 +178,63 @@
   })
 </script>
 
-<CDropdown manual bind:show={focused} {disabled}>
+<CDropdown manual bind:show="{focused}" {disabled}>
   <div
-    bind:this={selectDom}
-    class={clsx(
+    bind:this="{selectDom}"
+    class="{clsx(
       bem('select', {
         disabled,
         focused,
         rounded,
         hasError: $hasError,
       }),
-      rounded && `c-rounded-${$contextSize}`
-    )}
+      rounded && `c-rounded-${$contextSize}`,
+    )}"
     use:clickOutside
   >
     <div
       class="c-select--input-wrapper"
-      style={selectDomStyle}
-      on:click={onSelectClick}
-      on:keypress={onSelectClick}
+      style="{selectDomStyle}"
+      on:click="{onSelectClick}"
+      on:keypress="{onSelectClick}"
       role="none"
     >
       {#if multiple}
         <div
-          class={`c-select--placeholder c-font-${$contextSize} c-h-${$contextSize} c-px-${$contextSize}`}
+          class="c-select--placeholder c-font-{$contextSize} c-h-{$contextSize} c-px-{$contextSize}"
         >
           {realPlaceholder}
         </div>
       {:else}
         <CInput
           bind:focused
-          value={inputValue}
+          value="{inputValue}"
           {disabled}
           {clearable}
-          placeholder={realPlaceholder}
-          suffixDivider={false}
+          placeholder="{realPlaceholder}"
+          suffixDivider="{false}"
           customColor
           validateTrigger="manual"
-          autoBlur={false}
+          autoBlur="{false}"
           readonly
-          on:clear={onClear}
+          on:clear="{onClear}"
         />
       {/if}
       <div
-        class={clsx(
-          'c-select--arrow',
-          `c-mr-${$contextSize}`,
-          focused && 'c-select--arrow-show-options'
-        )}
-        on:click|stopPropagation={onArrowClick}
-        on:keypress|stopPropagation={onArrowClick}
+        class="c-select--arrow c-mr-{$contextSize}"
+        class:c-select--arrow-show-options="{focused}"
+        on:click|stopPropagation="{onArrowClick}"
+        on:keypress|stopPropagation="{onArrowClick}"
         role="button"
         tabindex="0"
       >
-        <div i-ph-caret-down-light class="c-icon" />
+        <div i-ph-caret-down-light class="c-icon"></div>
       </div>
       {#if multiple}
-        <div bind:this={tagsContainer} class="c-select--multiple-tags c-px-sm">
+        <div
+          bind:this="{tagsContainer}"
+          class="c-select--multiple-tags c-px-sm"
+        >
           {#each selectedMultipleOptions as { label, value }}
             <div>
               <CTag
@@ -242,7 +242,7 @@
                 size="xs"
                 rounded
                 closeable
-                on:close={() => onItemClick({ label, value })}
+                on:close="{() => onItemClick({ label, value })}"
               />
             </div>
           {/each}
@@ -251,12 +251,12 @@
     </div>
   </div>
 
-  <div slot="drop-content" class={`c-py-${$contextSize}`}>
+  <div slot="drop-content" class="{`c-py-${$contextSize}`}">
     <CList
-      items={options}
-      activeFn={isItemActive}
+      items="{options}"
+      activeFn="{isItemActive}"
       clickable
-      on:item-click={e => onItemClick(e.detail)}
+      on:item-click="{e => onItemClick(e.detail)}"
     />
   </div>
 </CDropdown>

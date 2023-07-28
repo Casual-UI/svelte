@@ -30,24 +30,27 @@
 
 <div>
   <div class="font-700 leading-8">Flex direction:</div>
-  <CRadioGroup options={mapOptions(flexDirections)} bind:value={direction} />
+  <CRadioGroup
+    options="{mapOptions(flexDirections)}"
+    bind:value="{direction}"
+  />
 
   <div class="font-700 leading-8">Justify content:</div>
-  <CRadioGroup options={mapOptions(justifies)} bind:value={justify} />
+  <CRadioGroup options="{mapOptions(justifies)}" bind:value="{justify}" />
 
   <div class="font-700 leading-8">Align items:</div>
-  <CRadioGroup options={mapOptions(aligns)} bind:value={align} />
+  <CRadioGroup options="{mapOptions(aligns)}" bind:value="{align}" />
 
   <div class="font-700 leading-8">Cols:</div>
-  <CRadioGroup options={mapOptions(cols)} bind:value={col} />
+  <CRadioGroup options="{mapOptions(cols)}" bind:value="{col}" />
 
   <div class="font-700 leading-8">Gutters:</div>
-  <CRadioGroup options={mapOptions(gutters)} bind:value={gutter} />
+  <CRadioGroup options="{mapOptions(gutters)}" bind:value="{gutter}" />
 
-  <div class={`${finalClasses} c-row`}>
-    <div class={`item c-col-${col}`}>1</div>
-    <div class={`item c-col-${col}`}>2</div>
-    <div class={`item c-col-${col}`}>3</div>
+  <div class="{`${finalClasses} c-row`}">
+    <div class="{`item c-col-${col}`}">1</div>
+    <div class="{`item c-col-${col}`}">2</div>
+    <div class="{`item c-col-${col}`}">3</div>
   </div>
 </div>
 

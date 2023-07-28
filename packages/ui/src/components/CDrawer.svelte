@@ -63,12 +63,12 @@
 <CDialog
   {title}
   bind:show
-  exchangeAnimationDirection={isLeftOrRight}
-  horizontalAlign={hMap.get(position)}
-  verticalAlign={vMap.get(position)}
-  width={!isLeftOrRight ? '100vw' : width}
-  customStyle={isLeftOrRight ? 'height: 100vh;' : ''}
-  bodyHeight={!isLeftOrRight ? bodyHeight : undefined}
+  exchangeAnimationDirection="{isLeftOrRight}"
+  horizontalAlign="{hMap.get(position)}"
+  verticalAlign="{vMap.get(position)}"
+  width="{!isLeftOrRight ? '100vw' : width}"
+  customStyle="{isLeftOrRight ? 'height: 100vh;' : ''}"
+  bodyHeight="{!isLeftOrRight ? bodyHeight : undefined}"
   {closeOnClickBackdrop}
 >
   <!-- The same as [CDialog](/features/components/popups/dialog/) -->
@@ -78,7 +78,7 @@
 
   <!-- The same as [CDialog](/features/components/popups/dialog/) -->
   <slot slot="close-icon" name="close-icon">
-    <div i-majesticons-close />
+    <div i-majesticons-close></div>
   </slot>
 
   <!-- The content of drawer -->

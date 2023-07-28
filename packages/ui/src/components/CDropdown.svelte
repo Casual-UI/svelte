@@ -38,16 +38,19 @@
   })
 </script>
 
-<div use:clickOutside class={clsx('c-dropdown', show && 'c-dropdown--dropped')}>
+<div
+  use:clickOutside
+  class="{clsx('c-dropdown', show && 'c-dropdown--dropped')}"
+>
   <div class="c-dropdown--trigger">
     <!-- The trigger content -->
     <slot />
   </div>
   <div
-    class={clsx(
+    class="{clsx(
       'c-dropdown--drop-content',
-      !widthWithinParent && 'c-dropdown--drop-content-auto-width'
-    )}
+      !widthWithinParent && 'c-dropdown--drop-content-auto-width',
+    )}"
   >
     <!-- The dropdown content -->
     <slot name="drop-content" />

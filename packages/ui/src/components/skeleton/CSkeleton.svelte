@@ -20,5 +20,5 @@
   class="{bem('skeleton')} c-skeleton--shape-{shape}"
   style:width
   style:height
-  style:border-radius={borderRadius}
-/>
+  style:border-radius="{borderRadius}"
+></div>

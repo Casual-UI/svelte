@@ -42,16 +42,16 @@
 </script>
 
 <div
-  class={`${bem('item', {
+  class="{bem('item', {
     clickable,
     active,
-  })} c-font-${$contextSize} c-pa-${$contextSize}`}
-  on:click|stopPropagation={onClick}
-  on:keypress={onClick}
+  })} c-font-{$contextSize} c-pa-{$contextSize}"
+  on:click|stopPropagation="{onClick}"
+  on:keypress="{onClick}"
   role="none"
 >
   <slot>
-    <span class={`c-h-${$contextSize}`}>
+    <span class="c-h-{$contextSize}">
       {label}
     </span>
   </slot>

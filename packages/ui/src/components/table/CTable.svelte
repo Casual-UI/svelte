@@ -88,34 +88,35 @@
 </script>
 
 <div
-  class={bem('table', {
+  class="{bem('table', {
     striped,
-  })}
+  })}"
   bind:clientWidth
-  on:scroll={handleScroll}
-  bind:this={tableWrapper}
+  on:scroll="{handleScroll}"
+  bind:this="{tableWrapper}"
 >
   <table class="c-table--table">
     <colgroup>
       {#each columns as col}
-        <col style={{ width: col.width ?? DEFAULT_WIDTH }} />
+        <col style="{{ width: col.width ?? DEFAULT_WIDTH }}" />
       {/each}
     </colgroup>
     <thead>
       <CTr>
         {#each columns as col, i}
           <CTh
-            width={col.width}
-            sticky={col.sticky}
-            stickyLeft={stickyLeftPositions[i]}
-            stickyRight={stickyRightPositions[i]}
-            stickyLeftMax={maxStickyLeftIdx === i && showMaxLeftStickyShadow}
-            stickyRightMin={minStickyRightIdx === i && showMaxRightStickyShadow}
+            width="{col.width}"
+            sticky="{col.sticky}"
+            stickyLeft="{stickyLeftPositions[i]}"
+            stickyRight="{stickyRightPositions[i]}"
+            stickyLeftMax="{maxStickyLeftIdx === i && showMaxLeftStickyShadow}"
+            stickyRightMin="{minStickyRightIdx === i &&
+              showMaxRightStickyShadow}"
           >
             {#if typeof col.title === 'string'}
               {col.title}
             {:else}
-              <svelte:component this={col.title} {col} />
+              <svelte:component this="{col.title}" {col} />
             {/if}
           </CTh>
         {/each}
@@ -126,16 +127,22 @@
         <CTr>
           {#each columns as col, j}
             <CTd
-              width={col.width}
-              sticky={col.sticky}
-              stickyLeft={stickyLeftPositions[j]}
-              stickyRight={stickyRightPositions[j]}
-              stickyLeftMax={maxStickyLeftIdx === j && showMaxLeftStickyShadow}
-              stickyRightMin={minStickyRightIdx === j &&
-                showMaxRightStickyShadow}
+              width="{col.width}"
+              sticky="{col.sticky}"
+              stickyLeft="{stickyLeftPositions[j]}"
+              stickyRight="{stickyRightPositions[j]}"
+              stickyLeftMax="{maxStickyLeftIdx === j &&
+                showMaxLeftStickyShadow}"
+              stickyRightMin="{minStickyRightIdx === j &&
+                showMaxRightStickyShadow}"
             >
               {#if col.cell}
-                <svelte:component this={col.cell} {col} {row} rowIndex={i} />
+                <svelte:component
+                  this="{col.cell}"
+                  {col}
+                  {row}
+                  rowIndex="{i}"
+                />
               {:else}
                 {row[col.field]}
               {/if}

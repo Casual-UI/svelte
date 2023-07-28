@@ -53,19 +53,19 @@
 </script>
 
 <div
-  class={bem('list', {
+  class="{bem('list', {
     withDivider: divider,
-  })}
+  })}"
 >
   {#if !items || items.length === 0}
     <!-- Customize the empty content -->
     <slot name="empty">
-      <div class={`c-list--empty c-px-${$contextSize}`}>No Data</div>
+      <div class="c-list--empty c-px-{$contextSize}">No Data</div>
     </slot>
   {:else}
     {#each items as item}
       {@const active = activeFn?.(item)}
-      <CItem {clickable} {active} on:click={() => onItemClick(item)}>
+      <CItem {clickable} {active} on:click="{() => onItemClick(item)}">
         <!--
           Customize item
           @param {any} itemObj the item obj that holds the whole item data.
@@ -75,9 +75,9 @@
         <slot
           name="item"
           {active}
-          itemObj={item}
-          isClickable={clickable}
-          isActive={activeFn && activeFn(item)}
+          itemObj="{item}"
+          isClickable="{clickable}"
+          isActive="{activeFn && activeFn(item)}"
         >
           {item.label}
         </slot>

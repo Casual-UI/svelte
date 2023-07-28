@@ -111,11 +111,11 @@
 
     pauses.splice(
       pauses.findIndex(p => p === pause),
-      1
+      1,
     )
     resumes.splice(
       resumes.findIndex(r => r === resume),
-      1
+      1,
     )
   })
 </script>
@@ -124,9 +124,9 @@
   <div
     class="c-carousel--slider-item"
     in:carousel
-    out:carousel={{ leave: true }}
-    on:introstart={onIntroStart}
-    on:introend={onIntroEnd}
+    out:carousel="{{ leave: true }}"
+    on:introstart="{onIntroStart}"
+    on:introend="{onIntroEnd}"
   >
     <!-- The content -->
     <slot />

@@ -54,13 +54,13 @@
    * The size of component in this form item. Notice that the default value is `'md'` instead of `undefined`
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let size
+  export let size = undefined
 
   /**
    * The gutter size of this form item.
    * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'=}
    */
-  export let gutterSize
+  export let gutterSize = undefined
 
   /**
    * Determine current form item has error or not.
@@ -168,25 +168,25 @@
 </script>
 
 <div
-  class={clsx(
+  class="{clsx(
     'c-form-item',
     `c-col-${$contextCol}`,
     `c-${$contextLabelDirection}`,
     isLabelVertical ? 'c-items-start' : 'c-items-center',
     $hasError && 'c-form-item--has-error',
-    currentRules && 'c-form-item--maybe-error'
-  )}
+    currentRules && 'c-form-item--maybe-error',
+  )}"
 >
   <div
-    class={clsx(
+    class="{clsx(
       'c-form-item--label',
       `c-font-${$contextSize}`,
       `c-m${getLabelMarginPosition(
-        $contextLabelDirection
+        $contextLabelDirection,
       )}-${$contextGutterSize}`,
-      `c-text-${$contextLabelAlign}`
-    )}
-    style={`width: ${$contextLabelWidth}`}
+      `c-text-${$contextLabelAlign}`,
+    )}"
+    style="{`width: ${$contextLabelWidth}`}"
   >
     {label}
   </div>
@@ -200,10 +200,10 @@
       <div
         class="c-form-item--error-tip"
         transition:errorTip
-        on:introstart={onInStart}
-        on:introend={onInEnd}
-        on:outrostart={onOutStart}
-        on:outroend={onOutEnd}
+        on:introstart="{onInStart}"
+        on:introend="{onInEnd}"
+        on:outrostart="{onOutStart}"
+        on:outroend="{onOutEnd}"
       >
         {$hasError}
       </div>

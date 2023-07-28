@@ -54,23 +54,21 @@
 </script>
 
 <div
-  class={`${bem('popup', {
+  class="{bem('popup', {
     show,
-  })} ${customClass}`}
-  bind:this={popupContainer}
+  })} {customClass}"
+  bind:this="{popupContainer}"
 >
   {#if show}
     <div
-      on:click={onBackdropClick}
-      on:keypress={onBackdropClick}
+      on:click="{onBackdropClick}"
+      on:keypress="{onBackdropClick}"
       transition:fade
       class="c-popup--backdrop"
       role="none"
-    />
+    ></div>
   {/if}
-  <div
-    class={`c-popup--content-wrapper c-items-${$hAlign} c-justify-${$vAlign}`}
-  >
+  <div class="c-popup--content-wrapper c-items-{$hAlign} c-justify-{$vAlign}">
     <div class="c-popup--content">
       <!-- The popup content -->
       <slot />

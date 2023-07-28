@@ -96,7 +96,7 @@
 
 <!-- The click event -->
 <button
-  class={`${bem('button', {
+  class="{bem('button', {
     round,
     outlined,
     disabled,
@@ -104,20 +104,20 @@
     block,
     icon,
     flat,
-  })} ${clsx(
+  })} {clsx(
     `c-button--theme-${$realTheme}`,
     rounded && `c-rounded-${$realSize}`,
     `c-font-${$realSize}`,
     `c-h-${$realSize}`,
     `c-px-${$realSize}`,
-    `c-button--size-${$realSize}`
-  )}`}
+    `c-button--size-${$realSize}`,
+  )}"
   {disabled}
   {...attributeAtom($$restProps)}
   {style}
-  on:click={handleClick}
+  on:click="{handleClick}"
 >
-  <div class="c-button--focus-helper" />
+  <div class="c-button--focus-helper"></div>
   <div class="c-button--content-wrapper">
     <!-- The internal content of the button. This slot can override `label` prop -->
     <slot>

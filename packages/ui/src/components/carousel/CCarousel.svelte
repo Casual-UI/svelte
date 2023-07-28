@@ -266,19 +266,19 @@
 </script>
 
 <div
-  class={bem('carousel', {
+  class="{bem('carousel', {
     vertical,
-  })}
-  style={`height: ${height}`}
-  on:mouseenter={onContainerMouseEnter}
-  on:mouseleave={onContainerMouseLeave}
+  })}"
+  style="height: {height}}"
+  on:mouseenter="{onContainerMouseEnter}"
+  on:mouseleave="{onContainerMouseLeave}"
   role="banner"
 >
   <div
-    class={`c-carousel--indicators c-flex c-items-${indicatorsPositionVertical} c-justify-${indicatorsPositionHorizontal}`}
+    class="c-carousel--indicators c-flex c-items-{indicatorsPositionVertical} c-justify-{indicatorsPositionHorizontal}"
   >
     <div
-      class={`c-carousel--indicators-container c-gutter-sm c-flex c-${indicatorsAlignDirection}`}
+      class="c-carousel--indicators-container c-gutter-sm c-flex c-{indicatorsAlignDirection}"
     >
       <!--
         Customize the indicators content.
@@ -290,23 +290,23 @@
           {@const isActiveAndHasInterval = isActive && interval}
           <div>
             <div
-              class={clsx(
+              class="{clsx(
                 'c-carousel--indicator-item',
                 `c-carousel--indicator-item--${theme}`,
-                isActive && 'c-carousel--indicator-item--active'
-              )}
-              on:click={() => toIndex(i)}
-              on:keypress={() => toIndex(i)}
+                isActive && 'c-carousel--indicator-item--active',
+              )}"
+              on:click="{() => toIndex(i)}"
+              on:keypress="{() => toIndex(i)}"
               role="button"
               tabindex="0"
             >
-              <div class="c-carousel--indicator-item--bg" />
+              <div class="c-carousel--indicator-item--bg"></div>
               <div
                 class="c-carousel--indicator-item--progress-bar"
-                style={isActiveAndHasInterval
+                style="{isActiveAndHasInterval
                   ? `animation-play-state: ${indicatorsAnimationPlayState}; animation-duration: ${interval}ms; `
-                  : ''}
-              />
+                  : ''}"
+              ></div>
             </div>
           </div>
         {/each}
@@ -317,16 +317,16 @@
   {#if showArrow && (infinity || activeIndex > 0)}
     <div
       class="c-carousel--control c-carousel--control--prev"
-      transition:fade={{ duration: 300, easing: cubicInOut }}
-      on:click={toPrev}
-      on:keypress={toPrev}
+      transition:fade="{{ duration: 300, easing: cubicInOut }}"
+      on:click="{toPrev}"
+      on:keypress="{toPrev}"
       role="button"
       tabindex="0"
     >
       <!-- Customize the to previous slide control content -->
       <slot name="control-prev">
         <CButton icon flat {theme}>
-          <div i-ooui-previous-ltr />
+          <div i-ooui-previous-ltr></div>
         </CButton>
       </slot>
     </div>
@@ -335,16 +335,16 @@
   {#if showArrow && (infinity || activeIndex < $slides.length - 1)}
     <div
       class="c-carousel--control c-carousel--control--next"
-      transition:fade={{ duration: 300, easing: cubicInOut }}
-      on:click={toNext}
-      on:keypress={toNext}
+      transition:fade="{{ duration: 300, easing: cubicInOut }}"
+      on:click="{toNext}"
+      on:keypress="{toNext}"
       role="button"
       tabindex="0"
     >
       <!-- Customize the to next slide control content -->
       <slot name="control-next">
         <CButton icon flat {theme}>
-          <div i-ooui-previous-rtl />
+          <div i-ooui-previous-rtl></div>
         </CButton>
       </slot>
     </div>

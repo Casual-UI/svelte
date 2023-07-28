@@ -20,14 +20,14 @@
 </script>
 
 <th
-  class={clsx('c-table--th', {
+  class="{clsx('c-table--th', {
     [`c-table--th--sticky-${sticky}`]: sticky,
-  })}
-  class:c-table--td--sticky-max-left={stickyLeftMax}
-  class:c-table--td--sticky-min-right={stickyRightMin}
-  style={`width: ${width};`}
-  style:--c-table-sticky-left={stickyLeft}
-  style:--c-table-sticky-right={stickyRight}
+  })}"
+  class:c-table--td--sticky-max-left="{stickyLeftMax}"
+  class:c-table--td--sticky-min-right="{stickyRightMin}"
+  style:width
+  style:--c-table-sticky-left="{stickyLeft}"
+  style:--c-table-sticky-right="{stickyRight}"
 >
   <slot />
 </th>

@@ -3,7 +3,6 @@
   import { createEventDispatcher } from 'svelte'
   import { cubicIn } from 'svelte/easing'
   import { scale } from 'svelte/transition'
-  import clsx from '../../../utils/clsx'
 
   /**
    * @type {number}
@@ -224,8 +223,8 @@
 </script>
 
 <div
-  class={'c-date-panel c-date-picker--panel'}
-  transition:scale={{ duration: 300, easing: cubicIn }}
+  class="c-date-panel c-date-picker--panel"
+  transition:scale="{{ duration: 300, easing: cubicIn }}"
 >
   <div class="c-date-panel--body">
     {#each messages.en.weeks as w}
@@ -235,25 +234,21 @@
     {/each}
     {#each dates.items as d, i}
       <div
-        class={clsx(
-          'c-date-panel--date-item',
-          isStart(d) && 'c-date-panel--date-item--is-start',
-          isEnd(d) && 'c-date-panel--date-item--is-end',
-          isDateInHoveringRange(d) && 'c-date-panel--date-item--in-range'
-        )}
-        on:click|stopPropagation={() => setDate(d)}
+        class="c-date-panel--date-item"
+        class:c-date-panel--date-item--is-start="{isStart(d)}"
+        class:c-date-panel--date-item--is-end="{isEnd(d)}"
+        class:c-date-panel--date-item--in-range="{isDateInHoveringRange(d)}"
+        on:click|stopPropagation="{() => setDate(d)}"
         on:keypress
-        on:mouseenter={() => setHoveringDate(d)}
+        on:mouseenter="{() => setHoveringDate(d)}"
         role="button"
         tabindex="0"
       >
         <div
-          class={clsx(
-            'c-date-panel--date-item--inner',
-            isSelected(d) && 'c-date-panel--date-item--inner-selected',
-            (i < dates.start || i >= dates.end) &&
-              'c-date-panel--date-item--inner-not-current-month'
-          )}
+          class="c-date-panel--date-item--inner"
+          class:c-date-panel--date-item--inner-selected="{isSelected(d)}"
+          class:c-date-panel--date-item--inner-not-current-month="{i <
+            dates.start || i >= dates.end}"
         >
           {getDisplayDateNum(d)}
         </div>

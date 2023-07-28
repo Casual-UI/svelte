@@ -34,8 +34,8 @@
     cy="50"
     r="20"
     fill="none"
-    stroke={color}
-    stroke-width={thickness}
+    stroke="{color}"
+    stroke-width="{thickness}"
     stroke-miterlimit="10"
-  />
+  ></circle>
 </svg>

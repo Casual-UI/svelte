@@ -51,8 +51,8 @@
 </script>
 
 <CGridPanel
-  isActive={isSelected}
-  items={years}
-  displayFormattor={year => year}
-  on:item-click={e => onYearClick(e.detail)}
+  isActive="{isSelected}"
+  items="{years}"
+  displayFormatter="{year => year}"
+  on:item-click="{e => onYearClick(e.detail)}"
 />

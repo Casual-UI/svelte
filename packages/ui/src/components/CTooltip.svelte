@@ -69,27 +69,27 @@
 </script>
 
 <div
-  class:c-tooltip--show={show}
+  class:c-tooltip--show="{show}"
   class="c-tooltip"
-  style:--c-tooltip-top={top}
-  style:--c-tooltip-left={left}
+  style:--c-tooltip-top="{top}"
+  style:--c-tooltip-left="{left}"
 >
   <div
-    bind:this={triggerDom}
+    bind:this="{triggerDom}"
     class="c-tooltip--trigger"
-    on:mouseenter={handleTriggerMouseEnter}
-    on:mouseleave={handleTriggerMouseLeave}
+    on:mouseenter="{handleTriggerMouseEnter}"
+    on:mouseleave="{handleTriggerMouseLeave}"
     use:clickOutside
     role="tooltip"
   >
     <!-- The trigger content -->
     <slot name="trigger" />
   </div>
-  <div bind:this={contentDom} class="c-tooltip--content" role="tooltip">
+  <div bind:this="{contentDom}" class="c-tooltip--content" role="tooltip">
     <!-- The tooltip content. Notice that this slot will override the content prop -->
     <slot>
       {content}
     </slot>
-    <div bind:this={arrowDom} class="c-tooltip--arrow" />
+    <div bind:this="{arrowDom}" class="c-tooltip--arrow"></div>
   </div>
 </div>

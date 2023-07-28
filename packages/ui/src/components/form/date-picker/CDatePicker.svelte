@@ -4,7 +4,6 @@
   import createClickOutsideAction from '../../../actions/createClickOutsideAction'
   import { validateCurrentKey } from '../../../hooks/useForm'
   import useSize from '../../../hooks/useSize'
-  import clsx from '../../../utils/clsx'
   import CDropdown from '../../CDropdown.svelte'
   import CInput from '../CInput.svelte'
   import CDatePanel from './CDatePanel.svelte'
@@ -184,24 +183,22 @@
 </script>
 
 <div
-  class={clsx(
-    `c-date-picker c-font-${$contextSize} c-date-picker--size-${$contextSize}`,
-    disabled && 'c-date-picker--diabled'
-  )}
+  class="c-date-picker c-font-{$contextSize} c-date-picker--size-{$contextSize}"
+  class:c-date-picker--disabled="{disabled}"
   use:clickOutside
 >
-  <CDropdown bind:show widthWithinParent={false} {disabled} manual>
+  <CDropdown bind:show widthWithinParent="{false}" {disabled} manual>
     <CInput
-      value={displayValue}
+      value="{displayValue}"
       {disabled}
       readonly
       {placeholder}
       clearable
       validateTrigger="manual"
-      suffixDivider={false}
-      on:clear={onClear}
+      suffixDivider="{false}"
+      on:clear="{onClear}"
     >
-      <div slot="suffix" i-mdi-calendar-edit />
+      <div slot="suffix" i-mdi-calendar-edit></div>
     </CInput>
     <svelte:fragment slot="drop-content">
       <CDatePickerHeader
@@ -209,11 +206,11 @@
         bind:month
         bind:yearRange
         bind:unit
-        unitSwitchable={!range}
-        on:unit-change={e => (unit = e.detail)}
+        unitSwitchable="{!range}"
+        on:unit-change="{e => (unit = e.detail)}"
       />
       <div
-        class={`c-date-picker--panel-wrapper c-px-${$contextSize} c-pb-${$contextSize}`}
+        class="c-date-picker--panel-wrapper c-px-{$contextSize} c-pb-{$contextSize}"
       >
         {#if unit === 'day'}
           <CDatePanel
@@ -223,20 +220,20 @@
             {range}
             {year}
             {month}
-            formatter={innerFormatter}
-            on:date-set={onDateSet}
+            formatter="{innerFormatter}"
+            on:date-set="{onDateSet}"
           />
         {:else if unit === 'month'}
           <CMonthPanel
             bind:value
             {year}
-            on:month-change={e => onMonthChange(e.detail)}
+            on:month-change="{e => onMonthChange(e.detail)}"
           />
         {:else}
           <CYearPanel
             bind:value
             {yearRange}
-            on:year-change={e => onYearChange(e.detail)}
+            on:year-change="{e => onYearChange(e.detail)}"
           />
         {/if}
       </div>

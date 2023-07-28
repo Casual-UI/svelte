@@ -21,7 +21,7 @@
       to="180 50 50"
       dur="0.5s"
       begin="rectBox.end"
-    />
+    ></animateTransform>
   </rect>
   <rect x="27" y="27" width="46" height="50" fill="currentColor">
     <animate
@@ -32,6 +32,6 @@
       from="50"
       to="0"
       fill="freeze"
-    />
+    ></animate>
   </rect>
 </svg>

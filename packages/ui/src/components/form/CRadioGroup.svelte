@@ -47,14 +47,14 @@
   useSize(size)
 </script>
 
-<div class={`c-flex c-items-center c-wrap c-gutter-x-${$contextGutterSize}`}>
+<div class="{`c-flex c-items-center c-wrap c-gutter-x-${$contextGutterSize}`}">
   {#each options as op}
     <div>
       <CRadio
         bind:value
-        selectedValue={op.value}
-        label={op.label}
-        on:change={mayValidate}
+        selectedValue="{op.value}"
+        label="{op.label}"
+        on:change="{mayValidate}"
       />
     </div>
   {/each}

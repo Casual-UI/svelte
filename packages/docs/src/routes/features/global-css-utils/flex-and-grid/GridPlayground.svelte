@@ -27,7 +27,7 @@
 
   $: activeItems = items.slice(
     (col - 1) * (row - 1),
-    (col - 1) * (row - 1) + itemNum
+    (col - 1) * (row - 1) + itemNum,
   )
 
   const [send, receive] = crossfade({
@@ -49,32 +49,32 @@
 
 <div>
   <div class="font-700 leading-8">Grid columns:</div>
-  <CRadioGroup options={mapOptions(cols)} bind:value={col} />
+  <CRadioGroup options="{mapOptions(cols)}" bind:value="{col}" />
 
   <div class="font-700 leading-8">Grid rows:</div>
-  <CRadioGroup options={mapOptions(rows)} bind:value={row} />
+  <CRadioGroup options="{mapOptions(rows)}" bind:value="{row}" />
 
   <div class="font-700 leading-8">Grid gap:</div>
-  <CRadioGroup options={mapOptions(gaps)} bind:value={gap} />
+  <CRadioGroup options="{mapOptions(gaps)}" bind:value="{gap}" />
 
   <div class="font-700 leading-8">Item number:</div>
-  <CRadioGroup options={mapOptions(itemNumArray)} bind:value={itemNum} />
+  <CRadioGroup options="{mapOptions(itemNumArray)}" bind:value="{itemNum}" />
 
   <div
-    class={`c-grid c-grid-col-${col} c-grid-row-${row} c-grid-gap-${gap} c-pa-${gap}`}
+    class="{`c-grid c-grid-col-${col} c-grid-row-${row} c-grid-gap-${gap} c-pa-${gap}`}"
   >
     {#each activeItems as item, i (item)}
       <div
-        animate:flip={{
+        animate:flip="{{
           duration: 500,
-        }}
-        class={`item c-col-${col}`}
-        in:receive={{
+        }}"
+        class="{`item c-col-${col}`}"
+        in:receive="{{
           key: item,
-        }}
-        out:send={{
+        }}"
+        out:send="{{
           key: item,
-        }}
+        }}"
       >
         {i + 1}
       </div>

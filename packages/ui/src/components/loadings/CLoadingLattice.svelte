@@ -12,7 +12,7 @@
       values="1;.2;1"
       calcMode="linear"
       repeatCount="indefinite"
-    />
+    ></animate>
   </circle>
   <circle cx="12.5" cy="52.5" r="12.5" fill-opacity=".5">
     <animate
@@ -22,7 +22,7 @@
       values="1;.2;1"
       calcMode="linear"
       repeatCount="indefinite"
-    />
+    ></animate>
   </circle>
   <circle cx="52.5" cy="12.5" r="12.5">
     <animate
@@ -32,7 +32,7 @@
       values="1;.2;1"
       calcMode="linear"
       repeatCount="indefinite"
-    />
+    ></animate>
   </circle>
   <circle cx="52.5" cy="52.5" r="12.5">
     <animate
@@ -42,7 +42,7 @@
       values="1;.2;1"
       calcMode="linear"
       repeatCount="indefinite"
-    />
+    ></animate>
   </circle>
   <circle cx="92.5" cy="12.5" r="12.5">
     <animate
@@ -52,7 +52,7 @@
       values="1;.2;1"
       calcMode="linear"
       repeatCount="indefinite"
-    />
+    ></animate>
   </circle>
   <circle cx="92.5" cy="52.5" r="12.5">
     <animate
@@ -62,7 +62,7 @@
       values="1;.2;1"
       calcMode="linear"
       repeatCount="indefinite"
-    />
+    ></animate>
   </circle>
   <circle cx="12.5" cy="92.5" r="12.5">
     <animate
@@ -72,7 +72,7 @@
       values="1;.2;1"
       calcMode="linear"
       repeatCount="indefinite"
-    />
+    ></animate>
   </circle>
   <circle cx="52.5" cy="92.5" r="12.5">
     <animate
@@ -82,7 +82,7 @@
       values="1;.2;1"
       calcMode="linear"
       repeatCount="indefinite"
-    />
+    ></animate>
   </circle>
   <circle cx="92.5" cy="92.5" r="12.5">
     <animate
@@ -92,6 +92,6 @@
       values="1;.2;1"
       calcMode="linear"
       repeatCount="indefinite"
-    />
+    ></animate>
   </circle>
 </svg>
