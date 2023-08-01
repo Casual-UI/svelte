@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.10.1
+
+### Patch Changes
+
+- [`b245775`](https://github.com/Casual-UI/svelte/commit/b245775345a919ab7b0aaa67be68e9686ad72c82) Thanks [@Blackman99](https://github.com/Blackman99)! - fix: carousel height
+
 ## 0.10.0
 
 ### Minor Changes
