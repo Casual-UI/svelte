@@ -7,7 +7,7 @@ componentName:
 
 ## Basic usage
 
-```svelte live
+```svelte live async
 <script lang="ts">
   import { CCarousel, CCarouselSlider } from '@casual-ui/svelte'
 

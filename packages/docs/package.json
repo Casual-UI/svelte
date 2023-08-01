@@ -23,7 +23,8 @@
     "unified": "^10.1.2",
     "unist-util-visit": "^5.0.0",
     "vite": "^4.4.7",
-    "vite-plugin-doc-parser": "workspace:*"
+    "vite-plugin-doc-parser": "workspace:*",
+    "vitest": "^0.33.0"
   },
   "type": "module",
   "license": "MIT"

@@ -71,7 +71,6 @@
   import { cubicInOut } from 'svelte/easing'
   import { writable } from 'svelte/store'
   import { fade } from 'svelte/transition'
-  import clsx from '../../utils/clsx'
   import bem from '../../utils/bem'
   import CButton from '../CButton.svelte'
 
@@ -269,7 +268,7 @@
   class="{bem('carousel', {
     vertical,
   })}"
-  style="height: {height}}"
+  style:height
   on:mouseenter="{onContainerMouseEnter}"
   on:mouseleave="{onContainerMouseLeave}"
   role="banner"
@@ -290,11 +289,8 @@
           {@const isActiveAndHasInterval = isActive && interval}
           <div>
             <div
-              class="{clsx(
-                'c-carousel--indicator-item',
-                `c-carousel--indicator-item--${theme}`,
-                isActive && 'c-carousel--indicator-item--active',
-              )}"
+              class="c-carousel--indicator-item c-carousel--indicator-item--{theme}"
+              class:c-carousel--indicator-item--active="{isActive}"
               on:click="{() => toIndex(i)}"
               on:keypress="{() => toIndex(i)}"
               role="button"
