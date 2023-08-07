@@ -6,10 +6,9 @@ actions:
   - label: Quick start
     type: primary
     to: '/guide/quick-start'
-  - label: View on github
+  - label: View components
     type: flat
-    to: https://github.com/Casual-UI/svelte
-    external: true
+    to: /features/components/basic/button/
 features:
   - title: Type friendly
     description: Written with typescript. Strong type tips.
