@@ -83,6 +83,7 @@
     </slot>
   </div>
   <div class="{classPrefix}--front">
+    <!-- The normally scrolling content -->
     <slot />
   </div>
 </div>
