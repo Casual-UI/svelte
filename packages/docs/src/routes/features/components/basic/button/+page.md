@@ -6,10 +6,6 @@ componentName: CButton
 ## Basic Usage
 
 ```svelte live
-<script>
-  import { CButton } from '@casual-ui/svelte'
-</script>
-
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
   <div>
     <CButton label="A Basic Button" />
@@ -32,10 +28,6 @@ componentName: CButton
 ## Themes
 
 ```svelte live
-<script lang="ts">
-  import { CButton } from '@casual-ui/svelte'
-</script>
-
 <div class="grid grid-cols-3 md:grid-cols-2 gap-4">
   <div>
     <CButton label="A Primary (default) Button" />
@@ -79,10 +71,6 @@ componentName: CButton
 ## Sizes
 
 ```svelte live
-<script lang="ts">
-  import { CButton } from '@casual-ui/svelte'
-</script>
-
 <CButton size="xs" label="XS Button" rounded />
 <CButton size="sm" label="SM Button" rounded />
 <CButton label="Normal Button (default)" rounded />
@@ -93,10 +81,6 @@ componentName: CButton
 ## Block button
 
 ```svelte live
-<script lang="ts">
-  import { CButton } from '@casual-ui/svelte'
-</script>
-
 <CButton block label="Block Button" />
 <div class="c-mt-md">
   <CButton block label="Block Button" theme="warning" round />
@@ -135,19 +119,13 @@ componentName: CButton
 ## Icon button
 
 ```svelte live
-<script lang="ts">
-  import { CButton } from '@casual-ui/svelte'
-</script>
-
-<div>
-  <CButton icon style="font-size: 2rem;">
-    <div class="i-openmoji-apple" />
-  </CButton>
-  <CButton icon style="font-size: 4rem;" outlined theme="warning">
-    <div class="i-openmoji-banana" />
-  </CButton>
-  <CButton icon style="font-size: 6rem;" theme="negative">
-    <div class="i-openmoji-peach" />
-  </CButton>
-</div>
+<CButton icon style="font-size: 2rem;">
+  <div class="i-openmoji-apple" />
+</CButton>
+<CButton icon style="font-size: 4rem;" outlined theme="warning">
+  <div class="i-openmoji-banana" />
+</CButton>
+<CButton icon style="font-size: 6rem;" theme="negative">
+  <div class="i-openmoji-peach" />
+</CButton>
 ```

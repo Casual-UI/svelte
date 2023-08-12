@@ -11,10 +11,12 @@
   "svelte": "./src/index.ts",
   "publishConfig": {
     "exports": {
-      ".": "./dist/index.js",
+      ".": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
       "./dist/style/style.css": "./dist/style/style.css"
     },
-    "types": "./dist/index.d.ts",
     "svelte": "./dist/index.js"
   },
   "files": [

@@ -3,6 +3,7 @@
   "rules": {
     "arrow-parens": ["error", "as-needed"],
     "@typescript-eslint/brace-style": "off",
-    "antfu/top-level-function": "off"
+    "antfu/top-level-function": "off",
+    "prefer-const": "off"
   }
 }

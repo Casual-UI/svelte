@@ -7,7 +7,6 @@ componentName: form/CSelect
 
 ```svelte live
 <script>
-  import { CSelect } from '@casual-ui/svelte'
 
   let selectedValue = ''
 
@@ -27,7 +26,6 @@ componentName: form/CSelect
 
 ```svelte live
 <script lang="ts">
-  import { CSelect } from '@casual-ui/svelte'
 
   let selectedValue = ''
 
@@ -55,7 +53,6 @@ componentName: form/CSelect
 ## Shape
 ```svelte live
 <script lang="ts">
-  import { CSelect } from '@casual-ui/svelte'
 
   let selectedValue = ''
 
@@ -75,7 +72,6 @@ componentName: form/CSelect
 
 ```svelte live
 <script lang="ts">
-  import { CSelect } from '@casual-ui/svelte'
 
   let selectedValue = ''
 
@@ -114,7 +110,6 @@ componentName: form/CSelect
 
 ```svelte live
 <script lang="ts">
-  import { CSelect } from '@casual-ui/svelte'
 
   let selectedValue: any[] = []
 

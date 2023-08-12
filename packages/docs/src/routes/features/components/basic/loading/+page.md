@@ -6,33 +6,6 @@ componentName: CLoading
 ## Loading instances
 
 ```svelte live
-<script lang="ts">
-  import {
-    CLoadingAudio,
-    CLoadingBar,
-    CLoadingBars,
-    CLoadingCircleBars,
-    CLoadingClock,
-    CLoadingComment,
-    CLoadingCube,
-    CLoadingDot,
-    CLoadingDots,
-    CLoadingGear,
-    CLoadingHeart,
-    CLoadingHourglass,
-    CLoadingInfinity,
-    CLoadingLattice,
-    CLoadingOrbit,
-    CLoadingOval,
-    CLoadingPie,
-    CLoadingPuff,
-    CLoadingRings,
-    CLoadingSpinBox,
-    CLoadingTail,
-    CLoadingWifi,
-  } from '@casual-ui/svelte'
-</script>
-
 <div class="c-flex c-gutter-md c-wrap text-12">
   <div class="c-text-primary">
     <CLoadingAudio />
@@ -101,7 +74,6 @@ componentName: CLoading
     <CLoadingWifi />
   </div>
 </div>
-
 ```
 
 ## Customize styles
@@ -111,14 +83,9 @@ componentName: CLoading
 - Use CSS attribute `color` to set the loading color
 
 ```svelte live
-<script lang="ts">
-  import { CLoading } from '@casual-ui/svelte'
-</script>
-
 <div flex gap-4 items-center>
   <CLoading style="font-size: 2em;color: pink;" />
   <CLoading style="font-size: 4em;color: cyan;" thickness={7} />
   <CLoading style="font-size: 8em;color: purple;" thickness={10} />
 </div>
-
 ```

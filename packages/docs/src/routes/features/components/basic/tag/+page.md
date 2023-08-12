@@ -6,10 +6,6 @@ componentName: CTag
 ## Themes
 
 ```svelte live
-<script lang="ts">
-  import { CTag } from '@casual-ui/svelte'
-</script>
-
 <CTag label="A primary tag (default)" />
 <CTag label="A secondary tag" theme="secondary" />
 <CTag label="A secondary tag" theme="warning" />
@@ -19,10 +15,6 @@ componentName: CTag
 ## Sizes
 
 ```svelte live
-<script lang="ts">
-  import { CTag } from '@casual-ui/svelte'
-</script>
-
 <CTag label="A xs tag" size="xs" />
 <CTag label="A sm tag" size="sm" />
 <CTag label="A md (default) tag" />
@@ -34,7 +26,7 @@ componentName: CTag
 
 ```svelte live
 <script lang="ts">
-  import { CTag, openNotification } from '@casual-ui/svelte'
+  import { openNotification } from '@casual-ui/svelte'
 
   function onClose() {
     openNotification({

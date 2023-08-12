@@ -6,10 +6,8 @@ componentName: form/CInput
 ## Basic usage
 
 ```svelte live
-<script lang="ts">
-  import { CInput } from '@casual-ui/svelte'
-
-  const value = ''
+<script>
+  let value = ''
 </script>
 
 <CInput {value} placeholder="Input something" />
@@ -18,10 +16,8 @@ componentName: form/CInput
 ## Shapes
 
 ```svelte live
-<script lang="ts">
-  import { CInput } from '@casual-ui/svelte'
-
-  const value = ''
+<script>
+  let value = ''
 </script>
 
 <CInput {value} placeholder="Normal input" />
@@ -32,9 +28,8 @@ componentName: form/CInput
 
 ```svelte live
 <script lang="ts">
-  import { CInput } from '@casual-ui/svelte'
 
-  const value = ''
+  let value = ''
 </script>
 
 <div class="c-flex c-gutter-md c-wrap c-items-center">
@@ -75,9 +70,7 @@ componentName: form/CInput
 
 ```svelte live
 <script lang="ts">
-  import { CInput } from '@casual-ui/svelte'
-
-  const value = ''
+  let value = ''
 </script>
 
 <CInput
@@ -91,9 +84,7 @@ componentName: form/CInput
 
 ```svelte live
 <script lang="ts">
-  import { CInput } from '@casual-ui/svelte'
-
-  const value = ''
+  let value = ''
 </script>
 
 <CInput {value} disabled placeholder="Disabled" />
@@ -106,9 +97,7 @@ componentName: form/CInput
 ## Custom loading instance
 ```svelte live
 <script lang="ts">
-  import { CInput, CLoadingCircleBars, CLoadingWifi } from '@casual-ui/svelte'
-
-  const value = ''
+  let value = ''
 </script>
 
 <CInput {value} placeholder="Custom loading" loading>
@@ -127,11 +116,8 @@ componentName: form/CInput
 ## Prefix & Suffix
 
 ```svelte live
-
 <script lang="ts">
-  import { CInput } from '@casual-ui/svelte'
-
-  const value = ''
+  let value = ''
 </script>
 
 <div class="c-wrap c-flex c-gutter-md c-items-center">

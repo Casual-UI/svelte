@@ -4,6 +4,7 @@ import { vitePluginDocParser } from 'vite-plugin-doc-parser'
 import { defaultTheme } from '@sveltepress/theme-default'
 import { parse } from 'sveltedoc-parser'
 import type { Plugin } from 'unified'
+import AutoImport from 'unplugin-svelte-components/vite'
 import navbar from './config/navbar'
 import sidebar from './config/sidebar'
 import componentApi from './src/remark-plugins/component-api'
@@ -35,30 +36,6 @@ const defaultThemeResolved = defaultTheme({
     solar: ['moon-sleep-outline', 'dumbbell-small-line-duotone'],
   },
   ga: 'G-SLFJJENX54',
-})
-
-const config = defineConfig({
-  plugins: [
-    vitePluginDocParser({
-      parser: svelteDocParser,
-      extension: '.svelte',
-      baseDir: '../ui/src/components/',
-    }),
-    sveltepress({
-      theme: defaultThemeResolved,
-      siteConfig: {
-        title: 'Casual UI - Svelte',
-        description: 'A component library that supports Svelte3+',
-      },
-      remarkPlugins: [componentApi],
-    }),
-  ],
-  optimizeDeps: {
-    exclude: ['dayjs/esm'],
-  },
-  ssr: {
-    noExternal: ['@casual-ui/utils', '@casual-ui/styles'],
-  },
 })
 
 async function svelteDocParser(filename: string) {
@@ -104,4 +81,65 @@ async function svelteDocParser(filename: string) {
   return api as any
 }
 
-export default config
+export default defineConfig({
+  plugins: [
+    vitePluginDocParser({
+      parser: svelteDocParser,
+      extension: '.svelte',
+      baseDir: '../ui/src/components/',
+    }),
+    AutoImport({
+      dts: true,
+      external: [
+        {
+          from: '@casual-ui/svelte',
+          names: [
+            'CButton',
+            'CLoading',
+            'CLoadingAudio',
+            'CLoadingBar',
+            'CLoadingBars',
+            'CLoadingCircleBars',
+            'CLoadingClock',
+            'CLoadingComment',
+            'CLoadingCube',
+            'CLoadingDot',
+            'CLoadingDots',
+            'CLoadingGear',
+            'CLoadingHeart',
+            'CLoadingHourglass',
+            'CLoadingInfinity',
+            'CLoadingLattice',
+            'CLoadingOrbit',
+            'CLoadingOval',
+            'CLoadingPie',
+            'CLoadingPuff',
+            'CLoadingRings',
+            'CLoadingSpinBox',
+            'CLoadingTail',
+            'CLoadingWifi',
+            'CTag',
+            'openNotification',
+            'CInput',
+            'CSelect',
+          ],
+          defaultImport: false,
+        },
+      ],
+    }),
+    sveltepress({
+      theme: defaultThemeResolved,
+      siteConfig: {
+        title: 'Casual UI - Svelte',
+        description: 'A component library that supports Svelte3+',
+      },
+      remarkPlugins: [componentApi],
+    }),
+  ],
+  optimizeDeps: {
+    exclude: ['dayjs/esm'],
+  },
+  ssr: {
+    noExternal: ['@casual-ui/utils', '@casual-ui/styles', '@casual-ui/svelte'],
+  },
+})

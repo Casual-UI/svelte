@@ -22,6 +22,8 @@
     "sveltedoc-parser": "^4.2.1",
     "unified": "^10.1.2",
     "unist-util-visit": "^5.0.0",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-svelte-components": "^0.2.10",
     "vite": "^4.4.7",
     "vite-plugin-doc-parser": "workspace:*",
     "vitest": "^0.33.0"
