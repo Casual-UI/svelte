@@ -34,6 +34,7 @@ const defaultThemeResolved = defaultTheme({
     logos: ['typescript-icon'],
     solar: ['moon-sleep-outline', 'dumbbell-small-line-duotone'],
   },
+  ga: 'G-SLFJJENX54',
 })
 
 const config = defineConfig({
