@@ -221,7 +221,7 @@
         />
       {/if}
       <div
-        class="c-select--arrow c-mr-{$contextSize}"
+        class="c-select--arrow c-mr-{$contextSize} c-font-{$contextSize}"
         class:c-select--arrow-show-options="{focused}"
         on:click|stopPropagation="{onArrowClick}"
         on:keypress|stopPropagation="{onArrowClick}"

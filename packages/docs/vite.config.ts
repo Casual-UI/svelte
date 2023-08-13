@@ -147,6 +147,8 @@ export default defineConfig({
             'CTable',
             'CTree',
             'CPagination',
+            'CTabs',
+            'CTabItem',
           ],
           defaultImport: false,
         },

@@ -46,11 +46,12 @@ import CCheckboxGroup from './src/components/form/CCheckboxGroup.svelte'
 import CToggle from './src/components/form/CToggle.svelte'
 import CDatePicker from './src/components/form/date-picker/CDatePicker.svelte'
 import CInfoItem from './src/components/CInfoItem.svelte'
-import CTabs from './src/components/CTabs.svelte'
+import CTabs from './src/components/tabs/CTabs.svelte'
 import CTable from './src/components/table/CTable.svelte'
 import CCarousel from './src/components/carousel/CCarousel.svelte'
 import CCarouselSlider from './src/components/carousel/CCarouselSlider.svelte'
 import CTree from './src/components/tree/CTree.svelte'
+import CTabItem from './src/components/tabs/CTabItem.svelte'
 import { attributeAtom } from './src/utils/attributeAtom'
 
 export { useFormProps } from './src/hooks/useForm'
@@ -59,6 +60,7 @@ export {
   attributeAtom,
   CCarouselSlider,
   CTree,
+  CTabItem,
   CCarousel,
   CTable,
   CTabs,

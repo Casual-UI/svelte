@@ -126,6 +126,10 @@ export default {
           to: '/features/components/interact/expansion/',
         },
         {
+          title: 'Tabs',
+          to: '/features/components/interact/tabs/',
+        },
+        {
           title: 'Carousel',
           to: '/features/components/interact/carousel/',
         },
