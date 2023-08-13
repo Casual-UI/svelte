@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.10.2
+
+### Patch Changes
+
+- [`f9af21a`](https://github.com/Casual-UI/svelte/commit/f9af21acd3331c3b3501396392a30e4fd99c8381) Thanks [@Blackman99](https://github.com/Blackman99)! - fix: svelte field in package.json
+
 ## 0.10.1
 
 ### Patch Changes
