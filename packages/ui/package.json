@@ -8,10 +8,10 @@
     "./dist/style/style.css": "./dist/style/style.css",
     "./icon.css": "./dist/icon/style.css"
   },
-  "svelte": "./dist/index.js",
   "publishConfig": {
     "exports": {
       ".": {
+        "svelte": "./dist/index.js",
         "import": "./dist/index.js",
         "types": "./dist/index.d.ts"
       },
