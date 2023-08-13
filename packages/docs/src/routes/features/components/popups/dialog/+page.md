@@ -7,8 +7,6 @@ componentName: CDialog
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CDialog } from '@casual-ui/svelte'
-
   let show = false
 </script>
 
@@ -21,8 +19,6 @@ componentName: CDialog
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CDialog } from '@casual-ui/svelte'
-
   let show = false
 </script>
 
@@ -37,8 +33,6 @@ componentName: CDialog
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CDialog } from '@casual-ui/svelte'
-
   let show = false
 </script>
 
@@ -54,8 +48,6 @@ componentName: CDialog
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CDialog } from '@casual-ui/svelte'
-
   let show = false
 
   let verticalAlign: any = 'start'
@@ -149,8 +141,6 @@ componentName: CDialog
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CDialog } from '@casual-ui/svelte'
-
   let show = false
 
   function onCancel() {
@@ -175,8 +165,6 @@ componentName: CDialog
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CDialog } from '@casual-ui/svelte'
-
   let show = false
 </script>
 

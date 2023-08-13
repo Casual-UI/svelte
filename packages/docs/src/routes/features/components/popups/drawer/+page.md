@@ -7,8 +7,6 @@ componentName: CDrawer
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CDrawer } from '@casual-ui/svelte'
-
   let show = false
 </script>
 
@@ -21,8 +19,6 @@ componentName: CDrawer
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CDrawer } from '@casual-ui/svelte'
-
   let show = false
   let position = 'left'
 

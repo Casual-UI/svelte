@@ -6,10 +6,6 @@ componentName: CTooltip
 ## Basic usage
 
 ```svelte live
-<script lang="ts">
-  import { CButton, CTooltip } from '@casual-ui/svelte'
-</script>
-
 <p>Hover (default)</p>
 <CTooltip content="Hi, there">
   <CButton slot="trigger" label="Hover Me" />
@@ -19,8 +15,6 @@ componentName: CTooltip
 ## Trigger 
 ```svelte live
 <script lang="ts">
-  import { CButton, CTooltip } from '@casual-ui/svelte'
-
   let show = false
 </script>
 
@@ -47,8 +41,6 @@ componentName: CTooltip
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CRadioGroup, CTooltip } from '@casual-ui/svelte'
-
   let position = 'top'
   const positions: any = [
     'top-start',

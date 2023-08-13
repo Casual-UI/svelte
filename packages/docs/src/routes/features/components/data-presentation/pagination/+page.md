@@ -7,8 +7,6 @@ componentName: CPagination
 
 ```svelte live
 <script>
-  import { CPagination } from '@casual-ui/svelte'
-
   let current
 </script>
 
@@ -19,8 +17,6 @@ componentName: CPagination
 
 ```svelte live
 <script>
-  import { CPagination } from '@casual-ui/svelte'
-
   let current
 </script>
 <div class="c-column c-gutter-md">
@@ -34,8 +30,6 @@ componentName: CPagination
 
 ```svelte live
 <script>
-  import { CPagination } from '@casual-ui/svelte'
-
   let current
 </script>
 <div class="c-column c-gutter-md">
@@ -51,8 +45,6 @@ componentName: CPagination
 
 ```svelte live
 <script>
-  import { CPagination } from '@casual-ui/svelte'
-
   let current
 </script>
 <div class="c-column c-gutter-md">
@@ -68,8 +60,6 @@ componentName: CPagination
 
 ```svelte live
 <script>
-  import { CPagination } from '@casual-ui/svelte'
-
   let current
 </script>
 <div class="c-column c-gutter-md">
@@ -84,8 +74,6 @@ componentName: CPagination
 
 ```svelte live
 <script>
-  import { CPagination } from '@casual-ui/svelte'
-
   let current
 </script>
 
@@ -96,8 +84,6 @@ componentName: CPagination
 
 ```svelte live
 <script>
-  import { CPagination } from '@casual-ui/svelte'
-
   let current
 </script>
 
@@ -108,8 +94,6 @@ componentName: CPagination
 
 ```svelte live
 <script>
-  import { CPagination } from '@casual-ui/svelte'
-
   let current = 4
 </script>
 
@@ -120,8 +104,6 @@ componentName: CPagination
 
 ```svelte live
 <script>
-  import { CButton, CPagination } from '@casual-ui/svelte'
-
   let current = 4
 </script>
 

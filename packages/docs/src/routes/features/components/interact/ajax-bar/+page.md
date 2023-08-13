@@ -9,8 +9,6 @@ Ajax bar is useful when page toggling or data fetching visibility is required.
 
 ```svelte live
 <script lang="ts">
-  import { CAjaxBar, CButton } from '@casual-ui/svelte'
-
   let ajaxBar: CAjaxBar
 
   const handleStart = () => {
@@ -31,8 +29,6 @@ Ajax bar is useful when page toggling or data fetching visibility is required.
 
 ```svelte live
 <script lang="ts">
-  import { CAjaxBar, CButton } from '@casual-ui/svelte'
-
   let ajaxBar: CAjaxBar
 
   let theme = 'primary'

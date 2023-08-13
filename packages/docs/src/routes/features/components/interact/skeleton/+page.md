@@ -6,10 +6,6 @@ componentName: skeleton/CSkeleton
 ## Basic usage
 
 ```svelte live
-<script>
-  import { CSkeleton } from '@casual-ui/svelte'
-</script>
-
 <div class="flex flex-col gap-4">
   <div class="flex items-center gap-4">
     <div class="flex-shrink-0">

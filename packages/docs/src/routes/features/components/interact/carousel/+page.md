@@ -9,8 +9,6 @@ componentName:
 
 ```svelte live async
 <script lang="ts">
-  import { CCarousel, CCarouselSlider } from '@casual-ui/svelte'
-
   let activeIndex = 0
 </script>
 
@@ -54,8 +52,6 @@ componentName:
 
 ```svelte live
 <script lang="ts">
-  import { CCarousel, CCarouselSlider, CRadioGroup } from '@casual-ui/svelte'
-
   let activeIndex = 0
   let theme: 'primary' | 'secondary' | 'warning' | 'negative' = 'primary'
   const themeOptions = [
@@ -127,8 +123,6 @@ componentName:
 
 ```svelte live
 <script lang="ts">
-  import { CCarousel, CCarouselSlider } from '@casual-ui/svelte'
-
   let activeIndex = 0
 </script>
 
@@ -172,8 +166,6 @@ componentName:
 
 ```svelte live
 <script lang="ts">
-  import { CCarousel, CCarouselSlider } from '@casual-ui/svelte'
-
   let activeIndex = 0
 </script>
 
@@ -221,8 +213,6 @@ So when you hover the carousel. It will pause transition.
 
 ```svelte live
 <script lang="ts">
-  import { CCarousel, CCarouselSlider } from '@casual-ui/svelte'
-
   let activeIndex = 0
 </script>
 
@@ -266,8 +256,6 @@ So when you hover the carousel. It will pause transition.
 
 ```svelte live
 <script lang="ts">
-  import { CCarousel, CCarouselSlider, CRadioGroup } from '@casual-ui/svelte'
-
   let activeIndex = 0
 
   let indicatorsPositionHorizontal: 'start' | 'center' | 'end' = 'center'
@@ -361,8 +349,6 @@ So when you hover the carousel. It will pause transition.
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CCarousel, CCarouselSlider } from '@casual-ui/svelte'
-
   let activeIndex = 0
 </script>
 
@@ -412,8 +398,6 @@ So when you hover the carousel. It will pause transition.
 
 ```svelte live
 <script lang="ts">
-  import { CCarousel, CCarouselSlider } from '@casual-ui/svelte'
-
   let activeIndex = 0
 </script>
 

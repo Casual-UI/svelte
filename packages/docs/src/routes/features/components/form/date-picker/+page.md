@@ -7,10 +7,7 @@ componentName: form/date-picker/CDatePicker
 
 ```svelte live
 <script lang="ts">
-  import { CDatePicker } from '@casual-ui/svelte'
-
   let date: Date | undefined = undefined
-
   let formattedDate = ''
 </script>
 
@@ -34,8 +31,6 @@ componentName: form/date-picker/CDatePicker
 
 ```svelte live
 <script lang="ts">
-  import { CDatePicker } from '@casual-ui/svelte'
-
   let date: Date
 </script>
 
@@ -46,8 +41,6 @@ componentName: form/date-picker/CDatePicker
 
 ```svelte live
 <script lang="ts">
-  import { CDatePicker } from '@casual-ui/svelte'
-
   let date: Date
 </script>
 
@@ -74,14 +67,9 @@ componentName: form/date-picker/CDatePicker
 
 ```svelte live
 <script lang="ts">
-  import { CDatePicker } from '@casual-ui/svelte'
-
   let month: Date
-
   let formattedMonth = ''
-
   let year: Date
-
   let yearFormatted = ''
 </script>
 
@@ -129,10 +117,7 @@ componentName: form/date-picker/CDatePicker
 
 ```svelte live
 <script lang="ts">
-  import { CDatePicker } from '@casual-ui/svelte'
-
   let rangeValue: [Date, Date]
-
   let rangeFormattedValue: [string, string] = ['', '']
 </script>
 

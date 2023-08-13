@@ -9,21 +9,9 @@ componentName:
 
 ```svelte live async
 <script lang="ts">
-  import {
-    CDatePicker,
-    CForm,
-    CFormItem,
-    CInput,
-    CRadioGroup,
-    CSelect,
-  } from '@casual-ui/svelte'
-
   let name = ''
-
   let gender = ''
-
   let industry = ''
-
   let birthday: Date
 
   const genderOptions = [
@@ -74,21 +62,9 @@ componentName:
 
 ```svelte live async
 <script lang="ts">
-  import {
-    CDatePicker,
-    CForm,
-    CFormItem,
-    CInput,
-    CRadioGroup,
-    CSelect,
-  } from '@casual-ui/svelte'
-
   let name = ''
-
   let gender = ''
-
   let industry = ''
-
   let birthday: Date
 
   const genderOptions = [
@@ -165,21 +141,9 @@ componentName:
 
 ```svelte live async
 <script lang="ts">
-  import {
-    CDatePicker,
-    CForm,
-    CFormItem,
-    CInput,
-    CRadioGroup,
-    CSelect,
-  } from '@casual-ui/svelte'
-
   let name = ''
-
   let gender = ''
-
   let industry = ''
-
   let birthday: Date
 
   const genderOptions = [
@@ -256,23 +220,10 @@ componentName:
 
 ```svelte live async
 <script lang="ts">
-  import {
-    CDatePicker,
-    CForm,
-    CFormItem,
-    CInput,
-    CRadioGroup,
-    CSelect,
-  } from '@casual-ui/svelte'
-
   let labelWidth = '80px'
-
   let name = ''
-
   let gender = ''
-
   let industry = ''
-
   let birthday: Date
 
   const genderOptions = [
@@ -325,21 +276,9 @@ componentName:
 
 ```svelte live async
 <script lang="ts">
-  import {
-    CDatePicker,
-    CForm,
-    CFormItem,
-    CInput,
-    CRadioGroup,
-    CSelect,
-  } from '@casual-ui/svelte'
-
   let name = ''
-
   let gender = ''
-
   let industry = ''
-
   let birthday: Date
 
   const genderOptions = [
@@ -408,21 +347,9 @@ componentName:
 
 ```svelte live async
 <script lang="ts">
-  import {
-    CDatePicker,
-    CForm,
-    CFormItem,
-    CInput,
-    CRadioGroup,
-    CSelect,
-  } from '@casual-ui/svelte'
-
   let name = ''
-
   let gender = ''
-
   let industry = ''
-
   let birthday: Date
 
   const genderOptions = [
@@ -515,23 +442,9 @@ Each rule can be a function that receive current value and return a string messa
 
 ```svelte live async
 <script lang="ts">
-  import {
-    CButton,
-    CDatePicker,
-    CForm,
-    CFormItem,
-    CInput,
-    CRadioGroup,
-    CSelect,
-    openNotification,
-  } from '@casual-ui/svelte'
-
   let name = ''
-
   let gender = ''
-
   let industry = ''
-
   let birthday: Date
 
   const genderOptions = [
@@ -630,16 +543,7 @@ const rule = async function (v) {
 
 ```svelte live async
 <script lang="ts">
-  import {
-    CButton,
-    CDatePicker,
-    CForm,
-    CFormItem,
-    CInput,
-    CRadioGroup,
-    CSelect,
-    openNotification,
-  } from '@casual-ui/svelte'
+  import { openNotification } from '@casual-ui/svelte'
 
   let name = ''
 

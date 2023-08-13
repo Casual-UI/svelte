@@ -8,8 +8,6 @@ componentName:
 
 ```svelte live
 <script lang="ts">
-  import { CTable } from '@casual-ui/svelte'
-
   const columns = [
     {
       title: 'Name',
@@ -36,8 +34,6 @@ componentName:
 
 ```svelte live
 <script lang="ts">
-  import { CTable } from '@casual-ui/svelte'
-
   const columns = [
     {
       title: 'Name',
@@ -126,7 +122,6 @@ A custom title component can hold these props:
 
 ```svelte live
 <script lang="ts">
-  import { CTable } from '@casual-ui/svelte'
   import CustomTitle from '/src/routes/features/components/data-presentation/table/CustomTitle.svelte'
 
   const columns = [
@@ -158,7 +153,6 @@ A custom title component can hold these props:
 
 ```svelte live
 <script>
-  import { CTable } from '@casual-ui/svelte'
   import CustomColumn from '/src/routes/features/components/data-presentation/table/CustomColumn.svelte'
 
   const columns = [

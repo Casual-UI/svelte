@@ -8,8 +8,6 @@ componentName: form/CRadio
 
 ```svelte live
 <script lang="ts">
-  import { CRadio } from '@casual-ui/svelte'
-
   let size = 'md'
 </script>
 
@@ -41,8 +39,6 @@ componentName: form/CRadio
 
 ```svelte live
 <script lang="ts">
-  import { CRadio } from '@casual-ui/svelte'
-
   let value = false
 </script>
 

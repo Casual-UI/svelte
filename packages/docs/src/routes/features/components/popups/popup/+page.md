@@ -7,7 +7,6 @@ componentName: CPopup
 
 ```svelte live ln
 <script lang="ts">
-  import { CButton, CPopup } from '@casual-ui/svelte'
   import { cubicInOut } from 'svelte/easing'
   import { fly } from 'svelte/transition'
 

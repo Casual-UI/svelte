@@ -10,8 +10,6 @@ componentName:
 
 ```svelte live
 <script lang="ts">
-  import { CList, CRadioGroup } from '@casual-ui/svelte'
-
   const items = [
     { label: 'Apple', id: 1 },
     { label: 'Banana', id: 2 },
@@ -39,8 +37,6 @@ componentName:
 
 ```svelte live
 <script lang="ts">
-  import { CList } from '@casual-ui/svelte'
-
   const items = [
     { label: 'Apple', id: 1 },
     { label: 'Banana', id: 2 },
@@ -56,8 +52,6 @@ componentName:
 
 ```svelte live
 <script>
-  import { CInfoItem, CList } from '@casual-ui/svelte'
-
   const items = [
     { title: 'Notification', subtitle: 'Some notification description', icon: 'no', },
     { title: 'Personal', subtitle: 'Some personal description', icon: 'per' },

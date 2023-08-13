@@ -7,8 +7,6 @@ componentName: form/CCheckbox
 
 ```svelte live
 <script lang="ts">
-  import { CCheckbox } from '@casual-ui/svelte'
-
   let checked = false
 </script>
 
@@ -34,10 +32,7 @@ componentName: form/CCheckbox
 
 ```svelte live
 <script lang="ts">
-  import { CCheckbox } from '@casual-ui/svelte'
-
   let checked = false
-
   let checked2 = true
 </script>
 
@@ -49,8 +44,6 @@ componentName: form/CCheckbox
 
 ```svelte live
 <script lang="ts">
-  import { CCheckbox } from '@casual-ui/svelte'
-
   let checked = 'md'
 </script>
 

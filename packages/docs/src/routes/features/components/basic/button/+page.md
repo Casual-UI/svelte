@@ -93,10 +93,6 @@ componentName: CButton
 ## Status
 
 ```svelte live
-<script>
-  import { CButton } from '@casual-ui/svelte'
-</script>
-
 <CButton label="A Disabled Button" disabled />
 <CButton label="A Loading Button" loading />
 ```
@@ -104,10 +100,6 @@ componentName: CButton
 ## Custom loading instance
 
 ```svelte live
-<script lang="ts">
-  import { CButton, CLoadingBar, CLoadingHourglass } from '@casual-ui/svelte'
-</script>
-
 <CButton loading label="Loading...">
   <CLoadingHourglass slot="loading" />
 </CButton>

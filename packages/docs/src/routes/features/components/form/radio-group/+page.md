@@ -7,8 +7,6 @@ componentName: form/CRadioGroup
 
 ```svelte live
 <script lang="ts">
-  import { CRadioGroup } from '@casual-ui/svelte'
-
   let fruit = 1
 
   const options = [

@@ -7,9 +7,7 @@ componentName: form/CSelect
 
 ```svelte live
 <script>
-
   let selectedValue = ''
-
   const options = [
     { label: 'Apple', value: 'Apple' },
     { label: 'Banana', value: 'Banana' },
@@ -26,9 +24,7 @@ componentName: form/CSelect
 
 ```svelte live
 <script lang="ts">
-
   let selectedValue = ''
-
   const options = [
     { label: 'Apple', value: 'Apple' },
     { label: 'Banana', value: 'Banana' },
@@ -53,9 +49,7 @@ componentName: form/CSelect
 ## Shape
 ```svelte live
 <script lang="ts">
-
   let selectedValue = ''
-
   const options = [
     { label: 'Apple', value: 'Apple' },
     { label: 'Banana', value: 'Banana' },
@@ -72,9 +66,7 @@ componentName: form/CSelect
 
 ```svelte live
 <script lang="ts">
-
   let selectedValue = ''
-
   const options = [
     { label: 'Apple', value: 'Apple' },
     { label: 'Banana', value: 'Banana' },
@@ -110,9 +102,7 @@ componentName: form/CSelect
 
 ```svelte live
 <script lang="ts">
-
   let selectedValue: any[] = []
-
   const options = [
     { label: 'Apple', value: 'Apple' },
     { label: 'Banana', value: 'Banana' },

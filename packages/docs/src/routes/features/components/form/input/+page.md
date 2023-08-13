@@ -10,7 +10,10 @@ componentName: form/CInput
   let value = ''
 </script>
 
-<CInput {value} placeholder="Input something" />
+<CInput bind:value placeholder="Input something" />
+<h3>
+  Value is: {value}
+</h3>
 ```
 
 ## Shapes
@@ -20,48 +23,47 @@ componentName: form/CInput
   let value = ''
 </script>
 
-<CInput {value} placeholder="Normal input" />
-<CInput {value} rounded placeholder="Rounded input" />
+<CInput bind:value placeholder="Normal input" />
+<CInput bind:value rounded placeholder="Rounded input" />
 ```
 
 ## Sizes
 
 ```svelte live
 <script lang="ts">
-
   let value = ''
 </script>
 
 <div class="c-flex c-gutter-md c-wrap c-items-center">
   <div>
-    <CInput {value} placeholder="xs" size="xs" />
+    <CInput bind:value placeholder="xs" size="xs" />
   </div>
   <div>
-    <CInput {value} placeholder="sm" size="sm" />
+    <CInput bind:value placeholder="sm" size="sm" />
   </div>
   <div>
-    <CInput {value} placeholder="md (default)" />
+    <CInput bind:value placeholder="md (default)" />
   </div>
   <div>
-    <CInput {value} placeholder="lg" size="lg" />
+    <CInput bind:value placeholder="lg" size="lg" />
   </div>
   <div>
-    <CInput {value} placeholder="xl" size="xl" />
+    <CInput bind:value placeholder="xl" size="xl" />
   </div>
   <div>
-    <CInput {value} placeholder="xs" rounded size="xs" />
+    <CInput bind:value placeholder="xs" rounded size="xs" />
   </div>
   <div>
-    <CInput {value} placeholder="sm" size="sm" rounded />
+    <CInput bind:value placeholder="sm" size="sm" rounded />
   </div>
   <div>
-    <CInput {value} placeholder="md (default)" rounded />
+    <CInput bind:value placeholder="md (default)" rounded />
   </div>
   <div>
-    <CInput {value} placeholder="lg" size="lg" rounded />
+    <CInput bind:value placeholder="lg" size="lg" rounded />
   </div>
   <div>
-    <CInput {value} placeholder="xl" size="xl" rounded />
+    <CInput bind:value placeholder="xl" size="xl" rounded />
   </div>
 </div>
 ```
@@ -74,7 +76,7 @@ componentName: form/CInput
 </script>
 
 <CInput
-  {value}
+  bind:value
   placeholder="Enter something and see the clear icon"
   clearable
 />
@@ -87,11 +89,11 @@ componentName: form/CInput
   let value = ''
 </script>
 
-<CInput {value} disabled placeholder="Disabled" />
+<CInput bind:value disabled placeholder="Disabled" />
 
-<CInput rounded {value} loading placeholder="Loading..." />
+<CInput rounded bind:value loading placeholder="Loading..." />
 
-<CInput rounded {value} placeholder="Readonly" readonly />
+<CInput rounded bind:value placeholder="Readonly" readonly />
 ```
 
 ## Custom loading instance
@@ -100,13 +102,13 @@ componentName: form/CInput
   let value = ''
 </script>
 
-<CInput {value} placeholder="Custom loading" loading>
+<CInput bind:value placeholder="Custom loading" loading>
   <div slot="loading" class="c-text-primary">
     <CLoadingWifi />
   </div>
 </CInput>
 
-<CInput {value} placeholder="Custom loading" loading>
+<CInput bind:value placeholder="Custom loading" loading>
   <div slot="loading" class="c-text-warning">
     <CLoadingCircleBars slot="loading" />
   </div>
@@ -122,19 +124,19 @@ componentName: form/CInput
 
 <div class="c-wrap c-flex c-gutter-md c-items-center">
   <div>
-    <CInput rounded {value} placeholder="With prefix">
+    <CInput rounded bind:value placeholder="With prefix">
       <svelte:fragment slot="prefix">+234</svelte:fragment>
     </CInput>
   </div>
 
   <div>
-    <CInput rounded {value} placeholder="With suffix">
+    <CInput rounded bind:value placeholder="With suffix">
       <svelte:fragment slot="suffix">@gmail.com</svelte:fragment>
     </CInput>
   </div>
 
   <div>
-    <CInput rounded {value} placeholder="With prefix and suffix">
+    <CInput rounded bind:value placeholder="With prefix and suffix">
       <svelte:fragment slot="prefix">to:</svelte:fragment>
       <svelte:fragment slot="suffix">@gmail.com</svelte:fragment>
     </CInput>
@@ -143,7 +145,7 @@ componentName: form/CInput
   <div>
     <CInput
       rounded
-      {value}
+      bind:value
       placeholder="No divider"
       prefixDivider={false}
       suffixDivider={false}
@@ -153,7 +155,7 @@ componentName: form/CInput
     </CInput>
   </div>
   <div>
-    <CInput {value} placeholder="Use icons">
+    <CInput bind:value placeholder="Use icons">
       <div slot="prefix" class="text-6 i-ph-address-book-thin" />
       <div slot="suffix" class="text-6 i-material-symbols-face-retouching-natural" />
     </CInput>

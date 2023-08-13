@@ -6,10 +6,6 @@ componentName: CExpansion
 ## Basic usage
 
 ```svelte live
-<script lang="ts">
-  import { CExpansion } from '@casual-ui/svelte'
-</script>
-
 <CExpansion title="Expansion title">
   <h3>Some body content</h3>
 </CExpansion>
@@ -18,10 +14,6 @@ componentName: CExpansion
 ## Custom arrow
 
 ```svelte live
-<script lang="ts">
-  import { CExpansion } from '@casual-ui/svelte'
-</script>
-
 <CExpansion title="Expansion title">
   <p>Look at the arrow, is a smile!</p>
   <div slot="arrow" class="i-ant-design-smile-outlined text-6" />
@@ -32,8 +24,6 @@ componentName: CExpansion
 
 ```svelte live
 <script lang="ts">
-  import { CButton, CExpansion } from '@casual-ui/svelte'
-
   let expanded = false
 </script>
 
@@ -51,10 +41,6 @@ componentName: CExpansion
 ## Reverse direction
 
 ```svelte live
-<script lang="ts">
-  import { CExpansion } from '@casual-ui/svelte'
-</script>
-
 <CExpansion reverse title="Expansion title">
   <p>Hello, I'm expanded from top!</p>
 </CExpansion>

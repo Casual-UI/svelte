@@ -8,7 +8,7 @@
     "./dist/style/style.css": "./dist/style/style.css",
     "./icon.css": "./dist/icon/style.css"
   },
-  "svelte": "./src/index.ts",
+  "svelte": "./dist/index.js",
   "publishConfig": {
     "exports": {
       ".": {
@@ -16,8 +16,7 @@
         "types": "./dist/index.d.ts"
       },
       "./dist/style/style.css": "./dist/style/style.css"
-    },
-    "svelte": "./dist/index.js"
+    }
   },
   "files": [
     "dist"

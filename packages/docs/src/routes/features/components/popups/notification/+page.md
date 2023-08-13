@@ -8,10 +8,6 @@ componentName: CNotification
 Take projects use SvelteKit for example:
 
 ```svelte title="/src/routes/+layout.svelte"
-<script>
-  import CNotification from '@casual-ui/svelte/dist/components/CNotification.svelte' // [svp! ~~]
-</script>
-
 <CNotification /> // [svp! ~~]
 <slot />
 ```
@@ -24,15 +20,15 @@ Please make sure CNotification component only used once in whole application.
 
 ```svelte live
 <script lang="ts">
-  import { CButton, openNotification } from '@casual-ui/svelte'
+  import { openNotification } from '@casual-ui/svelte'
 </script>
 
-<CButton 
-  label="Open notification" 
+<CButton
+  label="Open notification"
   on:click={() => openNotification({
     title: 'Hi, there',
     message: 'You\'ve got a new notification',
-  })} 
+  })}
 />
 ```
 
@@ -40,7 +36,7 @@ Please make sure CNotification component only used once in whole application.
 
 ```svelte live
 <script lang="ts">
-  import { CButton, openNotification } from '@casual-ui/svelte'
+  import { openNotification } from '@casual-ui/svelte'
 
   function openWithTheme(
     theme: 'primary' | 'secondary' | 'warning' | 'negative' = 'primary'
@@ -76,7 +72,7 @@ Please make sure CNotification component only used once in whole application.
 
 ```svelte live
 <script lang="ts">
-  import { CButton, openNotification } from '@casual-ui/svelte'
+  import { openNotification } from '@casual-ui/svelte'
 
   function openWithPosition(alignX: any, alignY: any) {
     openNotification({
@@ -161,7 +157,7 @@ Set `timeout` to `0` to disable auto closing
 
 ```svelte live
 <script lang="ts">
-  import { CButton, openNotification } from '@casual-ui/svelte'
+  import { openNotification } from '@casual-ui/svelte'
 </script>
 
 <CButton
@@ -181,7 +177,7 @@ set `closeIcon` to `false` to manually close notification.
 
 ```svelte live
 <script lang="ts">
-  import { CButton, openNotification } from '@casual-ui/svelte'
+  import { openNotification } from '@casual-ui/svelte'
 
   let closeNotification: (() => void) | null
 
@@ -212,7 +208,7 @@ set `closeIcon` to `false` to manually close notification.
 
 ```svelte live
 <script lang="ts">
-  import { CButton, openNotification } from '@casual-ui/svelte'
+  import { openNotification } from '@casual-ui/svelte'
 
   const onClick = () => {
     const { changeContent } = openNotification({

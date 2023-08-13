@@ -8,8 +8,6 @@ componentName:
  
 ```svelte live
 <script>
-  import { CTree } from '@casual-ui/svelte'
-
   const tree = [{
     title: 'Root1',
     children: [{
@@ -43,8 +41,6 @@ componentName:
 
 ```svelte live
 <script>
-  import { CTree } from '@casual-ui/svelte'
-
   const tree = [{
     title: 'Root1',
     children: [{

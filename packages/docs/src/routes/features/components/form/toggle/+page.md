@@ -7,8 +7,6 @@ componentName: form/CToggle
 
 ```svelte live
 <script lang="ts">
-  import { CToggle } from '@casual-ui/svelte'
-
   let on = false
   let on2 = true
 </script>
@@ -21,8 +19,6 @@ componentName: form/CToggle
 
 ```svelte live
 <script lang="ts">
-  import { CToggle } from '@casual-ui/svelte'
-
   let on = 'md'
 </script>
 
