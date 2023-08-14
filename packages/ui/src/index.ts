@@ -1,3 +1,4 @@
+import CImage from './components/CImage.svelte'
 import CButton from './components/CButton.svelte'
 import CAjaxBar from './components/CAjaxBar.svelte'
 import CExpansion from './components/CExpansion.svelte'
@@ -61,6 +62,7 @@ export { useFormProps } from './hooks/useForm'
 export {
   attributeAtom,
   CTabItem,
+  CImage,
   CPagination,
   CTree,
   CParallax,

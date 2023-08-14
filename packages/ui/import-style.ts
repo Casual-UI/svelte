@@ -54,11 +54,13 @@ import CCarouselSlider from './src/components/carousel/CCarouselSlider.svelte'
 import CTree from './src/components/tree/CTree.svelte'
 import { attributeAtom } from './src/utils/attributeAtom'
 import CTabItem from './src/components/tabs/CTabItem.svelte'
+import CImage from './src/components/CImage.svelte'
 
 export { useFormProps } from './src/hooks/useForm'
 
 export {
   attributeAtom,
+  CImage,
   CCarouselSlider,
   CTree,
   CTabItem,

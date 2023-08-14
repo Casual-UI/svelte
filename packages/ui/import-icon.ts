@@ -53,6 +53,7 @@ import CCarouselSlider from './src/components/carousel/CCarouselSlider.svelte'
 import CTree from './src/components/tree/CTree.svelte'
 import CTabItem from './src/components/tabs/CTabItem.svelte'
 import { attributeAtom } from './src/utils/attributeAtom'
+import CImage from './src/components/CImage.svelte'
 
 export { useFormProps } from './src/hooks/useForm'
 
@@ -60,6 +61,7 @@ export {
   attributeAtom,
   CCarouselSlider,
   CTree,
+  CImage,
   CTabItem,
   CCarousel,
   CTable,

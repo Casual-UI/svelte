@@ -149,6 +149,7 @@ export default defineConfig({
             'CPagination',
             'CTabs',
             'CTabItem',
+            'CImage',
           ],
           defaultImport: false,
         },

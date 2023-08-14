@@ -14,6 +14,7 @@ declare global {
     const CExpansion: typeof import("@casual-ui/svelte")["CExpansion"]
     const CForm: typeof import("@casual-ui/svelte")["CForm"]
     const CFormItem: typeof import("@casual-ui/svelte")["CFormItem"]
+    const CImage: typeof import("@casual-ui/svelte")["CImage"]
     const CInfoItem: typeof import("@casual-ui/svelte")["CInfoItem"]
     const CInput: typeof import("@casual-ui/svelte")["CInput"]
     const CList: typeof import("@casual-ui/svelte")["CList"]

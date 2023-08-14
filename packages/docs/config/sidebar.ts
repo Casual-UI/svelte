@@ -39,6 +39,10 @@ export default {
           title: 'Icon',
           to: '/features/components/basic/icon/',
         },
+        {
+          title: 'Image',
+          to: '/features/components/basic/image/',
+        },
       ],
     },
     {
