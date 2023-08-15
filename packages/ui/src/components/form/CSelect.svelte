@@ -1,6 +1,6 @@
 <script>
   import { onMount, tick } from 'svelte'
-  import createClickOutsideAction from '../../actions/createClickOutsideAction'
+  import clickOutside from '../../actions/clickOutside'
 
   import { useValidator } from '../../hooks/useForm'
   import useSize from '../../hooks/useSize'
@@ -145,14 +145,6 @@
     return item.value === value
   }
 
-  const clickOutside = createClickOutsideAction({
-    cbOutside: () => {
-      if (!focused) return
-      focused = false
-      if (validateOnFold && validateCurrent) validateCurrent()
-    },
-  })
-
   const recomputedSelectHeight = async () => {
     if (multiple && tagsContainer) {
       await tick()
@@ -190,7 +182,13 @@
       }),
       rounded && `c-rounded-${$contextSize}`,
     )}"
-    use:clickOutside
+    use:clickOutside="{{
+      cbOutside: () => {
+        if (!focused) return
+        focused = false
+        if (validateOnFold && validateCurrent) validateCurrent()
+      },
+    }}"
   >
     <div
       class="c-select--input-wrapper"

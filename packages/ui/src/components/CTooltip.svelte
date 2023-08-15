@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte'
   import { recomputePos } from '@casual-ui/utils'
-  import createClickOutsideAction from '../actions/createClickOutsideAction'
+  import clickOutside from '../actions/clickOutside'
 
   /**
    * The content text of tooltip
@@ -58,14 +58,17 @@
 
   $: if (show) doCompute()
 
-  const clickOutside = createClickOutsideAction({
+  /**
+   * @type {import('../actions/clickOutside').ClickOutsideParams}
+   */
+  const clickOutsideParams = {
     cbInside: () => {
       if (trigger === 'click') show = !show
     },
     cbOutside: () => {
       if (trigger === 'click') show = false
     },
-  })
+  }
 </script>
 
 <div
@@ -79,7 +82,7 @@
     class="c-tooltip--trigger"
     on:mouseenter="{handleTriggerMouseEnter}"
     on:mouseleave="{handleTriggerMouseLeave}"
-    use:clickOutside
+    use:clickOutside="{clickOutsideParams}"
     role="tooltip"
   >
     <!-- The trigger content -->

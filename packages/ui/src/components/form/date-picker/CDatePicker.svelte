@@ -1,7 +1,7 @@
 <script>
   import dayjs from 'dayjs'
   import { getContext } from 'svelte'
-  import createClickOutsideAction from '../../../actions/createClickOutsideAction'
+  import clickOutside from '../../../actions/clickOutside'
   import { validateCurrentKey } from '../../../hooks/useForm'
   import useSize from '../../../hooks/useSize'
   import CDropdown from '../../CDropdown.svelte'
@@ -169,7 +169,10 @@
 
   const validateCurrent = getContext(validateCurrentKey)
 
-  const clickOutside = createClickOutsideAction({
+  /**
+   * @type {import('../../../actions/clickOutside').ClickOutsideParams}
+   */
+  const clickOutsideParams = {
     cbInside: () => {
       if (disabled) return
       show = true
@@ -179,13 +182,13 @@
       if (validateOnClickOutside && validateCurrent) validateCurrent()
       show = false
     },
-  })
+  }
 </script>
 
 <div
   class="c-date-picker c-font-{$contextSize} c-date-picker--size-{$contextSize}"
   class:c-date-picker--disabled="{disabled}"
-  use:clickOutside
+  use:clickOutside="{clickOutsideParams}"
 >
   <CDropdown bind:show widthWithinParent="{false}" {disabled} manual>
     <CInput

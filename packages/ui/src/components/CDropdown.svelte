@@ -1,5 +1,5 @@
 <script>
-  import createClickOutsideAction from '../actions/createClickOutsideAction'
+  import clickOutside from '../actions/clickOutside'
   import clsx from '../utils/clsx'
 
   /**
@@ -26,7 +26,10 @@
    */
   export let manual = false
 
-  const clickOutside = createClickOutsideAction({
+  /**
+   * @type {import('../actions/clickOutside').ClickOutsideParams}
+   */
+  const clickOutsideParams = {
     cbInside: () => {
       if (disabled || manual) return
       if (!show) show = true
@@ -35,11 +38,11 @@
       if (disabled || manual) return
       show = false
     },
-  })
+  }
 </script>
 
 <div
-  use:clickOutside
+  use:clickOutside="{clickOutsideParams}"
   class="{clsx('c-dropdown', show && 'c-dropdown--dropped')}"
 >
   <div class="c-dropdown--trigger">

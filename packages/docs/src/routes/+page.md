@@ -11,7 +11,7 @@ actions:
     to: /features/components/basic/button/
 features:
   - title: Type friendly
-    description: Written with typescript. Strong type tips.
+    description: Fully typed with all components API 
     icon:
       type: iconify
       collection: logos

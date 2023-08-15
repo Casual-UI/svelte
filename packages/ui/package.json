@@ -9,6 +9,11 @@
       "svelte": "./src/index.ts",
       "types": "./src/index.ts"
     },
+    "./actions": {
+      "import": "./src/actions/index.ts",
+      "svelte": "./src/actions/index.ts",
+      "types": "./src/actions/index.ts"
+    },
     "./dist/style/style.css": "./dist/style/style.css",
     "./icon.css": "./dist/icon/style.css"
   },
@@ -18,6 +23,11 @@
         "svelte": "./dist/index.js",
         "import": "./dist/index.js",
         "types": "./dist/index.d.ts"
+      },
+      "./actions": {
+        "import": "./dist/actions/index.js",
+        "svelte": "./dist/actions/index.js",
+        "types": "./dist/actions/index.d.ts"
       },
       "./dist/style/style.css": "./dist/style/style.css"
     }
