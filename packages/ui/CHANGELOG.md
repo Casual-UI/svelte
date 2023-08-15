@@ -1,5 +1,23 @@
 # @casual-ui/svelte
 
+## 0.11.0
+
+### Minor Changes
+
+- [`24491dd`](https://github.com/Casual-UI/svelte/commit/24491dd8ad120755036da1bad6e71d1ef410df14) Thanks [@Blackman99](https://github.com/Blackman99)! - fix: select arrow icon size
+
+- [`5c28787`](https://github.com/Casual-UI/svelte/commit/5c287874a9626653ef1cd642bf2b7efe0287d9dc) Thanks [@Blackman99](https://github.com/Blackman99)! - docs: optimize CPagination and CImage docs
+
+- [`6ef96f9`](https://github.com/Casual-UI/svelte/commit/6ef96f9644487fb282f030990564d00e997707da) Thanks [@Blackman99](https://github.com/Blackman99)! - fix: make form item props not required
+
+- [`af23aca`](https://github.com/Casual-UI/svelte/commit/af23aca3bb809c63b99338daa5686ccc8964d81d) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: optimize select dropdown and validation logic
+
+- [`a96aaba`](https://github.com/Casual-UI/svelte/commit/a96aabac4bc009c4b14b11ef10bf535c4283124a) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: add solid style for tag
+
+- [`24491dd`](https://github.com/Casual-UI/svelte/commit/24491dd8ad120755036da1bad6e71d1ef410df14) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: add Tabs & TabItem
+
+- [`83fd8b2`](https://github.com/Casual-UI/svelte/commit/83fd8b2a9b7aceead447b23968943d5ef1b79f49) Thanks [@Blackman99](https://github.com/Blackman99)! - feat: add CImage
+
 ## 0.10.2
 
 ### Patch Changes
