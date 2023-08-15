@@ -1,6 +1,5 @@
 <script>
   import { onMount, tick } from 'svelte'
-  import clickOutside from '../../actions/clickOutside'
 
   import { useValidator } from '../../hooks/useForm'
   import useSize from '../../hooks/useSize'
@@ -74,6 +73,11 @@
    */
   let tagsContainer
 
+  /**
+   * @type {import('../CDropdown.svelte')}
+   */
+  let dropdown
+
   if (multiple && !Array.isArray(value)) value = []
 
   let inputValue = value
@@ -137,6 +141,7 @@
     }
     value = item.value
     focused = false
+    dropdown?.toggleManually(false)
   }
 
   $: isItemActive = (/** @type {{ value: any; }} */ item) => {
@@ -165,12 +170,19 @@
     recomputedSelectHeight()
   }
 
+  const maybeValidate = show => {
+    const oldFocused = focused
+    focused = show.detail
+    if (!oldFocused) return
+    if (validateOnFold && validateCurrent) validateCurrent()
+  }
+
   onMount(() => {
     initialSelectDomHeight = selectDom.clientHeight
   })
 </script>
 
-<CDropdown manual bind:show="{focused}" {disabled}>
+<CDropdown bind:this="{dropdown}" {disabled} on:toggle="{maybeValidate}">
   <div
     bind:this="{selectDom}"
     class="{clsx(
@@ -182,13 +194,6 @@
       }),
       rounded && `c-rounded-${$contextSize}`,
     )}"
-    use:clickOutside="{{
-      cbOutside: () => {
-        if (!focused) return
-        focused = false
-        if (validateOnFold && validateCurrent) validateCurrent()
-      },
-    }}"
   >
     <div
       class="c-select--input-wrapper"
@@ -205,7 +210,7 @@
         </div>
       {:else}
         <CInput
-          bind:focused
+          {focused}
           value="{inputValue}"
           {disabled}
           {clearable}

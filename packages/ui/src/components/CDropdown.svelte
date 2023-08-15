@@ -1,4 +1,5 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import clickOutside from '../actions/clickOutside'
   import clsx from '../utils/clsx'
 
@@ -26,18 +27,30 @@
    */
   export let manual = false
 
+  const dispatch = createEventDispatcher()
+
   /**
    * @type {import('../actions/clickOutside').ClickOutsideParams}
    */
   const clickOutsideParams = {
-    cbInside: () => {
+    cbInside: async () => {
       if (disabled || manual) return
-      if (!show) show = true
+      /**
+       * Emit dropdown next expand status
+       * @param {boolean} newShowStatus The new shown status
+       */
+      dispatch('toggle', !show)
+      show = !show
     },
-    cbOutside: () => {
+    cbOutside: async () => {
       if (disabled || manual) return
+      dispatch('toggle', false)
       show = false
     },
+  }
+
+  export const toggleManually = newShowStatus => {
+    show = newShowStatus
   }
 </script>
 
@@ -46,8 +59,11 @@
   class="{clsx('c-dropdown', show && 'c-dropdown--dropped')}"
 >
   <div class="c-dropdown--trigger">
-    <!-- The trigger content -->
-    <slot />
+    <!--
+      The trigger content
+      @param toggleManually The function to manually toggle shown status
+    -->
+    <slot {toggleManually} />
   </div>
   <div
     class="{clsx(
