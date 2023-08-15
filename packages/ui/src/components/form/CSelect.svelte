@@ -141,7 +141,7 @@
     }
     value = item.value
     focused = false
-    dropdown?.toggleManually(false)
+    if (dropdown) dropdown.toggleManually(false)
   }
 
   $: isItemActive = (/** @type {{ value: any; }} */ item) => {
