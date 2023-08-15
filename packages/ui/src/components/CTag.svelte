@@ -29,6 +29,12 @@
   export let rounded = false
 
   /**
+   * Determine whether the tag has a solid style or not
+   * @type {boolean}
+   */
+  export let solid = false
+
+  /**
    * If set to `true`. The tag will have a close icon which can be clicked an emit `close` event
    * @type {boolean}
    */
@@ -56,6 +62,7 @@
     `c-px-${$contextSize}`,
     rounded && `c-rounded-${$contextSize}`,
   )}"
+  class:c-tag--solid="{solid}"
 >
   <div class="c-tag--prefix">
     <!-- Customize prefix content -->
