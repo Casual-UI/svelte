@@ -127,6 +127,12 @@ componentName: CPagination
     <div class="i-ion-ellipsis-horizontal-circle"></div>
   </CButton>
 
+  <button slot="page-button" let:p let:active on:click={() => (current = p)}>
+    <span class:c-text-primary={active} class:c-font-xl={active}>
+      {p}
+    </span>
+  </button>
+
   <CButton slot="right-ellipsis" let:set flat theme="warning" on:click={set}>
     <div class="i-octicon-ellipsis-16"></div>
   </CButton>

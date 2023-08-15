@@ -9,7 +9,7 @@
   export let src
 
   /**
-   * The default image src
+   * The default image src used before real src image loaded
    * @type
    */
   export let placeholderSrc =
@@ -85,6 +85,7 @@
   {#if imagePromise}
     {#await imagePromise}
       <div class="c-image--loading">
+        <!-- Customize loading content -->
         <slot name="loading">
           <CLoading />
         </slot>
@@ -92,6 +93,10 @@
     {:then src}
       <img {src} {alt} {width} class="{imgClass}" {...$$restProps} />
     {:catch err}
+      <!--
+        Customize the error status
+        @param {any} err The error object
+      -->
       <slot name="err" {err}>
         <div>
           {err}
