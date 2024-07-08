@@ -84,12 +84,13 @@
   }
 
   $: boundaryLeft = Math.floor(maxDisplayPages / 2)
+  $: displayPages = maxDisplayPages < pages ? maxDisplayPages : pages
   $: pagesArray = Array.from({
-    length: maxDisplayPages < pages ? maxDisplayPages : pages,
+    length: displayPages,
   }).map((_, i) => {
     if (current <= boundaryLeft) return i + 1
 
-    if (current >= pages - boundaryLeft) return pages - maxDisplayPages + i + 1
+    if (current >= pages - boundaryLeft) return pages - displayPages + i + 1
 
     return i <= boundaryLeft
       ? current - boundaryLeft + i
