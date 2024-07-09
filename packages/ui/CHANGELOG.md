@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.11.1
+
+### Patch Changes
+
+- [`8886dd6`](https://github.com/Casual-UI/svelte/commit/8886dd6ecd7de0a2453e20b3bc2a5d622555bbb5) - fix: pagination display
+
 ## 0.11.0
 
 ### Minor Changes
