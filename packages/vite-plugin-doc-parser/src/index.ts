@@ -1,29 +1,8 @@
 import { resolve } from 'node:path'
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
-import process from 'node:process'
 import fg from 'fast-glob'
+import type { Plugin } from 'vite'
 
-const DOC_BASE_PATH = resolve(process.cwd(), '.doc-parser')
-
-const resolveDocPath = (path: string) => {
-  const fullPath = resolve(DOC_BASE_PATH, path)
-  return fullPath
-}
-const VIRTUAL_MAP_PATH = resolveDocPath('./virtual-map.json')
-
-const getVirtualMap = () => {
-  return JSON.parse(readFileSync(VIRTUAL_MAP_PATH, 'utf-8'))
-}
-
-const init = () => {
-  if (existsSync(DOC_BASE_PATH)) {
-    rmSync(DOC_BASE_PATH, {
-      recursive: true,
-    })
-  }
-  mkdirSync(DOC_BASE_PATH)
-  writeFileSync(VIRTUAL_MAP_PATH, '{}', 'utf-8')
-}
+const virtualMap = {}
 
 export interface DocParserOptions {
   /**
@@ -42,66 +21,42 @@ export interface DocParserOptions {
 
 const VIRTUAL_COMPONENT_API_PREFIX = 'virtual:doc-parse/'
 
-const vitePluginDocParser = ({
+const vitePluginDocParser = async ({
   extension,
   parser,
   baseDir,
-}: DocParserOptions) => {
-  const globPattern = `${baseDir}**/*${extension}`
-  const getVirtualId = (id: string) => {
+}: DocParserOptions): Promise<Plugin> => {
+  const globPattern = `${baseDir.endsWith('/') ? baseDir : `${baseDir}/`}**/*${extension}`
+  const getAPIJson = (id: string) => {
     if (id.startsWith(VIRTUAL_COMPONENT_API_PREFIX)) {
       const componentName = id.slice(VIRTUAL_COMPONENT_API_PREFIX.length)
-      const virtualMap = getVirtualMap()
-      const key = baseDir + componentName + extension
+      const key = resolve(baseDir, `${componentName}${extension}`)
       return virtualMap[key]
     }
+    return false
   }
+  const entries = await fg(globPattern)
+  for (const entry of entries) {
+    if (entry in virtualMap)
+      continue
+    const parsed = JSON.stringify(await parser(entry))
+    virtualMap[entry] = parsed
+  }
+
   return {
     name: 'vite-plugin-doc-parser',
-    async buildStart() {
-      init()
-      const virtualMap = getVirtualMap()
-      const entries = await fg(globPattern)
-      for (const entry of entries) {
-        if (entry in virtualMap)
-          continue
-        const parsed = JSON.stringify(await parser(entry))
-
-        const virtualId = Object.keys(virtualMap).length + 1
-        const tempFileFullPath = resolveDocPath(`./${virtualId}.json`)
-        writeFileSync(tempFileFullPath, parsed, 'utf-8')
-        virtualMap[entry] = virtualId
-      }
-      writeFileSync(VIRTUAL_MAP_PATH, JSON.stringify(virtualMap))
-    },
     resolveId(id) {
-      const virtualId = getVirtualId(id)
-      if (virtualId)
-        return `virtual:doc-parse/${virtualId}`
+      if (id.startsWith(VIRTUAL_COMPONENT_API_PREFIX))
+        return id
     },
     load(id) {
       if (id.startsWith(VIRTUAL_COMPONENT_API_PREFIX)) {
-        const virtualId = id.slice(VIRTUAL_COMPONENT_API_PREFIX.length)
-        const realDocJsonPath = resolveDocPath(`./${virtualId}.json`)
-        if (existsSync(realDocJsonPath))
-          return `export default ${readFileSync(realDocJsonPath, 'utf-8')}`
+        const json = getAPIJson(id)
+        if (json)
+          return `export default ${json}`
       }
     },
   }
-}
-
-export const virtualResolver = componentPath => {
-  const virtualMap = getVirtualMap()
-  if (componentPath in virtualMap) {
-    const id = virtualMap[componentPath]
-    return JSON.parse(
-      readFileSync(
-        resolve(DOC_BASE_PATH, `./${id}.json`),
-        'utf-8',
-      ),
-    )
-  }
-  return false
 }
 
 export {

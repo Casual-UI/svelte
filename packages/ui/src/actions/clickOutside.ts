@@ -19,10 +19,10 @@ const clickOutside: Action = <T extends HTMLElement>(node: T, {
     if (!e.target || !node)
       return
     if (node.contains(e.target as HTMLElement))
-      cbInside?.()
+      cbInside?.(e)
 
     else
-      cbOutside?.()
+      cbOutside?.(e)
   }
 
   window.addEventListener('click', clickHandler)

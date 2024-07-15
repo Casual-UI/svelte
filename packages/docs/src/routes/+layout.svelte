@@ -1,6 +1,5 @@
 <script>
   import '@casual-ui/styles'
-  import '@casual-ui/svelte/icon.css'
   import { CNotification } from '@casual-ui/svelte'
 </script>
 
@@ -17,5 +16,8 @@
   }
   :global(:root) {
     --docsearch-primary-color: var(--casual-primary);
+  }
+  :global(.theme-default--page-layout .meta) {
+    display: flex;
   }
 </style>

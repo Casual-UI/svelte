@@ -65,7 +65,8 @@
     cbInside: () => {
       if (trigger === 'click') show = !show
     },
-    cbOutside: () => {
+    cbOutside: e => {
+      if (contentDom.contains(e.target)) return
       if (trigger === 'click') show = false
     },
   }

@@ -1,14 +1,16 @@
+import { resolve } from 'node:path'
+import { cwd } from 'node:process'
 import { defineConfig } from 'vite'
 import { mdToSvelte, sveltepress } from '@sveltepress/vite'
-import { vitePluginDocParser } from 'vite-plugin-doc-parser'
 import { defaultTheme } from '@sveltepress/theme-default'
 import { parse } from 'sveltedoc-parser'
 import type { Plugin } from 'unified'
 import AutoImport from 'unplugin-svelte-components/vite'
-import navbar from './config/navbar'
-import sidebar from './config/sidebar'
-import componentApi from './src/remark-plugins/component-api'
-import links from './src/remark-plugins/links'
+import { vitePluginDocParser } from '../vite-plugin-doc-parser/src/index.js'
+import navbar from './config/navbar.js'
+import sidebar from './config/sidebar.js'
+import componentApi from './src/remark-plugins/component-api.js'
+import links from './src/remark-plugins/links.js'
 
 const defaultThemeResolved = defaultTheme({
   navbar,
@@ -50,27 +52,28 @@ async function svelteDocParser(filename: string) {
   if (admonitionPlugin)
     remarkPlugins.push(admonitionPlugin)
 
-  const converter = async <T extends Record<string, any>>(d: T) => ({
-    ...d,
-    description: (await mdToSvelte({
-      mdContent: d.description,
-      filename: `${filename}.md`,
-      highlighter: defaultThemeResolved.highlighter,
-      remarkPlugins,
-    })).code,
-  })
-
+  const converter = async <T extends Record<string, any>>(d: T) => {
+    return {
+      ...d,
+      description: (await mdToSvelte({
+        mdContent: d.description,
+        filename: `${filename}.md`,
+        highlighter: defaultThemeResolved.highlighter,
+        remarkPlugins,
+      })).code,
+    }
+  }
   if (api.data)
-    api.data = await Promise.all(api.data.map(converter))
+    api.data = await Promise.all(api.data.filter(d => d?.description).map(converter))
 
   if (api.events)
-    api.events = await Promise.all(api.events.map(converter))
+    api.events = (await Promise.all(api.events.filter(d => d?.description).map(converter))).filter(d => !!d)
 
   if (api.slots) {
-    api.slots = await Promise.all(api.slots?.map(async item => {
+    api.slots = await Promise.all(api.slots?.filter(d => d?.description).map(async item => {
       const newItem = await converter(item)
-      if (newItem.params) {
-        newItem.params = await Promise.all(newItem.params.filter(item => item.name !== 'slot')
+      if (newItem?.params) {
+        newItem.params = await Promise.all(newItem.params.filter(item => item?.description && item.name !== 'slot')
           .map(converter))
       }
 
@@ -86,7 +89,7 @@ export default defineConfig({
     vitePluginDocParser({
       parser: svelteDocParser,
       extension: '.svelte',
-      baseDir: '../ui/src/components/',
+      baseDir: resolve(cwd(), '../ui/src/components/'),
     }),
     AutoImport({
       dts: true,

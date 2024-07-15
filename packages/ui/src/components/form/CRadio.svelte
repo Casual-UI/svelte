@@ -42,7 +42,11 @@
   const onClick = () => {
     if (disabled || value === selectedValue) return
     value = selectedValue
-    dispatch('change')
+    /**
+     * The change event.
+     * @param {boolean | string | number} value - The new selected value.
+     */
+    dispatch('change', selectedValue)
   }
 </script>
 

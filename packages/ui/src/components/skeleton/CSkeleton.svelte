@@ -9,10 +9,22 @@
    */
   export let shape = 'circle'
 
+  /**
+   * The width of the skeleton
+   * @type {string}
+   */
   export let width = shape === 'circle' ? DEFAULT_DIMENSION : '100%'
 
+  /**
+   * The height of the skeleton
+   * @type {string}
+   */
   export let height = DEFAULT_DIMENSION
 
+  /**
+   * The border radius of the skeleton
+   * @type {string}
+   */
   export let borderRadius = shape === 'circle' ? '50%' : '5px'
 </script>
 

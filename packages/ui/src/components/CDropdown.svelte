@@ -22,7 +22,7 @@
   export let widthWithinParent = true
 
   /**
-   * If set to `true`. Hover parent would not trigger dropdwon show.
+   * If set to `true`. The dropdown shown status can only be controlled by show prop or the `toggleManually` method.
    * @type {boolean}
    */
   export let manual = false
@@ -49,6 +49,10 @@
     },
   }
 
+  /**
+   * Manually toggle the shows status of dropdown
+   * @param newShowStatus
+   */
   export const toggleManually = newShowStatus => {
     show = newShowStatus
   }
