@@ -1,5 +1,11 @@
 # @casual-ui/svelte
 
+## 0.11.2
+
+### Patch Changes
+
+- [`e9e9c64`](https://github.com/Casual-UI/svelte/commit/e9e9c642bf7e431868fe26471a9cfb556c487dbe) - fix: tooltip click"
+
 ## 0.11.1
 
 ### Patch Changes
