@@ -48,23 +48,14 @@
   <CRadioGroup options="{mapOptions(gutters)}" bind:value="{gutter}" />
 
   <div class="{`${finalClasses} c-row`}">
-    <div class="{`item c-col-${col}`}">1</div>
-    <div class="{`item c-col-${col}`}">2</div>
-    <div class="{`item c-col-${col}`}">3</div>
+    <div class="item c-col-{col} h-15">1</div>
+    <div class="item c-col-{col} h-30">2</div>
+    <div class="item c-col-{col} h-23">3</div>
   </div>
 </div>
 
 <style>
   .item {
     --at-apply: 'bg-svp-primary text-white text-center flex items-center justify-center bg-clip-content';
-  }
-  .item:nth-child(1) {
-    --at-apply: 'h-[60px]';
-  }
-  .item:nth-child(2) {
-    --at-apply: 'h-[120px]';
-  }
-  .item:nth-child(3) {
-    --at-apply: 'h-[90px]';
   }
 </style>

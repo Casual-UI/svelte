@@ -54,8 +54,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1))
       '@sveltepress/theme-default':
-        specifier: ^2.0.4
-        version: 2.0.4(@algolia/client-search@4.24.0)(@babel/core@7.24.8)(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(@sveltepress/vite@0.33.2(@babel/core@7.24.8)(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(rollup@2.79.1)(sass@1.64.1)(svelte@4.1.1)(typescript@5.5.3)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(@types/react@18.2.17)(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(rollup@2.79.1)(sass@1.64.1)(search-insights@2.6.0)(svelte@4.1.1)(typescript@5.5.3)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1))(workbox-build@7.0.0)(workbox-window@7.0.0)
+        specifier: ^2.0.6
+        version: 2.0.6(qpj26wvo5j7k4qpvusysllbie4)
       '@sveltepress/vite':
         specifier: ^0.33.2
         version: 0.33.2(@babel/core@7.24.8)(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(rollup@2.79.1)(sass@1.64.1)(svelte@4.1.1)(typescript@5.5.3)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1))
@@ -1915,8 +1915,8 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.0
 
-  '@sveltepress/theme-default@2.0.4':
-    resolution: {integrity: sha512-V9x8EQUoFU4TMnUoek8t4WwLry5eMuiIjGj9X5zVRRESLM1tK5ds/aeezKuJCjucynBBRKZ/VbRUP+kWkABpTw==}
+  '@sveltepress/theme-default@2.0.6':
+    resolution: {integrity: sha512-OYSaFcGox2yjyavQGxhHavMv9Gv2sEGKah5qLVWkd1SXUUdrFd0gGrI/RKgTrUAqB63ubM8ghcVhqaEY34ER3g==}
     peerDependencies:
       '@sveltejs/kit': ^1.20.4 || ^2.0.0
       '@sveltejs/vite-plugin-svelte': ^3.0.1
@@ -7599,8 +7599,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ? '@sveltepress/theme-default@2.0.4(@algolia/client-search@4.24.0)(@babel/core@7.24.8)(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(@sveltepress/vite@0.33.2(@babel/core@7.24.8)(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.1.1)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(rollup@2.79.1)(sass@1.64.1)(svelte@4.1.1)(typescript@5.5.3)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1)))(@types/react@18.2.17)(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(rollup@2.79.1)(sass@1.64.1)(search-insights@2.6.0)(svelte@4.1.1)(typescript@5.5.3)(vite@5.3.3(@types/node@20.4.5)(sass@1.64.1)(terser@5.18.1))(workbox-build@7.0.0)(workbox-window@7.0.0)'
-  : dependencies:
+  '@sveltepress/theme-default@2.0.6(qpj26wvo5j7k4qpvusysllbie4)':
+    dependencies:
       '@docsearch/css': 3.6.0
       '@docsearch/js': 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.2.17)(search-insights@2.6.0)
       '@iconify/json': 2.2.227
@@ -8258,7 +8258,7 @@ snapshots:
       emmet: 2.4.7
       jsonc-parser: 2.3.1
       vscode-languageserver-textdocument: 1.0.11
-      vscode-languageserver-types: 3.17.2
+      vscode-languageserver-types: 3.17.5
       vscode-nls: 5.2.0
       vscode-uri: 2.1.2
 
@@ -11553,11 +11553,11 @@ snapshots:
 
   svelte-language-server@0.16.13(@babel/core@7.24.8)(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(sass@1.64.1):
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.18
+      '@jridgewell/trace-mapping': 0.3.25
       '@vscode/emmet-helper': 2.8.4
-      chokidar: 3.5.3
+      chokidar: 3.6.0
       estree-walker: 2.0.2
-      fast-glob: 3.3.1
+      fast-glob: 3.3.2
       lodash: 4.17.21
       prettier: 3.2.5
       prettier-plugin-svelte: 3.2.5(prettier@3.2.5)(svelte@3.59.2)

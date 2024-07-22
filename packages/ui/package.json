@@ -38,7 +38,8 @@
   ],
   "scripts": {
     "build": "svelte-package -i src && vite build",
-    "build:icon": "vite build -c vite.icon.config.js"
+    "build:icon": "vite build -c vite.icon.config.js",
+    "prepare": "pnpm build:icon"
   },
   "peerDependencies": {
     "svelte": "^3.46.0 || ^4.0.0"

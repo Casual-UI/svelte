@@ -61,14 +61,14 @@
   <CRadioGroup options="{mapOptions(itemNumArray)}" bind:value="{itemNum}" />
 
   <div
-    class="{`c-grid c-grid-col-${col} c-grid-row-${row} c-grid-gap-${gap} c-pa-${gap}`}"
+    class="c-grid c-grid-col-{col} c-grid-row-{row} c-grid-gap-{gap} c-pa-{gap}"
   >
     {#each activeItems as item, i (item)}
       <div
         animate:flip="{{
           duration: 500,
         }}"
-        class="{`item c-col-${col}`}"
+        class="item c-col-{col}"
         in:receive="{{
           key: item,
         }}"
